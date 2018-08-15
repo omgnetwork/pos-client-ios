@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
-		033A63A82123E02800A2D08B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A72123E02800A2D08B /* ViewController.swift */; };
-		033A63AB2123E02800A2D08B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63A92123E02800A2D08B /* Main.storyboard */; };
-		033A63AD2123E02C00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63AC2123E02C00A2D08B /* Assets.xcassets */; };
-		033A63B02123E02C00A2D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63AE2123E02C00A2D08B /* LaunchScreen.storyboard */; };
 		033A63BB2123E02C00A2D08B /* POS_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63BA2123E02C00A2D08B /* POS_clientTests.swift */; };
+		033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */; };
+		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +26,12 @@
 /* Begin PBXFileReference section */
 		033A63A22123E02800A2D08B /* POS-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POS-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		033A63A72123E02800A2D08B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		033A63AA2123E02800A2D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		033A63AC2123E02C00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		033A63AF2123E02C00A2D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63B62123E02C00A2D08B /* POS-clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "POS-clientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63BA2123E02C00A2D08B /* POS_clientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POS_clientTests.swift; sourceTree = "<group>"; };
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033A63C72123E2CB00A2D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +73,9 @@
 		033A63A42123E02800A2D08B /* POS-client */ = {
 			isa = PBXGroup;
 			children = (
+				033A63C82123E2CB00A2D08B /* Assets */,
+				033A63C52123E2CB00A2D08B /* Storyboards */,
 				033A63A52123E02800A2D08B /* AppDelegate.swift */,
-				033A63A72123E02800A2D08B /* ViewController.swift */,
-				033A63A92123E02800A2D08B /* Main.storyboard */,
-				033A63AC2123E02C00A2D08B /* Assets.xcassets */,
-				033A63AE2123E02C00A2D08B /* LaunchScreen.storyboard */,
 				033A63B12123E02C00A2D08B /* Info.plist */,
 			);
 			path = "POS-client";
@@ -94,6 +88,22 @@
 				033A63BC2123E02C00A2D08B /* Info.plist */,
 			);
 			path = "POS-clientTests";
+			sourceTree = "<group>";
+		};
+		033A63C52123E2CB00A2D08B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		033A63C82123E2CB00A2D08B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				033A63C92123E2CB00A2D08B /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +187,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033A63B02123E02C00A2D08B /* LaunchScreen.storyboard in Resources */,
-				033A63AD2123E02C00A2D08B /* Assets.xcassets in Resources */,
-				033A63AB2123E02800A2D08B /* Main.storyboard in Resources */,
+				033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */,
+				033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033A63A82123E02800A2D08B /* ViewController.swift in Sources */,
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,18 +229,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		033A63A92123E02800A2D08B /* Main.storyboard */ = {
+		033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				033A63AA2123E02800A2D08B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		033A63AE2123E02C00A2D08B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				033A63AF2123E02C00A2D08B /* Base */,
+				033A63C72123E2CB00A2D08B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omisego.POS-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -384,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.omisego.POS-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
