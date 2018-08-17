@@ -1,0 +1,40 @@
+/*
+ Localizable.strings
+ POSClient
+
+ Created by Mederic Petit on 17/8/18.
+ Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
+ */
+
+// Global
+
+"global.next" = "Next";
+
+// Loading
+
+"loading.button.title.retry" = "Retry";
+
+// Login
+"login.error.validation.email" = "Invalid email";
+"login.error.validation.password" = "Password should be at least 6 characters long";
+"login.text_field.placeholder.email" = "Email";
+"login.text_field.placeholder.password" = "Password";
+"login.button.title.login" = "Log in";
+"login.button.title.register" = "Don't have an account yet? Register";
+
+// Register
+"register.view.title" = "Register";
+"register.text_field.placeholder.first_name" = "First name";
+"register.text_field.placeholder.last_name" = "Last name";
+"register.text_field.placeholder.email" = "Email";
+"register.text_field.placeholder.password" = "Password";
+"register.button.title.register" = "Register";
+"register.button.title.close" = "Close";
+"register.error.validation.first_name" = "First name is required";
+"register.error.validation.last_name" = "Last name is required";
+"register.error.validation.email" = "Invalid email";
+"register.error.validation.password" = "Password should be at least 6 characters long";
+
+// Global Errors
+"error.missing_required_fields" = "Missing required fields";
+"error.unexpected" = "An unexpected error has occured";

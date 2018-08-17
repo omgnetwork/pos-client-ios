@@ -9,6 +9,10 @@ target 'POSClient' do
   pod 'Alamofire'
   pod 'KeychainSwift'
   pod 'BigInt'
+  pod 'MBProgressHUD'
+  pod 'Toaster'
+  pod 'TPKeyboardAvoiding'
+  pod 'SkyFloatingLabelTextField'
   pod 'OmiseGO/Client', path: '../omisego-ios'
 
   target 'POSClientTests' do
