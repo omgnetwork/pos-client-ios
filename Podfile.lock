@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.7.3)
+  - BigInt (3.1.0):
+    - SipHash (~> 1.2)
+  - KeychainSwift (11.0.0)
+  - OmiseGO/Client (1.1.0):
+    - OmiseGO/Core
+  - OmiseGO/Core (1.1.0):
+    - BigInt (~> 3.1)
+    - Starscream (~> 3.0)
+  - SipHash (1.2.2)
+  - Starscream (3.0.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - BigInt
+  - KeychainSwift
+  - OmiseGO/Client (from `../omisego-ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - BigInt
+    - KeychainSwift
+    - SipHash
+    - Starscream
+
+EXTERNAL SOURCES:
+  OmiseGO:
+    :path: "../omisego-ios"
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
+  KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
+  OmiseGO: 0f59e7c96c4925c408d0d10d1001ae3c4160354e
+  SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+
+PODFILE CHECKSUM: 439899dfd88cf1a1dcc2ef354bf3af785fb37744
+
+COCOAPODS: 1.5.3
