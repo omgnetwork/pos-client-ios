@@ -49,6 +49,10 @@ extension String {
     func localized() -> String {
         return NSLocalizedString(self, comment: "")
     }
+
+    func trunc(length: Int, trailing: String = "") -> String {
+        return (self.count > length) ? self.prefix(length) + trailing : self
+    }
 }
 
 extension UITableView {

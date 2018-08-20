@@ -27,9 +27,9 @@ class SessionManager: SessionManagerProtocol {
     var currentUser: User?
     var state: AppState {
         if self.isLoggedIn() {
-            return self.currentUser == nil ? .loading : .login
+            return self.currentUser == nil ? .loading : .loggedIn
         } else {
-            return .logout
+            return .loggedOut
         }
     }
 

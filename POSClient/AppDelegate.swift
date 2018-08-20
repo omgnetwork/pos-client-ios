@@ -24,13 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func loadRootView() {
         switch SessionManager.shared.state {
-        case .logout:
+        case .loggedOut:
             self.window?.rootViewController = Storyboard.login.storyboard.instantiateInitialViewController()
         case .loading:
             self.window?.rootViewController = Storyboard.loading.storyboard.instantiateInitialViewController()
-        case .login:
-            print("WARNING: TO UPDATE")
-            self.window?.rootViewController = Storyboard.main.storyboard.instantiateInitialViewController()
+        case .loggedIn:
+            self.window?.rootViewController = Storyboard.balance.storyboard.instantiateInitialViewController()
         }
     }
 }

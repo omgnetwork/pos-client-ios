@@ -20,16 +20,16 @@ class OMGFloatingTextField: SkyFloatingLabelTextField {
     }
 
     private func setup() {
-        self.textColor = Color.omiseGOBlue.uiColor()
+        self.textColor = Color.black.uiColor()
 
         // Placeholder: The placeholder shown when there is no content in the text field
         self.placeholderFont = Font.avenirBook.withSize(15)
         self.placeholderColor = .lightGray
 
         // Line: The line shown below the text field
-        self.selectedLineColor = Color.omiseGOBlue.uiColor()
+        self.selectedLineColor = Color.black.uiColor()
         self.selectedLineHeight = 1
-        self.lineColor = Color.omiseGOBlue.uiColor(withAlpha: 0.8)
+        self.lineColor = Color.black.uiColor(withAlpha: 0.8)
         self.lineHeight = 1
 
         // Title: The label shown on top when there is content in the text field
