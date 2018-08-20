@@ -12,6 +12,8 @@
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
 		032F7A74212A476400AAC753 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A73212A476400AAC753 /* Closure.swift */; };
 		032F7A76212A478200AAC753 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A75212A478200AAC753 /* AppState.swift */; };
+		032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */; };
+		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63BB2123E02C00A2D08B /* POSClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63BA2123E02C00A2D08B /* POSClientTests.swift */; };
 		033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */; };
@@ -57,6 +59,8 @@
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		032F7A73212A476400AAC753 /* Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
 		032F7A75212A478200AAC753 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewController.swift; sourceTree = "<group>"; };
+		032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				03C2A65821269AA500267E7F /* LoginViewController.swift */,
 				03C2A67C2126BFD500267E7F /* LoadingViewController.swift */,
 				03C2A68C212A317D00267E7F /* BalanceListViewController.swift */,
+				032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				03C2A67A2126BFBD00267E7F /* LoadingViewModel.swift */,
 				03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */,
 				032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */,
+				032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
@@ -488,6 +495,7 @@
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
+				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,

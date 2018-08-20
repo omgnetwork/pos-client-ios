@@ -6,7 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class BalanceListViewController: BaseViewController {
     let balanceDetailSegueIdentifier = "showBalanceDetailViewController"
@@ -46,9 +46,11 @@ class BalanceListViewController: BaseViewController {
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == self.balanceDetailSegueIdentifier {
-            // TODO: Handle navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.balanceDetailSegueIdentifier,
+            let vc: BalanceDetailViewController = segue.destination as? BalanceDetailViewController,
+            let balance: Balance = sender as? Balance {
+            vc.setup(withBalance: balance)
         } else if segue.identifier == self.profileSegueIdentifier {
             // TODO: Handle navigation
         }
