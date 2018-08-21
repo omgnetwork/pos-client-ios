@@ -14,7 +14,6 @@ enum UserDefaultKeys: String {
 struct Constant {
     // LOCAL
     static let baseURL = "http://192.168.82.11:4000"
-    static let baseSocketURL = "ws://192.168.82.11:4000"
     static let APIKey = "V6XMe4i4uRoQPO5cB8ox6zSzAdRa4_T8CDLb7gXdxvA"
 
     // Pagination

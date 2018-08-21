@@ -27,22 +27,21 @@ class BalanceListViewController: BaseViewController {
         self.tableView.registerNib(tableViewCell: BalanceTableViewCell.self)
         self.tableView.tableFooterView = UIView()
         self.tableView.refreshControl = self.refreshControl
-        self.viewModel.loadData()
     }
 
     override func configureViewModel() {
         super.configureViewModel()
-        self.viewModel.onTableDataChange = {
-            self.tableView.reloadData()
-            self.refreshControl.endRefreshing()
+        self.viewModel.onTableDataChange = { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }
-        self.viewModel.onFailGetWallet = {
-            self.showError(withMessage: $0.localizedDescription)
-            self.refreshControl.endRefreshing()
+        self.viewModel.onFailGetWallet = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
+            self?.refreshControl.endRefreshing()
         }
-        self.viewModel.onLoadStateChange = { $0 ? self.showLoading() : self.hideLoading() }
-        self.viewModel.onBalanceSelection = {
-            self.performSegue(withIdentifier: self.balanceDetailSegueIdentifier, sender: $0)
+        self.viewModel.onBalanceSelection = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.balanceDetailSegueIdentifier, sender: $0)
         }
     }
 
@@ -61,7 +60,6 @@ extension BalanceListViewController {
     @IBAction func tapProfileButton(_: UIBarButtonItem) {
         // TODO: handle navigation
         SessionManager.shared.logout(withSuccessClosure: {
-            (UIApplication.shared.delegate as? AppDelegate)?.loadRootView()
         }, failure: { error in
             print(error)
         })

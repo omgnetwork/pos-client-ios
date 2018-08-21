@@ -13,33 +13,20 @@ class BalanceListViewModel: BaseViewModel {
     var onFailGetWallet: FailureClosure?
     var onTableDataChange: SuccessClosure?
     var onBalanceSelection: ObjectClosure<Balance>?
-    var onLoadStateChange: ObjectClosure<Bool>?
-
-    var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
-    }
 
     let viewTitle = "balance_list.view.title".localized()
     private var balanceCellViewModels: [BalanceCellViewModel] = []
-    private let walletLoader: WalletLoaderProtocol
+    private let sessionManager: SessionManagerProtocol
 
-    init(walletLoader: WalletLoaderProtocol = WalletLoader()) {
-        self.walletLoader = walletLoader
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+        self.sessionManager = sessionManager
         super.init()
+        sessionManager.attachObserver(observer: self)
+        self.process(wallet: sessionManager.wallet)
     }
 
     @objc func loadData() {
-        self.isLoading = true
-        self.walletLoader.getMain { result in
-            self.isLoading = false
-            switch result {
-            case let .success(data: wallet):
-                self.processWallet(wallet)
-            case let .fail(error: error):
-                self.handleOMGError(error)
-                self.onFailGetWallet?(.omiseGO(error: error))
-            }
-        }
+        self.sessionManager.loadWallet()
     }
 
     func numberOfRow() -> Int {
@@ -55,7 +42,8 @@ class BalanceListViewModel: BaseViewModel {
         self.onBalanceSelection?(balance)
     }
 
-    private func processWallet(_ wallet: Wallet) {
+    func process(wallet: Wallet?) {
+        guard let wallet = wallet else { return }
         self.generateTableViewModels(fromBalances: wallet.balances)
         self.onTableDataChange?()
     }
@@ -67,5 +55,17 @@ class BalanceListViewModel: BaseViewModel {
             newViewModels.append(viewModel)
         })
         self.balanceCellViewModels = newViewModels
+    }
+}
+
+extension BalanceListViewModel: Observer {
+    func onChange(event: AppEvent) {
+        switch event {
+        case let .onWalletUpdate(wallet: wallet):
+            self.process(wallet: wallet)
+        case let .onWalletError(error: error):
+            self.onFailGetWallet?(.omiseGO(error: error))
+        default: break
+        }
     }
 }

@@ -9,33 +9,46 @@
 import KeychainSwift
 import OmiseGO
 
-protocol SessionManagerProtocol {
+protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPClientAPI { get set }
     var currentUser: User? { get set }
+    var wallet: Wallet? { get set }
 
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
-    func loadCurrentUser(withSuccessClosure success: @escaping SuccessClosure,
-                         failure: @escaping (_ error: OMGError) -> Void)
     func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func loadCurrentUser()
+    func loadWallet()
 }
 
-class SessionManager: SessionManagerProtocol {
+class SessionManager: Publisher, SessionManagerProtocol {
     static let shared: SessionManager = SessionManager()
 
     let keychain = KeychainSwift()
+    var state: AppState! {
+        didSet {
+            if oldValue != self.state {
+                self.notify(event: .onAppStateUpdate(state: self.state))
+            }
+        }
+    }
 
-    var currentUser: User?
-    var state: AppState {
-        if self.isLoggedIn() {
-            return self.currentUser == nil ? .loading : .loggedIn
-        } else {
-            return .loggedOut
+    var currentUser: User? {
+        didSet {
+            self.updateState()
+            self.notify(event: .onUserUpdate(user: self.currentUser))
+        }
+    }
+
+    var wallet: Wallet? {
+        didSet {
+            self.updateState()
+            self.notify(event: .onWalletUpdate(wallet: self.wallet))
         }
     }
 
     var httpClient: HTTPClientAPI
 
-    init() {
+    override init() {
         let authenticationToken = self.keychain.get(UserDefaultKeys.authenticationToken.rawValue)
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
@@ -43,6 +56,8 @@ class SessionManager: SessionManagerProtocol {
                                              credentials: credentials,
                                              debugLog: true)
         self.httpClient = HTTPClientAPI(config: httpConfig)
+        super.init()
+        self.updateState()
     }
 
     func isLoggedIn() -> Bool {
@@ -55,13 +70,14 @@ class SessionManager: SessionManagerProtocol {
         self.currentUser = nil
     }
 
-    private func loadTokens() {
+    private func updateState() {
+        if self.isLoggedIn() {
+            self.state = (self.currentUser == nil || self.wallet == nil) ? .loading : .loggedIn
+        } else {
+            self.state = .loggedOut
+        }
     }
 
-    private func initializeOmiseGOSDK() {
-    }
-
-    // SessionManagerProtocol
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.httpClient.login(withParams: params) { response in
             switch response {
@@ -70,24 +86,8 @@ class SessionManager: SessionManagerProtocol {
                 self.currentUser = authenticationToken.user
                 self.keychain.set(authenticationToken.user.id, forKey: UserDefaultKeys.userId.rawValue)
                 self.keychain.set(authenticationToken.token, forKey: UserDefaultKeys.authenticationToken.rawValue)
+                self.updateState()
                 success()
-            }
-        }
-    }
-
-    func loadCurrentUser(withSuccessClosure success: @escaping SuccessClosure,
-                         failure: @escaping (_ error: OMGError) -> Void) {
-        guard self.isLoggedIn() else {
-            failure(.unexpected(message: "error.unexpected".localized()))
-            return
-        }
-        User.getCurrent(using: self.httpClient) { response in
-            switch response {
-            case let .success(data: user):
-                self.currentUser = user
-                success()
-            case let .fail(error: error):
-                failure(error)
             }
         }
     }
@@ -103,14 +103,26 @@ class SessionManager: SessionManagerProtocol {
             }
         }
     }
-}
 
-extension SessionManager: SocketConnectionDelegate {
-    func didConnect() {
-        print("Socket did connect")
+    func loadCurrentUser() {
+        User.getCurrent(using: self.httpClient) { response in
+            switch response {
+            case let .success(data: user):
+                self.currentUser = user
+            case let .fail(error: error):
+                self.notify(event: .onUserError(error: error))
+            }
+        }
     }
 
-    func didDisconnect(_: OMGError?) {
-        print("Socket did disconnect")
+    func loadWallet() {
+        Wallet.getMain(using: self.httpClient) { response in
+            switch response {
+            case let .success(data: wallet):
+                self.wallet = wallet
+            case let .fail(error: error):
+                self.notify(event: .onWalletError(error: error))
+            }
+        }
     }
 }

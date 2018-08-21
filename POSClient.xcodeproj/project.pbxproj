@@ -18,6 +18,11 @@
 		033A63BB2123E02C00A2D08B /* POSClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63BA2123E02C00A2D08B /* POSClientTests.swift */; };
 		033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
+		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
+		0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */; };
+		0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */; };
+		0380AADD212C2013006B2193 /* AppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADC212C2013006B2193 /* AppEvent.swift */; };
+		0380AADF212C2347006B2193 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADE212C2347006B2193 /* Publisher.swift */; };
 		03C2A6502126971F00267E7F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A64E2126971F00267E7F /* Login.storyboard */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
@@ -69,6 +74,11 @@
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63C72123E2CB00A2D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewController.swift; sourceTree = "<group>"; };
+		0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewModel.swift; sourceTree = "<group>"; };
+		0380AADC212C2013006B2193 /* AppEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvent.swift; sourceTree = "<group>"; };
+		0380AADE212C2347006B2193 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		03C2A64F2126971F00267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 				03C2A67C2126BFD500267E7F /* LoadingViewController.swift */,
 				03C2A68C212A317D00267E7F /* BalanceListViewController.swift */,
 				032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */,
+				0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */,
 				032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */,
 				032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */,
+				0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -220,6 +232,7 @@
 				032F7A71212A474C00AAC753 /* Storyboard.swift */,
 				032F7A73212A476400AAC753 /* Closure.swift */,
 				032F7A75212A478200AAC753 /* AppState.swift */,
+				0380AAD6212BF4F8006B2193 /* Observable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				03C2A6682126A12E00267E7F /* POSClientError.swift */,
+				0380AADC212C2013006B2193 /* AppEvent.swift */,
+				0380AADE212C2347006B2193 /* Publisher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0380AADD212C2013006B2193 /* AppEvent.swift in Sources */,
 				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
@@ -486,6 +502,7 @@
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
 				03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */,
+				0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */,
 				032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
@@ -495,8 +512,11 @@
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
+				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
+				0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */,
+				0380AADF212C2347006B2193 /* Publisher.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 			);

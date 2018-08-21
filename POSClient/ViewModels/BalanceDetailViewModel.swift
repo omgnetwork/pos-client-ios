@@ -11,7 +11,6 @@ import OmiseGO
 class BalanceDetailViewModel: BaseViewModel {
     var onFailGetWallet: FailureClosure?
     var onDataUpdate: SuccessClosure?
-    var onBalanceSelection: ObjectClosure<Balance>?
     var onLoadStateChange: ObjectClosure<Bool>?
 
     var isLoading: Bool = false {
@@ -63,34 +62,44 @@ class BalanceDetailViewModel: BaseViewModel {
         }
     }
 
-    private let walletLoader: WalletLoaderProtocol
+    private let sessionManager: SessionManagerProtocol
 
-    init(walletLoader: WalletLoaderProtocol = WalletLoader()) {
-        self.walletLoader = walletLoader
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+        self.sessionManager = sessionManager
         super.init()
+        sessionManager.attachObserver(observer: self)
+        self.process(wallet: sessionManager.wallet)
     }
 
     @objc func loadData() {
         self.isLoading = true
-        self.walletLoader.getMain { result in
-            self.isLoading = false
-            switch result {
-            case let .success(data: wallet):
-                self.processWallet(wallet)
-            case let .fail(error: error):
-                self.handleOMGError(error)
-                self.onFailGetWallet?(.omiseGO(error: error))
-            }
-        }
+        self.sessionManager.loadWallet()
     }
 
-    private func processWallet(_ wallet: Wallet) {
+    func stopObserving() {
+        self.sessionManager.removeObserver(observer: self)
+    }
+
+    private func process(wallet: Wallet?) {
+        guard let wallet = wallet else { return }
         if let exitingBalance = self.balance, let updatedBalance = wallet.balances.filter({ $0 == exitingBalance }).first {
             self.balance = updatedBalance
         } else if wallet.balances.count == 1 {
             self.balance = wallet.balances.first!
-        } else {
-            // TODO: Handle
+        }
+    }
+}
+
+extension BalanceDetailViewModel: Observer {
+    func onChange(event: AppEvent) {
+        switch event {
+        case let .onWalletUpdate(wallet: wallet):
+            self.process(wallet: wallet)
+            self.isLoading = false
+        case let .onWalletError(error: error):
+            self.onFailGetWallet?(.omiseGO(error: error))
+            self.isLoading = false
+        default: break
         }
     }
 }

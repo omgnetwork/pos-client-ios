@@ -30,31 +30,37 @@ class BalanceDetailViewController: BaseViewController {
         self.title = self.viewModel.title
         self.payButton.titleLabel?.numberOfLines = 0
         self.payButton.setAttributedTitle(self.viewModel.payOrTopupAttrStr, for: .normal)
+        self.viewModel.loadData()
     }
 
     override func configureViewModel() {
         super.configureViewModel()
-
-        self.viewModel.onDataUpdate = {
-            self.balanceLabel.text = self.viewModel.balanceDisplay
-            self.tokenSymbolLabel.text = self.viewModel.tokenSymbol
-            self.title = self.viewModel.title
+        self.viewModel.onDataUpdate = { [weak self] in
+            self?.balanceLabel.text = self?.viewModel.balanceDisplay
+            self?.tokenSymbolLabel.text = self?.viewModel.tokenSymbol
+            self?.title = self?.viewModel.title
         }
-        self.viewModel.onFailGetWallet = {
-            self.showError(withMessage: $0.localizedDescription)
+        self.viewModel.onFailGetWallet = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
         }
-        self.viewModel.onLoadStateChange = { $0 ? self.showLoading() : self.hideLoading() }
+        self.viewModel.onLoadStateChange = { [weak self] in
+            $0 ? self?.showLoading() : self?.hideLoading()
+        }
     }
 
-    /*
-     // MARK: - Navigation
+    deinit {
+        self.viewModel.stopObserving()
+    }
+}
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+extension BalanceDetailViewController {
+    @IBAction func tapProfileButton(_: UIBarButtonItem) {
+        // TODO: handle navigation
+        SessionManager.shared.logout(withSuccessClosure: {
+        }, failure: { error in
+            print(error)
+        })
+    }
 }
 
 extension BalanceDetailViewController {

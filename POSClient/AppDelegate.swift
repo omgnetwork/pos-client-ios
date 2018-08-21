@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.black
         self.window?.makeKeyAndVisible()
         self.loadRootView()
+        SessionManager.shared.attachObserver(observer: self)
         return true
     }
 
@@ -30,6 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = Storyboard.loading.storyboard.instantiateInitialViewController()
         case .loggedIn:
             self.window?.rootViewController = Storyboard.balance.storyboard.instantiateInitialViewController()
+        default: break
+        }
+    }
+}
+
+extension AppDelegate: Observer {
+    func id() -> Int {
+        return 0
+    }
+
+    func onChange(event: AppEvent) {
+        switch event {
+        case .onAppStateUpdate:
+            self.loadRootView()
+        default: break
         }
     }
 }
