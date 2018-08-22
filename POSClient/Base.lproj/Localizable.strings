@@ -40,7 +40,7 @@
 
 // Balance detail
 "balance_detail.label.pay" = "Pay";
-"balance_detail.label.or_topup" = "or topup";
+"balance_detail.label.or_topup" = "or top-up";
 "balance_detail.label.last_updated" = "Last updated";
 
 // Global Errors
