@@ -67,6 +67,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     func clearTokens() {
         self.keychain.delete(UserDefaultKeys.userId.rawValue)
         self.keychain.delete(UserDefaultKeys.authenticationToken.rawValue)
+        self.wallet = nil
         self.currentUser = nil
     }
 
@@ -86,7 +87,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 self.currentUser = authenticationToken.user
                 self.keychain.set(authenticationToken.user.id, forKey: UserDefaultKeys.userId.rawValue)
                 self.keychain.set(authenticationToken.token, forKey: UserDefaultKeys.authenticationToken.rawValue)
-                self.updateState()
                 success()
             }
         }
