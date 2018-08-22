@@ -35,6 +35,9 @@
 "register.error.validation.email" = "Invalid email";
 "register.error.validation.password" = "Password should be at least 6 characters long";
 
+// Balance list
+"balance_list.view.title" = "Balances";
+
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";

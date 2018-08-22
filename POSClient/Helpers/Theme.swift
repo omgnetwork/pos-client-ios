@@ -12,25 +12,26 @@ struct Theme {
     static func apply() {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.barTintColor = .white
-        navigationBarAppearance.tintColor = Color.omiseGOBlue.uiColor()
+        navigationBarAppearance.tintColor = Color.black.uiColor()
         navigationBarAppearance.isTranslucent = false
         navigationBarAppearance.titleTextAttributes = [
             .font: Font.avenirMedium.withSize(20),
-            .foregroundColor: Color.omiseGOBlue.uiColor()
+            .foregroundColor: Color.black.uiColor()
         ]
         let barButtonAppearance = UIBarButtonItem.appearance()
         barButtonAppearance.setTitleTextAttributes([
             .font: Font.avenirMedium.withSize(17),
-            .foregroundColor: Color.omiseGOBlue.uiColor()
+            .foregroundColor: Color.black.uiColor()
         ], for: .normal)
         barButtonAppearance.setTitleTextAttributes([
             .font: Font.avenirMedium.withSize(17),
-            .foregroundColor: Color.omiseGOBlue.uiColor()
+            .foregroundColor: Color.black.uiColor()
         ], for: .highlighted)
     }
 }
 
 enum Color: String {
+    case black = "04070D"
     case omiseGOBlue = "1A53F0"
     case transactionDebitRed = "e74c3c"
     case transactionCreditGreen = "2ecc71"
