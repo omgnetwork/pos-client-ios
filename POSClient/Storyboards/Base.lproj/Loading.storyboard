@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xqg-gX-zDF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="bdd-a3-8EO">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewController" id="xqg-gX-zDF" customClass="LoadingViewController" customModule="OMGShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lxF-c4-lcb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="omisego_logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-1p-9EI">
+                                <rect key="frame" x="97" y="301.5" width="180" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Ie3-Vd-TRi"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nsO-G2-2Qw">
+                                <rect key="frame" x="169.5" y="396.5" width="37" height="37"/>
+                                <color key="color" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqk-Rn-iHW">
+                                <rect key="frame" x="16" y="393" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bum-2f-vxO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapRetryButton:" destination="xqg-gX-zDF" eventType="touchUpInside" id="6Yq-qS-LGu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="juT-PV-jZm" firstAttribute="trailing" secondItem="eqk-Rn-iHW" secondAttribute="trailing" constant="16" id="4Di-GR-ySr"/>
+                            <constraint firstItem="zJd-1p-9EI" firstAttribute="centerY" secondItem="lxF-c4-lcb" secondAttribute="centerY" id="LsK-S8-No5"/>
+                            <constraint firstItem="zJd-1p-9EI" firstAttribute="centerX" secondItem="lxF-c4-lcb" secondAttribute="centerX" id="NVe-cr-40l"/>
+                            <constraint firstItem="eqk-Rn-iHW" firstAttribute="centerX" secondItem="nsO-G2-2Qw" secondAttribute="centerX" id="TW5-N9-9vf"/>
+                            <constraint firstItem="nsO-G2-2Qw" firstAttribute="top" secondItem="zJd-1p-9EI" secondAttribute="bottom" constant="32" id="U6T-Pm-V6q"/>
+                            <constraint firstItem="eqk-Rn-iHW" firstAttribute="centerY" secondItem="nsO-G2-2Qw" secondAttribute="centerY" id="YYp-6F-MVf"/>
+                            <constraint firstItem="nsO-G2-2Qw" firstAttribute="centerX" secondItem="lxF-c4-lcb" secondAttribute="centerX" id="gtB-Zh-nG8"/>
+                            <constraint firstItem="eqk-Rn-iHW" firstAttribute="leading" secondItem="juT-PV-jZm" secondAttribute="leading" constant="16" id="mNF-kG-Nw8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="juT-PV-jZm"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="nsO-G2-2Qw" id="9Pb-6u-Dwt"/>
+                        <outlet property="retryButton" destination="eqk-Rn-iHW" id="pvY-va-tZW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLL-jl-c9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="omisego_logo_black" width="180" height="63"/>
+    </resources>
+</document>
