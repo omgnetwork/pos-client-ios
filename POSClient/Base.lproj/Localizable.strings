@@ -45,7 +45,7 @@
 
 // QR viewer
 "qr_viewer.label.your_qr" = "Your QR";
-"qr_viewer.label.hint" = "Show this QR to scan\nfor paying or topup";
+"qr_viewer.label.hint" = "Show this QR code\nto pay or top-up";
 "qr_viewer.button.done" = "Done";
 
 // Global Errors
