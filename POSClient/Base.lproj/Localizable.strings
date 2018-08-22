@@ -43,6 +43,11 @@
 "balance_detail.label.or_topup" = "or top-up";
 "balance_detail.label.last_updated" = "Last updated";
 
+// QR viewer
+"qr_viewer.label.your_qr" = "Your QR";
+"qr_viewer.label.hint" = "Show this QR code\nto pay or top-up";
+"qr_viewer.button.done" = "Done";
+
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";

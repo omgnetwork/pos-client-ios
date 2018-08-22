@@ -103,7 +103,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="DidTapPayButton:" destination="wch-7x-AYt" eventType="touchUpInside" id="sgw-vD-GEN"/>
+                                    <segue destination="xKj-K1-8Hq" kind="presentation" id="OAD-bi-cmt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPN-Mx-5Cn">
@@ -154,6 +154,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oM0-2A-ExC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="181.25937031484258"/>
+        </scene>
+        <!--QRCode-->
+        <scene sceneID="7Gb-Uj-wh9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QRCode" id="xKj-K1-8Hq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sda-do-eV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="182"/>
         </scene>
         <!--Balance Navigation View Controller-->
         <scene sceneID="WHE-2f-T4a">

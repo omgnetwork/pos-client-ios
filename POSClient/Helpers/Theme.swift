@@ -35,6 +35,7 @@ enum Color: String {
     case omiseGOBlue = "1A53F0"
     case transactionDebitRed = "e74c3c"
     case transactionCreditGreen = "2ecc71"
+    case greyBorder = "E4E7ED"
 
     func uiColor(withAlpha alpha: CGFloat? = 1.0) -> UIColor {
         return UIColor.color(fromHexString: self.rawValue, alpha: alpha)

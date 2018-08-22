@@ -117,6 +117,12 @@ extension UIView {
         self.layer.shadowRadius = radius
         self.layer.masksToBounds = false
     }
+
+    func addBorder(withColor color: UIColor, width: CGFloat, radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.borderWidth = width
+        self.layer.borderColor = color.cgColor
+    }
 }
 
 extension UITextField {
