@@ -23,6 +23,10 @@
 		0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */; };
 		0380AADD212C2013006B2193 /* AppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADC212C2013006B2193 /* AppEvent.swift */; };
 		0380AADF212C2347006B2193 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADE212C2347006B2193 /* Publisher.swift */; };
+		0380AAE1212D0F24006B2193 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0380AAE0212D0F24006B2193 /* QRCode.storyboard */; };
+		0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE2212D11DA006B2193 /* QRViewController.swift */; };
+		0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE4212D11E5006B2193 /* QRViewModel.swift */; };
+		0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE6212D13C3006B2193 /* QRGenerator.swift */; };
 		03C2A6502126971F00267E7F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A64E2126971F00267E7F /* Login.storyboard */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
@@ -79,6 +83,10 @@
 		0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewModel.swift; sourceTree = "<group>"; };
 		0380AADC212C2013006B2193 /* AppEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvent.swift; sourceTree = "<group>"; };
 		0380AADE212C2347006B2193 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		0380AAE0212D0F24006B2193 /* QRCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		0380AAE2212D11DA006B2193 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
+		0380AAE4212D11E5006B2193 /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		0380AAE6212D13C3006B2193 /* QRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGenerator.swift; sourceTree = "<group>"; };
 		03C2A64F2126971F00267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 				03C2A64E2126971F00267E7F /* Login.storyboard */,
 				03C2A6812126C0BD00267E7F /* Loading.storyboard */,
 				03C2A689212A30FF00267E7F /* Balance.storyboard */,
+				0380AAE0212D0F24006B2193 /* QRCode.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 				03C2A68C212A317D00267E7F /* BalanceListViewController.swift */,
 				032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */,
 				0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */,
+				0380AAE2212D11DA006B2193 /* QRViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +227,7 @@
 				032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */,
 				032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */,
 				0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */,
+				0380AAE4212D11E5006B2193 /* QRViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 				032F7A73212A476400AAC753 /* Closure.swift */,
 				032F7A75212A478200AAC753 /* AppState.swift */,
 				0380AAD6212BF4F8006B2193 /* Observable.swift */,
+				0380AAE6212D13C3006B2193 /* QRGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -384,6 +396,7 @@
 				03C2A6882126C36500267E7F /* Localizable.strings in Resources */,
 				033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */,
 				03C2A6832126C0BD00267E7F /* Loading.storyboard in Resources */,
+				0380AAE1212D0F24006B2193 /* QRCode.storyboard in Resources */,
 				03C2A6502126971F00267E7F /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,15 +514,18 @@
 				03C2A66121269C2300267E7F /* Theme.swift in Sources */,
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
+				0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */,
 				03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */,
 				0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */,
 				032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
+				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
 				03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */,
 				03C2A68D212A317D00267E7F /* BalanceListViewController.swift in Sources */,
 				03C2A65F21269C2300267E7F /* CustomView.swift in Sources */,
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
+				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
 				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,

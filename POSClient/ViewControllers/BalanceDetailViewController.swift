@@ -62,8 +62,3 @@ extension BalanceDetailViewController {
         })
     }
 }
-
-extension BalanceDetailViewController {
-    @IBAction func DidTapPayButton(_: UIButton) {
-    }
-}
