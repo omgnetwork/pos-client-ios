@@ -9,13 +9,10 @@
 import OmiseGO
 
 class BaseViewModel: NSObject {
-    var onAppStateChange: EmptyClosure?
-
     func handleOMGError(_ error: OMGError) {
         switch error {
         case let .api(apiError: apiError) where apiError.isAuthorizationError():
             SessionManager.shared.clearTokens()
-            self.onAppStateChange?()
         default: break
         }
     }

@@ -50,11 +50,11 @@ class LoginViewModel: BaseViewModel {
 
     private func submit() {
         let params = LoginParams(email: self.email!, password: self.password!)
-        self.sessionManager.login(withParams: params, success: {
-            self.isLoading = false
-        }, failure: { error in
-            self.isLoading = false
-            self.onFailedLogin?(error)
+        self.sessionManager.login(withParams: params, success: { [weak self] in
+            self?.isLoading = false
+        }, failure: { [weak self] error in
+            self?.isLoading = false
+            self?.onFailedLogin?(error)
         })
     }
 

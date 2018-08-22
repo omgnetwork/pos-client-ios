@@ -12,9 +12,10 @@ enum UserDefaultKeys: String {
 }
 
 struct Constant {
+    static let urlScheme = "pos-client://"
     // LOCAL
-    static let baseURL = "http://192.168.82.11:4000"
-    static let APIKey = "V6XMe4i4uRoQPO5cB8ox6zSzAdRa4_T8CDLb7gXdxvA"
+    static let baseURL = "http://192.168.1.42:4000"
+    static let APIKey = "1i0I7MBjts7eKDxp3hQKlVpzSfA7nsIAeMDg-md_B-E"
 
     // Pagination
     static let perPage = 20
