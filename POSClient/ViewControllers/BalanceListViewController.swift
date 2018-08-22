@@ -6,7 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class BalanceListViewController: BaseViewController {
     let balanceDetailSegueIdentifier = "showBalanceDetailViewController"
@@ -27,28 +27,29 @@ class BalanceListViewController: BaseViewController {
         self.tableView.registerNib(tableViewCell: BalanceTableViewCell.self)
         self.tableView.tableFooterView = UIView()
         self.tableView.refreshControl = self.refreshControl
-        self.viewModel.loadData()
     }
 
     override func configureViewModel() {
         super.configureViewModel()
-        self.viewModel.onTableDataChange = {
-            self.tableView.reloadData()
-            self.refreshControl.endRefreshing()
+        self.viewModel.onTableDataChange = { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }
-        self.viewModel.onFailGetWallet = {
-            self.showError(withMessage: $0.localizedDescription)
-            self.refreshControl.endRefreshing()
+        self.viewModel.onFailGetWallet = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
+            self?.refreshControl.endRefreshing()
         }
-        self.viewModel.onLoadStateChange = { $0 ? self.showLoading() : self.hideLoading() }
-        self.viewModel.onBalanceSelection = {
-            self.performSegue(withIdentifier: self.balanceDetailSegueIdentifier, sender: $0)
+        self.viewModel.onBalanceSelection = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.balanceDetailSegueIdentifier, sender: $0)
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == self.balanceDetailSegueIdentifier {
-            // TODO: Handle navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.balanceDetailSegueIdentifier,
+            let vc: BalanceDetailViewController = segue.destination as? BalanceDetailViewController,
+            let balance: Balance = sender as? Balance {
+            vc.setup(withBalance: balance)
         } else if segue.identifier == self.profileSegueIdentifier {
             // TODO: Handle navigation
         }
@@ -59,7 +60,6 @@ extension BalanceListViewController {
     @IBAction func tapProfileButton(_: UIBarButtonItem) {
         // TODO: handle navigation
         SessionManager.shared.logout(withSuccessClosure: {
-            (UIApplication.shared.delegate as? AppDelegate)?.loadRootView()
         }, failure: { error in
             print(error)
         })

@@ -11,7 +11,6 @@ class LoginViewModel: BaseViewModel {
     // Delegate closures
     var updateEmailValidation: ViewModelValidationClosure?
     var updatePasswordValidation: ViewModelValidationClosure?
-    var onSuccessLogin: SuccessClosure?
     var onFailedLogin: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
@@ -53,7 +52,6 @@ class LoginViewModel: BaseViewModel {
         let params = LoginParams(email: self.email!, password: self.password!)
         self.sessionManager.login(withParams: params, success: {
             self.isLoading = false
-            self.onSuccessLogin?()
         }, failure: { error in
             self.isLoading = false
             self.onFailedLogin?(error)

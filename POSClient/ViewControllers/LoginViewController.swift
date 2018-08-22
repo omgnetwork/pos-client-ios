@@ -27,11 +27,18 @@ class LoginViewController: BaseViewController {
 
     override func configureViewModel() {
         super.configureViewModel()
-        self.viewModel.updateEmailValidation = { self.emailTextField.errorMessage = $0 }
-        self.viewModel.updatePasswordValidation = { self.passwordTextField.errorMessage = $0 }
-        self.viewModel.onLoadStateChange = { $0 ? self.showLoading() : self.hideLoading() }
-        self.viewModel.onSuccessLogin = { (UIApplication.shared.delegate as? AppDelegate)?.loadRootView() }
-        self.viewModel.onFailedLogin = { self.showError(withMessage: $0.localizedDescription) }
+        self.viewModel.updateEmailValidation = { [weak self] in
+            self?.emailTextField.errorMessage = $0
+        }
+        self.viewModel.updatePasswordValidation = { [weak self] in
+            self?.passwordTextField.errorMessage = $0
+        }
+        self.viewModel.onLoadStateChange = { [weak self] in
+            $0 ? self?.showLoading() : self?.hideLoading()
+        }
+        self.viewModel.onFailedLogin = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
+        }
     }
 }
 

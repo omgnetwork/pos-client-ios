@@ -48,6 +48,7 @@ enum Color: String {
 enum Font: String {
     case avenirMedium = "Avenir-Medium"
     case avenirBook = "Avenir-Book"
+    case avenirHeavy = "Avenir-Heavy"
 
     func withSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: self.rawValue, size: size)!
