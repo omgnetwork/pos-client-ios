@@ -28,7 +28,7 @@
 "signup.text_field.placeholder.password" = "Password";
 "signup.text_field.placeholder.password_confirmation" = "Re-type password";
 "signup.label.password_hint" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
-"signup.label.terms" = "* By signing up, you agree to our term of use and privacy policy.";
+"signup.label.terms" = "* By signing up, you agree to our terms of use and privacy policy.";
 "signup.button.title.signup" = "Sign up";
 "signup.error.validation.email" = "Invalid email";
 "signup.error.validation.password" = "Invalid password";
