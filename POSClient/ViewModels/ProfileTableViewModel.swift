@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum BioType {
-    case touch
-    case face
-    case none
-}
-
 class ProfileTableViewModel: BaseViewModel {
     let title = "profile.view.title".localized()
     let transactionLabelText = "profile.label.transactions".localized()
@@ -30,15 +24,12 @@ class ProfileTableViewModel: BaseViewModel {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
-    lazy var isBioEnable: Bool = {
-        self.bioType != .none
-    }()
+    lazy var isBioEnable: Bool = false
 
     lazy var emailValueLabelText: String = {
         self.sessionManager.currentUser?.email ?? ""
     }()
 
-    private var bioType: BioType = .none
     private let sessionManager: SessionManagerProtocol
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
@@ -46,8 +37,7 @@ class ProfileTableViewModel: BaseViewModel {
         super.init()
     }
 
-    func toggleSwitch(newValue _: Bool) {
-    }
+    func toggleSwitch(newValue _: Bool) {}
 
     func logout() {
         self.isLoading = true
