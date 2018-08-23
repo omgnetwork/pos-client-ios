@@ -52,13 +52,3 @@ class BalanceDetailViewController: BaseViewController {
         self.viewModel.stopObserving()
     }
 }
-
-extension BalanceDetailViewController {
-    @IBAction func tapProfileButton(_: UIBarButtonItem) {
-        // TODO: handle navigation
-        SessionManager.shared.logout(withSuccessClosure: {
-        }, failure: { error in
-            print(error)
-        })
-    }
-}

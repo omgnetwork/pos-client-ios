@@ -50,19 +50,7 @@ class BalanceListViewController: BaseViewController {
             let vc: BalanceDetailViewController = segue.destination as? BalanceDetailViewController,
             let balance: Balance = sender as? Balance {
             vc.setup(withBalance: balance)
-        } else if segue.identifier == self.profileSegueIdentifier {
-            // TODO: Handle navigation
         }
-    }
-}
-
-extension BalanceListViewController {
-    @IBAction func tapProfileButton(_: UIBarButtonItem) {
-        // TODO: handle navigation
-        SessionManager.shared.logout(withSuccessClosure: {
-        }, failure: { error in
-            print(error)
-        })
     }
 }
 

@@ -48,10 +48,16 @@
 "qr_viewer.button.done" = "Done";
 
 // Signup verification
-
+"profile.view.title" = "Profile";
 "signup_verification.label.title" = "Please confirm your email";
 "signup_verification.label.hint" = "We've sent you an email. Please check and click the link in the email to confirm your account.";
 "signup_verification.button.got_it" = "Got it!";
+
+// Profile
+"profile.label.transactions" = "Transactions";
+"profile.label.email" = "Email";
+"profile.label.touchFaceID" = "Touch ID / Face ID";
+"profile.label.signout" = "Sign out";
 
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";

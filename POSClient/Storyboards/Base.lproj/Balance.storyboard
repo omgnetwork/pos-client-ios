@@ -36,9 +36,10 @@
                         <viewLayoutGuide key="safeArea" id="zYA-kN-QIY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bTZ-by-OH9">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="x7V-tH-cDW">
+                        <barButtonItem key="rightBarButtonItem" image="profile_icon" id="x7V-tH-cDW">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="tapProfileButton:" destination="fde-Ww-4tS" id="8uQ-SN-7tf"/>
+                                <segue destination="T7M-J9-6aq" kind="show" id="wxF-DB-hap"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -137,9 +138,10 @@
                         <viewLayoutGuide key="safeArea" id="dds-iD-9Jp"/>
                     </view>
                     <navigationItem key="navigationItem" id="hRe-Qd-31u">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="xjF-Nw-VkS">
+                        <barButtonItem key="rightBarButtonItem" image="profile_icon" id="xjF-Nw-VkS">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="tapProfileButton:" destination="wch-7x-AYt" id="5cr-qc-cjc"/>
+                                <segue destination="T7M-J9-6aq" kind="show" id="brU-ZA-mEq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -154,6 +156,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oM0-2A-ExC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="920.79999999999995" y="181.25937031484258"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="x1d-wV-M0e">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="T7M-J9-6aq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gki-ur-eTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="868"/>
         </scene>
         <!--QRCode-->
         <scene sceneID="7Gb-Uj-wh9">
@@ -183,4 +193,10 @@
             <point key="canvasLocation" x="-928" y="183"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile_icon" width="40" height="40"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="brU-ZA-mEq"/>
+    </inferredMetricsTieBreakers>
 </document>
