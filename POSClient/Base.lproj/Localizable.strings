@@ -47,6 +47,12 @@
 "qr_viewer.label.hint" = "Show this QR code\nto pay or top-up";
 "qr_viewer.button.done" = "Done";
 
+// Signup verification
+
+"signup_verification.label.title" = "Please confirm your email";
+"signup_verification.label.hint" = "We've sent you an email. Please check and click the link in the email to confirm your account.";
+"signup_verification.button.got_it" = "Got it!";
+
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";

@@ -199,28 +199,77 @@
             </objects>
             <point key="canvasLocation" x="580" y="17.541229385307346"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup Confirmation View Controller-->
         <scene sceneID="x1N-V6-AY5">
             <objects>
-                <viewController id="ZZQ-I2-Jxc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupConfirmationViewController" id="ZZQ-I2-Jxc" customClass="SignupConfirmationViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AZg-Tq-h34">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success view coming soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTH-za-gZ5">
-                                <rect key="frame" x="84" y="291" width="206.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please confirm your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-GR-yJg">
+                                <rect key="frame" x="32" y="80" width="311" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We've sent you an email. Please check and click the link in the email to confirm your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-D5-GNQ">
+                                <rect key="frame" x="32" y="285" width="311" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWL-LY-5go">
+                                <rect key="frame" x="137.5" y="145" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.5450980392" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="SUh-XM-pNq"/>
+                                    <constraint firstAttribute="height" constant="100" id="szD-cs-e06"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lc-Ku-rB0">
+                                <rect key="frame" x="32" y="585" width="311" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nu4-Nn-fEo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapGotItButton:" destination="ZZQ-I2-Jxc" eventType="touchUpInside" id="G3J-gD-b3P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HTH-za-gZ5" firstAttribute="centerY" secondItem="AZg-Tq-h34" secondAttribute="centerY" id="cAA-09-Eq2"/>
-                            <constraint firstItem="HTH-za-gZ5" firstAttribute="centerX" secondItem="AZg-Tq-h34" secondAttribute="centerX" id="isf-cy-hmV"/>
+                            <constraint firstItem="8lc-Ku-rB0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ryl-D5-GNQ" secondAttribute="bottom" constant="32" id="0iE-d8-ZL6"/>
+                            <constraint firstItem="Ryl-D5-GNQ" firstAttribute="top" secondItem="YWL-LY-5go" secondAttribute="bottom" constant="40" id="6dJ-SI-dNQ"/>
+                            <constraint firstItem="vXO-jz-DRO" firstAttribute="bottom" secondItem="8lc-Ku-rB0" secondAttribute="bottom" constant="32" id="7Ls-4i-JDe"/>
+                            <constraint firstItem="Eca-GR-yJg" firstAttribute="leading" secondItem="vXO-jz-DRO" secondAttribute="leading" constant="32" id="Pje-AY-5J4"/>
+                            <constraint firstItem="vXO-jz-DRO" firstAttribute="trailing" secondItem="8lc-Ku-rB0" secondAttribute="trailing" constant="32" id="XTJ-mJ-cIS"/>
+                            <constraint firstItem="Ryl-D5-GNQ" firstAttribute="leading" secondItem="AZg-Tq-h34" secondAttribute="leading" constant="32" id="eaH-lJ-Scy"/>
+                            <constraint firstAttribute="trailing" secondItem="Ryl-D5-GNQ" secondAttribute="trailing" constant="32" id="fBm-Ek-d03"/>
+                            <constraint firstItem="8lc-Ku-rB0" firstAttribute="leading" secondItem="vXO-jz-DRO" secondAttribute="leading" constant="32" id="fxR-WA-MWP"/>
+                            <constraint firstItem="vXO-jz-DRO" firstAttribute="trailing" secondItem="Eca-GR-yJg" secondAttribute="trailing" constant="32" id="gDa-ND-ME3"/>
+                            <constraint firstItem="Eca-GR-yJg" firstAttribute="top" secondItem="vXO-jz-DRO" secondAttribute="top" constant="60" id="pSf-V1-oFm"/>
+                            <constraint firstItem="YWL-LY-5go" firstAttribute="centerX" secondItem="AZg-Tq-h34" secondAttribute="centerX" id="quV-hk-ZkA"/>
+                            <constraint firstItem="YWL-LY-5go" firstAttribute="top" secondItem="Eca-GR-yJg" secondAttribute="bottom" constant="40" id="zD2-Vr-zj2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vXO-jz-DRO"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="gotItButton" destination="8lc-Ku-rB0" id="grx-gV-tcc"/>
+                        <outlet property="hintLabel" destination="Ryl-D5-GNQ" id="kIx-DY-z2R"/>
+                        <outlet property="titleLabel" destination="Eca-GR-yJg" id="4HE-Up-lh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnA-zu-ZkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
