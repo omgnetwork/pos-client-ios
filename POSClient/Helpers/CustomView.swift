@@ -27,9 +27,9 @@ class OMGFloatingTextField: SkyFloatingLabelTextField {
         self.placeholderColor = .lightGray
 
         // Line: The line shown below the text field
-        self.selectedLineColor = Color.black.uiColor()
+        self.selectedLineColor = Color.greyUnderline.uiColor()
         self.selectedLineHeight = 1
-        self.lineColor = Color.black.uiColor(withAlpha: 0.8)
+        self.lineColor = Color.greyUnderline.uiColor()
         self.lineHeight = 1
 
         // Title: The label shown on top when there is content in the text field
