@@ -51,6 +51,8 @@
 		03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */; };
 		03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */; };
 		03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */; };
+		03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */; };
+		03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */; };
 		8F7CD18379BACA135DA25E81 /* Pods_POSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */; };
 		AA1F0153D21BBE2609A9B607 /* Pods_POSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FF7E1851BCB9015E8D889 /* Pods_POSClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModel.swift; sourceTree = "<group>"; };
 		03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewController.swift; sourceTree = "<group>"; };
+		03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewModel.swift; sourceTree = "<group>"; };
 		1AFBE851E5E6123AFC830E08 /* Pods-POSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSClientTests/Pods-POSClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DBD3DE3387D7ECEBF01D9CA /* Pods-POSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSClient/Pods-POSClient.debug.xcconfig"; sourceTree = "<group>"; };
 		3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +225,7 @@
 				0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */,
 				0380AAE2212D11DA006B2193 /* QRViewController.swift */,
 				0380AAEE212D54EF006B2193 /* SignupViewController.swift */,
+				03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */,
 				0380AAE4212D11E5006B2193 /* QRViewModel.swift */,
 				0380AAF0212D54FB006B2193 /* SignupViewModel.swift */,
+				03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
+				03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */,
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
 				03C2A67B2126BFBD00267E7F /* LoadingViewModel.swift in Sources */,
 				03C2A66121269C2300267E7F /* Theme.swift in Sources */,
@@ -545,6 +552,7 @@
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
 				0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */,
 				0380AADF212C2347006B2193 /* Publisher.swift in Sources */,
+				03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 			);
