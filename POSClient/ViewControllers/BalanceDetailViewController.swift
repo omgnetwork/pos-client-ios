@@ -52,3 +52,13 @@ class BalanceDetailViewController: BaseViewController {
         self.viewModel.stopObserving()
     }
 }
+
+extension BalanceDetailViewController {
+    @IBAction func tapPayOrTopupButton(_: Any) {
+        NotificationCenter.default.post(name: Notification.Name.didTapPayOrTopup, object: nil)
+    }
+
+    @IBAction func tapRefreshIcon(_: Any) {
+        self.viewModel.loadData()
+    }
+}

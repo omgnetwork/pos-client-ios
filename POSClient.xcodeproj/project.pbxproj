@@ -56,6 +56,8 @@
 		03FB797E212E9A1A00890D72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB797D212E9A1A00890D72 /* Profile.storyboard */; };
 		03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */; };
 		03FB7982212E9AB800890D72 /* ProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */; };
+		03FB7986212FB66A00890D72 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB7985212FB66A00890D72 /* MainTabBar.storyboard */; };
+		03FB7988212FB6D100890D72 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */; };
 		8F7CD18379BACA135DA25E81 /* Pods_POSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */; };
 		AA1F0153D21BBE2609A9B607 /* Pods_POSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FF7E1851BCB9015E8D889 /* Pods_POSClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -124,6 +126,8 @@
 		03FB797D212E9A1A00890D72 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModel.swift; sourceTree = "<group>"; };
+		03FB7985212FB66A00890D72 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
+		03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1AFBE851E5E6123AFC830E08 /* Pods-POSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSClientTests/Pods-POSClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DBD3DE3387D7ECEBF01D9CA /* Pods-POSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSClient/Pods-POSClient.debug.xcconfig"; sourceTree = "<group>"; };
 		3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +212,7 @@
 				03C2A689212A30FF00267E7F /* Balance.storyboard */,
 				0380AAE0212D0F24006B2193 /* QRCode.storyboard */,
 				0380AAEC212D5183006B2193 /* Signup.storyboard */,
+				03FB7985212FB66A00890D72 /* MainTabBar.storyboard */,
 				03FB797D212E9A1A00890D72 /* Profile.storyboard */,
 			);
 			path = Storyboards;
@@ -234,6 +239,7 @@
 				0380AAEE212D54EF006B2193 /* SignupViewController.swift */,
 				03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */,
 				03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */,
+				03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 			files = (
 				033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */,
 				03C2A68B212A30FF00267E7F /* Balance.storyboard in Resources */,
+				03FB7986212FB66A00890D72 /* MainTabBar.storyboard in Resources */,
 				03FB797E212E9A1A00890D72 /* Profile.storyboard in Resources */,
 				03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */,
 				03C2A6882126C36500267E7F /* Localizable.strings in Resources */,
@@ -562,6 +569,7 @@
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
 				0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */,
+				03FB7988212FB6D100890D72 /* MainTabBarViewController.swift in Sources */,
 				0380AADF212C2347006B2193 /* Publisher.swift in Sources */,
 				03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,

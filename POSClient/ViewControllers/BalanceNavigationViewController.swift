@@ -13,13 +13,22 @@ class BalanceNavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setInitialViewController()
         self.viewModel.onDisplayStyleUpdate = { [weak self] in
             self?.setInitialViewController()
         }
     }
 
-    func setInitialViewController() {
+    required init?(coder aCoder: NSCoder) {
+        super.init(coder: aCoder)
+        self.setInitialViewController()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.updateBalances()
+    }
+
+    private func setInitialViewController() {
         let viewController: UIViewController
         switch self.viewModel.displayStyle {
         case .single:

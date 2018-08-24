@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aBB-He-i4J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar View Controller-->
+        <scene sceneID="2nS-tD-ST8">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarViewController" id="aBB-He-i4J" customClass="MainTabBarViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="jhV-pH-mZY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kOf-cY-419" kind="relationship" relationship="viewControllers" id="qPo-5O-tGM"/>
+                        <segue destination="Opv-rd-uD1" kind="relationship" relationship="viewControllers" id="nS0-Be-ef5"/>
+                        <segue destination="yHG-nq-vuT" kind="relationship" relationship="viewControllers" id="Dvv-75-ZKv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2zq-Ez-8nW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="21"/>
+        </scene>
+        <!--Balance-->
+        <scene sceneID="Fgg-jw-Guq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Balance" id="kOf-cY-419" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="rtn-uA-cxT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lw-rw-qmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="-267"/>
+        </scene>
+        <!--QRCode-->
+        <scene sceneID="V49-9Y-RTX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QRCode" id="Opv-rd-uD1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="0E3-ok-Ww1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUa-g7-GeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="20"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="09a-HW-LpA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="yHG-nq-vuT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="Yqh-tz-A4E"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9C-Ao-Nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="298" y="294"/>
+        </scene>
+    </scenes>
+</document>
