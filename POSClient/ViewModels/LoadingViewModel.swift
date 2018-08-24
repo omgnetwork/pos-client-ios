@@ -45,8 +45,6 @@ class LoadingViewModel: BaseViewModel {
                 if let error = self.raisedError {
                     self.handleOMGError(error)
                     self.onFailedLoading?(POSClientError.omiseGO(error: error))
-                } else {
-                    self.onAppStateChange?()
                 }
             }
         }

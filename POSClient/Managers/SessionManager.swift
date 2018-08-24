@@ -13,9 +13,9 @@ protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPClientAPI { get set }
     var currentUser: User? { get set }
     var wallet: Wallet? { get set }
-
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func loadCurrentUser()
     func loadWallet()
 }
@@ -100,6 +100,15 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 success()
             case let .fail(error: error):
                 failure(.omiseGO(error: error))
+            }
+        }
+    }
+
+    func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        self.httpClient.signup(withParams: params) { response in
+            switch response {
+            case .success: success()
+            case let .fail(error: error): failure(.omiseGO(error: error))
             }
         }
     }
