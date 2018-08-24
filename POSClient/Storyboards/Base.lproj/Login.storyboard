@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="580" y="17.541229385307346"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation View Controller-->
         <scene sceneID="dsc-Mp-7A6">
             <objects>
-                <navigationController navigationBarHidden="YES" id="HbO-oK-DUf" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="HbO-oK-DUf" customClass="BaseNavigationViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="HkP-Oi-UFr">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
