@@ -76,32 +76,6 @@ extension UITableViewCell {
     }
 }
 
-extension UIImageView {
-    func downloaded(from url: URL?) {
-        guard let url = url else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-            else { return }
-            DispatchQueue.main.async {
-                self.image = image
-            }
-        }.resume()
-    }
-}
-
-extension UIViewController {
-    class func newInstance<T: UIViewController>(fromStoryboard storyboard: Storyboard) -> T? {
-        let identifier = String(describing: self)
-
-        return UIStoryboard(name: storyboard.name, bundle: nil).instantiateViewController(withIdentifier:
-            identifier) as? T
-    }
-}
-
 extension Date {
     func toString(withFormat format: String? = "dd MMM yyyy HH:mm:ss") -> String {
         let formatter = DateFormatter()
@@ -112,59 +86,9 @@ extension Date {
 }
 
 extension UIView {
-    func addDropShadow(withColor color: UIColor, offset: CGSize, opacity: Float, radius: CGFloat) {
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowOffset = offset
-        self.layer.shadowOpacity = opacity
-        self.layer.shadowRadius = radius
-        self.layer.masksToBounds = false
-    }
-
     func addBorder(withColor color: UIColor, width: CGFloat, radius: CGFloat) {
         self.layer.cornerRadius = radius
         self.layer.borderWidth = width
         self.layer.borderColor = color.cgColor
-    }
-}
-
-extension UITextField {
-    func addNextInputView(withOnNextSelector selector: Selector, target: Any) {
-        let accessoryView = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 44))
-        accessoryView.backgroundColor = .white
-        let nextButton = UIButton(type: .custom)
-        nextButton.setTitle("global.next".localized(), for: .normal)
-        nextButton.titleLabel?.font = Font.avenirMedium.withSize(17)
-        nextButton.setTitleColor(.black, for: .normal)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.addTarget(target,
-                             action: selector,
-                             for: .touchUpInside)
-        accessoryView.addSubview(nextButton)
-        [.top, .trailing, .bottom].forEach {
-            accessoryView.addConstraint(NSLayoutConstraint(item: accessoryView,
-                                                           attribute: $0,
-                                                           relatedBy: .equal,
-                                                           toItem: nextButton,
-                                                           attribute: $0,
-                                                           multiplier: 1,
-                                                           constant: 0))
-        }
-        nextButton.addConstraints([
-            NSLayoutConstraint(item: nextButton,
-                               attribute: .width,
-                               relatedBy: .equal,
-                               toItem: nil,
-                               attribute: .notAnAttribute,
-                               multiplier: 1,
-                               constant: 100),
-            NSLayoutConstraint(item: nextButton,
-                               attribute: .height,
-                               relatedBy: .equal,
-                               toItem: nil,
-                               attribute: .notAnAttribute,
-                               multiplier: 1,
-                               constant: 44)
-        ])
-        self.inputAccessoryView = accessoryView
     }
 }
