@@ -20,7 +20,7 @@ class ProfileTableViewController: BaseTableViewController {
 
     override func configureView() {
         super.configureView()
-        self.title = self.viewModel.title
+        self.navigationItem.title = self.viewModel.title
         self.transactionLabel.text = self.viewModel.transactionLabelText
         self.emailLabel.text = self.viewModel.emailLabelText
         self.emailValueLabel.text = self.viewModel.emailValueLabelText

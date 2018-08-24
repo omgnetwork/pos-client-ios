@@ -6,6 +6,8 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import Foundation
+
 enum UserDefaultKeys: String {
     case userId = "token.user_id"
     case authenticationToken = "token.authentication_token"
@@ -19,4 +21,8 @@ struct Constant {
 
     // Pagination
     static let perPage = 20
+}
+
+extension Notification.Name {
+    static let didTapPayOrTopup = Notification.Name("didTapPayOrTopup")
 }

@@ -72,6 +72,7 @@ class BalanceDetailViewModel: BaseViewModel {
     }
 
     @objc func loadData() {
+        guard self.isLoading == false else { return }
         self.isLoading = true
         self.sessionManager.loadWallet()
     }

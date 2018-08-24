@@ -40,9 +40,9 @@ class LoadingViewModel: BaseViewModel {
         DispatchQueue.global().async {
             self.dispatchGroup.wait()
             dispatchMain {
-                self.isLoading = false
                 self.sessionManager.removeObserver(observer: self)
                 if let error = self.raisedError {
+                    self.isLoading = false
                     self.handleOMGError(error)
                     self.onFailedLoading?(POSClientError.omiseGO(error: error))
                 }

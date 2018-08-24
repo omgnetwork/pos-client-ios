@@ -12,7 +12,8 @@ enum Storyboard {
     case loading
     case login
     case register
-    case balance // tmp
+    case balance
+    case tabBar
 
     var name: String {
         switch self {
@@ -20,6 +21,7 @@ enum Storyboard {
         case .login: return "Login"
         case .register: return "Register"
         case .balance: return "Balance"
+        case .tabBar: return "MainTabBar"
         }
     }
 

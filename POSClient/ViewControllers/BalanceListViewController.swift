@@ -15,12 +15,11 @@ class BalanceListViewController: BaseViewController {
     let viewModel: BalanceListViewModel = BalanceListViewModel()
     var refreshControl: UIRefreshControl!
 
-    @IBOutlet var profileButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
 
     override func configureView() {
         super.configureView()
-        self.title = self.viewModel.viewTitle
+        self.navigationItem.title = self.viewModel.viewTitle
         self.refreshControl = UIRefreshControl()
         self.refreshControl.tintColor = Color.black.uiColor()
         self.refreshControl.addTarget(self.viewModel, action: #selector(self.viewModel.loadData), for: .valueChanged)

@@ -33,13 +33,17 @@ class BalanceNavigationViewModel: BaseViewModel {
         sessionManager.attachObserver(observer: self)
     }
 
-    func process(wallet: Wallet?) {
-        guard let wallet = wallet else { return }
-        self.displayStyle = wallet.balances.count == 1 ? .single : .list
-    }
-
     func stopObserving() {
         self.sessionManager.removeObserver(observer: self)
+    }
+
+    func updateBalances() {
+        self.sessionManager.loadWallet()
+    }
+
+    private func process(wallet: Wallet?) {
+        guard let wallet = wallet else { return }
+        self.displayStyle = wallet.balances.count == 1 ? .single : .list
     }
 }
 
