@@ -26,11 +26,13 @@ class TransactionCellViewModel: BaseViewModel {
         if currentUserAddress == transaction.from.address {
             self.type = "transactions.label.debit".localized()
             self.color = Color.transactionDebitRed.uiColor()
+            self.name = transaction.to.account?.name ?? transaction.to.user?.email ?? "-"
             source = transaction.from
             sign = "-"
         } else {
             self.type = "transactions.label.topup".localized()
             self.color = Color.transactionCreditGreen.uiColor()
+            self.name = transaction.from.account?.name ?? transaction.from.user?.email ?? "-"
             source = transaction.to
             sign = "+"
         }
@@ -47,6 +49,5 @@ class TransactionCellViewModel: BaseViewModel {
         let displayableAmount = OMGNumberFormatter(precision: 2).string(from: source.amount, subunitToUnit: source.token.subUnitToUnit)
         amount = "\(sign!) \(displayableAmount) \(source.token.symbol)"
         timeStamp = transaction.createdAt.toString(withFormat: "MMM dd, HH:mm")
-        self.name = transaction.metadata["account"] as? String ?? "-"
     }
 }
