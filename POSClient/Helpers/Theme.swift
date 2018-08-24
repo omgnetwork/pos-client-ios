@@ -33,8 +33,8 @@ struct Theme {
 enum Color: String {
     case black = "04070D"
     case omiseGOBlue = "1A53F0"
-    case transactionDebitRed = "e74c3c"
-    case transactionCreditGreen = "2ecc71"
+    case transactionDebitRed = "EF3526"
+    case transactionCreditGreen = "06AB88"
     case greyBorder = "E4E7ED"
 
     func uiColor(withAlpha alpha: CGFloat? = 1.0) -> UIColor {
