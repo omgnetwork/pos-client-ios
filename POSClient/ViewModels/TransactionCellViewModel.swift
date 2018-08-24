@@ -46,7 +46,7 @@ class TransactionCellViewModel: BaseViewModel {
         self.status = "- \(statusText!)"
         let displayableAmount = OMGNumberFormatter(precision: 2).string(from: source.amount, subunitToUnit: source.token.subUnitToUnit)
         amount = "\(sign!) \(displayableAmount) \(source.token.symbol)"
-        timeStamp = transaction.createdAt.toString()
+        timeStamp = transaction.createdAt.toString(withFormat: "MMM dd, HH:mm")
         self.name = transaction.metadata["account"] as? String ?? "-"
     }
 }
