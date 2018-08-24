@@ -16,7 +16,7 @@
 
 // Login
 "login.error.validation.email" = "Invalid email";
-"login.error.validation.password" = "Password should be at least 6 characters long";
+"login.error.validation.password" = "Password should be at least 8 characters long";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Log in";
