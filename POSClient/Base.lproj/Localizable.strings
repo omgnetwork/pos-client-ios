@@ -67,3 +67,15 @@
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";
+
+// Biometric
+"biometric.touchID" = "Touch ID";
+"biometric.faceID" = "Face ID";
+
+// TouchID confirmation
+"touch_id_confirmation.view.title" = "Confirm your password";
+"touch_id_confirmation.text_field.placeholder.password" = "Password";
+"touch_id_confirmation.button.title.enable" = "Enable";
+"touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
+"touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
+

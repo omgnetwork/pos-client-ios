@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileTableViewController: BaseTableViewController {
     let transactionsSegueIdentifier = "showTransactionViewController"
+    let touchIdConfirmationSegueIdentifier = "showTouchIdConfirmationViewController"
     @IBOutlet var transactionLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var emailValueLabel: UILabel!
@@ -38,12 +39,28 @@ class ProfileTableViewController: BaseTableViewController {
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
         }
+        self.viewModel.shouldShowEnableConfirmationView = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.touchIdConfirmationSegueIdentifier, sender: nil)
+        }
+        self.viewModel.onBioStateChange = { [weak self] isEnabled in
+            self?.touchFaceIdSwitch.isOn = isEnabled
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.touchFaceIdSwitch.isOn = self.viewModel.switchState
+    }
+
+    deinit {
+        self.viewModel.stopObserving()
     }
 }
 
 extension ProfileTableViewController {
-    @IBAction func didUpdateSwitch(sw: UISwitch) {
-        self.viewModel.toggleSwitch(newValue: sw.isOn)
+    @IBAction func didUpdateSwitch(_ sender: UISwitch) {
+        self.viewModel.toggleSwitch(newValue: sender.isOn)
     }
 }
 

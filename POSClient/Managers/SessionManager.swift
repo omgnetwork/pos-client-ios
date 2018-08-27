@@ -13,6 +13,9 @@ protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPClientAPI { get set }
     var currentUser: User? { get set }
     var wallet: Wallet? { get set }
+    var isBioSwitchedOn: Bool { get }
+    func disableBiometricAuth()
+    func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
@@ -48,8 +51,12 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     var httpClient: HTTPClientAPI
 
+    var isBioSwitchedOn: Bool {
+        return UserDefaults().bool(forKey: UserDefaultKeys.biometricEnabled.rawValue)
+    }
+
     override init() {
-        let authenticationToken = self.keychain[UserDefaultKeys.authenticationToken.rawValue]
+        let authenticationToken = self.keychain[KeychainKeys.authenticationToken.rawValue]
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
         let httpConfig = ClientConfiguration(baseURL: Constant.baseURL,
@@ -65,18 +72,22 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     func clearTokens() {
-        self.keychain[UserDefaultKeys.userId.rawValue] = nil
-        self.keychain[UserDefaultKeys.authenticationToken.rawValue] = nil
+        self.keychain[KeychainKeys.userId.rawValue] = nil
+        self.keychain[KeychainKeys.authenticationToken.rawValue] = nil
         self.wallet = nil
         self.currentUser = nil
     }
 
-    private func updateState() {
-        if self.isLoggedIn() {
-            self.state = (self.currentUser == nil || self.wallet == nil) ? .loading : .loggedIn
-        } else {
-            self.state = .loggedOut
-        }
+    func disableBiometricAuth() {
+        self.keychain[KeychainKeys.password.rawValue] = nil
+        UserDefaults().set(false, forKey: UserDefaultKeys.biometricEnabled.rawValue)
+        self.notify(event: .onBioStateUpdate(enabled: false))
+    }
+
+    func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        self.login(withParams: params, success: {
+            self.enableBiometricAuthwithPassword(password: params.password, success: success, failure: failure)
+        }, failure: failure)
     }
 
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
@@ -85,8 +96,9 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.currentUser = authenticationToken.user
-                self.keychain[UserDefaultKeys.userId.rawValue] = authenticationToken.user.id
-                self.keychain[UserDefaultKeys.authenticationToken.rawValue] = authenticationToken.token
+                self.keychain[KeychainKeys.userId.rawValue] = authenticationToken.user.id
+                self.keychain[KeychainKeys.authenticationToken.rawValue] = authenticationToken.token
+                UserDefaults().set(params.email, forKey: UserDefaultKeys.email.rawValue)
                 success()
             }
         }
@@ -132,6 +144,32 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error):
                 self.notify(event: .onWalletError(error: error))
             }
+        }
+    }
+
+    private func enableBiometricAuthwithPassword(password: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        dispatchGlobal {
+            do {
+                try self.keychain
+                    .accessibility(.whenPasscodeSetThisDeviceOnly,
+                                   authenticationPolicy: .userPresence)
+                    .set(password, key: KeychainKeys.password.rawValue)
+                dispatchMain {
+                    UserDefaults().set(true, forKey: UserDefaultKeys.biometricEnabled.rawValue)
+                    self.notify(event: .onBioStateUpdate(enabled: true))
+                    success()
+                }
+            } catch let error {
+                failure(POSClientError.other(error: error))
+            }
+        }
+    }
+
+    private func updateState() {
+        if self.isLoggedIn() {
+            self.state = (self.currentUser == nil || self.wallet == nil) ? .loading : .loggedIn
+        } else {
+            self.state = .loggedOut
         }
     }
 }

@@ -9,8 +9,14 @@
 import Foundation
 
 enum UserDefaultKeys: String {
-    case userId = "token.user_id"
-    case authenticationToken = "token.authentication_token"
+    case email = "com.omisego.pos-client.email"
+    case biometricEnabled = "com.omisego.pos-client.biometric_enabled"
+}
+
+enum KeychainKeys: String {
+    case userId = "com.omisego.pos-client.user_id"
+    case authenticationToken = "com.omisego.pos-client.authentication_token"
+    case password = "com.omisego.pos-client.password"
 }
 
 struct Constant {
