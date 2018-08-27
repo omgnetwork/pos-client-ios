@@ -131,7 +131,7 @@
                                     <constraint firstAttribute="height" constant="44" id="zr9-Kv-sfc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                <state key="normal" title="Don't have an account yet? Signup">
+                                <state key="normal" title="Don't have an account yet? Sign up">
                                     <color key="titleColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
