@@ -48,6 +48,16 @@ extension ProfileTableViewController {
 }
 
 extension ProfileTableViewController {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        switch (indexPath.section, indexPath.row) {
+        case (1, 0) where !self.viewModel.isBioEnable: // Email
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        default: break
+        }
+        return cell
+    }
+
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): // transactions
