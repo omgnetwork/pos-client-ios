@@ -6,7 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import KeychainSwift
+import KeychainAccess
 import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
@@ -23,7 +23,7 @@ protocol SessionManagerProtocol: Observable {
 class SessionManager: Publisher, SessionManagerProtocol {
     static let shared: SessionManager = SessionManager()
 
-    let keychain = KeychainSwift()
+    let keychain = Keychain(service: "com.omisego.pos-client")
     var state: AppState! {
         didSet {
             if oldValue != self.state {
@@ -49,7 +49,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     var httpClient: HTTPClientAPI
 
     override init() {
-        let authenticationToken = self.keychain.get(UserDefaultKeys.authenticationToken.rawValue)
+        let authenticationToken = self.keychain[UserDefaultKeys.authenticationToken.rawValue]
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
         let httpConfig = ClientConfiguration(baseURL: Constant.baseURL,
@@ -65,8 +65,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     func clearTokens() {
-        self.keychain.delete(UserDefaultKeys.userId.rawValue)
-        self.keychain.delete(UserDefaultKeys.authenticationToken.rawValue)
+        self.keychain[UserDefaultKeys.userId.rawValue] = nil
+        self.keychain[UserDefaultKeys.authenticationToken.rawValue] = nil
         self.wallet = nil
         self.currentUser = nil
     }
@@ -85,8 +85,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.currentUser = authenticationToken.user
-                self.keychain.set(authenticationToken.user.id, forKey: UserDefaultKeys.userId.rawValue)
-                self.keychain.set(authenticationToken.token, forKey: UserDefaultKeys.authenticationToken.rawValue)
+                self.keychain[UserDefaultKeys.userId.rawValue] = authenticationToken.user.id
+                self.keychain[UserDefaultKeys.authenticationToken.rawValue] = authenticationToken.token
                 success()
             }
         }
