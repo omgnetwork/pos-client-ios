@@ -31,11 +31,37 @@ class LoginViewModel: BaseViewModel {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
+    lazy var isBioEnable: Bool = {
+        self.biometric.biometricType() != .none && self.sessionManager.isBioSwitchedOn
+    }()
+
+    lazy var touchFaceIdButtonTitle = {
+        self.biometric.biometricType().name
+    }()
+
+    lazy var touchFaceIdButtonPicture: UIImage? = {
+        switch self.biometric.biometricType() {
+        case .touchID: return UIImage(named: "")
+        case .faceID: return UIImage(named: "")
+        default: return nil
+        }
+    }()
+
     private let sessionManager: SessionManagerProtocol
+    private let biometric = BiometricIDAuth()
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
         super.init()
+    }
+
+    func bioLogin() {
+        self.isLoading = true
+        self.sessionManager.bioLogin(withPromptMessage: "login.alert.biometric_auth".localized(), success: { [weak self] in
+            self?.isLoading = false
+        }, failure: { [weak self] _ in
+            self?.isLoading = false
+        })
     }
 
     func login() {

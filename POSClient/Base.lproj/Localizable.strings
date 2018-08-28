@@ -21,6 +21,7 @@
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Log in";
 "login.button.title.register" = "Don't have an account yet? Sign up";
+"login.alert.biometric_auth" = "Authenticate to login";
 
 // Signup
 "signup.view.title" = "Sign up";

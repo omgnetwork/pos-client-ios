@@ -16,6 +16,7 @@ protocol SessionManagerProtocol: Observable {
     var isBioSwitchedOn: Bool { get }
     func disableBiometricAuth()
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
@@ -90,6 +91,18 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }, failure: failure)
     }
 
+    func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        self.retrieveBiometricPassword(withMessage: message, success: { pw in
+            guard let password = pw, !password.isEmpty,
+                let email = UserDefaults().string(forKey: UserDefaultKeys.email.rawValue), !email.isEmpty else {
+                failure(POSClientError.unexpected)
+                return
+            }
+            let params = LoginParams(email: email, password: password)
+            self.login(withParams: params, success: success, failure: failure)
+        }, failure: failure)
+    }
+
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.httpClient.login(withParams: params) { response in
             switch response {
@@ -147,6 +160,23 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }
     }
 
+    private func retrieveBiometricPassword(withMessage message: String, success: @escaping ObjectClosure<String?>, failure: @escaping FailureClosure) {
+        dispatchGlobal {
+            do {
+                let password = try self.keychain
+                    .authenticationPrompt(message)
+                    .get(KeychainKeys.password.rawValue)
+                dispatchMain {
+                    success(password)
+                }
+            } catch let error {
+                dispatchMain {
+                    failure(POSClientError.other(error: error))
+                }
+            }
+        }
+    }
+
     private func enableBiometricAuthwithPassword(password: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         dispatchGlobal {
             do {
@@ -160,7 +190,9 @@ class SessionManager: Publisher, SessionManagerProtocol {
                     success()
                 }
             } catch let error {
-                failure(POSClientError.other(error: error))
+                dispatchMain {
+                    failure(POSClientError.other(error: error))
+                }
             }
         }
     }
