@@ -54,7 +54,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
                                            authenticationToken: authenticationToken)
         let httpConfig = ClientConfiguration(baseURL: Constant.baseURL,
                                              credentials: credentials,
-                                             debugLog: true)
+                                             debugLog: false)
         self.httpClient = HTTPClientAPI(config: httpConfig)
         super.init()
         self.updateState()

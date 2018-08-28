@@ -38,27 +38,27 @@ class TransactionsViewController: BaseTableViewController {
         self.tableView.rowHeight = 62
         self.tableView.refreshControl = self.refreshControl
         self.reloadTransactions()
-        if #available(iOS 11.0, *) { self.tableView.contentInsetAdjustmentBehavior = .never }
+        self.tableView.contentInsetAdjustmentBehavior = .never
     }
 
     override func configureViewModel() {
         super.configureViewModel()
-        self.viewModel.onLoadStateChange = {
-            self.tableView.tableFooterView = $0 ? self.loadingView : UIView()
+        self.viewModel.onLoadStateChange = { [weak self] in
+            self?.tableView.tableFooterView = $0 ? self?.loadingView : UIView()
         }
-        self.viewModel.reloadTableViewClosure = {
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+        self.viewModel.reloadTableViewClosure = { [weak self] in
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
-        self.viewModel.onFailLoadTransactions = {
-            self.showError(withMessage: $0.localizedDescription)
-            self.refreshControl?.endRefreshing()
+        self.viewModel.onFailLoadTransactions = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
+            self?.refreshControl?.endRefreshing()
         }
-        self.viewModel.appendNewResultClosure = { indexPaths in
+        self.viewModel.appendNewResultClosure = { [weak self] indexPaths in
             UIView.setAnimationsEnabled(false)
-            self.tableView.beginUpdates()
-            self.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
-            self.tableView.endUpdates()
+            self?.tableView.beginUpdates()
+            self?.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
+            self?.tableView.endUpdates()
             UIView.setAnimationsEnabled(true)
         }
     }

@@ -22,22 +22,23 @@ class MainTabBarViewController: UITabBarController {
     }
 
     func setTabBarItems() {
+        let imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         if let item1 = self.viewControllers?[0].tabBarItem {
             item1.image = UIImage(named: "wallet_icon")
             item1.title = nil
-            item1.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            item1.imageInsets = imageInsets
         }
 
         if let item2 = self.viewControllers?[1].tabBarItem {
             item2.image = UIImage(named: "qr_icon")
-            item2.title = ""
-            item2.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            item2.title = nil
+            item2.imageInsets = imageInsets
         }
 
         if let item3 = self.viewControllers?[2].tabBarItem {
             item3.image = UIImage(named: "profile_icon")
-            item3.title = ""
-            item3.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
+            item3.title = nil
+            item3.imageInsets = imageInsets
         }
     }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BalanceNavigationViewController: UINavigationController {
+class BalanceNavigationViewController: BaseNavigationViewController {
     let viewModel: BalanceNavigationViewModel = BalanceNavigationViewModel()
 
     override func viewDidLoad() {

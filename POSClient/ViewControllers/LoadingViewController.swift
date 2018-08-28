@@ -24,10 +24,12 @@ class LoadingViewController: BaseViewController {
 
     override func configureViewModel() {
         super.configureViewModel()
-        self.viewModel.onFailedLoading = { self.showError(withMessage: $0.localizedDescription) }
-        self.viewModel.onLoadStateChange = { isLoading in
-            self.retryButton.isHidden = isLoading
-            self.activityIndicator.isHidden = !isLoading
+        self.viewModel.onFailedLoading = { [weak self] in
+            self?.showError(withMessage: $0.localizedDescription)
+        }
+        self.viewModel.onLoadStateChange = { [weak self] isLoading in
+            self?.retryButton.isHidden = isLoading
+            self?.activityIndicator.isHidden = !isLoading
         }
     }
 

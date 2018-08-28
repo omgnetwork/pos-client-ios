@@ -16,21 +16,17 @@
 		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63BB2123E02C00A2D08B /* POSClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63BA2123E02C00A2D08B /* POSClientTests.swift */; };
-		033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
 		0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */; };
 		0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */; };
 		0380AADD212C2013006B2193 /* AppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADC212C2013006B2193 /* AppEvent.swift */; };
 		0380AADF212C2347006B2193 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AADE212C2347006B2193 /* Publisher.swift */; };
-		0380AAE1212D0F24006B2193 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0380AAE0212D0F24006B2193 /* QRCode.storyboard */; };
 		0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE2212D11DA006B2193 /* QRViewController.swift */; };
 		0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE4212D11E5006B2193 /* QRViewModel.swift */; };
 		0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE6212D13C3006B2193 /* QRGenerator.swift */; };
-		0380AAED212D5183006B2193 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0380AAEC212D5183006B2193 /* Signup.storyboard */; };
 		0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAEE212D54EF006B2193 /* SignupViewController.swift */; };
 		0380AAF1212D54FB006B2193 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAF0212D54FB006B2193 /* SignupViewModel.swift */; };
-		03C2A6502126971F00267E7F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A64E2126971F00267E7F /* Login.storyboard */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -44,21 +40,16 @@
 		03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A66D2126B7F600267E7F /* POSClientManager.swift */; };
 		03C2A67B2126BFBD00267E7F /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A67A2126BFBD00267E7F /* LoadingViewModel.swift */; };
 		03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A67C2126BFD500267E7F /* LoadingViewController.swift */; };
-		03C2A6832126C0BD00267E7F /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A6812126C0BD00267E7F /* Loading.storyboard */; };
 		03C2A6882126C36500267E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A6862126C36500267E7F /* Localizable.strings */; };
-		03C2A68B212A30FF00267E7F /* Balance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A689212A30FF00267E7F /* Balance.storyboard */; };
 		03C2A68D212A317D00267E7F /* BalanceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A68C212A317D00267E7F /* BalanceListViewController.swift */; };
 		03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */; };
 		03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */; };
 		03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */; };
 		03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */; };
 		03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */; };
-		03FB797E212E9A1A00890D72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB797D212E9A1A00890D72 /* Profile.storyboard */; };
 		03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */; };
 		03FB7982212E9AB800890D72 /* ProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */; };
-		03FB7986212FB66A00890D72 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB7985212FB66A00890D72 /* MainTabBar.storyboard */; };
 		03FB7988212FB6D100890D72 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */; };
-		03FB798C212FEC8B00890D72 /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB798B212FEC8B00890D72 /* Transaction.storyboard */; };
 		03FB798E212FEC9600890D72 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB798D212FEC9500890D72 /* TransactionsViewController.swift */; };
 		03FB7991212FECA200890D72 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB798F212FECA100890D72 /* TransactionsViewModel.swift */; };
 		03FB7992212FECA200890D72 /* TransactionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7990212FECA100890D72 /* TransactionCellViewModel.swift */; };
@@ -66,6 +57,16 @@
 		03FB7996212FED4200890D72 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7994212FED4200890D72 /* TransactionTableViewCell.swift */; };
 		03FB7999212FEDFB00890D72 /* TransactionsPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7998212FEDFB00890D72 /* TransactionsPaginator.swift */; };
 		03FB799B212FEE2500890D72 /* Paginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB799A212FEE2500890D72 /* Paginator.swift */; };
+		03FB79AE2130105300890D72 /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB799C2130105200890D72 /* Loading.storyboard */; };
+		03FB79AF2130105300890D72 /* Balance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB799E2130105200890D72 /* Balance.storyboard */; };
+		03FB79B02130105300890D72 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79A02130105200890D72 /* Login.storyboard */; };
+		03FB79B12130105300890D72 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79A22130105200890D72 /* QRCode.storyboard */; };
+		03FB79B22130105300890D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79A42130105200890D72 /* LaunchScreen.storyboard */; };
+		03FB79B32130105300890D72 /* Transaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79A62130105300890D72 /* Transaction.storyboard */; };
+		03FB79B42130105300890D72 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79A82130105300890D72 /* MainTabBar.storyboard */; };
+		03FB79B52130105300890D72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AA2130105300890D72 /* Profile.storyboard */; };
+		03FB79B62130105300890D72 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AC2130105300890D72 /* Signup.storyboard */; };
+		03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */; };
 		8F7CD18379BACA135DA25E81 /* Pods_POSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */; };
 		AA1F0153D21BBE2609A9B607 /* Pods_POSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FF7E1851BCB9015E8D889 /* Pods_POSClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -94,21 +95,17 @@
 		033A63B62123E02C00A2D08B /* POSClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63BA2123E02C00A2D08B /* POSClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSClientTests.swift; sourceTree = "<group>"; };
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		033A63C72123E2CB00A2D08B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewController.swift; sourceTree = "<group>"; };
 		0380AADA212C1303006B2193 /* BalanceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewModel.swift; sourceTree = "<group>"; };
 		0380AADC212C2013006B2193 /* AppEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvent.swift; sourceTree = "<group>"; };
 		0380AADE212C2347006B2193 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
-		0380AAE0212D0F24006B2193 /* QRCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
 		0380AAE2212D11DA006B2193 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		0380AAE4212D11E5006B2193 /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 		0380AAE6212D13C3006B2193 /* QRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGenerator.swift; sourceTree = "<group>"; };
-		0380AAEC212D5183006B2193 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		0380AAEE212D54EF006B2193 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0380AAF0212D54FB006B2193 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		03C2A64F2126971F00267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -122,21 +119,16 @@
 		03C2A66D2126B7F600267E7F /* POSClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSClientManager.swift; sourceTree = "<group>"; };
 		03C2A67A2126BFBD00267E7F /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		03C2A67C2126BFD500267E7F /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		03C2A6822126C0BD00267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Loading.storyboard; sourceTree = "<group>"; };
 		03C2A6872126C36500267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		03C2A68A212A30FF00267E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Balance.storyboard; sourceTree = "<group>"; };
 		03C2A68C212A317D00267E7F /* BalanceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewController.swift; sourceTree = "<group>"; };
 		03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModel.swift; sourceTree = "<group>"; };
 		03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
 		03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewController.swift; sourceTree = "<group>"; };
 		03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewModel.swift; sourceTree = "<group>"; };
-		03FB797D212E9A1A00890D72 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModel.swift; sourceTree = "<group>"; };
-		03FB7985212FB66A00890D72 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		03FB798B212FEC8B00890D72 /* Transaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transaction.storyboard; sourceTree = "<group>"; };
 		03FB798D212FEC9500890D72 /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		03FB798F212FECA100890D72 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
 		03FB7990212FECA100890D72 /* TransactionCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCellViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +136,16 @@
 		03FB7994212FED4200890D72 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		03FB7998212FEDFB00890D72 /* TransactionsPaginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsPaginator.swift; sourceTree = "<group>"; };
 		03FB799A212FEE2500890D72 /* Paginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginator.swift; sourceTree = "<group>"; };
+		03FB799D2130105200890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Loading.storyboard; sourceTree = "<group>"; };
+		03FB799F2130105200890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Balance.storyboard; sourceTree = "<group>"; };
+		03FB79A12130105200890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		03FB79A32130105200890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/QRCode.storyboard; sourceTree = "<group>"; };
+		03FB79A52130105200890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03FB79A72130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Transaction.storyboard; sourceTree = "<group>"; };
+		03FB79A92130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
+		03FB79AB2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		03FB79AD2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
+		03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		1AFBE851E5E6123AFC830E08 /* Pods-POSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSClientTests/Pods-POSClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DBD3DE3387D7ECEBF01D9CA /* Pods-POSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSClient/Pods-POSClient.debug.xcconfig"; sourceTree = "<group>"; };
 		3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,15 +225,15 @@
 		033A63C52123E2CB00A2D08B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */,
-				03C2A64E2126971F00267E7F /* Login.storyboard */,
-				03C2A6812126C0BD00267E7F /* Loading.storyboard */,
-				03C2A689212A30FF00267E7F /* Balance.storyboard */,
-				0380AAE0212D0F24006B2193 /* QRCode.storyboard */,
-				0380AAEC212D5183006B2193 /* Signup.storyboard */,
-				03FB7985212FB66A00890D72 /* MainTabBar.storyboard */,
-				03FB797D212E9A1A00890D72 /* Profile.storyboard */,
-				03FB798B212FEC8B00890D72 /* Transaction.storyboard */,
+				03FB799E2130105200890D72 /* Balance.storyboard */,
+				03FB79A42130105200890D72 /* LaunchScreen.storyboard */,
+				03FB799C2130105200890D72 /* Loading.storyboard */,
+				03FB79A02130105200890D72 /* Login.storyboard */,
+				03FB79A82130105300890D72 /* MainTabBar.storyboard */,
+				03FB79AA2130105300890D72 /* Profile.storyboard */,
+				03FB79A22130105200890D72 /* QRCode.storyboard */,
+				03FB79AC2130105300890D72 /* Signup.storyboard */,
+				03FB79A62130105300890D72 /* Transaction.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -259,6 +261,7 @@
 				03FB797F212E9AA300890D72 /* ProfileTableViewController.swift */,
 				03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */,
 				03FB798D212FEC9500890D72 /* TransactionsViewController.swift */,
+				03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -452,19 +455,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FB79B22130105300890D72 /* LaunchScreen.storyboard in Resources */,
 				033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */,
-				03C2A68B212A30FF00267E7F /* Balance.storyboard in Resources */,
-				03FB7986212FB66A00890D72 /* MainTabBar.storyboard in Resources */,
-				03FB797E212E9A1A00890D72 /* Profile.storyboard in Resources */,
+				03FB79B42130105300890D72 /* MainTabBar.storyboard in Resources */,
+				03FB79AF2130105300890D72 /* Balance.storyboard in Resources */,
+				03FB79B02130105300890D72 /* Login.storyboard in Resources */,
 				03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */,
+				03FB79B52130105300890D72 /* Profile.storyboard in Resources */,
+				03FB79B32130105300890D72 /* Transaction.storyboard in Resources */,
 				03C2A6882126C36500267E7F /* Localizable.strings in Resources */,
-				0380AAED212D5183006B2193 /* Signup.storyboard in Resources */,
-				033A63CA2123E2CB00A2D08B /* LaunchScreen.storyboard in Resources */,
-				03C2A6832126C0BD00267E7F /* Loading.storyboard in Resources */,
+				03FB79AE2130105300890D72 /* Loading.storyboard in Resources */,
+				03FB79B12130105300890D72 /* QRCode.storyboard in Resources */,
 				03FB7995212FED4200890D72 /* TransactionTableViewCell.xib in Resources */,
-				0380AAE1212D0F24006B2193 /* QRCode.storyboard in Resources */,
-				03C2A6502126971F00267E7F /* Login.storyboard in Resources */,
-				03FB798C212FEC8B00890D72 /* Transaction.storyboard in Resources */,
+				03FB79B62130105300890D72 /* Signup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +616,7 @@
 				0380AADF212C2347006B2193 /* Publisher.swift in Sources */,
 				03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
+				03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 				03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */,
 			);
@@ -637,30 +641,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		033A63C62123E2CB00A2D08B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				033A63C72123E2CB00A2D08B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		03C2A64E2126971F00267E7F /* Login.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03C2A64F2126971F00267E7F /* Base */,
-			);
-			name = Login.storyboard;
-			sourceTree = "<group>";
-		};
-		03C2A6812126C0BD00267E7F /* Loading.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03C2A6822126C0BD00267E7F /* Base */,
-			);
-			name = Loading.storyboard;
-			sourceTree = "<group>";
-		};
 		03C2A6862126C36500267E7F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -669,12 +649,76 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		03C2A689212A30FF00267E7F /* Balance.storyboard */ = {
+		03FB799C2130105200890D72 /* Loading.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03C2A68A212A30FF00267E7F /* Base */,
+				03FB799D2130105200890D72 /* Base */,
+			);
+			name = Loading.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB799E2130105200890D72 /* Balance.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB799F2130105200890D72 /* Base */,
 			);
 			name = Balance.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79A02130105200890D72 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79A12130105200890D72 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79A22130105200890D72 /* QRCode.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79A32130105200890D72 /* Base */,
+			);
+			name = QRCode.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79A42130105200890D72 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79A52130105200890D72 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79A62130105300890D72 /* Transaction.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79A72130105300890D72 /* Base */,
+			);
+			name = Transaction.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79A82130105300890D72 /* MainTabBar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79A92130105300890D72 /* Base */,
+			);
+			name = MainTabBar.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79AA2130105300890D72 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79AB2130105300890D72 /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		03FB79AC2130105300890D72 /* Signup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03FB79AD2130105300890D72 /* Base */,
+			);
+			name = Signup.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

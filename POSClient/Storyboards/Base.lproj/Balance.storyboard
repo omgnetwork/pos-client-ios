@@ -150,14 +150,6 @@
             </objects>
             <point key="canvasLocation" x="734" y="182"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="x1d-wV-M0e">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="T7M-J9-6aq" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gki-ur-eTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="438" y="868"/>
-        </scene>
         <!--Balance Navigation View Controller-->
         <scene sceneID="WHE-2f-T4a">
             <objects>

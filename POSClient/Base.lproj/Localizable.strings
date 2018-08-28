@@ -16,14 +16,14 @@
 
 // Login
 "login.error.validation.email" = "Invalid email";
-"login.error.validation.password" = "Password should be at least 6 characters long";
+"login.error.validation.password" = "Password should be at least 8 characters long";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Log in";
-"login.button.title.register" = "Don't have an account yet? Register";
+"login.button.title.register" = "Don't have an account yet? Sign up";
 
 // Signup
-"signup.view.title" = "Signup";
+"signup.view.title" = "Sign up";
 "signup.text_field.placeholder.email" = "Email";
 "signup.text_field.placeholder.password" = "Password";
 "signup.text_field.placeholder.password_confirmation" = "Re-type password";
