@@ -85,11 +85,12 @@ class SessionManager: Publisher, SessionManagerProtocol {
         self.notify(event: .onBioStateUpdate(enabled: false))
     }
 
-    func enableBiometricAuth(withParams params: LoginParams, success _: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+    func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.login(withParams: params, success: {
             self.keychainWrapper.storePassword(password: params.password, forKey: .password, success: {
                 self.userDefaultsWrapper.storeValue(value: true, forKey: .biometricEnabled)
                 self.notify(event: .onBioStateUpdate(enabled: true))
+                success()
             }, failure: failure)
         }, failure: failure)
     }
