@@ -6,14 +6,13 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import KeychainAccess
 import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPClientAPI { get set }
     var currentUser: User? { get set }
     var wallet: Wallet? { get set }
-    var isBioSwitchedOn: Bool { get }
+    var isBiometricAvailable: Bool { get }
     func disableBiometricAuth()
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
@@ -26,8 +25,6 @@ protocol SessionManagerProtocol: Observable {
 
 class SessionManager: Publisher, SessionManagerProtocol {
     static let shared: SessionManager = SessionManager()
-
-    let keychain = Keychain(service: "com.omisego.pos-client")
     var state: AppState! {
         didSet {
             if oldValue != self.state {
@@ -52,12 +49,15 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     var httpClient: HTTPClientAPI
 
-    var isBioSwitchedOn: Bool {
-        return UserDefaults().bool(forKey: UserDefaultKeys.biometricEnabled.rawValue)
+    var isBiometricAvailable: Bool {
+        return self.userDefaultsWrapper.getBool(forKey: .biometricEnabled)
     }
 
+    private let keychainWrapper = KeychainWrapper()
+    private let userDefaultsWrapper = UserDefaultsWrapper()
+
     override init() {
-        let authenticationToken = self.keychain[KeychainKeys.authenticationToken.rawValue]
+        let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken)
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
         let httpConfig = ClientConfiguration(baseURL: Constant.baseURL,
@@ -73,28 +73,31 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     func clearTokens() {
-        self.keychain[KeychainKeys.userId.rawValue] = nil
-        self.keychain[KeychainKeys.authenticationToken.rawValue] = nil
+        self.keychainWrapper.clearValue(forKey: .userId)
+        self.keychainWrapper.clearValue(forKey: .authenticationToken)
         self.wallet = nil
         self.currentUser = nil
     }
 
     func disableBiometricAuth() {
-        self.keychain[KeychainKeys.password.rawValue] = nil
-        UserDefaults().set(false, forKey: UserDefaultKeys.biometricEnabled.rawValue)
+        self.keychainWrapper.clearValue(forKey: .password)
+        self.userDefaultsWrapper.clearValue(forKey: .biometricEnabled)
         self.notify(event: .onBioStateUpdate(enabled: false))
     }
 
-    func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+    func enableBiometricAuth(withParams params: LoginParams, success _: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.login(withParams: params, success: {
-            self.enableBiometricAuthwithPassword(password: params.password, success: success, failure: failure)
+            self.keychainWrapper.storePassword(password: params.password, forKey: .password, success: {
+                self.userDefaultsWrapper.storeValue(value: true, forKey: .biometricEnabled)
+                self.notify(event: .onBioStateUpdate(enabled: true))
+            }, failure: failure)
         }, failure: failure)
     }
 
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
-        self.retrieveBiometricPassword(withMessage: message, success: { pw in
+        self.keychainWrapper.retrievePassword(withMessage: message, forKey: .password, success: { pw in
             guard let password = pw, !password.isEmpty,
-                let email = UserDefaults().string(forKey: UserDefaultKeys.email.rawValue), !email.isEmpty else {
+                let email = self.userDefaultsWrapper.getValue(forKey: .email), !email.isEmpty else {
                 failure(POSClientError.unexpected)
                 return
             }
@@ -109,9 +112,9 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.currentUser = authenticationToken.user
-                self.keychain[KeychainKeys.userId.rawValue] = authenticationToken.user.id
-                self.keychain[KeychainKeys.authenticationToken.rawValue] = authenticationToken.token
-                UserDefaults().set(params.email, forKey: UserDefaultKeys.email.rawValue)
+                self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
+                self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
+                self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
                 success()
             }
         }
@@ -156,43 +159,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 self.wallet = wallet
             case let .fail(error: error):
                 self.notify(event: .onWalletError(error: error))
-            }
-        }
-    }
-
-    private func retrieveBiometricPassword(withMessage message: String, success: @escaping ObjectClosure<String?>, failure: @escaping FailureClosure) {
-        dispatchGlobal {
-            do {
-                let password = try self.keychain
-                    .authenticationPrompt(message)
-                    .get(KeychainKeys.password.rawValue)
-                dispatchMain {
-                    success(password)
-                }
-            } catch let error {
-                dispatchMain {
-                    failure(POSClientError.other(error: error))
-                }
-            }
-        }
-    }
-
-    private func enableBiometricAuthwithPassword(password: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
-        dispatchGlobal {
-            do {
-                try self.keychain
-                    .accessibility(.whenPasscodeSetThisDeviceOnly,
-                                   authenticationPolicy: .userPresence)
-                    .set(password, key: KeychainKeys.password.rawValue)
-                dispatchMain {
-                    UserDefaults().set(true, forKey: UserDefaultKeys.biometricEnabled.rawValue)
-                    self.notify(event: .onBioStateUpdate(enabled: true))
-                    success()
-                }
-            } catch let error {
-                dispatchMain {
-                    failure(POSClientError.other(error: error))
-                }
             }
         }
     }

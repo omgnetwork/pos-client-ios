@@ -29,7 +29,7 @@ class ProfileTableViewModel: BaseViewModel {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
-    lazy var isBioEnable: Bool = {
+    lazy var isBiometricAvailable: Bool = {
         self.biometric.biometricType() != .none
     }()
 
@@ -46,7 +46,7 @@ class ProfileTableViewModel: BaseViewModel {
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
-        self.switchState = sessionManager.isBioSwitchedOn
+        self.switchState = sessionManager.isBiometricAvailable
         super.init()
         sessionManager.attachObserver(observer: self)
     }

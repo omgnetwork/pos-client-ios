@@ -44,7 +44,7 @@ class LoginViewController: BaseViewController {
     }
 
     private func setupBioLoginButton() {
-        guard self.viewModel.isBioEnable else {
+        guard self.viewModel.isBiometricAvailable else {
             self.bioLoginButton.isHidden = true
             return
         }

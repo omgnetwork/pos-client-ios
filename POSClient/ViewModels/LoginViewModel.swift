@@ -31,8 +31,8 @@ class LoginViewModel: BaseViewModel {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
-    lazy var isBioEnable: Bool = {
-        self.biometric.biometricType() != .none && self.sessionManager.isBioSwitchedOn
+    lazy var isBiometricAvailable: Bool = {
+        self.biometric.biometricType() != .none && self.sessionManager.isBiometricAvailable
     }()
 
     lazy var touchFaceIdButtonTitle = {

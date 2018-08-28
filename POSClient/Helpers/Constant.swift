@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum UserDefaultKeys: String {
+enum UserDefaultKey: String {
     case email = "com.omisego.pos-client.email"
     case biometricEnabled = "com.omisego.pos-client.biometric_enabled"
 }
 
-enum KeychainKeys: String {
+enum KeychainKey: String {
     case userId = "com.omisego.pos-client.user_id"
     case authenticationToken = "com.omisego.pos-client.authentication_token"
     case password = "com.omisego.pos-client.password"
