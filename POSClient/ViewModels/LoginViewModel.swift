@@ -41,8 +41,8 @@ class LoginViewModel: BaseViewModel {
 
     lazy var touchFaceIdButtonPicture: UIImage? = {
         switch self.biometric.biometricType() {
-        case .touchID: return UIImage(named: "")
-        case .faceID: return UIImage(named: "")
+        case .touchID: return UIImage(named: "touch_id_icon")
+        case .faceID: return UIImage(named: "face_id_icon")
         default: return nil
         }
     }()
