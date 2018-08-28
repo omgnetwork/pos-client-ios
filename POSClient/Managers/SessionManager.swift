@@ -73,7 +73,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     func clearTokens() {
-        self.keychainWrapper.clearValue(forKey: .userId)
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
         self.wallet = nil
         self.currentUser = nil
@@ -113,7 +112,6 @@ class SessionManager: Publisher, SessionManagerProtocol {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.currentUser = authenticationToken.user
-                self.keychainWrapper.storeValue(value: authenticationToken.user.id, forKey: .userId)
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
                 success()
