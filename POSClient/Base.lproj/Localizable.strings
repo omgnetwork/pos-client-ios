@@ -59,6 +59,11 @@
 "profile.label.touchFaceID" = "Touch ID / Face ID";
 "profile.label.signout" = "Sign out";
 
+// Transactions
+"transactions.view.title" = "Transactions";
+"transactions.label.debit" = "debit";
+"transactions.label.topup" = "top-up";
+
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
 "error.unexpected" = "An unexpected error has occured";

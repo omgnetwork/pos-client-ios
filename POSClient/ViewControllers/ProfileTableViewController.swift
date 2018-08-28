@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileTableViewController: BaseTableViewController {
+    let transactionsSegueIdentifier = "showTransactionViewController"
     @IBOutlet var transactionLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var emailValueLabel: UILabel!
@@ -50,8 +51,7 @@ extension ProfileTableViewController {
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): // transactions
-            // TODO: Handle selection
-            break
+            self.performSegue(withIdentifier: self.transactionsSegueIdentifier, sender: nil)
         case (2, 0): // Sign out
             self.viewModel.logout()
         default:

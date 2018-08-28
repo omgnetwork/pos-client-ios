@@ -155,11 +155,20 @@
                         <outlet property="touchFaceIdLabel" destination="E8w-gp-6Pk" id="j0K-3C-71j"/>
                         <outlet property="touchFaceIdSwitch" destination="sxc-k4-Fn6" id="pBg-2l-aqS"/>
                         <outlet property="transactionLabel" destination="f3t-jC-okq" id="nkh-bb-djA"/>
+                        <segue destination="vHQ-vw-xgN" kind="show" identifier="showTransactionViewController" id="5Cb-Dk-BNp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5w-x3-cDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-391.19999999999999" y="61.619190404797607"/>
+        </scene>
+        <!--Transaction-->
+        <scene sceneID="cZU-XJ-uL3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Transaction" id="vHQ-vw-xgN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i4l-kH-li6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="399" y="61"/>
         </scene>
     </scenes>
 </document>
