@@ -196,6 +196,9 @@
                 <navigationController navigationBarHidden="YES" id="HbO-oK-DUf" customClass="BaseNavigationViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="HkP-Oi-UFr">
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="34"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="iR1-Gf-MIY" kind="relationship" relationship="rootViewController" id="LgM-RH-9Ev"/>

@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="20"/>
+                                <integer key="value" value="8"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
@@ -39,16 +39,22 @@
                         <rect key="frame" x="64" y="8.5" width="248" height="40"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="P16-Qv-Yc9">
-                                <rect key="frame" x="0.0" y="0.0" width="248" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="12,324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-Wa-Qv4">
-                                        <rect key="frame" x="196" y="0.0" width="52" height="20"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-q6-r1o">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-q6-r1o">
-                                        <rect key="frame" x="0.0" y="0.0" width="188" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="TKN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzO-jb-9Oe">
+                                        <rect key="frame" x="218" y="0.0" width="30" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="12,324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-Wa-Qv4">
+                                        <rect key="frame" x="150" y="0.0" width="52" height="40"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,18 +65,15 @@
                                     <constraint firstAttribute="bottom" secondItem="4Jk-Wa-Qv4" secondAttribute="bottom" id="5LP-fy-3bQ"/>
                                     <constraint firstAttribute="bottom" secondItem="5bq-q6-r1o" secondAttribute="bottom" id="6Wt-zI-39c"/>
                                     <constraint firstItem="5bq-q6-r1o" firstAttribute="leading" secondItem="P16-Qv-Yc9" secondAttribute="leading" id="6YF-OV-c2K"/>
+                                    <constraint firstItem="RzO-jb-9Oe" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="G7P-j3-KRT"/>
+                                    <constraint firstAttribute="bottom" secondItem="RzO-jb-9Oe" secondAttribute="bottom" id="MAl-OT-PFG"/>
                                     <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="R6a-Hb-7fR"/>
-                                    <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="leading" secondItem="5bq-q6-r1o" secondAttribute="trailing" constant="8" id="UJn-u0-BLc"/>
+                                    <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="leading" secondItem="5bq-q6-r1o" secondAttribute="trailing" constant="16" id="UJn-u0-BLc"/>
                                     <constraint firstItem="5bq-q6-r1o" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="W7Z-ve-ivB"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Jk-Wa-Qv4" secondAttribute="trailing" id="kZs-Ou-1q6"/>
+                                    <constraint firstItem="RzO-jb-9Oe" firstAttribute="leading" secondItem="4Jk-Wa-Qv4" secondAttribute="trailing" constant="16" id="fZo-7M-1SF"/>
+                                    <constraint firstAttribute="trailing" secondItem="RzO-jb-9Oe" secondAttribute="trailing" id="nRh-KK-6Yn"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TKN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzO-jb-9Oe">
-                                <rect key="frame" x="0.0" y="20" width="248" height="20"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -92,7 +95,7 @@
                 <outlet property="tokenNameLabel" destination="5bq-q6-r1o" id="wLg-q5-5s4"/>
                 <outlet property="tokenSymbolLabel" destination="RzO-jb-9Oe" id="nM3-eT-O6k"/>
             </connections>
-            <point key="canvasLocation" x="34" y="66"/>
+            <point key="canvasLocation" x="34" y="65.5"/>
         </tableViewCell>
     </objects>
 </document>
