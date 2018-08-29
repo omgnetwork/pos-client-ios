@@ -19,7 +19,7 @@
 "login.error.validation.password" = "Password should be at least 8 characters long";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
-"login.button.title.login" = "Log in";
+"login.button.title.login" = "Sign in";
 "login.button.title.register" = "Don't have an account yet? Sign up";
 "login.alert.biometric_auth" = "Authenticate to login";
 
