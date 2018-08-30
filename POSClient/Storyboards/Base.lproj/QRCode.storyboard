@@ -37,49 +37,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR to scan  for paying or topup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-uS-gWm">
-                                <rect key="frame" x="16" y="156" width="343" height="46.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7o-Hl-H6a">
-                                <rect key="frame" x="0.0" y="202.5" width="375" height="464.5"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="403"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="To9-qH-ka3">
-                                        <rect key="frame" x="70" y="115" width="235" height="235"/>
+                                        <rect key="frame" x="16" y="0.0" width="343" height="343"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6tF-1a-UvD">
-                                                <rect key="frame" x="8" y="8" width="219" height="219"/>
+                                                <rect key="frame" x="32" y="32" width="279" height="279"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="6tF-1a-UvD" secondAttribute="bottom" constant="8" id="7pk-lC-i7V"/>
-                                            <constraint firstItem="6tF-1a-UvD" firstAttribute="top" secondItem="To9-qH-ka3" secondAttribute="top" constant="8" id="IUs-p5-zhh"/>
-                                            <constraint firstItem="6tF-1a-UvD" firstAttribute="leading" secondItem="To9-qH-ka3" secondAttribute="leading" constant="8" id="RTu-pb-34I"/>
+                                            <constraint firstAttribute="bottom" secondItem="6tF-1a-UvD" secondAttribute="bottom" constant="32" id="7pk-lC-i7V"/>
+                                            <constraint firstItem="6tF-1a-UvD" firstAttribute="top" secondItem="To9-qH-ka3" secondAttribute="top" constant="32" id="IUs-p5-zhh"/>
+                                            <constraint firstItem="6tF-1a-UvD" firstAttribute="leading" secondItem="To9-qH-ka3" secondAttribute="leading" constant="32" id="RTu-pb-34I"/>
                                             <constraint firstAttribute="width" secondItem="To9-qH-ka3" secondAttribute="height" id="TKZ-mh-Jss"/>
-                                            <constraint firstAttribute="trailing" secondItem="6tF-1a-UvD" secondAttribute="trailing" constant="8" id="cb8-Sg-2Jv"/>
+                                            <constraint firstAttribute="trailing" secondItem="6tF-1a-UvD" secondAttribute="trailing" constant="32" id="cb8-Sg-2Jv"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show this QR to scan  for paying or topup" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phl-uS-gWm">
+                                        <rect key="frame" x="16" y="359" width="343" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="To9-qH-ka3" secondAttribute="trailing" constant="70" id="Mcw-m3-WrW"/>
-                                    <constraint firstItem="To9-qH-ka3" firstAttribute="leading" secondItem="T7o-Hl-H6a" secondAttribute="leading" constant="70" id="XOb-fK-4HV"/>
-                                    <constraint firstItem="To9-qH-ka3" firstAttribute="centerY" secondItem="T7o-Hl-H6a" secondAttribute="centerY" id="s1j-xd-nV1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Phl-uS-gWm" secondAttribute="bottom" id="I3x-fH-bwH"/>
+                                    <constraint firstAttribute="trailing" secondItem="To9-qH-ka3" secondAttribute="trailing" constant="16" id="Mcw-m3-WrW"/>
+                                    <constraint firstItem="Phl-uS-gWm" firstAttribute="top" secondItem="To9-qH-ka3" secondAttribute="bottom" constant="16" id="O7a-zb-EKc"/>
+                                    <constraint firstItem="To9-qH-ka3" firstAttribute="leading" secondItem="T7o-Hl-H6a" secondAttribute="leading" constant="16" id="XOb-fK-4HV"/>
+                                    <constraint firstItem="To9-qH-ka3" firstAttribute="top" secondItem="T7o-Hl-H6a" secondAttribute="top" id="afL-lk-DTd"/>
+                                    <constraint firstItem="Phl-uS-gWm" firstAttribute="leading" secondItem="T7o-Hl-H6a" secondAttribute="leading" constant="16" id="oJu-k9-AaA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Phl-uS-gWm" secondAttribute="trailing" constant="16" id="paN-cI-SxZ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="T7o-Hl-H6a" firstAttribute="leading" secondItem="0f6-t1-kgd" secondAttribute="leading" id="0Fp-mN-OlU"/>
-                            <constraint firstItem="T7o-Hl-H6a" firstAttribute="top" secondItem="Phl-uS-gWm" secondAttribute="bottom" id="2S7-Vb-6Ys"/>
                             <constraint firstItem="0f6-t1-kgd" firstAttribute="trailing" secondItem="T7o-Hl-H6a" secondAttribute="trailing" id="4FH-qB-jE6"/>
-                            <constraint firstItem="Phl-uS-gWm" firstAttribute="leading" secondItem="0f6-t1-kgd" secondAttribute="leading" constant="16" id="5WG-zi-Yfc"/>
-                            <constraint firstAttribute="trailing" secondItem="Phl-uS-gWm" secondAttribute="trailing" constant="16" id="87n-qk-oHu"/>
-                            <constraint firstItem="0f6-t1-kgd" firstAttribute="bottom" secondItem="T7o-Hl-H6a" secondAttribute="bottom" id="IZr-NC-PGo"/>
-                            <constraint firstItem="Phl-uS-gWm" firstAttribute="top" secondItem="0f6-t1-kgd" secondAttribute="top" constant="40" id="LKA-3h-hLF"/>
+                            <constraint firstItem="T7o-Hl-H6a" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0f6-t1-kgd" secondAttribute="top" priority="990" constant="16" id="c2n-WC-1lG"/>
+                            <constraint firstItem="T7o-Hl-H6a" firstAttribute="centerY" secondItem="fMZ-yq-ngs" secondAttribute="centerY" id="soT-xP-sdq"/>
+                            <constraint firstItem="0f6-t1-kgd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="T7o-Hl-H6a" secondAttribute="bottom" priority="990" constant="16" id="vLk-pf-Ocu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0f6-t1-kgd"/>
                     </view>
@@ -92,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yi1-ke-vd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="169"/>
+            <point key="canvasLocation" x="72.799999999999997" y="168.6656671664168"/>
         </scene>
     </scenes>
 </document>
