@@ -9,7 +9,6 @@
 import UIKit
 
 class QRViewController: BaseViewController {
-    @IBOutlet var yourQRLabel: UILabel!
     @IBOutlet var hintLabel: UILabel!
     @IBOutlet var qrBorderView: UIView!
     @IBOutlet var qrImageView: UIImageView!
@@ -21,9 +20,10 @@ class QRViewController: BaseViewController {
     override func configureView() {
         super.configureView()
         self.navigationItem.title = self.viewModel.title
-        self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
         self.qrBorderView.addBorder(withColor: Color.greyBorder.uiColor(), width: 1, radius: 0)
         self.hintLabel.text = self.viewModel.hint
+        self.view.layoutIfNeeded()
+        self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
     }
 
     override func viewWillAppear(_ animated: Bool) {
