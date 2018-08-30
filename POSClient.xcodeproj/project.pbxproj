@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */; };
 		032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */; };
 		032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */; };
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				0380AAF0212D54FB006B2193 /* SignupViewModel.swift */,
 				03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */,
 				03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */,
+				030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */,
 				03FB7990212FECA100890D72 /* TransactionCellViewModel.swift */,
 				03FB798F212FECA100890D72 /* TransactionsViewModel.swift */,
 				03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */,
@@ -593,6 +596,7 @@
 				03FB7992212FECA200890D72 /* TransactionCellViewModel.swift in Sources */,
 				0380AADD212C2013006B2193 /* AppEvent.swift in Sources */,
 				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
+				030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
