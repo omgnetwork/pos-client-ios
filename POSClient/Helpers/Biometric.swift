@@ -26,7 +26,7 @@ class BiometricIDAuth {
     let context = LAContext()
 
     func biometricType() -> BiometricType {
-        guard self.context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) else { return .none }
+        guard self.canEvaluatePolicy() else { return .none }
         switch self.context.biometryType {
         case .none:
             return .none
