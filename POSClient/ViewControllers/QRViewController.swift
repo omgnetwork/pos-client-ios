@@ -13,7 +13,7 @@ class QRViewController: BaseViewController {
     @IBOutlet var qrBorderView: UIView!
     @IBOutlet var qrImageView: UIImageView!
 
-    let initialBrightness: CGFloat = UIScreen.main.brightness
+    var initialBrightness: CGFloat = UIScreen.main.brightness
 
     let viewModel = QRViewModel()
 
@@ -28,6 +28,7 @@ class QRViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.initialBrightness = UIScreen.main.brightness
         UIScreen.main.brightness = 1
     }
 
