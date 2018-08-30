@@ -17,7 +17,9 @@ class TransactionCellViewModel: BaseViewModel {
     let timeStamp: String
     let amount: String
     let color: UIColor
-    let status: String
+    let statusText: String
+    let statusColor: UIColor
+    let statusImage: UIImage?
 
     init(transaction: Transaction, currentUserAddress: String) {
         self.transaction = transaction
@@ -36,18 +38,25 @@ class TransactionCellViewModel: BaseViewModel {
             source = transaction.to
             sign = "+"
         }
-        var statusText: String!
         switch transaction.status {
-        case .approved: statusText = "transactions.label.status.approved".localized()
-        case .confirmed: statusText = "transactions.label.status.confirmed".localized()
-        case .expired: statusText = "transactions.label.status.expired".localized()
-        case .failed: statusText = "transactions.label.status.failed".localized()
-        case .pending: statusText = "transactions.label.status.pending".localized()
-        case .rejected: statusText = "transactions.label.status.rejected".localized()
+        case .approved: self.statusText = "transactions.label.status.approved".localized()
+        case .confirmed: self.statusText = "transactions.label.status.confirmed".localized()
+        case .expired: self.statusText = "transactions.label.status.expired".localized()
+        case .failed: self.statusText = "transactions.label.status.failed".localized()
+        case .pending: self.statusText = "transactions.label.status.pending".localized()
+        case .rejected: self.statusText = "transactions.label.status.rejected".localized()
         }
-        self.status = "- \(statusText!)"
+
+        switch transaction.status {
+        case .confirmed:
+            self.statusColor = Color.transactionCreditGreen.uiColor()
+            self.statusImage = UIImage(named: "checkmark_icon")
+        default:
+            self.statusColor = Color.transactionDebitRed.uiColor()
+            self.statusImage = UIImage(named: "cross_icon")
+        }
         let displayableAmount = OMGNumberFormatter(precision: 2).string(from: source.amount, subunitToUnit: source.token.subUnitToUnit)
         amount = "\(sign!) \(displayableAmount) \(source.token.symbol)"
-        timeStamp = transaction.createdAt.toString(withFormat: "MMM dd, HH:mm")
+        timeStamp = "\(transaction.createdAt.toString(withFormat: "MMM dd, HH:mm")) :"
     }
 }
