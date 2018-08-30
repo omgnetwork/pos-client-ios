@@ -26,11 +26,7 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
     func showLoading() {
-        self.loading = MBProgressHUD.showAdded(to: self.view, animated: true)
-        self.loading!.contentColor = Color.black.uiColor()
-        self.loading!.bezelView.style = .solidColor
-        self.loading!.bezelView.color = UIColor.white
-        self.loading!.mode = .indeterminate
+        self.loading = MBProgressHUDBuilder.build(for: self)
     }
 
     func hideLoading() {
@@ -81,13 +77,8 @@ class BaseTableViewController: UITableViewController {
 }
 
 extension BaseTableViewController {
-    func showLoading(withMessage message: String? = nil) {
-        self.loading = MBProgressHUD.showAdded(to: self.view, animated: true)
-        self.loading!.label.text = message
-        self.loading!.contentColor = Color.black.uiColor()
-        self.loading!.bezelView.style = .solidColor
-        self.loading!.bezelView.color = UIColor.white
-        self.loading!.mode = .indeterminate
+    func showLoading(withMessage _: String? = nil) {
+        self.loading = MBProgressHUDBuilder.build(for: self)
     }
 
     func hideLoading() {
