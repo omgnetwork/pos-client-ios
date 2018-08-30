@@ -84,8 +84,8 @@
                     <constraint firstItem="mZ1-On-vJo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="UGm-k6-Rte"/>
                     <constraint firstItem="ocW-wV-jCC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Vkx-Ze-hEL"/>
                     <constraint firstAttribute="bottom" secondItem="ocW-wV-jCC" secondAttribute="bottom" constant="8" id="Yrn-Lo-z4F"/>
-                    <constraint firstItem="mZ1-On-vJo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fYG-FF-hdJ"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mZ1-On-vJo" secondAttribute="bottom" constant="8" id="irZ-0M-n3f"/>
+                    <constraint firstItem="mZ1-On-vJo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" priority="750" constant="8" id="fYG-FF-hdJ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mZ1-On-vJo" secondAttribute="bottom" priority="750" constant="8" id="irZ-0M-n3f"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
