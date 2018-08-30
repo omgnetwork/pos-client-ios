@@ -13,6 +13,10 @@ func dispatchMain(_ block: @escaping EmptyClosure) {
     DispatchQueue.main.async { block() }
 }
 
+func dispatchGlobal(_ block: @escaping EmptyClosure) {
+    DispatchQueue.global().async { block() }
+}
+
 extension UIColor {
     static func color(fromHexString: String, alpha: CGFloat? = 1.0) -> UIColor {
         let hexint = Int(colorInteger(fromHexString: fromHexString))

@@ -8,15 +8,20 @@
 
 import Foundation
 
-enum UserDefaultKeys: String {
-    case userId = "token.user_id"
-    case authenticationToken = "token.authentication_token"
+enum UserDefaultKey: String {
+    case email = "com.omisego.pos-client.email"
+    case biometricEnabled = "com.omisego.pos-client.biometric_enabled"
+}
+
+enum KeychainKey: String {
+    case authenticationToken = "com.omisego.pos-client.authentication_token"
+    case password = "com.omisego.pos-client.password"
 }
 
 struct Constant {
     static let urlScheme = "pos-client://"
     // LOCAL
-    static let baseURL = "http://192.168.1.42:4000"
+    static let baseURL = "http://192.168.82.11:4000"
     static let APIKey = "1i0I7MBjts7eKDxp3hQKlVpzSfA7nsIAeMDg-md_B-E"
 
     // Pagination

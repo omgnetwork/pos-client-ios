@@ -37,7 +37,7 @@ class LoadingViewModel: BaseViewModel {
         self.sessionManager.loadCurrentUser()
         self.dispatchGroup.enter()
         self.sessionManager.loadWallet()
-        DispatchQueue.global().async {
+        dispatchGlobal {
             self.dispatchGroup.wait()
             dispatchMain {
                 self.sessionManager.removeObserver(observer: self)

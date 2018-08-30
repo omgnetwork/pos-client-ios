@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var emailTextField: OMGFloatingTextField!
     @IBOutlet var passwordTextField: OMGFloatingTextField!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var bioLoginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
 
     override func configureView() {
@@ -23,6 +24,7 @@ class LoginViewController: BaseViewController {
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.loginButton.setTitle(self.viewModel.loginButtonTitle, for: .normal)
         self.registerButton.setTitle(self.viewModel.registerButtonTitle, for: .normal)
+        self.setupBioLoginButton()
     }
 
     override func configureViewModel() {
@@ -40,12 +42,27 @@ class LoginViewController: BaseViewController {
             self?.showError(withMessage: $0.localizedDescription)
         }
     }
+
+    private func setupBioLoginButton() {
+        guard self.viewModel.isBiometricAvailable else {
+            self.bioLoginButton.isHidden = true
+            return
+        }
+        self.bioLoginButton.setTitle(self.viewModel.touchFaceIdButtonTitle, for: .normal)
+        self.bioLoginButton.setImage(self.viewModel.touchFaceIdButtonPicture, for: .normal)
+        self.bioLoginButton.addBorder(withColor: Color.omiseGOBlue.uiColor(), width: 1, radius: 4)
+    }
 }
 
 extension LoginViewController {
     @IBAction func tapLoginButton(_: UIButton) {
         self.view.endEditing(true)
         self.viewModel.login()
+    }
+
+    @IBAction func tapBioLoginButton(_: Any) {
+        self.view.endEditing(true)
+        self.viewModel.bioLogin()
     }
 }
 

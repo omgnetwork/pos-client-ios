@@ -12,32 +12,48 @@ class ProfileTableViewModel: BaseViewModel {
     let title = "profile.view.title".localized()
     let transactionLabelText = "profile.label.transactions".localized()
     let emailLabelText = "profile.label.email".localized()
-    let touchFaceIdLabelText = "profile.label.touchFaceID".localized()
     let signOutLabelText = "profile.label.signout".localized()
 
     var onFailLogout: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
+    var shouldShowEnableConfirmationView: EmptyClosure?
+    var onBioStateChange: ObjectClosure<Bool>?
 
-    var switchState: Bool = false
+    var switchState: Bool {
+        didSet {
+            self.onBioStateChange?(self.switchState)
+        }
+    }
 
     var isLoading: Bool = false {
         didSet { self.onLoadStateChange?(isLoading) }
     }
 
-    lazy var isBioEnable: Bool = false
+    lazy var isBiometricAvailable: Bool = {
+        self.biometric.biometricType() != .none
+    }()
+
+    lazy var touchFaceIdLabelText = {
+        self.biometric.biometricType().name
+    }()
 
     lazy var emailValueLabelText: String = {
         self.sessionManager.currentUser?.email ?? ""
     }()
 
     private let sessionManager: SessionManagerProtocol
+    private let biometric = BiometricIDAuth()
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
+        self.switchState = sessionManager.isBiometricAvailable
         super.init()
+        sessionManager.attachObserver(observer: self)
     }
 
-    func toggleSwitch(newValue _: Bool) {}
+    func toggleSwitch(newValue isEnabled: Bool) {
+        isEnabled ? self.shouldShowEnableConfirmationView?() : self.sessionManager.disableBiometricAuth()
+    }
 
     func logout() {
         self.isLoading = true
@@ -45,5 +61,19 @@ class ProfileTableViewModel: BaseViewModel {
             self?.isLoading = false
             self?.onFailLogout?(error)
         })
+    }
+
+    func stopObserving() {
+        self.sessionManager.removeObserver(observer: self)
+    }
+}
+
+extension ProfileTableViewModel: Observer {
+    func onChange(event: AppEvent) {
+        switch event {
+        case let .onBioStateUpdate(enabled: enabled):
+            self.switchState = enabled
+        default: break
+        }
     }
 }

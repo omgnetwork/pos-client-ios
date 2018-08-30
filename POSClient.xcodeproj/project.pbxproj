@@ -27,6 +27,11 @@
 		0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE6212D13C3006B2193 /* QRGenerator.swift */; };
 		0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAEE212D54EF006B2193 /* SignupViewController.swift */; };
 		0380AAF1212D54FB006B2193 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAF0212D54FB006B2193 /* SignupViewModel.swift */; };
+		03885C132133ADDB00E78F69 /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C122133ADDB00E78F69 /* Biometric.swift */; };
+		03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */; };
+		03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */; };
+		03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0C00921350FFD00E31833 /* KeychainWrapper.swift */; };
+		03A0C00C2135173B00E31833 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -106,6 +111,11 @@
 		0380AAE6212D13C3006B2193 /* QRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGenerator.swift; sourceTree = "<group>"; };
 		0380AAEE212D54EF006B2193 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0380AAF0212D54FB006B2193 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		03885C122133ADDB00E78F69 /* Biometric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
+		03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewController.swift; sourceTree = "<group>"; };
+		03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModel.swift; sourceTree = "<group>"; };
+		03A0C00921350FFD00E31833 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +272,7 @@
 				03FB7987212FB6D100890D72 /* MainTabBarViewController.swift */,
 				03FB798D212FEC9500890D72 /* TransactionsViewController.swift */,
 				03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */,
+				03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 				03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */,
 				03FB7990212FECA100890D72 /* TransactionCellViewModel.swift */,
 				03FB798F212FECA100890D72 /* TransactionsViewModel.swift */,
+				03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,6 +311,9 @@
 				032F7A75212A478200AAC753 /* AppState.swift */,
 				0380AAD6212BF4F8006B2193 /* Observable.swift */,
 				0380AAE6212D13C3006B2193 /* QRGenerator.swift */,
+				03885C122133ADDB00E78F69 /* Biometric.swift */,
+				03A0C00921350FFD00E31833 /* KeychainWrapper.swift */,
+				03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -503,7 +518,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/OmiseGO/OmiseGO.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
@@ -516,7 +531,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OmiseGO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
@@ -583,6 +598,7 @@
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
 				03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */,
+				03885C132133ADDB00E78F69 /* Biometric.swift in Sources */,
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
 				03C2A67B2126BFBD00267E7F /* LoadingViewModel.swift in Sources */,
 				03C2A66121269C2300267E7F /* Theme.swift in Sources */,
@@ -594,11 +610,15 @@
 				03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */,
 				0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */,
 				032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */,
+				03A0C00C2135173B00E31833 /* UserDefaultsWrapper.swift in Sources */,
 				03FB7982212E9AB800890D72 /* ProfileTableViewModel.swift in Sources */,
+				03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */,
 				03FB7991212FECA200890D72 /* TransactionsViewModel.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
 				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
+				03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
+				03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */,
 				03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */,
 				03C2A68D212A317D00267E7F /* BalanceListViewController.swift in Sources */,
 				03C2A65F21269C2300267E7F /* CustomView.swift in Sources */,

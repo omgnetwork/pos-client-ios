@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileTableViewController: BaseTableViewController {
     let transactionsSegueIdentifier = "showTransactionViewController"
+    let touchIdConfirmationSegueIdentifier = "showTouchIdConfirmationViewController"
     @IBOutlet var transactionLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var emailValueLabel: UILabel!
@@ -38,12 +39,28 @@ class ProfileTableViewController: BaseTableViewController {
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
         }
+        self.viewModel.shouldShowEnableConfirmationView = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.touchIdConfirmationSegueIdentifier, sender: nil)
+        }
+        self.viewModel.onBioStateChange = { [weak self] isEnabled in
+            self?.touchFaceIdSwitch.isOn = isEnabled
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.touchFaceIdSwitch.isOn = self.viewModel.switchState
+    }
+
+    deinit {
+        self.viewModel.stopObserving()
     }
 }
 
 extension ProfileTableViewController {
-    @IBAction func didUpdateSwitch(sw: UISwitch) {
-        self.viewModel.toggleSwitch(newValue: sw.isOn)
+    @IBAction func didUpdateSwitch(_ sender: UISwitch) {
+        self.viewModel.toggleSwitch(newValue: sender.isOn)
     }
 }
 
@@ -51,7 +68,7 @@ extension ProfileTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         switch (indexPath.section, indexPath.row) {
-        case (1, 0) where !self.viewModel.isBioEnable: // Email
+        case (1, 0) where !self.viewModel.isBiometricAvailable: // Email
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         default: break
         }
@@ -71,7 +88,7 @@ extension ProfileTableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch (indexPath.section, indexPath.row) {
-        case (1, 1) where !self.viewModel.isBioEnable: return 0
+        case (1, 1) where !self.viewModel.isBiometricAvailable: return 0
         default: return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }

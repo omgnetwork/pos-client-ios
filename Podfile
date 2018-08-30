@@ -7,7 +7,7 @@ target 'POSClient' do
 
   # Pods for POSClient
   pod 'Alamofire'
-  pod 'KeychainSwift'
+  pod 'KeychainAccess'
   pod 'BigInt'
   pod 'MBProgressHUD'
   pod 'Toaster'

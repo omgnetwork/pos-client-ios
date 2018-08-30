@@ -14,4 +14,5 @@ enum AppEvent {
     case onUserUpdate(user: User?)
     case onUserError(error: OMGError)
     case onAppStateUpdate(state: AppState)
+    case onBioStateUpdate(enabled: Bool)
 }
