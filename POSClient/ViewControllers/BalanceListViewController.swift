@@ -25,6 +25,7 @@ class BalanceListViewController: BaseViewController {
         self.refreshControl.addTarget(self.viewModel, action: #selector(self.viewModel.loadData), for: .valueChanged)
         self.tableView.registerNib(tableViewCell: BalanceTableViewCell.self)
         self.tableView.tableFooterView = UIView()
+        self.tableView.estimatedRowHeight = 56
         self.tableView.refreshControl = self.refreshControl
     }
 
