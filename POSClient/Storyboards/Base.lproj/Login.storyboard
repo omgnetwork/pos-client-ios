@@ -103,6 +103,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MCk-FN-bcC"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                 <color key="tintColor" red="0.1019607843" green="0.32549019610000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Touch ID" image="touch_id_icon">
@@ -219,6 +220,6 @@
     </scenes>
     <resources>
         <image name="omisego_logo_black" width="180" height="63"/>
-        <image name="touch_id_icon" width="23" height="23"/>
+        <image name="touch_id_icon" width="17" height="17"/>
     </resources>
 </document>
