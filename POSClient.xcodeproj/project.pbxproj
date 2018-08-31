@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */; };
+		0326EF652138F0030062DBE3 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 0326EF642138F0030062DBE3 /* Fixtures */; };
+		0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */; };
+		0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF682138F0E80062DBE3 /* TestSessionManager.swift */; };
+		0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */; };
 		032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */; };
 		032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */; };
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
@@ -16,7 +20,6 @@
 		032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */; };
 		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
-		033A63BB2123E02C00A2D08B /* POSClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63BA2123E02C00A2D08B /* POSClientTests.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
 		0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD8212C12AF006B2193 /* BalanceNavigationViewController.swift */; };
@@ -92,6 +95,10 @@
 
 /* Begin PBXFileReference section */
 		030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
+		0326EF642138F0030062DBE3 /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
+		0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelTests.swift; sourceTree = "<group>"; };
+		0326EF682138F0E80062DBE3 /* TestSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionManager.swift; sourceTree = "<group>"; };
+		0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
 		032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -103,7 +110,6 @@
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63B62123E02C00A2D08B /* POSClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		033A63BA2123E02C00A2D08B /* POSClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSClientTests.swift; sourceTree = "<group>"; };
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -192,6 +198,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0326EF622138EFF90062DBE3 /* TestMocks */ = {
+			isa = PBXGroup;
+			children = (
+				0326EF682138F0E80062DBE3 /* TestSessionManager.swift */,
+				0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */,
+			);
+			path = TestMocks;
+			sourceTree = "<group>";
+		};
+		0326EF632138EFF90062DBE3 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		0326EF6C2138FA8B0062DBE3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		033A63992123E02800A2D08B = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +264,10 @@
 		033A63B92123E02C00A2D08B /* POSClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				033A63BA2123E02C00A2D08B /* POSClientTests.swift */,
+				0326EF6C2138FA8B0062DBE3 /* Helpers */,
+				0326EF642138F0030062DBE3 /* Fixtures */,
+				0326EF622138EFF90062DBE3 /* TestMocks */,
+				0326EF632138EFF90062DBE3 /* ViewModelTests */,
 				033A63BC2123E02C00A2D08B /* Info.plist */,
 			);
 			path = POSClientTests;
@@ -462,6 +495,7 @@
 					};
 					033A63B52123E02C00A2D08B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 033A63A12123E02800A2D08B;
 					};
 				};
@@ -511,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0326EF652138F0030062DBE3 /* Fixtures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +705,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				033A63BB2123E02C00A2D08B /* POSClientTests.swift in Sources */,
+				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
+				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
+				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +963,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -935,6 +973,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.omisego.POSClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POSClient.app/POSClient";
@@ -947,6 +986,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = POSClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

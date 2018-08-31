@@ -17,6 +17,11 @@ func dispatchGlobal(_ block: @escaping EmptyClosure) {
     DispatchQueue.global().async { block() }
 }
 
+func dispatchMain(afterMilliseconds: Int, _ block: @escaping EmptyClosure) {
+    let deadlineTime = DispatchTime.now() + .milliseconds(afterMilliseconds)
+    DispatchQueue.main.asyncAfter(deadline: deadlineTime) { block() }
+}
+
 extension UIColor {
     static func color(fromHexString: String, alpha: CGFloat? = 1.0) -> UIColor {
         let hexint = Int(colorInteger(fromHexString: fromHexString))
