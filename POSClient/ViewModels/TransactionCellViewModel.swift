@@ -18,7 +18,6 @@ class TransactionCellViewModel: BaseViewModel {
     let amount: String
     let color: UIColor
     let statusText: String
-    let statusColor: UIColor
     let statusImage: UIImage?
 
     init(transaction: Transaction, currentUserAddress: String) {
@@ -49,10 +48,8 @@ class TransactionCellViewModel: BaseViewModel {
 
         switch transaction.status {
         case .confirmed:
-            self.statusColor = Color.transactionCreditGreen.uiColor()
             self.statusImage = UIImage(named: "checkmark_icon")
         default:
-            self.statusColor = Color.transactionDebitRed.uiColor()
             self.statusImage = UIImage(named: "cross_icon")
         }
         let displayableAmount = OMGNumberFormatter(precision: 2).string(from: source.amount, subunitToUnit: source.token.subUnitToUnit)
