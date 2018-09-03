@@ -62,14 +62,8 @@
 
 // Transactions
 "transactions.view.title" = "Transactions";
-"transactions.label.debit" = "debit";
-"transactions.label.topup" = "top-up";
-"transactions.label.status.approved" = "Approved";
-"transactions.label.status.confirmed" = "Confirmed";
-"transactions.label.status.expired" = "Expired";
-"transactions.label.status.failed" = "Failed";
-"transactions.label.status.pending" = "Pending";
-"transactions.label.status.rejected" = "Rejected";
+"transactions.label.status.success" = "Success";
+"transactions.label.status.failure" = "failure";
 
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
