@@ -87,11 +87,3 @@ class LoginViewModelTests: XCTestCase {
         self.sut.password = "aV@1IdP@ssWord"
     }
 }
-
-extension LoginViewModelTests {
-    private func goToLoginFinished() {
-        self.fillValidCredentials()
-        self.sut.login()
-        self.sessionManager.loginSuccess()
-    }
-}

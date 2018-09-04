@@ -106,7 +106,7 @@ class SignupViewModel: BaseViewModel {
     @discardableResult
     private func validatePasswordMatch() -> Bool {
         let arePasswordMatching = self.password == self.passwordConfirmation && self.password != nil && !self.password!.isEmpty
-        updatePasswordMatchingValidation?(arePasswordMatching ? nil : "register.error.validation.password_mismatch".localized())
+        updatePasswordMatchingValidation?(arePasswordMatching ? nil : "signup.error.validation.password_mismatch".localized())
         return arePasswordMatching
     }
 
