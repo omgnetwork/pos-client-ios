@@ -25,6 +25,8 @@ class StubGenerator {
 
     class func mainWallet() -> Wallet { return self.stub(forResource: "wallet") }
 
+    class func mainWalletSingleBalance() -> Wallet { return self.stub(forResource: "wallet_single_balance") }
+
     class func transactions() -> [Transaction] { return self.stub(forResource: "transactions") }
 
     class func pagination() -> Pagination { return self.stub(forResource: "pagination") }
