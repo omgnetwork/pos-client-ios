@@ -66,6 +66,8 @@
 		03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */; };
 		03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */; };
 		03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */; };
+		03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F191214103A80089939D /* BaseViewControllerTests.swift */; };
+		03E5F19421410B100089939D /* BaseViewControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F19321410B100089939D /* BaseViewControllerProtocols.swift */; };
 		03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C377213E68E600BCC867 /* BalanceNavigationViewModelTests.swift */; };
 		03F2C37A213E7CB000BCC867 /* SignupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C379213E7CB000BCC867 /* SignupViewModelTests.swift */; };
 		03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */; };
@@ -168,6 +170,8 @@
 		03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionLoader.swift; sourceTree = "<group>"; };
 		03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModelTests.swift; sourceTree = "<group>"; };
 		03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPaginatorTests.swift; sourceTree = "<group>"; };
+		03E5F191214103A80089939D /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
+		03E5F19321410B100089939D /* BaseViewControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocols.swift; sourceTree = "<group>"; };
 		03F2C377213E68E600BCC867 /* BalanceNavigationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewModelTests.swift; sourceTree = "<group>"; };
 		03F2C379213E7CB000BCC867 /* SignupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelTests.swift; sourceTree = "<group>"; };
 		03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		033A63B92123E02C00A2D08B /* POSClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				03E5F190214103900089939D /* ViewControllers */,
 				03E5F18D2140F0DA0089939D /* Paginators */,
 				0326EF6C2138FA8B0062DBE3 /* Helpers */,
 				0326EF642138F0030062DBE3 /* Fixtures */,
@@ -399,6 +404,7 @@
 				03A0C00921350FFD00E31833 /* KeychainWrapper.swift */,
 				03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */,
 				0381C20A2137DEE200F813E3 /* MBProgressHUDBuilder.swift */,
+				03E5F19321410B100089939D /* BaseViewControllerProtocols.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -449,6 +455,14 @@
 				03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */,
 			);
 			path = Paginators;
+			sourceTree = "<group>";
+		};
+		03E5F190214103900089939D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				03E5F191214103A80089939D /* BaseViewControllerTests.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		03FB7997212FEDFB00890D72 /* Paginators */ = {
@@ -738,6 +752,7 @@
 				03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 				03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */,
+				03E5F19421410B100089939D /* BaseViewControllerProtocols.swift in Sources */,
 				0381C20B2137DEE200F813E3 /* MBProgressHUDBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +774,7 @@
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 				03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */,
+				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,
 				03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
