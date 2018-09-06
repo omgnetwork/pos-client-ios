@@ -65,6 +65,7 @@
 		03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */; };
 		03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */; };
 		03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */; };
+		03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */; };
 		03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C377213E68E600BCC867 /* BalanceNavigationViewModelTests.swift */; };
 		03F2C37A213E7CB000BCC867 /* SignupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F2C379213E7CB000BCC867 /* SignupViewModelTests.swift */; };
 		03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */; };
@@ -166,6 +167,7 @@
 		03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModelTests.swift; sourceTree = "<group>"; };
 		03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionLoader.swift; sourceTree = "<group>"; };
 		03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModelTests.swift; sourceTree = "<group>"; };
+		03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPaginatorTests.swift; sourceTree = "<group>"; };
 		03F2C377213E68E600BCC867 /* BalanceNavigationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewModelTests.swift; sourceTree = "<group>"; };
 		03F2C379213E7CB000BCC867 /* SignupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelTests.swift; sourceTree = "<group>"; };
 		03FB7979212E6EAD00890D72 /* SignupConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		033A63B92123E02C00A2D08B /* POSClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				03E5F18D2140F0DA0089939D /* Paginators */,
 				0326EF6C2138FA8B0062DBE3 /* Helpers */,
 				0326EF642138F0030062DBE3 /* Fixtures */,
 				0326EF622138EFF90062DBE3 /* TestMocks */,
@@ -438,6 +441,14 @@
 				03FB7993212FED4200890D72 /* TransactionTableViewCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		03E5F18D2140F0DA0089939D /* Paginators */ = {
+			isa = PBXGroup;
+			children = (
+				03E5F18E2140F0E60089939D /* TransactionsPaginatorTests.swift */,
+			);
+			path = Paginators;
 			sourceTree = "<group>";
 		};
 		03FB7997212FEDFB00890D72 /* Paginators */ = {
@@ -735,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */,
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
