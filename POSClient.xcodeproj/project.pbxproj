@@ -49,6 +49,7 @@
 		03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DA2146289D006B056A /* BalanceListViewControllerTests.swift */; };
 		03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */; };
 		03B9A0DF21464B39006B056A /* BalanceNavigationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */; };
+		03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0E021465A47006B056A /* QRViewControllerTests.swift */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -158,6 +159,7 @@
 		03B9A0DA2146289D006B056A /* BalanceListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewControllerTests.swift; sourceTree = "<group>"; };
+		03B9A0E021465A47006B056A /* QRViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewControllerTests.swift; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				03B9A0DA2146289D006B056A /* BalanceListViewControllerTests.swift */,
 				03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */,
 				03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */,
+				03B9A0E021465A47006B056A /* QRViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */,
 				03B9A0DF21464B39006B056A /* BalanceNavigationViewControllerTests.swift in Sources */,
 				03B9A0D7214129D9006B056A /* LoginViewControllerTests.swift in Sources */,
+				03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */,
 				03F2C37A213E7CB000BCC867 /* SignupViewModelTests.swift in Sources */,
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,

@@ -13,6 +13,7 @@ enum Storyboard {
     case login
     case register
     case balance
+    case qrCode
     case tabBar
 
     var name: String {
@@ -21,6 +22,7 @@ enum Storyboard {
         case .login: return "Login"
         case .register: return "Register"
         case .balance: return "Balance"
+        case .qrCode: return "QRCode"
         case .tabBar: return "MainTabBar"
         }
     }
