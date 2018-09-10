@@ -91,7 +91,7 @@ class LoadingViewModelTests: XCTestCase {
         self.sut.load()
         self.sessionManager.loadCurrentUserSuccess()
         self.sessionManager.loadWalletSuccess()
-        dispatchMain(afterMilliseconds: 100) { expectation.fulfill() }
+        dispatchMain { expectation.fulfill() }
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertTrue(self.sessionManager.removeObserverCalled)
         XCTAssertNil(self.sut.raisedError)

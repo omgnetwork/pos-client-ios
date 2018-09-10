@@ -21,6 +21,7 @@ class LoadingViewControllerTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
+        ToastCenter.default.cancelAll()
         self.sut = nil
     }
 
