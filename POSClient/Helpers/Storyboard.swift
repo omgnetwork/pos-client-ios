@@ -11,7 +11,7 @@ import UIKit
 enum Storyboard {
     case loading
     case login
-    case register
+    case signup
     case balance
     case qrCode
     case tabBar
@@ -20,7 +20,7 @@ enum Storyboard {
         switch self {
         case .loading: return "Loading"
         case .login: return "Login"
-        case .register: return "Register"
+        case .signup: return "Signup"
         case .balance: return "Balance"
         case .qrCode: return "QRCode"
         case .tabBar: return "MainTabBar"

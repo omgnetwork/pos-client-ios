@@ -23,6 +23,7 @@
 		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
+		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
 		0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EA60213D241700BBF92C /* LoginViewModelTests.swift */; };
 		0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */; };
 		0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */; };
@@ -133,6 +134,7 @@
 		033A63B62123E02C00A2D08B /* POSClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
 		0371EA60213D241700BBF92C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModelTests.swift; sourceTree = "<group>"; };
 		0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModelTests.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */,
 				03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */,
 				03B9A0E021465A47006B056A /* QRViewControllerTests.swift */,
+				033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
 				03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */,
+				033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,

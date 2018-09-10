@@ -27,7 +27,7 @@ class SignupViewController: BaseViewController {
         self.emailTextField.placeholder = self.viewModel.emailPlaceholder
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.passwordConfirmationTextField.placeholder = self.viewModel.passwordConfirmationPlaceholder
-        self.signupButton.setTitle(self.viewModel.registerButtonTitle, for: .normal)
+        self.signupButton.setTitle(self.viewModel.signupButtonTitle, for: .normal)
     }
 
     override func configureViewModel() {

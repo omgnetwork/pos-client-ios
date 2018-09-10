@@ -25,7 +25,7 @@ class SignupViewModel: BaseViewModel {
     let passwordConfirmationPlaceholder = "signup.text_field.placeholder.password_confirmation".localized()
     let passwordHint = "signup.label.password_hint".localized()
     let terms = "signup.label.terms".localized()
-    let registerButtonTitle = "signup.button.title.signup".localized()
+    let signupButtonTitle = "signup.button.title.signup".localized()
 
     var email: String? {
         didSet { self.validateEmail() }
