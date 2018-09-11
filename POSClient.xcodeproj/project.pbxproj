@@ -13,6 +13,8 @@
 		0320B59B2147916D00A8D646 /* MainTabBarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */; };
 		0320B59D2147981D00A8D646 /* TransactionsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B59C2147981D00A8D646 /* TransactionsViewControllerTests.swift */; };
 		0320B59F21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */; };
+		0320B5A22147D2C200A8D646 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B5A12147D2C200A8D646 /* LoginViewModelProtocol.swift */; };
+		0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B5A32147D2FD00A8D646 /* TestLoginViewModel.swift */; };
 		0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320EB66213F8C15001E711F /* ProfileTableViewModelTests.swift */; };
 		0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320EB68213F9167001E711F /* MainTabBarViewModelTests.swift */; };
 		0326EF652138F0030062DBE3 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 0326EF642138F0030062DBE3 /* Fixtures */; };
@@ -125,6 +127,8 @@
 		0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewControllerTests.swift; sourceTree = "<group>"; };
 		0320B59C2147981D00A8D646 /* TransactionsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewControllerTests.swift; sourceTree = "<group>"; };
 		0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		0320B5A12147D2C200A8D646 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		0320B5A32147D2FD00A8D646 /* TestLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewModel.swift; sourceTree = "<group>"; };
 		0320EB66213F8C15001E711F /* ProfileTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModelTests.swift; sourceTree = "<group>"; };
 		0320EB68213F9167001E711F /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		0326EF642138F0030062DBE3 /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
@@ -248,12 +252,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0320B5A02147D2B700A8D646 /* ViewModelProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				0320B5A12147D2C200A8D646 /* LoginViewModelProtocol.swift */,
+			);
+			path = ViewModelProtocols;
+			sourceTree = "<group>";
+		};
 		0326EF622138EFF90062DBE3 /* TestMocks */ = {
 			isa = PBXGroup;
 			children = (
 				0326EF682138F0E80062DBE3 /* TestSessionManager.swift */,
 				0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */,
 				03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */,
+				0320B5A32147D2FD00A8D646 /* TestLoginViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -314,6 +327,7 @@
 				033A63C52123E2CB00A2D08B /* Storyboards */,
 				03C2A65121269A6700267E7F /* ViewControllers */,
 				03C2A65221269A6800267E7F /* ViewModels */,
+				0320B5A02147D2B700A8D646 /* ViewModelProtocols */,
 				03C2A690212A31C600267E7F /* Views */,
 				033A63A52123E02800A2D08B /* AppDelegate.swift */,
 				033A63B12123E02C00A2D08B /* Info.plist */,
@@ -773,6 +787,7 @@
 				03C2A65F21269C2300267E7F /* CustomView.swift in Sources */,
 				03FB799B212FEE2500890D72 /* Paginator.swift in Sources */,
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
+				0320B5A22147D2C200A8D646 /* LoginViewModelProtocol.swift in Sources */,
 				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
@@ -817,6 +832,7 @@
 				033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
+				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,

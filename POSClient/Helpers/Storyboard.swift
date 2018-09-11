@@ -34,4 +34,8 @@ enum Storyboard {
     var storyboard: UIStoryboard {
         return UIStoryboard(name: self.name, bundle: nil)
     }
+
+    func viewControllerFromId<T: UIViewController>() -> T? {
+        return self.storyboard.instantiateViewController(withIdentifier: String(describing: T.self)) as? T
+    }
 }
