@@ -15,6 +15,7 @@ enum Storyboard {
     case balance
     case qrCode
     case profile
+    case transaction
     case tabBar
 
     var name: String {
@@ -25,6 +26,7 @@ enum Storyboard {
         case .balance: return "Balance"
         case .qrCode: return "QRCode"
         case .profile: return "Profile"
+        case .transaction: return "Transaction"
         case .tabBar: return "MainTabBar"
         }
     }
