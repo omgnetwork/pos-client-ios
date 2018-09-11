@@ -10,6 +10,7 @@
 		030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */; };
 		0320B5972147772000A8D646 /* SignupConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B5962147772000A8D646 /* SignupConfirmationViewControllerTests.swift */; };
 		0320B599214783F600A8D646 /* ProfileTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B598214783F600A8D646 /* ProfileTableViewControllerTests.swift */; };
+		0320B59B2147916D00A8D646 /* MainTabBarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */; };
 		0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320EB66213F8C15001E711F /* ProfileTableViewModelTests.swift */; };
 		0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0320EB68213F9167001E711F /* MainTabBarViewModelTests.swift */; };
 		0326EF652138F0030062DBE3 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 0326EF642138F0030062DBE3 /* Fixtures */; };
@@ -119,6 +120,7 @@
 		030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		0320B5962147772000A8D646 /* SignupConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
 		0320B598214783F600A8D646 /* ProfileTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewControllerTests.swift; sourceTree = "<group>"; };
+		0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewControllerTests.swift; sourceTree = "<group>"; };
 		0320EB66213F8C15001E711F /* ProfileTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModelTests.swift; sourceTree = "<group>"; };
 		0320EB68213F9167001E711F /* MainTabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModelTests.swift; sourceTree = "<group>"; };
 		0326EF642138F0030062DBE3 /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */,
 				0320B5962147772000A8D646 /* SignupConfirmationViewControllerTests.swift */,
 				0320B598214783F600A8D646 /* ProfileTableViewControllerTests.swift */,
+				0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0320B599214783F600A8D646 /* ProfileTableViewControllerTests.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
+				0320B59B2147916D00A8D646 /* MainTabBarViewControllerTests.swift in Sources */,
 				03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */,
 				033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
