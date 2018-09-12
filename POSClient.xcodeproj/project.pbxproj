@@ -28,6 +28,8 @@
 		032F7A76212A478200AAC753 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A75212A478200AAC753 /* AppState.swift */; };
 		032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */; };
 		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
+		032FAF342148C7F000992742 /* LoadingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */; };
+		032FAF362148C8F900992742 /* TestLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF352148C8F900992742 /* TestLoadingViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
@@ -142,6 +144,8 @@
 		032F7A75212A478200AAC753 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		032F7A77212A5A6300AAC753 /* BalanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewController.swift; sourceTree = "<group>"; };
 		032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModel.swift; sourceTree = "<group>"; };
+		032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelProtocol.swift; sourceTree = "<group>"; };
+		032FAF352148C8F900992742 /* TestLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadingViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				0320B5A12147D2C200A8D646 /* LoginViewModelProtocol.swift */,
+				032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */,
 				03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */,
 				0320B5A32147D2FD00A8D646 /* TestLoginViewModel.swift */,
+				032FAF352148C8F900992742 /* TestLoadingViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -764,6 +770,7 @@
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
 				03C2A67B2126BFBD00267E7F /* LoadingViewModel.swift in Sources */,
 				03C2A66121269C2300267E7F /* Theme.swift in Sources */,
+				032FAF342148C7F000992742 /* LoadingViewModelProtocol.swift in Sources */,
 				0381C2092137D21100F813E3 /* LoadingView.swift in Sources */,
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
@@ -826,6 +833,7 @@
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0320B599214783F600A8D646 /* ProfileTableViewControllerTests.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
+				032FAF362148C8F900992742 /* TestLoadingViewModel.swift in Sources */,
 				0320B59B2147916D00A8D646 /* MainTabBarViewControllerTests.swift in Sources */,
 				0320B59F21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift in Sources */,
 				03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */,

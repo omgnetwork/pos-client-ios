@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-class LoadingViewModel: BaseViewModel {
+class LoadingViewModel: BaseViewModel, LoadingViewModelProtocol {
     var onFailedLoading: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 

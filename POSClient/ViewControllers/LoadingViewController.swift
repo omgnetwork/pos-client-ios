@@ -9,10 +9,16 @@
 import UIKit
 
 class LoadingViewController: BaseViewController {
-    let viewModel: LoadingViewModel = LoadingViewModel()
-    @IBOutlet var loadingImageView: UIImageView!
+    private var viewModel: LoadingViewModelProtocol = LoadingViewModel()
 
+    @IBOutlet var loadingImageView: UIImageView!
     @IBOutlet var retryButton: UIButton!
+
+    class func initWithViewModel(_ viewModel: LoadingViewModelProtocol = LoadingViewModel()) -> LoadingViewController? {
+        guard let loadingVC: LoadingViewController = Storyboard.loading.viewControllerFromId() else { return nil }
+        loadingVC.viewModel = viewModel
+        return loadingVC
+    }
 
     override func configureView() {
         super.configureView()
