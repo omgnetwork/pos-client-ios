@@ -9,12 +9,19 @@
 import UIKit
 
 class TouchIDConfirmationViewController: BaseViewController {
-    let viewModel: TouchIDConfirmationViewModel = TouchIDConfirmationViewModel()
+    private var viewModel: TouchIDConfirmationViewModelProtocol = TouchIDConfirmationViewModel()
 
     @IBOutlet var hintLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var passwordTextField: OMGFloatingTextField!
     @IBOutlet var enableButton: UIButton!
+
+    class func initWithViewModel(_ viewModel: TouchIDConfirmationViewModelProtocol = TouchIDConfirmationViewModel())
+        -> TouchIDConfirmationViewController? {
+        guard let touchIDConfVC: TouchIDConfirmationViewController = Storyboard.profile.viewControllerFromId() else { return nil }
+        touchIDConfVC.viewModel = viewModel
+        return touchIDConfVC
+    }
 
     override func configureView() {
         super.configureView()

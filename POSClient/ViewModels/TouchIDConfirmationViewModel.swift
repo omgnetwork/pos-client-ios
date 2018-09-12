@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-class TouchIDConfirmationViewModel: BaseViewModel {
+class TouchIDConfirmationViewModel: BaseViewModel, TouchIDConfirmationViewModelProtocol {
     // Delegate closures
     var updatePasswordValidation: ViewModelValidationClosure?
     var onSuccessEnable: EmptyClosure?
