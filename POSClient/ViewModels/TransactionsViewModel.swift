@@ -9,7 +9,7 @@
 import OmiseGO
 import UIKit
 
-class TransactionsViewModel: BaseViewModel {
+class TransactionsViewModel: BaseViewModel, TransactionsViewModelProtocol {
     // Delegate closures
     var appendNewResultClosure: ObjectClosure<[IndexPath]>?
     var reloadTableViewClosure: EmptyClosure?

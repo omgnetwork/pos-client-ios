@@ -9,7 +9,7 @@
 import UIKit
 
 class TransactionsViewController: BaseTableViewController {
-    let viewModel: TransactionsViewModel = TransactionsViewModel()
+    private var viewModel: TransactionsViewModelProtocol = TransactionsViewModel()
 
     lazy var loadingView: UIView = {
         let loader = UIActivityIndicatorView(activityIndicatorStyle: .white)
@@ -28,6 +28,12 @@ class TransactionsViewController: BaseTableViewController {
         })
         return view
     }()
+
+    class func initWithViewModel(_ viewModel: TransactionsViewModelProtocol = TransactionsViewModel()) -> TransactionsViewController? {
+        guard let transactionsVC: TransactionsViewController = Storyboard.transaction.viewControllerFromId() else { return nil }
+        transactionsVC.viewModel = viewModel
+        return transactionsVC
+    }
 
     override func configureView() {
         super.configureView()

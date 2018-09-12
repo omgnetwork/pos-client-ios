@@ -42,6 +42,8 @@
 		032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF492149127300992742 /* TestSignupViewModel.swift */; };
 		032FAF4C214915F200992742 /* ProfileTableViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */; };
 		032FAF4E214916F100992742 /* TestProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */; };
+		032FAF50214919B500992742 /* TransactionsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4F214919B500992742 /* TransactionsViewModelProtocol.swift */; };
+		032FAF5221491A8000992742 /* TestTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF5121491A8000992742 /* TestTransactionsViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
@@ -170,6 +172,8 @@
 		032FAF492149127300992742 /* TestSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignupViewModel.swift; sourceTree = "<group>"; };
 		032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModelProtocol.swift; sourceTree = "<group>"; };
 		032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileTableViewModel.swift; sourceTree = "<group>"; };
+		032FAF4F214919B500992742 /* TransactionsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModelProtocol.swift; sourceTree = "<group>"; };
+		032FAF5121491A8000992742 /* TestTransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionsViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				032FAF4321490FC400992742 /* QRViewModelProtocol.swift */,
 				032FAF47214911A000992742 /* SignupViewModelProtocol.swift */,
 				032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */,
+				032FAF4F214919B500992742 /* TransactionsViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				032FAF452149104B00992742 /* TestQRViewModel.swift */,
 				032FAF492149127300992742 /* TestSignupViewModel.swift */,
 				032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */,
+				032FAF5121491A8000992742 /* TestTransactionsViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -852,6 +858,7 @@
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 				03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */,
 				03E5F19421410B100089939D /* BaseViewControllerProtocols.swift in Sources */,
+				032FAF50214919B500992742 /* TransactionsViewModelProtocol.swift in Sources */,
 				0381C20B2137DEE200F813E3 /* MBProgressHUDBuilder.swift in Sources */,
 				032FAF4021490C3E00992742 /* BalanceNavigationViewModelProtocol.swift in Sources */,
 			);
@@ -896,6 +903,7 @@
 				03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */,
 				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,
 				03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */,
+				032FAF5221491A8000992742 /* TestTransactionsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
