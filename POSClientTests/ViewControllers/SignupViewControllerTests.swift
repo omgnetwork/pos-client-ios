@@ -12,10 +12,12 @@ import XCTest
 
 class SignupViewControllerTests: XCTestCase {
     var sut: SignupViewController!
+    var viewModel: TestSignupViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sut = Storyboard.signup.storyboard.instantiateViewController(withIdentifier: "SignupViewController") as! SignupViewController
+        self.viewModel = TestSignupViewModel()
+        self.sut = SignupViewController.initWithViewModel(self.viewModel)
         _ = UINavigationController(rootViewController: self.sut)
         _ = self.sut.view
     }
@@ -30,40 +32,41 @@ class SignupViewControllerTests: XCTestCase {
         super.tearDown()
         ToastCenter.default.cancelAll()
         self.sut = nil
+        self.viewModel = nil
     }
 
     func testSetupsCorrectly() {
-        XCTAssertEqual(self.sut.emailTextField.placeholder, self.sut.viewModel.emailPlaceholder)
-        XCTAssertEqual(self.sut.passwordTextField.placeholder, self.sut.viewModel.passwordPlaceholder)
-        XCTAssertEqual(self.sut.passwordConfirmationTextField.placeholder, self.sut.viewModel.passwordConfirmationPlaceholder)
-        XCTAssertEqual(self.sut.signupButton.titleLabel?.text, self.sut.viewModel.signupButtonTitle)
+        XCTAssertEqual(self.sut.emailTextField.placeholder, "x")
+        XCTAssertEqual(self.sut.passwordTextField.placeholder, "x")
+        XCTAssertEqual(self.sut.passwordConfirmationTextField.placeholder, "x")
+        XCTAssertEqual(self.sut.signupButton.titleLabel?.text, "x")
     }
 
     func testInvalidEmailShowsError() {
-        self.sut.viewModel.updateEmailValidation?("qwe")
+        self.viewModel.updateEmailValidation?("qwe")
         XCTAssertEqual(self.sut.emailTextField.errorMessage, "qwe")
     }
 
     func testInvalidPasswordShowsError() {
-        self.sut.viewModel.updatePasswordValidation?("123")
+        self.viewModel.updatePasswordValidation?("123")
         XCTAssertEqual(self.sut.passwordTextField.errorMessage, "123")
     }
 
     func testInvalidPasswordConfirmationShowsError() {
-        self.sut.viewModel.updatePasswordConfirmationValidation?("456")
+        self.viewModel.updatePasswordConfirmationValidation?("456")
         XCTAssertEqual(self.sut.passwordConfirmationTextField.errorMessage, "456")
     }
 
     func testPasswordsMismatchingShowsError() {
-        self.sut.viewModel.updatePasswordMatchingValidation?("789")
+        self.viewModel.updatePasswordMatchingValidation?("789")
         XCTAssertEqual(self.sut.passwordConfirmationTextField.errorMessage, "789")
     }
 
     func testLoadStateChangeTriggersLoading() {
         let e = self.expectation(description: "loading state change triggers loading view to show/hide")
-        self.sut.viewModel.onLoadStateChange?(true)
+        self.viewModel.onLoadStateChange?(true)
         XCTAssertEqual(self.sut.loading!.alpha, 1.0)
-        self.sut.viewModel.onLoadStateChange?(false)
+        self.viewModel.onLoadStateChange?(false)
         dispatchMain(afterMilliseconds: 10) {
             e.fulfill()
         }
@@ -73,7 +76,7 @@ class SignupViewControllerTests: XCTestCase {
 
     func testFailedSignupShowsError() {
         let error = POSClientError.unexpected
-        self.sut.viewModel.onFailedSignup?(error)
+        self.viewModel.onFailedSignup?(error)
         XCTAssertEqual(ToastCenter.default.currentToast!.text, error.message)
     }
 
@@ -81,7 +84,7 @@ class SignupViewControllerTests: XCTestCase {
         let e = self.expectation(description: "onSuccessfulSignup pushes SignupConfirmationViewController")
         XCTAssertEqual(self.sut.navigationController!.viewControllers.count, 1)
         dispatchMain {
-            self.sut.viewModel.onSuccessfulSignup?()
+            self.viewModel.onSuccessfulSignup?()
             e.fulfill()
         }
         self.waitForExpectations(timeout: 1, handler: nil)
@@ -89,22 +92,34 @@ class SignupViewControllerTests: XCTestCase {
         XCTAssertTrue(self.sut.navigationController!.viewControllers[1].isKind(of: SignupConfirmationViewController.self))
     }
 
+    func testTapSignupButtonTriggersSignupAndResignFirstResponder() {
+        self.mountOnWindow()
+        self.sut.emailTextField.becomeFirstResponder()
+        XCTAssertTrue(self.sut.emailTextField.isFirstResponder)
+        self.sut.tapSignupButton(self.sut.signupButton)
+        let e = self.expectation(description: "Tap on sign up button resigns first responder and trigger sign up")
+        dispatchMain { e.fulfill() }
+        self.waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertFalse(self.sut.emailTextField.isFirstResponder)
+        XCTAssertTrue(self.viewModel.isSignupCalled)
+    }
+
     func testEmailTextFieldChangeUpdatesViewModelEmailAttribute() {
         let range = NSRange(location: 0, length: 0)
         _ = self.sut.textField(self.sut.emailTextField, shouldChangeCharactersIn: range, replacementString: "123")
-        XCTAssertEqual(self.sut.viewModel.email, "123")
+        XCTAssertEqual(self.viewModel.email, "123")
     }
 
     func testPasswordTextFieldChangeUpdatesViewModelPasswordAttribute() {
         let range = NSRange(location: 0, length: 0)
         _ = self.sut.textField(self.sut.passwordTextField, shouldChangeCharactersIn: range, replacementString: "123")
-        XCTAssertEqual(self.sut.viewModel.password, "123")
+        XCTAssertEqual(self.viewModel.password, "123")
     }
 
     func testPasswordConfirmationTextFieldChangeUpdatesViewModelPasswordConfirmationAttribute() {
         let range = NSRange(location: 0, length: 0)
         _ = self.sut.textField(self.sut.passwordConfirmationTextField, shouldChangeCharactersIn: range, replacementString: "123")
-        XCTAssertEqual(self.sut.viewModel.passwordConfirmation, "123")
+        XCTAssertEqual(self.viewModel.passwordConfirmation, "123")
     }
 
     func testReturningEmailTFFocusPasswordTF() {
@@ -138,24 +153,24 @@ class SignupViewControllerTests: XCTestCase {
         dispatchMain { e.fulfill() }
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertFalse(self.sut.passwordConfirmationTextField.isFirstResponder)
-        XCTAssertEqual(ToastCenter.default.currentToast!.text, "Missing required fields")
+        XCTAssertTrue(self.viewModel.isSignupCalled)
     }
 
     func testClearEmailTFClearsViewModelEmail() {
-        self.sut.viewModel.email = "123"
+        self.viewModel.email = "123"
         _ = self.sut.textFieldShouldClear(self.sut.emailTextField)
-        XCTAssertEqual(self.sut.viewModel.email, "")
+        XCTAssertEqual(self.viewModel.email, "")
     }
 
     func testClearPWTFClearsViewModelPW() {
-        self.sut.viewModel.password = "123"
+        self.viewModel.password = "123"
         _ = self.sut.textFieldShouldClear(self.sut.passwordTextField)
-        XCTAssertEqual(self.sut.viewModel.password, "")
+        XCTAssertEqual(self.viewModel.password, "")
     }
 
     func testClearPWConfirmationTFClearsViewModelPasswordConfirmation() {
-        self.sut.viewModel.passwordConfirmation = "123"
+        self.viewModel.passwordConfirmation = "123"
         _ = self.sut.textFieldShouldClear(self.sut.passwordConfirmationTextField)
-        XCTAssertEqual(self.sut.viewModel.passwordConfirmation, "")
+        XCTAssertEqual(self.viewModel.passwordConfirmation, "")
     }
 }

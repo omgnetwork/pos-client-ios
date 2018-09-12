@@ -38,6 +38,8 @@
 		032FAF4221490C9100992742 /* TestBalanceNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4121490C9100992742 /* TestBalanceNavigationViewModel.swift */; };
 		032FAF4421490FC400992742 /* QRViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4321490FC400992742 /* QRViewModelProtocol.swift */; };
 		032FAF462149104B00992742 /* TestQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF452149104B00992742 /* TestQRViewModel.swift */; };
+		032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF47214911A000992742 /* SignupViewModelProtocol.swift */; };
+		032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF492149127300992742 /* TestSignupViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
@@ -162,6 +164,8 @@
 		032FAF4121490C9100992742 /* TestBalanceNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBalanceNavigationViewModel.swift; sourceTree = "<group>"; };
 		032FAF4321490FC400992742 /* QRViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModelProtocol.swift; sourceTree = "<group>"; };
 		032FAF452149104B00992742 /* TestQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRViewModel.swift; sourceTree = "<group>"; };
+		032FAF47214911A000992742 /* SignupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelProtocol.swift; sourceTree = "<group>"; };
+		032FAF492149127300992742 /* TestSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignupViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				032FAF3B2149010100992742 /* BalanceDetailViewModelProtocol.swift */,
 				032FAF3F21490C3E00992742 /* BalanceNavigationViewModelProtocol.swift */,
 				032FAF4321490FC400992742 /* QRViewModelProtocol.swift */,
+				032FAF47214911A000992742 /* SignupViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				032FAF3D214902B600992742 /* TestBalanceDetailViewModel.swift */,
 				032FAF4121490C9100992742 /* TestBalanceNavigationViewModel.swift */,
 				032FAF452149104B00992742 /* TestQRViewModel.swift */,
+				032FAF492149127300992742 /* TestSignupViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -825,6 +831,7 @@
 				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
+				032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
 				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
@@ -851,6 +858,7 @@
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
+				032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */,
 				03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */,
 				03B9A0DF21464B39006B056A /* BalanceNavigationViewControllerTests.swift in Sources */,
 				03B9A0D7214129D9006B056A /* LoginViewControllerTests.swift in Sources */,
