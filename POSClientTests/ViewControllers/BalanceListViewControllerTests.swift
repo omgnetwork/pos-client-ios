@@ -60,12 +60,7 @@ class BalanceListViewControllerTests: XCTestCase {
         }
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(self.sut.navigationController!.viewControllers.count, 2)
-        guard let balanceDetailViewController: BalanceDetailViewController =
-            self.sut.navigationController!.viewControllers[1] as? BalanceDetailViewController else {
-            XCTFail("Unexpected view contrller type")
-            return
-        }
-        XCTAssertEqual(balanceDetailViewController.viewModel.balance!, balance)
+        XCTAssertTrue(self.sut.navigationController!.viewControllers[1].isKind(of: BalanceDetailViewController.self))
     }
 
     func testRefreshControllerTriggersLoadData() {

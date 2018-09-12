@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-class BalanceDetailViewModel: BaseViewModel {
+class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
     var onFailGetWallet: FailureClosure?
     var onDataUpdate: SuccessClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
