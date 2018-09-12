@@ -40,6 +40,8 @@
 		032FAF462149104B00992742 /* TestQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF452149104B00992742 /* TestQRViewModel.swift */; };
 		032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF47214911A000992742 /* SignupViewModelProtocol.swift */; };
 		032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF492149127300992742 /* TestSignupViewModel.swift */; };
+		032FAF4C214915F200992742 /* ProfileTableViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */; };
+		032FAF4E214916F100992742 /* TestProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
@@ -166,6 +168,8 @@
 		032FAF452149104B00992742 /* TestQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRViewModel.swift; sourceTree = "<group>"; };
 		032FAF47214911A000992742 /* SignupViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModelProtocol.swift; sourceTree = "<group>"; };
 		032FAF492149127300992742 /* TestSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignupViewModel.swift; sourceTree = "<group>"; };
+		032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModelProtocol.swift; sourceTree = "<group>"; };
+		032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProfileTableViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				032FAF3F21490C3E00992742 /* BalanceNavigationViewModelProtocol.swift */,
 				032FAF4321490FC400992742 /* QRViewModelProtocol.swift */,
 				032FAF47214911A000992742 /* SignupViewModelProtocol.swift */,
+				032FAF4B214915F200992742 /* ProfileTableViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				032FAF4121490C9100992742 /* TestBalanceNavigationViewModel.swift */,
 				032FAF452149104B00992742 /* TestQRViewModel.swift */,
 				032FAF492149127300992742 /* TestSignupViewModel.swift */,
+				032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -819,6 +825,7 @@
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
 				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
 				032FAF382148CC4100992742 /* BalanceListViewModelProtocol.swift in Sources */,
+				032FAF4C214915F200992742 /* ProfileTableViewModelProtocol.swift in Sources */,
 				03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
 				03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */,
@@ -884,6 +891,7 @@
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 				03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */,
+				032FAF4E214916F100992742 /* TestProfileTableViewModel.swift in Sources */,
 				032FAF3E214902B600992742 /* TestBalanceDetailViewModel.swift in Sources */,
 				03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */,
 				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,

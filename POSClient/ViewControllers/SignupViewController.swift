@@ -22,9 +22,9 @@ class SignupViewController: BaseViewController {
     @IBOutlet var signupButton: UIButton!
 
     class func initWithViewModel(_ viewModel: SignupViewModelProtocol = SignupViewModel()) -> SignupViewController? {
-        guard let qrVC: SignupViewController = Storyboard.signup.viewControllerFromId() else { return nil }
-        qrVC.viewModel = viewModel
-        return qrVC
+        guard let signupVC: SignupViewController = Storyboard.signup.viewControllerFromId() else { return nil }
+        signupVC.viewModel = viewModel
+        return signupVC
     }
 
     override func configureView() {

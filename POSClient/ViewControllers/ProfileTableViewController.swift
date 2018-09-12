@@ -18,7 +18,13 @@ class ProfileTableViewController: BaseTableViewController {
     @IBOutlet var touchFaceIdSwitch: UISwitch!
     @IBOutlet var signOutLabel: UILabel!
 
-    let viewModel = ProfileTableViewModel()
+    private var viewModel: ProfileTableViewModelProtocol = ProfileTableViewModel()
+
+    class func initWithViewModel(_ viewModel: ProfileTableViewModelProtocol = ProfileTableViewModel()) -> ProfileTableViewController? {
+        guard let profileVC: ProfileTableViewController = Storyboard.profile.viewControllerFromId() else { return nil }
+        profileVC.viewModel = viewModel
+        return profileVC
+    }
 
     override func configureView() {
         super.configureView()
