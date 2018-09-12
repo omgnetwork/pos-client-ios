@@ -8,12 +8,12 @@
 
 import OmiseGO
 
-class BalanceNavigationViewModel: BaseViewModel {
-    enum DisplayStyle {
-        case single
-        case list
-    }
+enum DisplayStyle {
+    case single
+    case list
+}
 
+class BalanceNavigationViewModel: BaseViewModel, BalanceNavigationViewModelProtocol {
     private let sessionManager: SessionManagerProtocol
 
     var onDisplayStyleUpdate: EmptyClosure?

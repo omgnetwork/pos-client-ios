@@ -11,26 +11,36 @@ import XCTest
 
 class BalanceNavigationViewControllerTests: XCTestCase {
     var sut: BalanceNavigationViewController!
+    var viewModel: TestBalanceNavigationViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sut = Storyboard.balance.storyboard.instantiateViewController(withIdentifier: "BalanceNavigationViewController")
-            as! BalanceNavigationViewController
+        self.viewModel = TestBalanceNavigationViewModel()
+        self.sut = BalanceNavigationViewController.initWithViewModel(self.viewModel)
         _ = self.sut.view
     }
 
     override func tearDown() {
         super.tearDown()
         self.sut = nil
+        self.viewModel = nil
     }
 
     func testSingleBalanceDisplaysBalanceDetailVC() {
-        self.sut.viewModel.displayStyle = .single
+        self.viewModel.displayStyle = .single
+        self.viewModel.onDisplayStyleUpdate?()
         XCTAssertTrue(self.sut.viewControllers[0].isKind(of: BalanceDetailViewController.self))
     }
 
     func testListBalanceDisplaysBalanceListVC() {
-        self.sut.viewModel.displayStyle = .list
+        self.viewModel.displayStyle = .list
+        self.viewModel.onDisplayStyleUpdate?()
         XCTAssertTrue(self.sut.viewControllers[0].isKind(of: BalanceListViewController.self))
+    }
+
+    func testViewWillAppearCallsUpdateBalances() {
+        self.viewModel.isUpdateBalancesCalled = false
+        self.sut.viewWillAppear(false)
+        XCTAssertTrue(self.viewModel.isUpdateBalancesCalled)
     }
 }

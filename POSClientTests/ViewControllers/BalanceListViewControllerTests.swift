@@ -25,6 +25,7 @@ class BalanceListViewControllerTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
         ToastCenter.default.cancelAll()
+        self.viewModel = nil
         self.sut = nil
     }
 
