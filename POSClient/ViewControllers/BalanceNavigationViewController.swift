@@ -11,7 +11,8 @@ import UIKit
 class BalanceNavigationViewController: BaseNavigationViewController {
     private var viewModel: BalanceNavigationViewModelProtocol = BalanceNavigationViewModel()
 
-    class func initWithViewModel(_ viewModel: BalanceNavigationViewModelProtocol = BalanceNavigationViewModel()) -> BalanceNavigationViewController? {
+    class func initWithViewModel(_ viewModel: BalanceNavigationViewModelProtocol = BalanceNavigationViewModel()) ->
+        BalanceNavigationViewController? {
         guard let balanceNavVC: BalanceNavigationViewController = Storyboard.balance.viewControllerFromId() else { return nil }
         balanceNavVC.viewModel = viewModel
         return balanceNavVC

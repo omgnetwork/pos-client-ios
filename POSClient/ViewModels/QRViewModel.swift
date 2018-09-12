@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QRViewModel: BaseViewModel {
+class QRViewModel: BaseViewModel, QRViewModelProtocol {
     private let sessionManager: SessionManagerProtocol
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
