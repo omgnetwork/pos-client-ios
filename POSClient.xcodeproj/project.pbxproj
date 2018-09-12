@@ -30,6 +30,8 @@
 		032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */; };
 		032FAF342148C7F000992742 /* LoadingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */; };
 		032FAF362148C8F900992742 /* TestLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF352148C8F900992742 /* TestLoadingViewModel.swift */; };
+		032FAF382148CC4100992742 /* BalanceListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF372148CC4100992742 /* BalanceListViewModelProtocol.swift */; };
+		032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF392148CE6000992742 /* TestBalanceListViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
@@ -146,6 +148,8 @@
 		032F7A79212A5A7200AAC753 /* BalanceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModel.swift; sourceTree = "<group>"; };
 		032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelProtocol.swift; sourceTree = "<group>"; };
 		032FAF352148C8F900992742 /* TestLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoadingViewModel.swift; sourceTree = "<group>"; };
+		032FAF372148CC4100992742 /* BalanceListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModelProtocol.swift; sourceTree = "<group>"; };
+		032FAF392148CE6000992742 /* TestBalanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBalanceListViewModel.swift; sourceTree = "<group>"; };
 		033A63A22123E02800A2D08B /* POSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63A52123E02800A2D08B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		033A63B12123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			children = (
 				0320B5A12147D2C200A8D646 /* LoginViewModelProtocol.swift */,
 				032FAF332148C7F000992742 /* LoadingViewModelProtocol.swift */,
+				032FAF372148CC4100992742 /* BalanceListViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */,
 				0320B5A32147D2FD00A8D646 /* TestLoginViewModel.swift */,
 				032FAF352148C8F900992742 /* TestLoadingViewModel.swift */,
+				032FAF392148CE6000992742 /* TestBalanceListViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				03FB7991212FECA200890D72 /* TransactionsViewModel.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
 				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
+				032FAF382148CC4100992742 /* BalanceListViewModelProtocol.swift in Sources */,
 				03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
 				03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */,
@@ -840,6 +847,7 @@
 				033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
+				032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */,
 				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,

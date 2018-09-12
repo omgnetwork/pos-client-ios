@@ -8,7 +8,7 @@
 
 import OmiseGO
 
-class BalanceListViewModel: BaseViewModel {
+class BalanceListViewModel: BaseViewModel, BalanceListViewModelProtocol {
     // Delegate Closures
     var onFailGetWallet: FailureClosure?
     var onTableDataChange: SuccessClosure?
@@ -42,7 +42,7 @@ class BalanceListViewModel: BaseViewModel {
         self.onBalanceSelection?(balance)
     }
 
-    func process(wallet: Wallet?) {
+    private func process(wallet: Wallet?) {
         guard let wallet = wallet else { return }
         self.generateTableViewModels(fromBalances: wallet.balances)
         self.onTableDataChange?()
