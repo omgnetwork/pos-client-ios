@@ -71,12 +71,6 @@ extension UITableView {
         self.register(UINib(nibName: String(describing: tableViewCell), bundle: nil),
                       forCellReuseIdentifier: String(describing: tableViewCell))
     }
-
-    public func registerNibs(tableViewCells: [UITableViewCell.Type]) {
-        tableViewCells.forEach { tableViewCell in
-            self.registerNib(tableViewCell: tableViewCell)
-        }
-    }
 }
 
 extension UITableViewCell {
