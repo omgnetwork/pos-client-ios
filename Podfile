@@ -13,7 +13,7 @@ target 'POSClient' do
   pod 'Toaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
-  pod 'OmiseGO/Client', path: '../omisego-ios'
+  pod 'OmiseGO/Client', '1.1.0-beta1'
 
   target 'POSClientTests' do
     inherit! :search_paths
