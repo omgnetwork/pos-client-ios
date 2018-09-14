@@ -9,7 +9,7 @@
 import TPKeyboardAvoiding
 
 class LoginViewController: BaseViewController {
-    let viewModel: LoginViewModel = LoginViewModel()
+    private var viewModel: LoginViewModelProtocol = LoginViewModel()
 
     @IBOutlet var scrollView: TPKeyboardAvoidingScrollView!
     @IBOutlet var emailTextField: OMGFloatingTextField!
@@ -17,6 +17,12 @@ class LoginViewController: BaseViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var bioLoginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
+
+    class func initWithViewModel(_ viewModel: LoginViewModelProtocol = LoginViewModel()) -> LoginViewController? {
+        guard let loginVC: LoginViewController = Storyboard.login.viewControllerFromId() else { return nil }
+        loginVC.viewModel = viewModel
+        return loginVC
+    }
 
     override func configureView() {
         super.configureView()

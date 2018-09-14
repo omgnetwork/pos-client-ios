@@ -15,7 +15,13 @@ class QRViewController: BaseViewController {
 
     var initialBrightness: CGFloat = UIScreen.main.brightness
 
-    let viewModel = QRViewModel()
+    private var viewModel: QRViewModelProtocol = QRViewModel()
+
+    class func initWithViewModel(_ viewModel: QRViewModelProtocol = QRViewModel()) -> QRViewController? {
+        guard let qrVC: QRViewController = Storyboard.qrCode.viewControllerFromId() else { return nil }
+        qrVC.viewModel = viewModel
+        return qrVC
+    }
 
     override func configureView() {
         super.configureView()

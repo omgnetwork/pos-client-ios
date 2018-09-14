@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewModel: BaseViewModel {
+class ProfileTableViewModel: BaseViewModel, ProfileTableViewModelProtocol {
     let title = "profile.view.title".localized()
     let transactionLabelText = "profile.label.transactions".localized()
     let emailLabelText = "profile.label.email".localized()

@@ -12,17 +12,23 @@ class BalanceListViewController: BaseViewController {
     let balanceDetailSegueIdentifier = "showBalanceDetailViewController"
     let profileSegueIdentifier = "showProfileViewController"
 
-    let viewModel: BalanceListViewModel = BalanceListViewModel()
+    private var viewModel: BalanceListViewModelProtocol = BalanceListViewModel()
     var refreshControl: UIRefreshControl!
 
     @IBOutlet var tableView: UITableView!
+
+    class func initWithViewModel(_ viewModel: BalanceListViewModelProtocol = BalanceListViewModel()) -> BalanceListViewController? {
+        guard let balanceListVC: BalanceListViewController = Storyboard.balance.viewControllerFromId() else { return nil }
+        balanceListVC.viewModel = viewModel
+        return balanceListVC
+    }
 
     override func configureView() {
         super.configureView()
         self.navigationItem.title = self.viewModel.viewTitle
         self.refreshControl = UIRefreshControl()
         self.refreshControl.tintColor = Color.black.uiColor()
-        self.refreshControl.addTarget(self.viewModel, action: #selector(self.viewModel.loadData), for: .valueChanged)
+        self.refreshControl.addTarget(self, action: #selector(self.loadDataBridge), for: .valueChanged)
         self.tableView.registerNib(tableViewCell: BalanceTableViewCell.self)
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 72
@@ -51,6 +57,10 @@ class BalanceListViewController: BaseViewController {
             let balance: Balance = sender as? Balance {
             vc.setup(withBalance: balance)
         }
+    }
+
+    @objc private func loadDataBridge() {
+        self.viewModel.loadData()
     }
 }
 

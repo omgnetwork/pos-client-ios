@@ -9,7 +9,14 @@
 import UIKit
 
 class BalanceNavigationViewController: BaseNavigationViewController {
-    let viewModel: BalanceNavigationViewModel = BalanceNavigationViewModel()
+    private var viewModel: BalanceNavigationViewModelProtocol = BalanceNavigationViewModel()
+
+    class func initWithViewModel(_ viewModel: BalanceNavigationViewModelProtocol = BalanceNavigationViewModel()) ->
+        BalanceNavigationViewController? {
+        guard let balanceNavVC: BalanceNavigationViewController = Storyboard.balance.viewControllerFromId() else { return nil }
+        balanceNavVC.viewModel = viewModel
+        return balanceNavVC
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

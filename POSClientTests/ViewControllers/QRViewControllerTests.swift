@@ -11,23 +11,25 @@ import XCTest
 
 class QRViewControllerTests: XCTestCase {
     var sut: QRViewController!
+    var viewModel: TestQRViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sut = Storyboard.qrCode.storyboard.instantiateViewController(withIdentifier: "QRViewController")
-            as! QRViewController
-        SessionManager.shared.wallet = StubGenerator.mainWallet()
+        self.viewModel = TestQRViewModel()
+        self.sut = QRViewController.initWithViewModel(self.viewModel)
         _ = self.sut.view
     }
 
     override func tearDown() {
         super.tearDown()
         self.sut = nil
+        self.viewModel = nil
     }
 
     func testSetupsCorrectly() {
-        XCTAssertEqual(self.sut.hintLabel.text, self.sut.viewModel.hint)
-        XCTAssertEqual(self.sut.navigationItem.title, self.sut.viewModel.title)
-        XCTAssertNotNil(self.sut.qrImageView.image)
+        XCTAssertEqual(self.sut.hintLabel.text, "x")
+        XCTAssertEqual(self.sut.navigationItem.title, "x")
+        XCTAssertNil(self.sut.qrImageView.image)
+        XCTAssertEqual(self.viewModel.didCallQRImageWithWidth, CGFloat(self.sut.qrImageView.frame.width))
     }
 }

@@ -12,36 +12,44 @@ import XCTest
 
 class LoadingViewControllerTests: XCTestCase {
     var sut: LoadingViewController!
+    var viewModel: TestLoadingViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sut = Storyboard.loading.storyboard.instantiateViewController(withIdentifier: "LoadingViewController") as! LoadingViewController
+        self.viewModel = TestLoadingViewModel()
+        self.sut = LoadingViewController.initWithViewModel(self.viewModel)
         _ = self.sut.view
     }
 
     override func tearDown() {
         super.tearDown()
         ToastCenter.default.cancelAll()
+        self.viewModel = nil
         self.sut = nil
     }
 
     func testSetupsCorrectly() {
-        XCTAssertEqual(self.sut.retryButton.titleLabel?.text, self.sut.viewModel.retryButtonTitle)
+        XCTAssertEqual(self.sut.retryButton.titleLabel?.text, "x")
         XCTAssertTrue(self.sut.retryButton.isHidden)
     }
 
     func testFailedLoadinShowsError() {
         let error = POSClientError.unexpected
-        self.sut.viewModel.onFailedLoading?(error)
+        self.viewModel.onFailedLoading?(error)
         XCTAssertEqual(ToastCenter.default.currentToast!.text, error.message)
     }
 
     func testLoadStateChangeTriggersLoadingAndRetryButtonVisibiliyChange() {
-        self.sut.viewModel.onLoadStateChange?(true)
+        self.viewModel.onLoadStateChange?(true)
         XCTAssertTrue(self.sut.loadingImageView.isAnimating)
         XCTAssertTrue(self.sut.retryButton.isHidden)
-        self.sut.viewModel.onLoadStateChange?(false)
+        self.viewModel.onLoadStateChange?(false)
         XCTAssertFalse(self.sut.loadingImageView.isAnimating)
         XCTAssertFalse(self.sut.retryButton.isHidden)
+    }
+
+    func testTapRetryButtonTriggersLoad() {
+        self.sut.tapRetryButton(self.sut.retryButton)
+        XCTAssertTrue(self.viewModel.isLoadCalled)
     }
 }

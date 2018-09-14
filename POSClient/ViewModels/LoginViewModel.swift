@@ -7,7 +7,7 @@
 //
 import OmiseGO
 
-class LoginViewModel: BaseViewModel {
+class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     // Delegate closures
     var updateEmailValidation: ViewModelValidationClosure?
     var updatePasswordValidation: ViewModelValidationClosure?

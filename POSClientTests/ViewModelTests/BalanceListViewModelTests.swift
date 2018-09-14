@@ -71,13 +71,6 @@ class BalanceListViewModelTests: XCTestCase {
         XCTAssertEqual(cellViewModel.tokenSymbol, "BTC")
     }
 
-    func testProcessGeneratesViewModelsCorrectly() {
-        let wallet = StubGenerator.mainWallet()
-        self.sut.process(wallet: wallet)
-        XCTAssertEqual(wallet.balances.count, self.sut.numberOfRow())
-        XCTAssertEqual(wallet.balances.first!, self.sut.cellViewModel(forIndex: 0).balance)
-    }
-
     func testDidSelectBalanceCallsOnBalanceSelection() {
         var selectedBalance: Balance?
         self.sut.onBalanceSelection = { balance in

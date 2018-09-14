@@ -12,16 +12,19 @@ import XCTest
 
 class LoginViewControllerTests: XCTestCase {
     var sut: LoginViewController!
+    var viewModel: TestLoginViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sut = Storyboard.login.storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.viewModel = TestLoginViewModel()
+        self.sut = LoginViewController.initWithViewModel(self.viewModel)
         _ = self.sut.view
     }
 
     override func tearDown() {
         super.tearDown()
         ToastCenter.default.cancelAll()
+        self.viewModel = nil
         self.sut = nil
     }
 
@@ -32,28 +35,37 @@ class LoginViewControllerTests: XCTestCase {
     }
 
     func testSetupsCorrectly() {
-        XCTAssertEqual(self.sut.emailTextField.placeholder, self.sut.viewModel.emailPlaceholder)
-        XCTAssertEqual(self.sut.passwordTextField.placeholder, self.sut.viewModel.passwordPlaceholder)
-        XCTAssertEqual(self.sut.loginButton.titleLabel?.text, self.sut.viewModel.loginButtonTitle)
-        XCTAssertEqual(self.sut.registerButton.titleLabel?.text, self.sut.viewModel.registerButtonTitle)
+        XCTAssertEqual(self.sut.emailTextField.placeholder, "x")
+        XCTAssertEqual(self.sut.passwordTextField.placeholder, "x")
+        XCTAssertEqual(self.sut.loginButton.titleLabel?.text, "x")
+        XCTAssertEqual(self.sut.registerButton.titleLabel?.text, "x")
         XCTAssertTrue(self.sut.bioLoginButton.isHidden)
     }
 
+    func testBioLoginButtonSetupsCorrectly() {
+        let viewModel = TestLoginViewModel()
+        viewModel.isBiometricAvailable = true
+        let sut = LoginViewController.initWithViewModel(viewModel)!
+        _ = sut.view
+        XCTAssertFalse(sut.bioLoginButton.isHidden)
+        XCTAssertEqual(sut.bioLoginButton.titleLabel?.text, "x")
+    }
+
     func testInvalidEmailShowsError() {
-        self.sut.viewModel.updateEmailValidation?("qwe")
+        self.viewModel.updateEmailValidation?("qwe")
         XCTAssertEqual(self.sut.emailTextField.errorMessage, "qwe")
     }
 
     func testInvalidPasswordShowsError() {
-        self.sut.viewModel.updatePasswordValidation?("123")
+        self.viewModel.updatePasswordValidation?("123")
         XCTAssertEqual(self.sut.passwordTextField.errorMessage, "123")
     }
 
     func testLoadStateChangeTriggersLoading() {
         let e = self.expectation(description: "loading state change triggers loading view to show/hide")
-        self.sut.viewModel.onLoadStateChange?(true)
+        self.viewModel.onLoadStateChange?(true)
         XCTAssertEqual(self.sut.loading!.alpha, 1.0)
-        self.sut.viewModel.onLoadStateChange?(false)
+        self.viewModel.onLoadStateChange?(false)
         dispatchMain(afterMilliseconds: 10) {
             e.fulfill()
         }
@@ -63,20 +75,20 @@ class LoginViewControllerTests: XCTestCase {
 
     func testFailedLoginShowsError() {
         let error = POSClientError.unexpected
-        self.sut.viewModel.onFailedLogin?(error)
+        self.viewModel.onFailedLogin?(error)
         XCTAssertEqual(ToastCenter.default.currentToast!.text, error.message)
     }
 
     func testEmailTextFieldChangeUpdatesViewModelEmailAttribute() {
         let range = NSRange(location: 0, length: 0)
         _ = self.sut.textField(self.sut.emailTextField, shouldChangeCharactersIn: range, replacementString: "123")
-        XCTAssertEqual(self.sut.viewModel.email, "123")
+        XCTAssertEqual(self.viewModel.email, "123")
     }
 
     func testPasswordTextFieldChangeUpdatesViewModelPasswordAttribute() {
         let range = NSRange(location: 0, length: 0)
         _ = self.sut.textField(self.sut.passwordTextField, shouldChangeCharactersIn: range, replacementString: "123")
-        XCTAssertEqual(self.sut.viewModel.password, "123")
+        XCTAssertEqual(self.viewModel.password, "123")
     }
 
     func testReturningEmailTFFocusPasswordTF() {
@@ -99,18 +111,42 @@ class LoginViewControllerTests: XCTestCase {
         dispatchMain { e.fulfill() }
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertFalse(self.sut.passwordTextField.isFirstResponder)
-        XCTAssertEqual(ToastCenter.default.currentToast!.text, "Missing required fields")
+        XCTAssertTrue(self.viewModel.isLoginCalled)
     }
 
     func testClearEmailTFClearsViewModelEmail() {
-        self.sut.viewModel.email = "123"
+        self.viewModel.email = "123"
         _ = self.sut.textFieldShouldClear(self.sut.emailTextField)
-        XCTAssertEqual(self.sut.viewModel.email, "")
+        XCTAssertEqual(self.viewModel.email, "")
     }
 
     func testClearPWTFClearsViewModelPW() {
-        self.sut.viewModel.password = "123"
+        self.viewModel.password = "123"
         _ = self.sut.textFieldShouldClear(self.sut.passwordTextField)
-        XCTAssertEqual(self.sut.viewModel.password, "")
+        XCTAssertEqual(self.viewModel.password, "")
+    }
+
+    func testTapLoginButtonTriggersLoginAndResignFirstResponder() {
+        self.mountOnWindow()
+        self.sut.emailTextField.becomeFirstResponder()
+        XCTAssertTrue(self.sut.emailTextField.isFirstResponder)
+        self.sut.tapLoginButton(self.sut.loginButton)
+        let e = self.expectation(description: "Tap on log in button resigns first responder and trigger log in")
+        dispatchMain { e.fulfill() }
+        self.waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertFalse(self.sut.emailTextField.isFirstResponder)
+        XCTAssertTrue(self.viewModel.isLoginCalled)
+    }
+
+    func testTapBioLoginButtonTriggersBioLoginAndResignFirstResponder() {
+        self.mountOnWindow()
+        self.sut.emailTextField.becomeFirstResponder()
+        XCTAssertTrue(self.sut.emailTextField.isFirstResponder)
+        self.sut.tapBioLoginButton(self.sut.bioLoginButton)
+        let e = self.expectation(description: "Tap on bio log in button resigns first responder and trigger bio log in")
+        dispatchMain { e.fulfill() }
+        self.waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertFalse(self.sut.emailTextField.isFirstResponder)
+        XCTAssertTrue(self.viewModel.isBioLoginCalled)
     }
 }

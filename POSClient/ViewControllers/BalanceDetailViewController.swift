@@ -15,7 +15,13 @@ class BalanceDetailViewController: BaseViewController {
     @IBOutlet var lastUpdatedLabel: UILabel!
     @IBOutlet var lastUpdatedValueLabel: UILabel!
 
-    let viewModel: BalanceDetailViewModel = BalanceDetailViewModel()
+    private var viewModel: BalanceDetailViewModelProtocol = BalanceDetailViewModel()
+
+    class func initWithViewModel(_ viewModel: BalanceDetailViewModelProtocol = BalanceDetailViewModel()) -> BalanceDetailViewController? {
+        guard let balanceDetailVC: BalanceDetailViewController = Storyboard.balance.viewControllerFromId() else { return nil }
+        balanceDetailVC.viewModel = viewModel
+        return balanceDetailVC
+    }
 
     func setup(withBalance balance: Balance) {
         self.viewModel.balance = balance

@@ -11,7 +11,7 @@ import TPKeyboardAvoiding
 class SignupViewController: BaseViewController {
     let showSignupSuccessSegueIdentifier = "showSignupSuccessViewController"
 
-    let viewModel: SignupViewModel = SignupViewModel()
+    private var viewModel: SignupViewModelProtocol = SignupViewModel()
 
     @IBOutlet var scrollView: TPKeyboardAvoidingScrollView!
     @IBOutlet var emailTextField: OMGFloatingTextField!
@@ -20,6 +20,12 @@ class SignupViewController: BaseViewController {
     @IBOutlet var passwordHintLabel: UILabel!
     @IBOutlet var termsLabel: UILabel!
     @IBOutlet var signupButton: UIButton!
+
+    class func initWithViewModel(_ viewModel: SignupViewModelProtocol = SignupViewModel()) -> SignupViewController? {
+        guard let signupVC: SignupViewController = Storyboard.signup.viewControllerFromId() else { return nil }
+        signupVC.viewModel = viewModel
+        return signupVC
+    }
 
     override func configureView() {
         super.configureView()
