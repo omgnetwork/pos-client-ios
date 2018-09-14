@@ -22,6 +22,7 @@ class BalanceNavigationViewControllerTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
+        self.sut.viewControllers = []
         self.sut = nil
         self.viewModel = nil
     }
