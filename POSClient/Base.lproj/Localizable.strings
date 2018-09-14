@@ -19,7 +19,7 @@
 "login.error.validation.password" = "Password should be at least 8 characters long";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
-"login.button.title.login" = "Log in";
+"login.button.title.login" = "Sign in";
 "login.button.title.register" = "Don't have an account yet? Sign up";
 "login.alert.biometric_auth" = "Authenticate to login";
 
@@ -62,8 +62,8 @@
 
 // Transactions
 "transactions.view.title" = "Transactions";
-"transactions.label.debit" = "debit";
-"transactions.label.topup" = "top-up";
+"transactions.label.status.success" = "Success";
+"transactions.label.status.failure" = "failure";
 
 // Global Errors
 "error.missing_required_fields" = "Missing required fields";
@@ -80,3 +80,7 @@
 "touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
 "touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
 
+// Tabs
+"tab.balances.title" = "Balances";
+"tab.qr.title" = "QR";
+"tab.profile.title" = "Profile";

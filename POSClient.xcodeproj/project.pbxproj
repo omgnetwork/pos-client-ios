@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */; };
 		032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */; };
 		032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */; };
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
@@ -27,6 +28,9 @@
 		0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAE6212D13C3006B2193 /* QRGenerator.swift */; };
 		0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAEE212D54EF006B2193 /* SignupViewController.swift */; };
 		0380AAF1212D54FB006B2193 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAF0212D54FB006B2193 /* SignupViewModel.swift */; };
+		0381C2072137D1E200F813E3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0381C2062137D1E200F813E3 /* LoadingView.xib */; };
+		0381C2092137D21100F813E3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381C2082137D21100F813E3 /* LoadingView.swift */; };
+		0381C20B2137DEE200F813E3 /* MBProgressHUDBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381C20A2137DEE200F813E3 /* MBProgressHUDBuilder.swift */; };
 		03885C132133ADDB00E78F69 /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C122133ADDB00E78F69 /* Biometric.swift */; };
 		03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */; };
 		03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */; };
@@ -87,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 		0380AAE6212D13C3006B2193 /* QRGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGenerator.swift; sourceTree = "<group>"; };
 		0380AAEE212D54EF006B2193 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0380AAF0212D54FB006B2193 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		0381C2062137D1E200F813E3 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		0381C2082137D21100F813E3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		0381C20A2137DEE200F813E3 /* MBProgressHUDBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBProgressHUDBuilder.swift; sourceTree = "<group>"; };
 		03885C122133ADDB00E78F69 /* Biometric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
 		03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewController.swift; sourceTree = "<group>"; };
 		03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +264,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		0381C2052137D1D600F813E3 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				0381C2062137D1E200F813E3 /* LoadingView.xib */,
+				0381C2082137D21100F813E3 /* LoadingView.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		03C2A65121269A6700267E7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +308,7 @@
 				0380AAF0212D54FB006B2193 /* SignupViewModel.swift */,
 				03FB797B212E6EF800890D72 /* SignupConfirmationViewModel.swift */,
 				03FB7981212E9AB800890D72 /* ProfileTableViewModel.swift */,
+				030D5F4521379CEC00EB5B6A /* MainTabBarViewModel.swift */,
 				03FB7990212FECA100890D72 /* TransactionCellViewModel.swift */,
 				03FB798F212FECA100890D72 /* TransactionsViewModel.swift */,
 				03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */,
@@ -314,6 +332,7 @@
 				03885C122133ADDB00E78F69 /* Biometric.swift */,
 				03A0C00921350FFD00E31833 /* KeychainWrapper.swift */,
 				03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */,
+				0381C20A2137DEE200F813E3 /* MBProgressHUDBuilder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -341,6 +360,7 @@
 		03C2A690212A31C600267E7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0381C2052137D1D600F813E3 /* Others */,
 				03C2A691212A31C600267E7F /* TableViewCells */,
 			);
 			path = Views;
@@ -481,6 +501,7 @@
 				03C2A6882126C36500267E7F /* Localizable.strings in Resources */,
 				03FB79AE2130105300890D72 /* Loading.storyboard in Resources */,
 				03FB79B12130105300890D72 /* QRCode.storyboard in Resources */,
+				0381C2072137D1E200F813E3 /* LoadingView.xib in Resources */,
 				03FB7995212FED4200890D72 /* TransactionTableViewCell.xib in Resources */,
 				03FB79B62130105300890D72 /* Signup.storyboard in Resources */,
 			);
@@ -593,6 +614,7 @@
 				03FB7992212FECA200890D72 /* TransactionCellViewModel.swift in Sources */,
 				0380AADD212C2013006B2193 /* AppEvent.swift in Sources */,
 				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
+				030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
@@ -602,6 +624,7 @@
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
 				03C2A67B2126BFBD00267E7F /* LoadingViewModel.swift in Sources */,
 				03C2A66121269C2300267E7F /* Theme.swift in Sources */,
+				0381C2092137D21100F813E3 /* LoadingView.swift in Sources */,
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
 				0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */,
@@ -639,6 +662,7 @@
 				03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
 				03FB7980212E9AA300890D72 /* ProfileTableViewController.swift in Sources */,
+				0381C20B2137DEE200F813E3 /* MBProgressHUDBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

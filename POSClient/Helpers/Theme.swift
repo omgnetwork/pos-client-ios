@@ -11,6 +11,11 @@ import UIKit
 struct Theme {
     static func apply() {
         let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.prefersLargeTitles = true
+        navigationBarAppearance.largeTitleTextAttributes = [
+            .font: Font.avenirMedium.withSize(34),
+            .foregroundColor: Color.black.uiColor()
+        ]
         navigationBarAppearance.barTintColor = .white
         navigationBarAppearance.tintColor = Color.black.uiColor()
         navigationBarAppearance.isTranslucent = false

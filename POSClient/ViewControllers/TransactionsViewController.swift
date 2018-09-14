@@ -36,6 +36,7 @@ class TransactionsViewController: BaseTableViewController {
         self.tableView.registerNib(tableViewCell: TransactionTableViewCell.self)
         self.tableView.tableFooterView = UIView()
         self.tableView.rowHeight = 62
+        self.tableView.estimatedRowHeight = 62
         self.tableView.refreshControl = self.refreshControl
         self.reloadTransactions()
         self.tableView.contentInsetAdjustmentBehavior = .never
@@ -56,9 +57,7 @@ class TransactionsViewController: BaseTableViewController {
         }
         self.viewModel.appendNewResultClosure = { [weak self] indexPaths in
             UIView.setAnimationsEnabled(false)
-            self?.tableView.beginUpdates()
             self?.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
-            self?.tableView.endUpdates()
             UIView.setAnimationsEnabled(true)
         }
     }

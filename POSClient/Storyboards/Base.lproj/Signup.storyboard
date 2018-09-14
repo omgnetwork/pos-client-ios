@@ -207,24 +207,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please confirm your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-GR-yJg">
-                                <rect key="frame" x="32" y="80" width="311" height="25"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please confirm your email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eca-GR-yJg">
+                                <rect key="frame" x="32" y="80" width="311" height="93"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We've sent you an email. Please check and click the link in the email to confirm your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-D5-GNQ">
-                                <rect key="frame" x="32" y="285" width="311" height="70"/>
+                                <rect key="frame" x="16" y="332" width="343" height="70"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWL-LY-5go">
-                                <rect key="frame" x="137.5" y="145" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.52156862749999999" green="0.5450980392" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="YWL-LY-5go">
+                                <rect key="frame" x="122.5" y="213" width="130" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="SUh-XM-pNq"/>
-                                    <constraint firstAttribute="height" constant="100" id="szD-cs-e06"/>
+                                    <constraint firstAttribute="width" constant="130" id="SUh-XM-pNq"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lc-Ku-rB0">
@@ -254,8 +252,8 @@
                             <constraint firstItem="vXO-jz-DRO" firstAttribute="bottom" secondItem="8lc-Ku-rB0" secondAttribute="bottom" constant="32" id="7Ls-4i-JDe"/>
                             <constraint firstItem="Eca-GR-yJg" firstAttribute="leading" secondItem="vXO-jz-DRO" secondAttribute="leading" constant="32" id="Pje-AY-5J4"/>
                             <constraint firstItem="vXO-jz-DRO" firstAttribute="trailing" secondItem="8lc-Ku-rB0" secondAttribute="trailing" constant="32" id="XTJ-mJ-cIS"/>
-                            <constraint firstItem="Ryl-D5-GNQ" firstAttribute="leading" secondItem="AZg-Tq-h34" secondAttribute="leading" constant="32" id="eaH-lJ-Scy"/>
-                            <constraint firstAttribute="trailing" secondItem="Ryl-D5-GNQ" secondAttribute="trailing" constant="32" id="fBm-Ek-d03"/>
+                            <constraint firstItem="Ryl-D5-GNQ" firstAttribute="leading" secondItem="AZg-Tq-h34" secondAttribute="leading" constant="16" id="eaH-lJ-Scy"/>
+                            <constraint firstAttribute="trailing" secondItem="Ryl-D5-GNQ" secondAttribute="trailing" constant="16" id="fBm-Ek-d03"/>
                             <constraint firstItem="8lc-Ku-rB0" firstAttribute="leading" secondItem="vXO-jz-DRO" secondAttribute="leading" constant="32" id="fxR-WA-MWP"/>
                             <constraint firstItem="vXO-jz-DRO" firstAttribute="trailing" secondItem="Eca-GR-yJg" secondAttribute="trailing" constant="32" id="gDa-ND-ME3"/>
                             <constraint firstItem="Eca-GR-yJg" firstAttribute="top" secondItem="vXO-jz-DRO" secondAttribute="top" constant="60" id="pSf-V1-oFm"/>
@@ -276,4 +274,7 @@
             <point key="canvasLocation" x="1684" y="18"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="email_icon" width="130" height="79"/>
+    </resources>
 </document>

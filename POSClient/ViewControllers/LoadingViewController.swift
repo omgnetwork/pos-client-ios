@@ -10,16 +10,21 @@ import UIKit
 
 class LoadingViewController: BaseViewController {
     let viewModel: LoadingViewModel = LoadingViewModel()
+    @IBOutlet var loadingImageView: UIImageView!
 
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var retryButton: UIButton!
 
     override func configureView() {
         super.configureView()
         self.retryButton.isHidden = self.viewModel.isLoading
-        self.activityIndicator.isHidden = !self.viewModel.isLoading
         self.retryButton.setTitle(self.viewModel.retryButtonTitle, for: .normal)
+        self.buildAnimation()
         self.load()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.retryButton.addBorder(withColor: Color.omiseGOBlue.uiColor(), width: 1, radius: 4)
     }
 
     override func configureViewModel() {
@@ -28,9 +33,18 @@ class LoadingViewController: BaseViewController {
             self?.showError(withMessage: $0.localizedDescription)
         }
         self.viewModel.onLoadStateChange = { [weak self] isLoading in
+            isLoading ? self?.loadingImageView.startAnimating() : self?.loadingImageView.stopAnimating()
             self?.retryButton.isHidden = isLoading
-            self?.activityIndicator.isHidden = !isLoading
         }
+    }
+
+    private func buildAnimation() {
+        var images: [UIImage] = []
+        for n in 1 ... 52 {
+            images.append(UIImage(named: "GO_\(n)")!)
+        }
+        self.loadingImageView.animationImages = images
+        self.loadingImageView.startAnimating()
     }
 
     @objc func load() {

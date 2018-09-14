@@ -37,12 +37,13 @@ class TransactionsViewModel: BaseViewModel {
         super.init()
         self.paginator = TransactionPaginator(transactionLoader: transactionLoader,
                                               successClosure: { [weak self] transactions in
-                                                  self?.process(transactions)
+                                                  self?.process(transactions: transactions)
                                                   self?.isLoading = false
                                               }, failureClosure: { [weak self] error in
+                                                  self?.process(error: error)
                                                   self?.isLoading = false
-                                                  self?.onFailLoadTransactions?(error)
-        })
+                                              }
+        )
     }
 
     func reloadTransactions() {
@@ -56,7 +57,7 @@ class TransactionsViewModel: BaseViewModel {
         self.paginator.loadNext()
     }
 
-    private func process(_ transactions: [Transaction]) {
+    private func process(transactions: [Transaction]) {
         guard let wallet = self.sessionManager.wallet else { return }
         var newCellViewModels: [TransactionCellViewModel] = []
         transactions.forEach({
@@ -70,6 +71,17 @@ class TransactionsViewModel: BaseViewModel {
         }
         self.transactionCellViewModels.append(contentsOf: newCellViewModels)
         self.appendNewResultClosure?(indexPaths)
+    }
+
+    private func process(error: POSClientError) {
+        switch error {
+        case let .omiseGO(error: omiseGOError):
+            switch omiseGOError {
+            case .other: return
+            default: self.onFailLoadTransactions?(error)
+            }
+        default: self.onFailLoadTransactions?(error)
+        }
     }
 }
 
