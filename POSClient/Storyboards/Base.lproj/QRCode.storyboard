@@ -32,7 +32,7 @@
         <!--View Controller-->
         <scene sceneID="uCG-b5-1rX">
             <objects>
-                <viewController id="Vbd-NG-pvE" customClass="QRViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRViewController" id="Vbd-NG-pvE" customClass="QRViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fMZ-yq-ngs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

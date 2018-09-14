@@ -25,7 +25,7 @@ class SignupViewModel: BaseViewModel {
     let passwordConfirmationPlaceholder = "signup.text_field.placeholder.password_confirmation".localized()
     let passwordHint = "signup.label.password_hint".localized()
     let terms = "signup.label.terms".localized()
-    let registerButtonTitle = "signup.button.title.signup".localized()
+    let signupButtonTitle = "signup.button.title.signup".localized()
 
     var email: String? {
         didSet { self.validateEmail() }
@@ -106,7 +106,7 @@ class SignupViewModel: BaseViewModel {
     @discardableResult
     private func validatePasswordMatch() -> Bool {
         let arePasswordMatching = self.password == self.passwordConfirmation && self.password != nil && !self.password!.isEmpty
-        updatePasswordMatchingValidation?(arePasswordMatching ? nil : "register.error.validation.password_mismatch".localized())
+        updatePasswordMatchingValidation?(arePasswordMatching ? nil : "signup.error.validation.password_mismatch".localized())
         return arePasswordMatching
     }
 

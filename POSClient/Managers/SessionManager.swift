@@ -21,6 +21,7 @@ protocol SessionManagerProtocol: Observable {
     func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func loadCurrentUser()
     func loadWallet()
+    func clearTokens()
 }
 
 class SessionManager: Publisher, SessionManagerProtocol {

@@ -22,6 +22,7 @@ class TouchIDConfirmationViewController: BaseViewController {
         self.emailLabel.text = self.viewModel.emailString
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.enableButton.setTitle(self.viewModel.enableButtonTitle, for: .normal)
+        self.hintLabel.text = self.viewModel.hintString
     }
 
     override func configureViewModel() {
@@ -49,7 +50,8 @@ extension TouchIDConfirmationViewController {
 }
 
 extension TouchIDConfirmationViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         self.viewModel.enable()
         return true
     }

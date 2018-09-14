@@ -33,7 +33,7 @@
 "signup.button.title.signup" = "Sign up";
 "signup.error.validation.email" = "Invalid email";
 "signup.error.validation.password" = "Invalid password";
-"register.error.validation.password_mismatch" = "Passwords don't match";
+"signup.error.validation.password_mismatch" = "Passwords don't match";
 
 // Balance list
 "balance_list.view.title" = "Balances";
