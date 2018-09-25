@@ -53,7 +53,7 @@ class LoadingViewModel: BaseViewModel, LoadingViewModelProtocol {
     private func handleOMGError(_ error: OMGError) {
         switch error {
         case let .api(apiError: apiError) where apiError.isAuthorizationError():
-            self.sessionManager.clearTokens()
+            self.sessionManager.logout(true, success: {}, failure: { _ in })
         default: break
         }
     }

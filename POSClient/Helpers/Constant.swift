@@ -21,8 +21,8 @@ enum KeychainKey: String {
 struct Constant {
     static let urlScheme = "pos-client://"
     // LOCAL
-    static let baseURL = "http://192.168.82.11:4000"
-    static let APIKey = "1i0I7MBjts7eKDxp3hQKlVpzSfA7nsIAeMDg-md_B-E"
+    static let baseURL = "https://coffeego.omisego.io"
+    static let APIKey = "fxqhJomqeemaAomNyfH_RphsVx4D2Z0ruBo_g-3jCY4"
 
     // Pagination
     static let perPage = 20

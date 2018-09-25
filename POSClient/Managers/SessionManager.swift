@@ -9,7 +9,7 @@
 import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
-    var httpClient: HTTPClientAPI { get set }
+    var httpClient: HTTPClientAPI! { get set }
     var currentUser: User? { get set }
     var wallet: Wallet? { get set }
     var isBiometricAvailable: Bool { get }
@@ -17,11 +17,10 @@ protocol SessionManagerProtocol: Observable {
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
-    func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func loadCurrentUser()
     func loadWallet()
-    func clearTokens()
 }
 
 class SessionManager: Publisher, SessionManagerProtocol {
@@ -48,7 +47,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }
     }
 
-    var httpClient: HTTPClientAPI
+    var httpClient: HTTPClientAPI!
 
     var isBiometricAvailable: Bool {
         return self.userDefaultsWrapper.getBool(forKey: .biometricEnabled)
@@ -58,6 +57,12 @@ class SessionManager: Publisher, SessionManagerProtocol {
     private let userDefaultsWrapper = UserDefaultsWrapper()
 
     override init() {
+        super.init()
+        self.setupHttpClient()
+        self.updateState()
+    }
+
+    func setupHttpClient() {
         let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken)
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
@@ -65,18 +70,10 @@ class SessionManager: Publisher, SessionManagerProtocol {
                                              credentials: credentials,
                                              debugLog: false)
         self.httpClient = HTTPClientAPI(config: httpConfig)
-        super.init()
-        self.updateState()
     }
 
     func isLoggedIn() -> Bool {
         return self.httpClient.isAuthenticated
-    }
-
-    func clearTokens() {
-        self.keychainWrapper.clearValue(forKey: .authenticationToken)
-        self.wallet = nil
-        self.currentUser = nil
     }
 
     func disableBiometricAuth() {
@@ -120,14 +117,20 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }
     }
 
-    func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
-        self.httpClient.logout { response in
-            switch response {
-            case .success(data: _):
-                self.clearTokens()
-                success()
-            case let .fail(error: error):
-                failure(.omiseGO(error: error))
+    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        if force {
+            self.clearTokens()
+            self.disableBiometricAuth()
+            self.setupHttpClient()
+        } else {
+            self.httpClient.logout { response in
+                switch response {
+                case .success(data: _):
+                    self.clearTokens()
+                    success()
+                case let .fail(error: error):
+                    failure(.omiseGO(error: error))
+                }
             }
         }
     }
@@ -169,5 +172,11 @@ class SessionManager: Publisher, SessionManagerProtocol {
         } else {
             self.state = .loggedOut
         }
+    }
+
+    private func clearTokens() {
+        self.keychainWrapper.clearValue(forKey: .authenticationToken)
+        self.wallet = nil
+        self.currentUser = nil
     }
 }

@@ -57,7 +57,7 @@ class ProfileTableViewModel: BaseViewModel, ProfileTableViewModelProtocol {
 
     func logout() {
         self.isLoading = true
-        self.sessionManager.logout(withSuccessClosure: {}, failure: { [weak self] error in
+        self.sessionManager.logout(false, success: {}, failure: { [weak self] error in
             self?.isLoading = false
             self?.onFailLogout?(error)
         })
