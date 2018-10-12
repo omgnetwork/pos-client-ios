@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OmiseGO:
-    :commit: 8c417ed750e7f1f23d89545db00f47f677b7fd5d
+    :commit: 4854fba440a4aae3eda0d2f07157c292d977121d
     :git: https://github.com/omisego/ios-sdk.git
 
 SPEC CHECKSUMS:
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  OmiseGO: ae5b3c451ad1535293365a0285d7d784b8d20221
+  OmiseGO: d0e97b58270017ebd9ab3c689178b8d7c5fc2941
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
@@ -61,4 +61,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 233f21f261ccf227791bcd85915ef2175de6ff55
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.5.3

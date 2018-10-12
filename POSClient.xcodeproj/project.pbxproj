@@ -745,7 +745,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -772,7 +772,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C7270502E9ED82126C18D2C /* [CP] Check Pods Manifest.lock */ = {
