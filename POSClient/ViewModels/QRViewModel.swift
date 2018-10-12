@@ -6,6 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import OmiseGO
 import UIKit
 
 class QRViewModel: BaseViewModel, QRViewModelProtocol {
@@ -13,16 +14,28 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
 
+    var onQRImageGenerate: ObjectClosure<UIImage?>?
+    var onFailure: FailureClosure?
+    var onLoadStateChange: ObjectClosure<Bool>?
+
+    private var isLoading: Bool = false
+
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
         super.init()
     }
 
-    func qrImage(withWidth width: CGFloat) -> UIImage? {
-        guard let address = self.sessionManager.wallet?.address,
-            let data = address.data(using: .isoLatin1) else {
-            return nil
-        }
-        return QRGenerator.generateQRCode(fromData: data, outputSize: CGSize(width: width, height: width))
+    func generateImage(withWidth width: CGFloat) {
+        self.isLoading = true
+        let tokenId = self.sessionManager.wallet!.balances.first!.token.id
+        TransactionRequestBuilder(sessionManager: self.sessionManager,
+                                  tokenId: tokenId).build(onSuccess: { [weak self] encodedString in
+            let image = QRGenerator.generateQRCode(fromData: encodedString, outputSize: CGSize(width: width, height: width))
+            self?.onQRImageGenerate?(image)
+            self?.isLoading = false
+        }, onFailure: { [weak self] error in
+            self?.onFailure?(error)
+            self?.isLoading = false
+        })
     }
 }

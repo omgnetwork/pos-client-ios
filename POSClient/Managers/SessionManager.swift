@@ -176,6 +176,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     private func clearTokens() {
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
+        self.userDefaultsWrapper.clearValue(forKey: .transactionRequestsQRString)
         self.wallet = nil
         self.currentUser = nil
     }

@@ -68,6 +68,7 @@
 		03885C132133ADDB00E78F69 /* Biometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C122133ADDB00E78F69 /* Biometric.swift */; };
 		03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */; };
 		03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */; };
+		038A52EB2170842D00A931CF /* TransactionRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A52EA2170842D00A931CF /* TransactionRequestBuilder.swift */; };
 		03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0C00921350FFD00E31833 /* KeychainWrapper.swift */; };
 		03A0C00C2135173B00E31833 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */; };
 		03AB7E59214A2E5900C80D8E /* BalanceTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AB7E58214A2E5900C80D8E /* BalanceTableViewCellTests.swift */; };
@@ -206,6 +207,7 @@
 		03885C122133ADDB00E78F69 /* Biometric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Biometric.swift; sourceTree = "<group>"; };
 		03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewController.swift; sourceTree = "<group>"; };
 		03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModel.swift; sourceTree = "<group>"; };
+		038A52EA2170842D00A931CF /* TransactionRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestBuilder.swift; sourceTree = "<group>"; };
 		03A0C00921350FFD00E31833 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		03AB7E58214A2E5900C80D8E /* BalanceTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCellTests.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				03A0C00B2135173B00E31833 /* UserDefaultsWrapper.swift */,
 				0381C20A2137DEE200F813E3 /* MBProgressHUDBuilder.swift */,
 				03E5F19321410B100089939D /* BaseViewControllerProtocols.swift */,
+				038A52EA2170842D00A931CF /* TransactionRequestBuilder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
 				032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
+				038A52EB2170842D00A931CF /* TransactionRequestBuilder.swift in Sources */,
 				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
