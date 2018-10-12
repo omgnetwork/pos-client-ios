@@ -10,6 +10,7 @@ import OmiseGO
 
 protocol SessionManagerProtocol: Observable {
     var httpClient: HTTPClientAPI! { get set }
+    var socketClient: SocketClient! { get set }
     var currentUser: User? { get set }
     var wallet: Wallet? { get set }
     var isBiometricAvailable: Bool { get }
@@ -48,6 +49,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     var httpClient: HTTPClientAPI!
+    var socketClient: SocketClient!
 
     var isBiometricAvailable: Bool {
         return self.userDefaultsWrapper.getBool(forKey: .biometricEnabled)
@@ -58,18 +60,8 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     override init() {
         super.init()
-        self.setupHttpClient()
+        self.setupOmiseGOClients()
         self.updateState()
-    }
-
-    func setupHttpClient() {
-        let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken)
-        let credentials = ClientCredential(apiKey: Constant.APIKey,
-                                           authenticationToken: authenticationToken)
-        let httpConfig = ClientConfiguration(baseURL: Constant.baseURL,
-                                             credentials: credentials,
-                                             debugLog: false)
-        self.httpClient = HTTPClientAPI(config: httpConfig)
     }
 
     func isLoggedIn() -> Bool {
@@ -121,7 +113,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
         if force {
             self.clearTokens()
             self.disableBiometricAuth()
-            self.setupHttpClient()
+            self.setupOmiseGOClients()
         } else {
             self.httpClient.logout { response in
                 switch response {
@@ -164,6 +156,17 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 self.notify(event: .onWalletError(error: error))
             }
         }
+    }
+
+    private func setupOmiseGOClients() {
+        let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken)
+        let credentials = ClientCredential(apiKey: Constant.APIKey,
+                                           authenticationToken: authenticationToken)
+        let config = ClientConfiguration(baseURL: Constant.baseURL,
+                                         credentials: credentials,
+                                         debugLog: false)
+        self.httpClient = HTTPClientAPI(config: config)
+        self.socketClient = SocketClient(config: config, delegate: nil)
     }
 
     private func updateState() {

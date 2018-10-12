@@ -12,7 +12,7 @@ class TransactionRequestBuilder {
     private let sessionManager: SessionManagerProtocol
     private let tokenId: String
 
-    init(sessionManager: SessionManagerProtocol = SessionManager(),
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
          tokenId: String) {
         self.sessionManager = sessionManager
         self.tokenId = tokenId

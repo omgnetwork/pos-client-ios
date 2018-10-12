@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   OmiseGO:
-    :commit: 4854fba440a4aae3eda0d2f07157c292d977121d
+    :commit: 21b8989a36b345a875987d9c7500667c830da1bc
     :git: https://github.com/omisego/ios-sdk.git
 
 SPEC CHECKSUMS:
