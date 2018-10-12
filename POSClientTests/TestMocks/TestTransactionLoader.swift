@@ -14,7 +14,7 @@ class TestTransactionLoader {
 
     var transactions: [Transaction]?
     var pagination: Pagination?
-    var completionClosure: Transaction.ListRequestCallback!
+    var completionClosure: Transaction.PaginatedListRequestCallback!
 
     func loadTransactionSuccess() {
         self.completionClosure(
@@ -31,8 +31,8 @@ class TestTransactionLoader {
 
 extension TestTransactionLoader: TransactionLoaderProtocol {
     func list(withParams _: TransactionListParams,
-              callback: @escaping Transaction.ListRequestCallback)
-        -> Transaction.ListRequest? {
+              callback: @escaping Transaction.PaginatedListRequestCallback)
+        -> Transaction.PaginatedListRequest? {
         self.isListCalled = true
         self.completionClosure = callback
         return nil
