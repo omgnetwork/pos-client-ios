@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aBB-He-i4J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aBB-He-i4J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +23,7 @@
                         <segue destination="kOf-cY-419" kind="relationship" relationship="viewControllers" id="qPo-5O-tGM"/>
                         <segue destination="Opv-rd-uD1" kind="relationship" relationship="viewControllers" id="nS0-Be-ef5"/>
                         <segue destination="yHG-nq-vuT" kind="relationship" relationship="viewControllers" id="Dvv-75-ZKv"/>
+                        <segue destination="Uoe-ni-SyB" kind="presentation" identifier="consumptionConfirmationSegueIdentifier" id="vq4-sJ-SFS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zq-Ez-8nW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,6 +59,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9C-Ao-Nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298" y="294"/>
+        </scene>
+        <!--ConsumptionConfirmationViewController-->
+        <scene sceneID="9rA-tq-zbV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Transaction" referencedIdentifier="ConsumptionConfirmationViewController" id="Uoe-ni-SyB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XE-X7-UI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="465" y="-621"/>
         </scene>
     </scenes>
 </document>

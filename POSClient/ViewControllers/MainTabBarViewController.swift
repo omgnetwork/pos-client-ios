@@ -6,9 +6,10 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class MainTabBarViewController: UITabBarController {
+    let consumptionConfirmationSegueIdentifier = "consumptionConfirmationSegueIdentifier"
     let viewModel: MainTabBarViewModel = MainTabBarViewModel()
 
     override func viewDidLoad() {
@@ -16,7 +17,19 @@ class MainTabBarViewController: UITabBarController {
         self.viewModel.onTabSelected = { [weak self] tabIndex in
             self?.selectedIndex = tabIndex
         }
+        self.viewModel.onConsumptionRequest = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.performSegue(withIdentifier: weakself.consumptionConfirmationSegueIdentifier, sender: $0)
+        }
         self.setTabBarItems()
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.consumptionConfirmationSegueIdentifier,
+            let consumptionConfirmationVC = segue.destination as? ConsumptionConfirmationViewController,
+            let consumption = sender as? TransactionConsumption {
+            consumptionConfirmationVC.viewModel = ConsumptionConfirmationViewModel(consumption: consumption)
+        }
     }
 
     func setTabBarItems() {

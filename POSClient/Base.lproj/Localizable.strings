@@ -84,3 +84,9 @@
 "tab.balances.title" = "Balances";
 "tab.qr.title" = "QR";
 "tab.profile.title" = "Profile";
+
+// Consumption confirmation
+"consumption_confirmation.button.confirm" = "Confirm";
+"consumption_confirmation.button.reject" = "Reject";
+"consumption_confirmation.send" = "Send";
+"consumption_confirmation.to" = "To";
