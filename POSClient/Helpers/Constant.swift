@@ -35,5 +35,5 @@ struct Constant {
 extension Notification.Name {
     static let didTapPayOrTopup = Notification.Name("didTapPayOrTopup")
     static let onConsumptionRequest = Notification.Name("onConsumptionRequest")
-    static let onConsumptionConfirmation = Notification.Name("onConsumptionConfirmation")
+    static let onConsumptionFinalized = Notification.Name("onConsumptionFinalized")
 }

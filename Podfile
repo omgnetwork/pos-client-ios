@@ -13,6 +13,7 @@ target 'POSClient' do
   pod 'Toaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
+  pod 'NotificationBannerSwift'
   pod 'OmiseGO/Client', git: 'https://github.com/omisego/ios-sdk.git', branch: '101-transaction-request'
 
   target 'POSClientTests' do

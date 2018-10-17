@@ -35,7 +35,7 @@ extension SocketListener: UserEventDelegate {
         case let (.transactionConsumptionRequest, .transactionConsumption(consumption)):
             NotificationCenter.default.post(name: .onConsumptionRequest, object: consumption)
         case let (.transactionConsumptionFinalized, .transactionConsumption(consumption)):
-            NotificationCenter.default.post(name: .onConsumptionConfirmation, object: consumption)
+            NotificationCenter.default.post(name: .onConsumptionFinalized, object: consumption)
         default: break
         }
     }

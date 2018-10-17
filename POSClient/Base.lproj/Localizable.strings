@@ -84,6 +84,10 @@
 "tab.balances.title" = "Balances";
 "tab.qr.title" = "QR";
 "tab.profile.title" = "Profile";
+"tab.notification.received" = "Received";
+"tab.notification.from" = "From";
+"tab.profile.sent" = "Sent";
+"tab.notification.to" = "to";
 
 // Consumption confirmation
 "consumption_confirmation.button.confirm" = "Confirm";
