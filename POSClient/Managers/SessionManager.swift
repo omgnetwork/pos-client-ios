@@ -43,6 +43,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     var wallet: Wallet? {
         didSet {
+            PrimaryTokenManager().setDefaultPrimaryIfNeeded(withWallet: self.wallet)
             self.updateState()
             self.notify(event: .onWalletUpdate(wallet: self.wallet))
         }
@@ -179,7 +180,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
 
     private func clearTokens() {
         self.keychainWrapper.clearValue(forKey: .authenticationToken)
-        self.userDefaultsWrapper.clearValue(forKey: .transactionRequestsQRString)
+        PrimaryTokenManager().clear()
         self.wallet = nil
         self.currentUser = nil
     }

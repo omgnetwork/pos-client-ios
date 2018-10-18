@@ -29,7 +29,7 @@ class QRViewController: BaseViewController {
         self.qrBorderView.addBorder(withColor: Color.greyBorder.uiColor(), width: 1, radius: 0)
         self.hintLabel.text = self.viewModel.hint
         self.view.layoutIfNeeded()
-        self.viewModel.generateImage(withWidth: self.qrImageView.frame.width)
+        self.viewModel.buildTransactionRequests()
     }
 
     override func configureViewModel() {
@@ -40,8 +40,9 @@ class QRViewController: BaseViewController {
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
         }
-        self.viewModel.onQRImageGenerate = { [weak self] in
-            self?.qrImageView.image = $0
+        self.viewModel.onTransactionRequestGenerated = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.qrImageView.image = weakself.viewModel.qrImage(withWidth: weakself.qrImageView.frame.width)
         }
     }
 

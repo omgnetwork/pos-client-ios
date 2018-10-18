@@ -12,6 +12,7 @@ enum UserDefaultKey: String {
     case email = "com.omisego.pos-client.email"
     case biometricEnabled = "com.omisego.pos-client.biometric_enabled"
     case transactionRequestsQRString = "com.omisego.pos-client.transaction_requests_qr_string"
+    case primaryBalance = "com.omisego.pos-client.primary-balance"
 }
 
 enum KeychainKey: String {
@@ -36,4 +37,5 @@ extension Notification.Name {
     static let didTapPayOrTopup = Notification.Name("didTapPayOrTopup")
     static let onConsumptionRequest = Notification.Name("onConsumptionRequest")
     static let onConsumptionFinalized = Notification.Name("onConsumptionFinalized")
+    static let onPrimaryTokenUpdate = Notification.Name("onPrimaryTokenUpdate")
 }

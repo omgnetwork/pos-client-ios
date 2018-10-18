@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEI-ix-ZNV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vEI-ix-ZNV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,10 +113,24 @@
                                 <color key="textColor" red="0.23529411759999999" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91R-ZY-S3a">
+                                <rect key="frame" x="254" y="295" width="89" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CxS-Nx-h8J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Set Primary">
+                                    <color key="titleColor" red="0.1019607843" green="0.33725490200000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSetPrimaryButton:" destination="wch-7x-AYt" eventType="touchUpInside" id="JYK-VL-hQq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hPN-Mx-5Cn" firstAttribute="leading" secondItem="dds-iD-9Jp" secondAttribute="leading" constant="32" id="0ld-kS-6Uc"/>
+                            <constraint firstItem="dds-iD-9Jp" firstAttribute="trailing" secondItem="91R-ZY-S3a" secondAttribute="trailing" constant="32" id="3Rk-he-v94"/>
                             <constraint firstItem="hPN-Mx-5Cn" firstAttribute="top" secondItem="Pel-Ny-Cbb" secondAttribute="bottom" constant="20" id="4aX-ug-aF3"/>
                             <constraint firstItem="dds-iD-9Jp" firstAttribute="trailing" secondItem="hPN-Mx-5Cn" secondAttribute="trailing" constant="32" id="6xo-if-iJl"/>
                             <constraint firstItem="dds-iD-9Jp" firstAttribute="trailing" secondItem="FxV-xj-Alr" secondAttribute="trailing" constant="32" id="Kbf-GM-WaZ"/>
@@ -123,6 +138,7 @@
                             <constraint firstItem="dds-iD-9Jp" firstAttribute="trailing" secondItem="lax-qQ-AIE" secondAttribute="trailing" constant="32" id="MxF-mL-qst"/>
                             <constraint firstItem="FxV-xj-Alr" firstAttribute="top" secondItem="hPN-Mx-5Cn" secondAttribute="bottom" constant="2" id="PuW-LU-OIR"/>
                             <constraint firstItem="dds-iD-9Jp" firstAttribute="bottom" secondItem="lax-qQ-AIE" secondAttribute="bottom" constant="32" id="Ssx-dB-RVq"/>
+                            <constraint firstItem="91R-ZY-S3a" firstAttribute="top" secondItem="FxV-xj-Alr" secondAttribute="bottom" constant="32" id="c7j-45-drH"/>
                             <constraint firstItem="Pel-Ny-Cbb" firstAttribute="top" secondItem="dds-iD-9Jp" secondAttribute="top" constant="100" id="glj-sK-fHm"/>
                             <constraint firstItem="Pel-Ny-Cbb" firstAttribute="leading" secondItem="dds-iD-9Jp" secondAttribute="leading" constant="32" id="hqn-Bq-Q5R"/>
                             <constraint firstItem="lax-qQ-AIE" firstAttribute="leading" secondItem="dds-iD-9Jp" secondAttribute="leading" constant="32" id="qsr-IQ-CZW"/>
@@ -143,6 +159,7 @@
                         <outlet property="lastUpdatedLabel" destination="hPN-Mx-5Cn" id="taX-6I-EoR"/>
                         <outlet property="lastUpdatedValueLabel" destination="FxV-xj-Alr" id="rFA-AF-98q"/>
                         <outlet property="payButton" destination="lax-qQ-AIE" id="svC-WJ-FCc"/>
+                        <outlet property="setPrimaryButton" destination="91R-ZY-S3a" id="jFE-2U-wGH"/>
                         <outlet property="tokenSymbolLabel" destination="eHJ-FY-c23" id="5JQ-yt-fav"/>
                     </connections>
                 </viewController>

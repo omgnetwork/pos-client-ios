@@ -14,28 +14,64 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
 
-    var onQRImageGenerate: ObjectClosure<UIImage?>?
+    var onTransactionRequestGenerated: EmptyClosure?
     var onFailure: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
-    private var isLoading: Bool = false
+    private var isLoading: Bool = false {
+        didSet {
+            self.onLoadStateChange?(isLoading)
+        }
+    }
+
+    private var observer: NSObjectProtocol?
+    private var encodedQRCodeData: Data? {
+        didSet {
+            self.onTransactionRequestGenerated?()
+        }
+    }
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
         super.init()
+        self.addObserver()
     }
 
-    func generateImage(withWidth width: CGFloat) {
+    private func addObserver() {
+        self.observer = NotificationCenter.default.addObserver(forName: .onPrimaryTokenUpdate,
+                                                               object: nil,
+                                                               queue: nil) { [weak self] _ in
+            self?.buildTransactionRequests()
+        }
+    }
+
+    func buildTransactionRequests() {
         self.isLoading = true
-        let tokenId = self.sessionManager.wallet!.balances.first!.token.id
+        guard let tokenId = PrimaryTokenManager().getPrimaryTokenId() else {
+            self.isLoading = false
+            self.onFailure?(.unexpected)
+            return
+        }
+        self.encodedQRCodeData = nil
         TransactionRequestBuilder(sessionManager: self.sessionManager,
                                   tokenId: tokenId).build(onSuccess: { [weak self] encodedString in
-            let image = QRGenerator.generateQRCode(fromData: encodedString, outputSize: CGSize(width: width, height: width))
-            self?.onQRImageGenerate?(image)
+            self?.encodedQRCodeData = encodedString
             self?.isLoading = false
         }, onFailure: { [weak self] error in
             self?.onFailure?(error)
             self?.isLoading = false
         })
+    }
+
+    func qrImage(withWidth width: CGFloat) -> UIImage? {
+        guard let data = self.encodedQRCodeData else { return nil }
+        return QRGenerator.generateQRCode(fromData: data,
+                                          outputSize: CGSize(width: width, height: width))
+    }
+
+    deinit {
+        if let observer = self.observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }

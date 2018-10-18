@@ -18,4 +18,5 @@ protocol BalanceListViewModelProtocol {
     func numberOfRow() -> Int
     func cellViewModel(forIndex index: Int) -> BalanceCellViewModel
     func didSelectBalance(atIndex index: Int)
+    func stopObserving()
 }

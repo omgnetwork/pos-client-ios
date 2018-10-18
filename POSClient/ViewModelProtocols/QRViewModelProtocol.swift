@@ -12,9 +12,10 @@ protocol QRViewModelProtocol {
     var title: String { get }
     var hint: String { get }
 
-    var onQRImageGenerate: ObjectClosure<UIImage?>? { get set }
+    var onTransactionRequestGenerated: EmptyClosure? { get set }
     var onFailure: FailureClosure? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
 
-    func generateImage(withWidth width: CGFloat)
+    func buildTransactionRequests()
+    func qrImage(withWidth width: CGFloat) -> UIImage?
 }

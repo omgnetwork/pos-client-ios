@@ -13,6 +13,7 @@ class BalanceCellViewModel: BaseViewModel {
     let tokenName: String
     let tokenSymbol: String
     let balanceDisplay: String
+    let primary: String
     let balance: Balance
 
     init(balance: Balance) {
@@ -21,5 +22,8 @@ class BalanceCellViewModel: BaseViewModel {
         self.tokenName = balance.token.name
         self.tokenSymbol = balance.token.symbol
         self.balanceDisplay = balance.displayAmount(withPrecision: 2)
+        self.primary = balance.token.id == PrimaryTokenManager().getPrimaryTokenId() ?
+            "balance_cell.label.primary".localized() :
+            ""
     }
 }

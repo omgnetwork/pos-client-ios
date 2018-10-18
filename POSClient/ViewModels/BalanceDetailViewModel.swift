@@ -9,6 +9,7 @@
 import OmiseGO
 
 class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
+    var onPrimaryStateChange: EmptyClosure?
     var onFailGetWallet: FailureClosure?
     var onDataUpdate: SuccessClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
@@ -22,6 +23,14 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
     var title: String = ""
     let lastUpdatedString: String = "balance_detail.label.last_updated".localized()
     var lastUpdated: String = "-"
+    var setPrimaryButtonTitle: String = "-"
+    var isPrimary: Bool = false {
+        didSet {
+            self.onPrimaryStateChange?()
+        }
+    }
+
+    let primaryTokenManager = PrimaryTokenManager()
 
     private var lastUpdatedDate: Date? {
         didSet {
@@ -49,7 +58,7 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
         return payOrTopup
     }()
 
-    var balance: Balance? {
+    private var balance: Balance? {
         didSet {
             guard let balance = balance else {
                 return
@@ -64,10 +73,13 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
 
     private let sessionManager: SessionManagerProtocol
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
+         balance: Balance? = nil) {
         self.sessionManager = sessionManager
+        self.balance = balance
         super.init()
         sessionManager.attachObserver(observer: self)
+        self.updatePrimaryState()
         self.process(wallet: sessionManager.wallet)
     }
 
@@ -79,6 +91,27 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
 
     func stopObserving() {
         self.sessionManager.removeObserver(observer: self)
+    }
+
+    func setPrimary() {
+        guard let tokenId = self.balance?.token.id else { return }
+        self.primaryTokenManager.setPrimary(tokenId: tokenId)
+        self.updatePrimaryState()
+    }
+
+    private func updatePrimaryState() {
+        if let balance = self.balance {
+            if UserDefaultsWrapper().getValue(forKey: .primaryBalance) == balance.token.id {
+                self.setPrimaryButtonTitle = "balance_detail.button.primary".localized()
+                self.isPrimary = true
+            } else {
+                self.setPrimaryButtonTitle = "balance_detail.button.set_primary".localized()
+                self.isPrimary = false
+            }
+        } else {
+            self.setPrimaryButtonTitle = ""
+            self.isPrimary = true
+        }
     }
 
     private func process(wallet: Wallet?) {

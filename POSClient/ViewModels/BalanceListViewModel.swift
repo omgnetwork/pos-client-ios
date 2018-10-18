@@ -18,11 +18,22 @@ class BalanceListViewModel: BaseViewModel, BalanceListViewModelProtocol {
     private var balanceCellViewModels: [BalanceCellViewModel] = []
     private let sessionManager: SessionManagerProtocol
 
+    private var observer: NSObjectProtocol?
+
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
         super.init()
         sessionManager.attachObserver(observer: self)
+        self.addObserver()
         self.process(wallet: sessionManager.wallet)
+    }
+
+    private func addObserver() {
+        self.observer = NotificationCenter.default.addObserver(forName: .onPrimaryTokenUpdate,
+                                                               object: nil,
+                                                               queue: nil) { [weak self] _ in
+            self?.process(wallet: self?.sessionManager.wallet)
+        }
     }
 
     @objc func loadData() {
@@ -42,6 +53,10 @@ class BalanceListViewModel: BaseViewModel, BalanceListViewModelProtocol {
         self.onBalanceSelection?(balance)
     }
 
+    func stopObserving() {
+        self.sessionManager.removeObserver(observer: self)
+    }
+
     private func process(wallet: Wallet?) {
         guard let wallet = wallet else { return }
         self.generateTableViewModels(fromBalances: wallet.balances)
@@ -55,6 +70,12 @@ class BalanceListViewModel: BaseViewModel, BalanceListViewModelProtocol {
             newViewModels.append(viewModel)
         })
         self.balanceCellViewModels = newViewModels
+    }
+
+    deinit {
+        if let observer = self.observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }
 

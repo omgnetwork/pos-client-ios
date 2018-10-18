@@ -53,6 +53,7 @@
 		0371EBA821758F25006BDFD1 /* ConsumptionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */; };
 		0371EBAA21758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */; };
 		0371EBAC2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */; };
+		0371EBAE217836D3006BDFD1 /* PrimaryTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */; };
 		0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */; };
 		0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */; };
 		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
@@ -196,6 +197,7 @@
 		0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewController.swift; sourceTree = "<group>"; };
 		0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
+		0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTokenManager.swift; sourceTree = "<group>"; };
 		0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModelTests.swift; sourceTree = "<group>"; };
 		0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 				03C2A66B2126A25100267E7F /* SessionManager.swift */,
 				03C2A66D2126B7F600267E7F /* POSClientManager.swift */,
 				038A52EC217093B700A931CF /* SocketListener.swift */,
+				0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				038A52ED217093B700A931CF /* SocketListener.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
+				0371EBAE217836D3006BDFD1 /* PrimaryTokenManager.swift in Sources */,
 				032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
 				038A52EB2170842D00A931CF /* TransactionRequestBuilder.swift in Sources */,

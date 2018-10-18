@@ -38,10 +38,15 @@
 // Balance list
 "balance_list.view.title" = "Balances";
 
+// Balance cell
+"balance_cell.label.primary" = "Primary";
+
 // Balance detail
 "balance_detail.label.pay" = "Pay";
 "balance_detail.label.or_topup" = "or top-up";
 "balance_detail.label.last_updated" = "Last updated";
+"balance_detail.button.primary" = "Primary";
+"balance_detail.button.set_primary" = "Set primary";
 
 // QR viewer
 "qr_viewer.label.your_qr" = "Your QR";
