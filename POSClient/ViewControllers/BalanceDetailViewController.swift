@@ -16,7 +16,9 @@ class BalanceDetailViewController: BaseViewController {
     @IBOutlet var lastUpdatedValueLabel: UILabel!
     @IBOutlet var setPrimaryButton: UIButton!
 
-    var viewModel: BalanceDetailViewModelProtocol!
+    lazy var viewModel: BalanceDetailViewModelProtocol! = {
+        BalanceDetailViewModel()
+    }()
 
     class func initWithViewModel(_ viewModel: BalanceDetailViewModelProtocol = BalanceDetailViewModel()) -> BalanceDetailViewController? {
         guard let balanceDetailVC: BalanceDetailViewController = Storyboard.balance.viewControllerFromId() else { return nil }
