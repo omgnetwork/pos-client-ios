@@ -11,6 +11,7 @@ import UIKit
 
 class QRViewModel: BaseViewModel, QRViewModelProtocol {
     private let sessionManager: SessionManagerProtocol
+    private let transactionRequestBuilder: TransactionRequestBuilderProtocol
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
 
@@ -31,18 +32,12 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
         }
     }
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
+         transactionRequestBuilder: TransactionRequestBuilderProtocol) {
         self.sessionManager = sessionManager
+        self.transactionRequestBuilder = transactionRequestBuilder
         super.init()
         self.addObserver()
-    }
-
-    private func addObserver() {
-        self.observer = NotificationCenter.default.addObserver(forName: .onPrimaryTokenUpdate,
-                                                               object: nil,
-                                                               queue: nil) { [weak self] _ in
-            self?.buildTransactionRequests()
-        }
     }
 
     func buildTransactionRequests() {
@@ -53,8 +48,7 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
             return
         }
         self.encodedQRCodeData = nil
-        TransactionRequestBuilder(sessionManager: self.sessionManager,
-                                  tokenId: tokenId).build(onSuccess: { [weak self] encodedString in
+        self.transactionRequestBuilder.build(withTokenId: tokenId, onSuccess: { [weak self] encodedString in
             self?.encodedQRCodeData = encodedString
             self?.isLoading = false
         }, onFailure: { [weak self] error in
@@ -72,6 +66,14 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
     deinit {
         if let observer = self.observer {
             NotificationCenter.default.removeObserver(observer)
+        }
+    }
+
+    private func addObserver() {
+        self.observer = NotificationCenter.default.addObserver(forName: .onPrimaryTokenUpdate,
+                                                               object: nil,
+                                                               queue: nil) { [weak self] _ in
+            self?.buildTransactionRequests()
         }
     }
 }

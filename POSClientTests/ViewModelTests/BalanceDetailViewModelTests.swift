@@ -17,8 +17,8 @@ class BalanceDetailViewModelTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.sessionManager = TestSessionManager(wallet: StubGenerator.mainWallet())
-        self.sut = BalanceDetailViewModel(sessionManager: self.sessionManager)
-        self.sut.balance = self.sessionManager.wallet!.balances.first!
+        self.sut = BalanceDetailViewModel(sessionManager: self.sessionManager,
+                                          balance: self.sessionManager.wallet!.balances.first!)
     }
 
     override func tearDown() {

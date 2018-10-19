@@ -54,6 +54,11 @@
 		0371EBAA21758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */; };
 		0371EBAC2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */; };
 		0371EBAE217836D3006BDFD1 /* PrimaryTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */; };
+		0371EBB0217891AC006BDFD1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBAF217891AC006BDFD1 /* Extension.swift */; };
+		0371EBB221789273006BDFD1 /* QrViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB121789273006BDFD1 /* QrViewModelTests.swift */; };
+		0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */; };
+		0371EBB7217990F2006BDFD1 /* SocketListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB6217990F2006BDFD1 /* SocketListenerTests.swift */; };
+		0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */; };
 		0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */; };
 		0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */; };
 		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
@@ -198,6 +203,11 @@
 		0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModel.swift; sourceTree = "<group>"; };
 		0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
 		0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTokenManager.swift; sourceTree = "<group>"; };
+		0371EBAF217891AC006BDFD1 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0371EBB121789273006BDFD1 /* QrViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrViewModelTests.swift; sourceTree = "<group>"; };
+		0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionRequestBuilder.swift; sourceTree = "<group>"; };
+		0371EBB6217990F2006BDFD1 /* SocketListenerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketListenerTests.swift; sourceTree = "<group>"; };
+		0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSocketClient.swift; sourceTree = "<group>"; };
 		0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModelTests.swift; sourceTree = "<group>"; };
 		0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -338,6 +348,8 @@
 				032FAF4D214916F100992742 /* TestProfileTableViewModel.swift */,
 				032FAF5121491A8000992742 /* TestTransactionsViewModel.swift */,
 				032FAF5521491F6A00992742 /* TestTouchIDConfirmationViewModel.swift */,
+				0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */,
+				0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -355,6 +367,7 @@
 				0320EB68213F9167001E711F /* MainTabBarViewModelTests.swift */,
 				03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */,
 				03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */,
+				0371EBB121789273006BDFD1 /* QrViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 		0326EF6C2138FA8B0062DBE3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0371EBAF217891AC006BDFD1 /* Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -409,6 +423,7 @@
 		033A63B92123E02C00A2D08B /* POSClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				0371EBB5217990E0006BDFD1 /* Managers */,
 				03AB7E57214A2E3C00C80D8E /* Views */,
 				03E5F190214103900089939D /* ViewControllers */,
 				03E5F18D2140F0DA0089939D /* Paginators */,
@@ -443,6 +458,14 @@
 				033A63C92123E2CB00A2D08B /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		0371EBB5217990E0006BDFD1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0371EBB6217990F2006BDFD1 /* SocketListenerTests.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		0381C2052137D1D600F813E3 /* Others */ = {
@@ -921,6 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */,
+				0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */,
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
@@ -931,10 +955,12 @@
 				032FAF5621491F6A00992742 /* TestTouchIDConfirmationViewModel.swift in Sources */,
 				0320B59D2147981D00A8D646 /* TransactionsViewControllerTests.swift in Sources */,
 				03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */,
+				0371EBB221789273006BDFD1 /* QrViewModelTests.swift in Sources */,
 				0320B5972147772000A8D646 /* SignupConfirmationViewControllerTests.swift in Sources */,
 				03AB7E5B214A3EDE00C80D8E /* TransactionTableViewCellTests.swift in Sources */,
 				03F2C37A213E7CB000BCC867 /* SignupViewModelTests.swift in Sources */,
 				032FAF462149104B00992742 /* TestQRViewModel.swift in Sources */,
+				0371EBB0217891AC006BDFD1 /* Extension.swift in Sources */,
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0320B599214783F600A8D646 /* ProfileTableViewControllerTests.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
@@ -945,9 +971,11 @@
 				03F2C378213E68E600BCC867 /* BalanceNavigationViewModelTests.swift in Sources */,
 				03AB7E59214A2E5900C80D8E /* BalanceTableViewCellTests.swift in Sources */,
 				033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */,
+				0371EBB7217990F2006BDFD1 /* SocketListenerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
 				032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */,
+				0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */,
 				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,

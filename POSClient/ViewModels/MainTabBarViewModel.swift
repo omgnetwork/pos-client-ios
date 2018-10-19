@@ -47,14 +47,14 @@ class MainTabBarViewModel: BaseViewModel {
     }
 
     private func buildBanner(withConsumption consumption: TransactionConsumption) {
-        let type: String
-        let direction: String
-        let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
-                                                          subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
         guard consumption.status == .confirmed else {
             self.onConsumptionRejected?()
             return
         }
+        let type: String
+        let direction: String
+        let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
+                                                          subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
         switch consumption.transactionRequest.type {
         case .receive:
             type = "tab.notification.received".localized()

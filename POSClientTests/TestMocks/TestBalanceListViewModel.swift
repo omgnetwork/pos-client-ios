@@ -34,9 +34,14 @@ class TestBalanceListViewModel: BalanceListViewModelProtocol {
         self.selectedBalanceIndex = index
     }
 
+    func stopObserving() {
+        self.isStopObservingCalled = true
+    }
+
     var isLoadDataCalled = false
     var rowCount: Int = 0
     var isNumberOfRowCalled = false
+    var isStopObservingCalled = false
     var cellVM: BalanceCellViewModel = BalanceCellViewModel(balance: StubGenerator.mainWalletSingleBalance().balances.first!)
     var isCellViewModelCalled = false
     var selectedBalanceIndex: Int?

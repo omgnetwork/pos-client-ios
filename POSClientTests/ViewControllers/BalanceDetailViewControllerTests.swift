@@ -38,12 +38,6 @@ class BalanceDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(self.sut.title, "x")
     }
 
-    func testSetupWithBalanceSetsTheBalanceOnTheViewModel() {
-        self.viewModel.balance = nil
-        self.sut.setup(withBalance: StubGenerator.mainWallet().balances.first!)
-        XCTAssertNotNil(self.viewModel.balance)
-    }
-
     func testOnDataUpdateTriggersDisplayUpdate() {
         XCTAssertEqual(self.sut.balanceLabel.text, "x")
         XCTAssertEqual(self.sut.tokenSymbolLabel.text, "x")

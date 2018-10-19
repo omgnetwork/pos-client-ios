@@ -8,17 +8,22 @@
 
 import OmiseGO
 
-class TransactionRequestBuilder {
-    private let sessionManager: SessionManagerProtocol
-    private let tokenId: String
+protocol TransactionRequestBuilderProtocol {
+    func build(withTokenId tokenId: String,
+               onSuccess: @escaping ObjectClosure<Data>,
+               onFailure: @escaping FailureClosure)
+}
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
-         tokenId: String) {
+class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
+    private let sessionManager: SessionManagerProtocol
+
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
-        self.tokenId = tokenId
     }
 
-    func build(onSuccess: @escaping ObjectClosure<Data>, onFailure: @escaping FailureClosure) {
+    func build(withTokenId tokenId: String,
+               onSuccess: @escaping ObjectClosure<Data>,
+               onFailure: @escaping FailureClosure) {
         if let existingString = UserDefaultsWrapper().getData(forKey: .transactionRequestsQRString) {
             onSuccess(existingString)
             return
@@ -28,7 +33,7 @@ class TransactionRequestBuilder {
         var topupId: String?
         let group = DispatchGroup()
         group.enter()
-        self.buildReceive { result in
+        self.buildReceive(withTokenId: tokenId) { result in
             switch result {
             case let .success(data: receiveTR): receiveId = receiveTR.formattedId
             case let .fail(error: error): raisedError = error
@@ -36,7 +41,7 @@ class TransactionRequestBuilder {
             group.leave()
         }
         group.enter()
-        self.buildTopup { result in
+        self.buildTopup(withTokenId: tokenId) { result in
             switch result {
             case let .success(data: topupTR): topupId = topupTR.formattedId
             case let .fail(error: error): raisedError = error
@@ -60,9 +65,10 @@ class TransactionRequestBuilder {
         }
     }
 
-    private func buildReceive(callback: @escaping TransactionRequest.RetrieveRequestCallback) {
+    private func buildReceive(withTokenId tokenId: String,
+                              callback: @escaping TransactionRequest.RetrieveRequestCallback) {
         let receive = TransactionRequestCreateParams(type: .receive,
-                                                     tokenId: self.tokenId,
+                                                     tokenId: tokenId,
                                                      amount: nil,
                                                      address: sessionManager.wallet!.address,
                                                      requireConfirmation: false,
@@ -70,9 +76,10 @@ class TransactionRequestBuilder {
         TransactionRequest.create(using: sessionManager.httpClient, params: receive, callback: callback)
     }
 
-    private func buildTopup(callback: @escaping TransactionRequest.RetrieveRequestCallback) {
+    private func buildTopup(withTokenId tokenId: String,
+                            callback: @escaping TransactionRequest.RetrieveRequestCallback) {
         let topup = TransactionRequestCreateParams(type: .send,
-                                                   tokenId: self.tokenId,
+                                                   tokenId: tokenId,
                                                    amount: nil,
                                                    address: sessionManager.wallet!.address,
                                                    requireConfirmation: true,

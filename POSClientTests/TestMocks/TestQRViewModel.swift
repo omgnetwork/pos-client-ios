@@ -13,10 +13,19 @@ class TestQRViewModel: QRViewModelProtocol {
     var title: String = "x"
     var hint: String = "x"
 
+    var onTransactionRequestGenerated: EmptyClosure?
+    var onFailure: FailureClosure?
+    var onLoadStateChange: ObjectClosure<Bool>?
+
+    func buildTransactionRequests() {
+        self.didCallBuildTransactionRequests = true
+    }
+
     func qrImage(withWidth width: CGFloat) -> UIImage? {
         self.didCallQRImageWithWidth = width
-        return nil
+        return UIColor.red.image()
     }
 
     var didCallQRImageWithWidth: CGFloat?
+    var didCallBuildTransactionRequests = false
 }
