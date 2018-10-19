@@ -22,9 +22,6 @@ protocol ConsumptionConfirmationViewModelProtocol {
     var rejectButtonTitle: String { get }
     var accountName: String { get }
 
-    init(sessionManager: SessionManagerProtocol,
-         consumption: TransactionConsumption)
-
     func approve()
     func reject()
 }

@@ -28,11 +28,11 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
     }
 
     private let consumption: TransactionConsumption
-    private let sessionManager: SessionManagerProtocol
+    private let transactionConsumptionApprover: TransactionConsumptionApproverProtocol
 
-    required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
+    required init(transactionConsumptionApprover: TransactionConsumptionApproverProtocol = TransactionConsumptionApprover(),
                   consumption: TransactionConsumption) {
-        self.sessionManager = sessionManager
+        self.transactionConsumptionApprover = transactionConsumptionApprover
         self.title = "consumption_confirmation.send".localized()
         self.direction = "consumption_confirmation.to".localized()
         self.consumption = consumption
@@ -45,7 +45,7 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
 
     func approve() {
         self.isLoading = true
-        self.consumption.approve(using: self.sessionManager.httpClient) { [weak self] result in
+        self.transactionConsumptionApprover.approve(consumption: self.consumption) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success:
@@ -58,7 +58,7 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
 
     func reject() {
         self.isLoading = true
-        self.consumption.reject(using: self.sessionManager.httpClient) { [weak self] result in
+        self.transactionConsumptionApprover.reject(consumption: self.consumption) { [weak self] result in
             self?.isLoading = false
             switch result {
             case .success:

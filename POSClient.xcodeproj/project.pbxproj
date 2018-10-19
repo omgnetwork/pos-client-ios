@@ -59,6 +59,12 @@
 		0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */; };
 		0371EBB7217990F2006BDFD1 /* SocketListenerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB6217990F2006BDFD1 /* SocketListenerTests.swift */; };
 		0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */; };
+		0371EBBB2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */; };
+		0371EBBD2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBBC2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift */; };
+		0371EBBF2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBBE2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift */; };
+		0371EBC12179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBC02179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift */; };
+		0371EBC32179E5EC006BDFD1 /* TransactionRequestBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBC22179E5EC006BDFD1 /* TransactionRequestBuilderTest.swift */; };
+		0371EBC52179E710006BDFD1 /* TestTransactionRequestCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBC42179E710006BDFD1 /* TestTransactionRequestCreator.swift */; };
 		0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */; };
 		0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */; };
 		0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0380AAD6212BF4F8006B2193 /* Observable.swift */; };
@@ -208,6 +214,12 @@
 		0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionRequestBuilder.swift; sourceTree = "<group>"; };
 		0371EBB6217990F2006BDFD1 /* SocketListenerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketListenerTests.swift; sourceTree = "<group>"; };
 		0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSocketClient.swift; sourceTree = "<group>"; };
+		0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		0371EBBC2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModelTests.swift; sourceTree = "<group>"; };
+		0371EBBE2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionApprover.swift; sourceTree = "<group>"; };
+		0371EBC02179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConsumptionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		0371EBC22179E5EC006BDFD1 /* TransactionRequestBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestBuilderTest.swift; sourceTree = "<group>"; };
+		0371EBC42179E710006BDFD1 /* TestTransactionRequestCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionRequestCreator.swift; sourceTree = "<group>"; };
 		0372E3B6213E31590058D0A6 /* BalanceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModelTests.swift; sourceTree = "<group>"; };
 		0372E3B8213E41970058D0A6 /* BalanceDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0380AAD6212BF4F8006B2193 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -350,6 +362,9 @@
 				032FAF5521491F6A00992742 /* TestTouchIDConfirmationViewModel.swift */,
 				0371EBB321789AB9006BDFD1 /* TestTransactionRequestBuilder.swift */,
 				0371EBB821799CC6006BDFD1 /* TestSocketClient.swift */,
+				0371EBBE2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift */,
+				0371EBC02179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift */,
+				0371EBC42179E710006BDFD1 /* TestTransactionRequestCreator.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -368,6 +383,7 @@
 				03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */,
 				03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */,
 				0371EBB121789273006BDFD1 /* QrViewModelTests.swift */,
+				0371EBBC2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -376,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				0371EBAF217891AC006BDFD1 /* Extension.swift */,
+				0371EBC22179E5EC006BDFD1 /* TransactionRequestBuilderTest.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -620,6 +637,7 @@
 				0320B59A2147916D00A8D646 /* MainTabBarViewControllerTests.swift */,
 				0320B59C2147981D00A8D646 /* TransactionsViewControllerTests.swift */,
 				0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */,
+				0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -946,6 +964,7 @@
 				03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */,
 				0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */,
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
+				0371EBBB2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
 				032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */,
@@ -963,7 +982,9 @@
 				0371EBB0217891AC006BDFD1 /* Extension.swift in Sources */,
 				03B9A0D921413832006B056A /* LoadingViewControllerTests.swift in Sources */,
 				0320B599214783F600A8D646 /* ProfileTableViewControllerTests.swift in Sources */,
+				0371EBC52179E710006BDFD1 /* TestTransactionRequestCreator.swift in Sources */,
 				0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */,
+				0371EBC32179E5EC006BDFD1 /* TransactionRequestBuilderTest.swift in Sources */,
 				032FAF362148C8F900992742 /* TestLoadingViewModel.swift in Sources */,
 				0320B59B2147916D00A8D646 /* MainTabBarViewControllerTests.swift in Sources */,
 				0320B59F21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift in Sources */,
@@ -977,13 +998,16 @@
 				032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */,
 				0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */,
 				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
+				0371EBBD2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 				03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */,
 				032FAF4E214916F100992742 /* TestProfileTableViewModel.swift in Sources */,
+				0371EBC12179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift in Sources */,
 				032FAF3E214902B600992742 /* TestBalanceDetailViewModel.swift in Sources */,
 				03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */,
+				0371EBBF2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift in Sources */,
 				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,
 				03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */,
 				032FAF5221491A8000992742 /* TestTransactionsViewModel.swift in Sources */,

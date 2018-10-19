@@ -16,9 +16,12 @@ protocol TransactionRequestBuilderProtocol {
 
 class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
     private let sessionManager: SessionManagerProtocol
+    private let transactionRequestCreator: TransactionRequestCreatorProtocol
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
+         transactionRequestCreator: TransactionRequestCreatorProtocol = TransactionRequestCreator()) {
         self.sessionManager = sessionManager
+        self.transactionRequestCreator = transactionRequestCreator
     }
 
     func build(withTokenId tokenId: String,
@@ -73,7 +76,7 @@ class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
                                                      address: sessionManager.wallet!.address,
                                                      requireConfirmation: false,
                                                      allowAmountOverride: true)!
-        TransactionRequest.create(using: sessionManager.httpClient, params: receive, callback: callback)
+        self.transactionRequestCreator.create(withParams: receive, callback: callback)
     }
 
     private func buildTopup(withTokenId tokenId: String,
@@ -84,6 +87,6 @@ class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
                                                    address: sessionManager.wallet!.address,
                                                    requireConfirmation: true,
                                                    allowAmountOverride: true)!
-        TransactionRequest.create(using: sessionManager.httpClient, params: topup, callback: callback)
+        self.transactionRequestCreator.create(withParams: topup, callback: callback)
     }
 }
