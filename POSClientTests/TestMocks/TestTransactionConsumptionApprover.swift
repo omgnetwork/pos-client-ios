@@ -35,13 +35,15 @@ class TestTransactionConsumptionApprover {
 }
 
 extension TestTransactionConsumptionApprover: TransactionConsumptionApproverProtocol {
-    func approve(consumption _: TransactionConsumption, callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
+    func approve(consumption _: TransactionConsumption,
+                 callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
         self.isApproveCalled = true
         self.approveCompletionClosure = callback
         return nil
     }
 
-    func reject(consumption _: TransactionConsumption, callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
+    func reject(consumption _: TransactionConsumption,
+                callback: @escaping TransactionConsumption.RetrieveRequestCallback) -> TransactionConsumption.RetrieveRequest? {
         self.isRejectCalled = true
         self.rejectCompletionClosure = callback
         return nil

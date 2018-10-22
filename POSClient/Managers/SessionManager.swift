@@ -102,9 +102,10 @@ class SessionManager: Publisher, SessionManagerProtocol {
             switch response {
             case let .fail(error: error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
-                self.currentUser = authenticationToken.user
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
+                self.socketClient.updateConfiguration(self.clientConfiguration())
+                self.currentUser = authenticationToken.user
                 success()
             }
         }
@@ -160,14 +161,18 @@ class SessionManager: Publisher, SessionManagerProtocol {
     }
 
     private func setupOmiseGOClients() {
+        let config = self.clientConfiguration()
+        self.httpClient = HTTPClientAPI(config: config)
+        self.socketClient = SocketClient(config: config, delegate: nil)
+    }
+
+    private func clientConfiguration() -> ClientConfiguration {
         let authenticationToken = self.keychainWrapper.getValue(forKey: .authenticationToken)
         let credentials = ClientCredential(apiKey: Constant.APIKey,
                                            authenticationToken: authenticationToken)
-        let config = ClientConfiguration(baseURL: Constant.baseURL,
-                                         credentials: credentials,
-                                         debugLog: false)
-        self.httpClient = HTTPClientAPI(config: config)
-        self.socketClient = SocketClient(config: config, delegate: nil)
+        return ClientConfiguration(baseURL: Constant.baseURL,
+                                   credentials: credentials,
+                                   debugLog: false)
     }
 
     private func updateState() {
