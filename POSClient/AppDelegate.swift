@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = POSClientManager.shared
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.black
@@ -25,11 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func loadRootView() {
         switch SessionManager.shared.state {
-        case .loggedOut:
+        case .loggedOut?:
             self.window?.rootViewController = Storyboard.login.storyboard.instantiateInitialViewController()
-        case .loading:
+        case .loading?:
             self.window?.rootViewController = Storyboard.loading.storyboard.instantiateInitialViewController()
-        case .loggedIn:
+        case .loggedIn?:
             self.window?.rootViewController = Storyboard.tabBar.storyboard.instantiateInitialViewController()
         default: break
         }

@@ -15,7 +15,7 @@ class SignupConfirmationViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.sut =
-            Storyboard.signup.storyboard.instantiateViewController(withIdentifier: "SignupConfirmationViewController") as! SignupConfirmationViewController
+            Storyboard.signup.storyboard.instantiateViewController(withIdentifier: "SignupConfirmationViewController") as? SignupConfirmationViewController
         _ = UINavigationController(rootViewController: self.sut)
         _ = self.sut.view
     }
@@ -46,7 +46,7 @@ class SignupConfirmationViewControllerTests: XCTestCase {
         let navVC = UINavigationController(rootViewController: dummyVC)
         navVC.pushViewController(self.sut, animated: false)
         XCTAssertEqual(navVC.viewControllers.count, 2)
-        NotificationCenter.default.post(name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.post(name: UIApplication.willEnterForegroundNotification, object: nil)
         XCTAssertEqual(navVC.viewControllers.count, 1)
         XCTAssertEqual(navVC.viewControllers[0], dummyVC)
     }

@@ -21,14 +21,14 @@ class WalletLoader: WalletLoaderProtocol {
 
 protocol TransactionLoaderProtocol {
     func list(withParams params: TransactionListParams,
-              callback: @escaping Transaction.ListRequestCallback) -> Transaction.ListRequest?
+              callback: @escaping Transaction.PaginatedListRequestCallback) -> Transaction.PaginatedListRequest?
 }
 
 /// This wrapper has been created for the sake of testing with dependency injection
 class TransactionLoader: TransactionLoaderProtocol {
     @discardableResult
     func list(withParams params: TransactionListParams,
-              callback: @escaping Transaction.ListRequestCallback) -> Transaction.ListRequest? {
+              callback: @escaping Transaction.PaginatedListRequestCallback) -> Transaction.PaginatedListRequest? {
         return Transaction.list(using: SessionManager.shared.httpClient,
                                 params: params,
                                 callback: callback)

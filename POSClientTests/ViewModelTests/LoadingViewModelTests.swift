@@ -97,7 +97,7 @@ class LoadingViewModelTests: XCTestCase {
         XCTAssertNil(self.sut.raisedError)
     }
 
-    func testCallsClearTokensWhenRaisingAnAuthenticationError() {
+    func testCallsForceLogoutWhenRaisingAnAuthenticationError() {
         let expectation = self.expectation(description: "Failure with an authentication error calls clearToken")
         self.sut.onFailedLoading = { _ in expectation.fulfill() }
         self.sut.load()
@@ -107,7 +107,8 @@ class LoadingViewModelTests: XCTestCase {
         self.sessionManager.loadCurrentUserFailed(withError: error)
         self.sessionManager.loadWalletFailed(withError: error)
         self.waitForExpectations(timeout: 1, handler: nil)
-        XCTAssertTrue(self.sessionManager.clearTokenCalled)
+        XCTAssertTrue(self.sessionManager.logoutCalled)
+        XCTAssertTrue(self.sessionManager.isForceLogout)
     }
 
     func testHideLoadingWhenRequestFails() {

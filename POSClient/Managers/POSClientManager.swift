@@ -6,7 +6,6 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import OmiseGO
 import UIKit
 
 class POSClientManager {

@@ -19,12 +19,11 @@ class TransactionPaginator: Paginator<Transaction> {
     }
 
     override func load() {
-        let paginationParams = PaginationParams<Transaction>(page: self.page,
-                                                             perPage: self.perPage,
-                                                             searchTerm: nil,
-                                                             sortBy: .createdAt,
-                                                             sortDirection: .descending)
-        let params = TransactionListParams(paginationParams: paginationParams)
+        let paginationParams = PaginatedListParams<Transaction>(page: self.page,
+                                                                perPage: self.perPage,
+                                                                sortBy: .createdAt,
+                                                                sortDirection: .descending)
+        let params = TransactionListParams(paginatedListParams: paginationParams)
         self.currentRequest = self.transactionLoader.list(withParams: params) { response in
             switch response {
             case let .success(data: transactionList):

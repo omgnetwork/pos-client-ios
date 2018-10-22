@@ -12,7 +12,7 @@ class TransactionsViewController: BaseTableViewController {
     private var viewModel: TransactionsViewModelProtocol = TransactionsViewModel()
 
     lazy var loadingView: UIView = {
-        let loader = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let loader = UIActivityIndicatorView(style: .white)
         loader.startAnimating()
         loader.translatesAutoresizingMaskIntoConstraints = false
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
@@ -63,7 +63,7 @@ class TransactionsViewController: BaseTableViewController {
         }
         self.viewModel.appendNewResultClosure = { [weak self] indexPaths in
             UIView.setAnimationsEnabled(false)
-            self?.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
+            self?.tableView.insertRows(at: indexPaths, with: UITableView.RowAnimation.none)
             UIView.setAnimationsEnabled(true)
         }
     }

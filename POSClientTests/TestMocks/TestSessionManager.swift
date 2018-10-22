@@ -10,7 +10,7 @@ import OmiseGO
 @testable import POSClient
 
 class TestSessionManager: Publisher, SessionManagerProtocol {
-    var httpClient: HTTPClientAPI
+    var httpClient: HTTPClientAPI!
     var currentUser: User?
     var wallet: Wallet?
     var isBiometricAvailable: Bool
@@ -43,6 +43,7 @@ class TestSessionManager: Publisher, SessionManagerProtocol {
     var removeObserverCalled: Bool = false
     var notifyCalled: Bool = false
     var clearTokenCalled: Bool = false
+    var isForceLogout: Bool = false
 
     private var enableBiometricAuthSuccessClosure: SuccessClosure?
     private var enableBiometricAuthFailureClosure: FailureClosure?
@@ -140,7 +141,8 @@ class TestSessionManager: Publisher, SessionManagerProtocol {
         self.loginFailureClosure = failure
     }
 
-    func logout(withSuccessClosure success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+        self.isForceLogout = force
         self.logoutCalled = true
         self.logoutSuccessClosure = success
         self.logoutFailureClosure = failure

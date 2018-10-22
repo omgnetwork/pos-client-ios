@@ -15,7 +15,7 @@ class MainTabBarViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.sut =
-            Storyboard.tabBar.storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as! MainTabBarViewController
+            Storyboard.tabBar.storyboard.instantiateViewController(withIdentifier: "MainTabBarViewController") as? MainTabBarViewController
         _ = self.sut.view
     }
 

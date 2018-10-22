@@ -19,7 +19,7 @@ class SignupConfirmationViewController: BaseViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.appWillEnterForeground),
-                                               name: Notification.Name.UIApplicationWillEnterForeground,
+                                               name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
     }
 
