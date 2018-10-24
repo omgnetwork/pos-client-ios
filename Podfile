@@ -14,7 +14,7 @@ target 'POSClient' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Client', git: 'https://github.com/omisego/ios-sdk.git', branch: '101-transaction-request'
+  pod 'OmiseGO/Admin', '1.1.0-beta2'
 
   target 'POSClientTests' do
     inherit! :search_paths
