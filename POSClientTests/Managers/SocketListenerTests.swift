@@ -49,34 +49,30 @@ class SocketListenerTests: XCTestCase {
     }
 
     func testBroadcastNotificationOnConsumptionRequest() {
-        let e = self.expectation(description: "broadcast notification on consumption request")
         let exptectedConsumption = StubGenerator.transactionConsumption()
         var consumption: TransactionConsumption?
-        let observer = NotificationCenter.default.addObserver(forName: .onConsumptionRequest, object: nil, queue: nil) { notification in
+        self.expectation(forNotification: .onConsumptionRequest, object: nil) { (notification) -> Bool in
             consumption = notification.object as? TransactionConsumption
-            e.fulfill()
+            return true
         }
         let event = SocketEvent.transactionConsumptionRequest
         let object = WebsocketObject.transactionConsumption(object: exptectedConsumption)
         self.sut.on(object, error: nil, forEvent: event)
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(exptectedConsumption, consumption)
-        NotificationCenter.default.removeObserver(observer)
     }
 
     func testBroadcastNotificationOnConsumptionFinalized() {
-        let e = self.expectation(description: "broadcast notification on consumption finalized")
         let exptectedConsumption = StubGenerator.transactionConsumption()
         var consumption: TransactionConsumption?
-        let observer = NotificationCenter.default.addObserver(forName: .onConsumptionFinalized, object: nil, queue: nil) { notification in
+        self.expectation(forNotification: .onConsumptionFinalized, object: nil) { (notification) -> Bool in
             consumption = notification.object as? TransactionConsumption
-            e.fulfill()
+            return true
         }
         let event = SocketEvent.transactionConsumptionFinalized
         let object = WebsocketObject.transactionConsumption(object: exptectedConsumption)
         self.sut.on(object, error: nil, forEvent: event)
         self.waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(exptectedConsumption, consumption)
-        NotificationCenter.default.removeObserver(observer)
     }
 }
