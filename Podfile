@@ -14,7 +14,7 @@ target 'POSClient' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Admin', '1.1.0-beta2'
+  pod 'OmiseGO/Client', '1.1.0-beta2'
 
   target 'POSClientTests' do
     inherit! :search_paths
