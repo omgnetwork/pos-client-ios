@@ -9,6 +9,10 @@
 @testable import POSClient
 
 class TestProfileTableViewModel: ProfileTableViewModelProtocol {
+    var versionLabelText: String = "x"
+    var settingsSectionTitle: String = "x"
+    var infoSectionTitle: String = "x"
+    var currentVersion: String = "x"
     var title: String = "x"
     var transactionLabelText: String = "x"
     var emailLabelText: String = "x"

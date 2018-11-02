@@ -64,6 +64,9 @@
 "profile.label.email" = "Email";
 "profile.label.touchFaceID" = "Touch ID / Face ID";
 "profile.label.signout" = "Sign out";
+"profile.section.settings" = "SETTINGS";
+"profile.section.info" = "INFO";
+"profile.label.version" = "Version";
 
 // Transactions
 "transactions.view.title" = "Transactions";

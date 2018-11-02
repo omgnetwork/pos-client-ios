@@ -17,6 +17,8 @@ class ProfileTableViewController: BaseTableViewController {
     @IBOutlet var touchFaceIdLabel: UILabel!
     @IBOutlet var touchFaceIdSwitch: UISwitch!
     @IBOutlet var signOutLabel: UILabel!
+    @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var versionValueLabel: UILabel!
 
     private var viewModel: ProfileTableViewModelProtocol = ProfileTableViewModel()
 
@@ -35,6 +37,8 @@ class ProfileTableViewController: BaseTableViewController {
         self.touchFaceIdLabel.text = self.viewModel.touchFaceIdLabelText
         self.touchFaceIdSwitch.isOn = self.viewModel.switchState
         self.signOutLabel.text = self.viewModel.signOutLabelText
+        self.versionLabel.text = self.viewModel.versionLabelText
+        self.versionValueLabel.text = self.viewModel.currentVersion
     }
 
     override func configureViewModel() {
@@ -85,7 +89,7 @@ extension ProfileTableViewController {
         switch (indexPath.section, indexPath.row) {
         case (0, 0): // transactions
             self.performSegue(withIdentifier: self.transactionsSegueIdentifier, sender: nil)
-        case (2, 0): // Sign out
+        case (3, 0): // Sign out
             self.viewModel.logout()
         default:
             break
@@ -96,6 +100,15 @@ extension ProfileTableViewController {
         switch (indexPath.section, indexPath.row) {
         case (1, 1) where !self.viewModel.isBiometricAvailable: return 0
         default: return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+
+    override func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 1: return self.viewModel.settingsSectionTitle
+        case 2: return self.viewModel.infoSectionTitle
+        default:
+            return nil
         }
     }
 }

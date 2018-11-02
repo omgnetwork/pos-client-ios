@@ -17,6 +17,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var bioLoginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
+    @IBOutlet var versionLabel: UILabel!
 
     class func initWithViewModel(_ viewModel: LoginViewModelProtocol = LoginViewModel()) -> LoginViewController? {
         guard let loginVC: LoginViewController = Storyboard.login.viewControllerFromId() else { return nil }
@@ -30,6 +31,7 @@ class LoginViewController: BaseViewController {
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.loginButton.setTitle(self.viewModel.loginButtonTitle, for: .normal)
         self.registerButton.setTitle(self.viewModel.registerButtonTitle, for: .normal)
+        self.versionLabel.text = self.viewModel.currentVersion
         self.setupBioLoginButton()
     }
 

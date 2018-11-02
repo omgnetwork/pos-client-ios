@@ -20,6 +20,7 @@ protocol LoginViewModelProtocol {
     var isBiometricAvailable: Bool { get }
     var touchFaceIdButtonTitle: String { get }
     var touchFaceIdButtonPicture: UIImage? { get }
+    var currentVersion: String { get }
     var email: String? { get set }
     var password: String? { get set }
 
