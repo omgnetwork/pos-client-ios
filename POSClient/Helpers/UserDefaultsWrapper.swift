@@ -27,6 +27,14 @@ class UserDefaultsWrapper {
         return self.userDefaults.string(forKey: key.rawValue)
     }
 
+    func storeData(data: Data, forKey key: UserDefaultKey) {
+        self.userDefaults.set(data, forKey: key.rawValue)
+    }
+
+    func getData(forKey key: UserDefaultKey) -> Data? {
+        return self.userDefaults.data(forKey: key.rawValue)
+    }
+
     func clearValue(forKey key: UserDefaultKey) {
         self.userDefaults.removeObject(forKey: key.rawValue)
     }

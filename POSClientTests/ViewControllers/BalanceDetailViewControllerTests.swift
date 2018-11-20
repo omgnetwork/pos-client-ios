@@ -38,12 +38,6 @@ class BalanceDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(self.sut.title, "x")
     }
 
-    func testSetupWithBalanceSetsTheBalanceOnTheViewModel() {
-        self.viewModel.balance = nil
-        self.sut.setup(withBalance: StubGenerator.mainWallet().balances.first!)
-        XCTAssertNotNil(self.viewModel.balance)
-    }
-
     func testOnDataUpdateTriggersDisplayUpdate() {
         XCTAssertEqual(self.sut.balanceLabel.text, "x")
         XCTAssertEqual(self.sut.tokenSymbolLabel.text, "x")
@@ -76,16 +70,9 @@ class BalanceDetailViewControllerTests: XCTestCase {
     }
 
     func testTapPayOrTopupButtonPostNotification() {
-        var didReceiveNotification = false
-        let e = self.expectation(description: "Receive a notification when tapping the button")
-        let o = NotificationCenter.default.addObserver(forName: Notification.Name.didTapPayOrTopup, object: nil, queue: OperationQueue.main) { _ in
-            didReceiveNotification = true
-            e.fulfill()
-        }
+        self.expectation(forNotification: .didTapPayOrTopup, object: nil)
         self.sut.tapPayOrTopupButton(self.sut.payButton)
         self.waitForExpectations(timeout: 1, handler: nil)
-        XCTAssertTrue(didReceiveNotification)
-        NotificationCenter.default.removeObserver(o)
     }
 
     func testTapRefreshIconCallsLoadData() {

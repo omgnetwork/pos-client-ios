@@ -38,10 +38,15 @@
 // Balance list
 "balance_list.view.title" = "Balances";
 
+// Balance cell
+"balance_cell.label.primary" = "Primary";
+
 // Balance detail
 "balance_detail.label.pay" = "Pay";
 "balance_detail.label.or_topup" = "or top-up";
 "balance_detail.label.last_updated" = "Last updated";
+"balance_detail.button.primary" = "Primary";
+"balance_detail.button.set_primary" = "Set primary";
 
 // QR viewer
 "qr_viewer.label.your_qr" = "Your QR";
@@ -84,3 +89,13 @@
 "tab.balances.title" = "Balances";
 "tab.qr.title" = "QR";
 "tab.profile.title" = "Profile";
+"tab.notification.received" = "Received";
+"tab.notification.from" = "From";
+"tab.profile.sent" = "Sent";
+"tab.notification.to" = "to";
+
+// Consumption confirmation
+"consumption_confirmation.button.confirm" = "Confirm";
+"consumption_confirmation.button.reject" = "Reject";
+"consumption_confirmation.send" = "Send";
+"consumption_confirmation.to" = "To";

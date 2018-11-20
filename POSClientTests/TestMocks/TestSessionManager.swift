@@ -6,19 +6,26 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import OmiseGO
+@testable import OmiseGO
 @testable import POSClient
 
 class TestSessionManager: Publisher, SessionManagerProtocol {
     var httpClient: HTTPClientAPI!
+    var socketClient: SocketClient!
     var currentUser: User?
     var wallet: Wallet?
     var isBiometricAvailable: Bool
 
+    let startscreamSocketClient = TestSocketClient()
+
     init(httpClient: HTTPClientAPI? = nil,
+         socketClient: SocketClient? = nil,
          currentUser: User? = nil,
          wallet: Wallet? = nil,
          isBiometricAvailable: Bool = false) {
+        self.currentUser = currentUser
+        self.wallet = wallet
+        self.isBiometricAvailable = isBiometricAvailable
         if let client = httpClient {
             self.httpClient = client
         } else {
@@ -26,9 +33,12 @@ class TestSessionManager: Publisher, SessionManagerProtocol {
             let clientConfiguration = ClientConfiguration(baseURL: "http://localhost:4000", credentials: clientCredential)
             self.httpClient = HTTPClientAPI(config: clientConfiguration)
         }
-        self.currentUser = currentUser
-        self.wallet = wallet
-        self.isBiometricAvailable = isBiometricAvailable
+        if let client = socketClient {
+            self.socketClient = client
+        } else {
+            self.socketClient = SocketClient(websocketClient: self.startscreamSocketClient)
+        }
+        super.init()
     }
 
     var disableBiometricAuthCalled: Bool = false

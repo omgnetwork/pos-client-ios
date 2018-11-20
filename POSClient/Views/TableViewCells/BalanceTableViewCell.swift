@@ -13,6 +13,7 @@ class BalanceTableViewCell: UITableViewCell {
     @IBOutlet var tokenNameLabel: UILabel!
     @IBOutlet var tokenSymbolLabel: UILabel!
     @IBOutlet var balanceLabel: UILabel!
+    @IBOutlet var primaryLabel: UILabel!
 
     var balanceTableViewModel: BalanceCellViewModel! {
         didSet {
@@ -20,6 +21,7 @@ class BalanceTableViewCell: UITableViewCell {
             self.tokenNameLabel.text = self.balanceTableViewModel.tokenName
             self.tokenSymbolLabel.text = self.balanceTableViewModel.tokenSymbol
             self.balanceLabel.text = self.balanceTableViewModel.balanceDisplay
+            self.primaryLabel.text = self.balanceTableViewModel.primary
         }
     }
 }

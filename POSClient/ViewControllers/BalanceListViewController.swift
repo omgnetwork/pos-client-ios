@@ -55,12 +55,16 @@ class BalanceListViewController: BaseViewController {
         if segue.identifier == self.balanceDetailSegueIdentifier,
             let vc: BalanceDetailViewController = segue.destination as? BalanceDetailViewController,
             let balance: Balance = sender as? Balance {
-            vc.setup(withBalance: balance)
+            vc.viewModel = BalanceDetailViewModel(balance: balance)
         }
     }
 
     @objc private func loadDataBridge() {
         self.viewModel.loadData()
+    }
+
+    deinit {
+        self.viewModel.stopObserving()
     }
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,41 +36,50 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ocW-wV-jCC">
-                        <rect key="frame" x="64" y="8.5" width="248" height="56"/>
+                        <rect key="frame" x="64" y="8" width="248" height="56.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="P16-Qv-Yc9">
-                                <rect key="frame" x="0.0" y="0.0" width="248" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-q6-r1o">
-                                        <rect key="frame" x="0.0" y="0.0" width="123" height="56"/>
+                                        <rect key="frame" x="0.0" y="4" width="123" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="TKN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzO-jb-9Oe">
-                                        <rect key="frame" x="214" y="0.0" width="34" height="56"/>
+                                        <rect key="frame" x="214" y="0.0" width="34" height="56.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="12,324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jk-Wa-Qv4">
-                                        <rect key="frame" x="139" y="0.0" width="59" height="56"/>
+                                        <rect key="frame" x="139" y="0.0" width="59" height="56.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Primary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oab-Fk-mLU">
+                                        <rect key="frame" x="0.0" y="34.5" width="123" height="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="4Jk-Wa-Qv4" secondAttribute="bottom" id="5LP-fy-3bQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="5bq-q6-r1o" secondAttribute="bottom" id="6Wt-zI-39c"/>
                                     <constraint firstItem="5bq-q6-r1o" firstAttribute="leading" secondItem="P16-Qv-Yc9" secondAttribute="leading" id="6YF-OV-c2K"/>
                                     <constraint firstItem="RzO-jb-9Oe" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="G7P-j3-KRT"/>
+                                    <constraint firstAttribute="bottom" secondItem="oab-Fk-mLU" secondAttribute="bottom" constant="4" id="HIs-rR-VZW"/>
                                     <constraint firstAttribute="bottom" secondItem="RzO-jb-9Oe" secondAttribute="bottom" id="MAl-OT-PFG"/>
                                     <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="R6a-Hb-7fR"/>
                                     <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="leading" secondItem="5bq-q6-r1o" secondAttribute="trailing" constant="16" id="UJn-u0-BLc"/>
-                                    <constraint firstItem="5bq-q6-r1o" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" id="W7Z-ve-ivB"/>
+                                    <constraint firstItem="5bq-q6-r1o" firstAttribute="top" secondItem="P16-Qv-Yc9" secondAttribute="top" constant="4" id="W7Z-ve-ivB"/>
+                                    <constraint firstItem="oab-Fk-mLU" firstAttribute="leading" secondItem="P16-Qv-Yc9" secondAttribute="leading" id="fUu-Ba-auA"/>
                                     <constraint firstItem="RzO-jb-9Oe" firstAttribute="leading" secondItem="4Jk-Wa-Qv4" secondAttribute="trailing" constant="16" id="fZo-7M-1SF"/>
+                                    <constraint firstItem="oab-Fk-mLU" firstAttribute="top" secondItem="5bq-q6-r1o" secondAttribute="bottom" id="gGV-77-bjI"/>
+                                    <constraint firstItem="4Jk-Wa-Qv4" firstAttribute="leading" secondItem="oab-Fk-mLU" secondAttribute="trailing" constant="16" id="mQ2-dn-uo3"/>
                                     <constraint firstAttribute="trailing" secondItem="RzO-jb-9Oe" secondAttribute="trailing" id="nRh-KK-6Yn"/>
                                 </constraints>
                             </view>
@@ -92,11 +101,12 @@
             <inset key="separatorInset" minX="64" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="balanceLabel" destination="4Jk-Wa-Qv4" id="bVX-68-b6V"/>
+                <outlet property="primaryLabel" destination="oab-Fk-mLU" id="YdZ-Ck-IiL"/>
                 <outlet property="tokenIconLabel" destination="mZ1-On-vJo" id="8IB-4L-xeB"/>
                 <outlet property="tokenNameLabel" destination="5bq-q6-r1o" id="wLg-q5-5s4"/>
                 <outlet property="tokenSymbolLabel" destination="RzO-jb-9Oe" id="nM3-eT-O6k"/>
             </connections>
-            <point key="canvasLocation" x="34" y="65.5"/>
+            <point key="canvasLocation" x="33.600000000000001" y="65.217391304347828"/>
         </tableViewCell>
     </objects>
 </document>

@@ -20,4 +20,24 @@ class BalanceTableViewCellTests: XCTestCase {
         XCTAssertEqual(sut?.tokenSymbolLabel.text, "BTC")
         XCTAssertEqual(sut?.balanceLabel.text, "8\(Locale.current.groupingSeparator ?? ",")000")
     }
+
+    func testShowPrimaryIfIsPrimary() {
+        let bundle = Bundle(for: BalanceTableViewCell.self)
+        let sut = bundle.loadNibNamed("BalanceTableViewCell", owner: nil)?.first as? BalanceTableViewCell
+        let balance = StubGenerator.mainWalletSingleBalance().balances.first!
+        PrimaryTokenManager().setPrimary(tokenId: balance.token.id)
+        let vm = BalanceCellViewModel(balance: balance)
+        sut?.balanceTableViewModel = vm
+        XCTAssertEqual(sut?.primaryLabel.text, "balance_cell.label.primary".localized())
+    }
+
+    func testDoesNotShowPrimaryIfIsPrimary() {
+        let bundle = Bundle(for: BalanceTableViewCell.self)
+        let sut = bundle.loadNibNamed("BalanceTableViewCell", owner: nil)?.first as? BalanceTableViewCell
+        let balance = StubGenerator.mainWalletSingleBalance().balances.first!
+        PrimaryTokenManager().setPrimary(tokenId: "an_other_token_id")
+        let vm = BalanceCellViewModel(balance: balance)
+        sut?.balanceTableViewModel = vm
+        XCTAssertEqual(sut?.primaryLabel.text, "")
+    }
 }

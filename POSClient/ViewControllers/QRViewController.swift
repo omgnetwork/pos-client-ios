@@ -15,9 +15,10 @@ class QRViewController: BaseViewController {
 
     var initialBrightness: CGFloat = UIScreen.main.brightness
 
-    private var viewModel: QRViewModelProtocol = QRViewModel()
+    private var viewModel: QRViewModelProtocol =
+        QRViewModel(transactionRequestBuilder: TransactionRequestBuilder(sessionManager: SessionManager.shared))
 
-    class func initWithViewModel(_ viewModel: QRViewModelProtocol = QRViewModel()) -> QRViewController? {
+    class func initWithViewModel(_ viewModel: QRViewModelProtocol) -> QRViewController? {
         guard let qrVC: QRViewController = Storyboard.qrCode.viewControllerFromId() else { return nil }
         qrVC.viewModel = viewModel
         return qrVC
@@ -29,7 +30,21 @@ class QRViewController: BaseViewController {
         self.qrBorderView.addBorder(withColor: Color.greyBorder.uiColor(), width: 1, radius: 0)
         self.hintLabel.text = self.viewModel.hint
         self.view.layoutIfNeeded()
-        self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
+        self.viewModel.buildTransactionRequests()
+    }
+
+    override func configureViewModel() {
+        super.configureViewModel()
+        self.viewModel.onFailure = { [weak self] in
+            self?.showError(withMessage: $0.message)
+        }
+        self.viewModel.onLoadStateChange = { [weak self] in
+            $0 ? self?.showLoading() : self?.hideLoading()
+        }
+        self.viewModel.onTransactionRequestGenerated = { [weak self] in
+            guard let weakself = self else { return }
+            weakself.qrImageView.image = weakself.viewModel.qrImage(withWidth: weakself.qrImageView.frame.width)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

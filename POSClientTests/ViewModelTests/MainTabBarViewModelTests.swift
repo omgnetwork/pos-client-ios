@@ -6,6 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import OmiseGO
 @testable import POSClient
 import XCTest
 
@@ -24,11 +25,33 @@ class MainTabBarViewModelTests: XCTestCase {
 
     func testNotificationTriggersOnTabSelected() {
         var selectedIndex: Int?
-        self.sut.onTabSelected = { index in
-            selectedIndex = index
+        self.sut.onTabSelected = {
+            selectedIndex = $0
         }
         NotificationCenter.default.post(name: Notification.Name.didTapPayOrTopup, object: nil)
         XCTAssertNotNil(selectedIndex)
         XCTAssertEqual(selectedIndex!, 1)
+    }
+
+    func testNotificationTriggersOnConsumptionRequest() {
+        var consumption: TransactionConsumption?
+        let expectedConsumption = StubGenerator.transactionConsumption()
+        self.sut.onConsumptionRequest = {
+            consumption = $0
+        }
+        NotificationCenter.default.post(name: Notification.Name.onConsumptionRequest, object: expectedConsumption)
+        XCTAssertNotNil(consumption)
+        XCTAssertEqual(consumption, expectedConsumption)
+    }
+
+    func testNotificationTriggersOnConsumptionFinalized() {
+        var stringData: (title: NSAttributedString, subtitle: NSAttributedString)?
+        let consumption = StubGenerator.transactionConsumption()
+        self.sut.onConsumptionFinalized = {
+            stringData = $0
+        }
+        NotificationCenter.default.post(name: Notification.Name.onConsumptionFinalized, object: consumption)
+        XCTAssertEqual(stringData?.title.string, "Received 1 TK1")
+        XCTAssertEqual(stringData?.subtitle.string, "From Headquarter")
     }
 }

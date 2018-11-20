@@ -14,17 +14,16 @@ class BalanceDetailViewController: BaseViewController {
     @IBOutlet var payButton: UIButton!
     @IBOutlet var lastUpdatedLabel: UILabel!
     @IBOutlet var lastUpdatedValueLabel: UILabel!
+    @IBOutlet var setPrimaryButton: UIButton!
 
-    private var viewModel: BalanceDetailViewModelProtocol = BalanceDetailViewModel()
+    lazy var viewModel: BalanceDetailViewModelProtocol! = {
+        BalanceDetailViewModel()
+    }()
 
     class func initWithViewModel(_ viewModel: BalanceDetailViewModelProtocol = BalanceDetailViewModel()) -> BalanceDetailViewController? {
         guard let balanceDetailVC: BalanceDetailViewController = Storyboard.balance.viewControllerFromId() else { return nil }
         balanceDetailVC.viewModel = viewModel
         return balanceDetailVC
-    }
-
-    func setup(withBalance balance: Balance) {
-        self.viewModel.balance = balance
     }
 
     override func configureView() {
@@ -36,6 +35,7 @@ class BalanceDetailViewController: BaseViewController {
         self.title = self.viewModel.title
         self.payButton.titleLabel?.numberOfLines = 0
         self.payButton.setAttributedTitle(self.viewModel.payOrTopupAttrStr, for: .normal)
+        self.updatePrimaryButton()
         self.viewModel.loadData()
     }
 
@@ -52,14 +52,27 @@ class BalanceDetailViewController: BaseViewController {
         self.viewModel.onLoadStateChange = { [weak self] in
             $0 ? self?.showLoading() : self?.hideLoading()
         }
+        self.viewModel.onPrimaryStateChange = { [weak self] in
+            self?.updatePrimaryButton()
+        }
     }
 
     deinit {
         self.viewModel.stopObserving()
     }
+
+    private func updatePrimaryButton() {
+        self.setPrimaryButton.setTitle(self.viewModel.setPrimaryButtonTitle, for: .normal)
+        self.setPrimaryButton.alpha = self.viewModel.isPrimary ? 0.5 : 1
+        self.setPrimaryButton.isEnabled = !self.viewModel.isPrimary
+    }
 }
 
 extension BalanceDetailViewController {
+    @IBAction func tapSetPrimaryButton(_: Any) {
+        self.viewModel.setPrimary()
+    }
+
     @IBAction func tapPayOrTopupButton(_: Any) {
         NotificationCenter.default.post(name: Notification.Name.didTapPayOrTopup, object: nil)
     }

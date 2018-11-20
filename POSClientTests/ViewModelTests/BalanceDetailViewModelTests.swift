@@ -16,9 +16,10 @@ class BalanceDetailViewModelTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        PrimaryTokenManager().clear()
         self.sessionManager = TestSessionManager(wallet: StubGenerator.mainWallet())
-        self.sut = BalanceDetailViewModel(sessionManager: self.sessionManager)
-        self.sut.balance = self.sessionManager.wallet!.balances.first!
+        self.sut = BalanceDetailViewModel(sessionManager: self.sessionManager,
+                                          balance: self.sessionManager.wallet!.balances.first!)
     }
 
     override func tearDown() {
@@ -57,6 +58,23 @@ class BalanceDetailViewModelTests: XCTestCase {
     func testDataAreCorrect() {
         XCTAssertEqual(self.sut.balanceDisplay, "8,000")
         XCTAssertEqual(self.sut.tokenSymbol, "BTC")
+    }
+
+    func testPrimaryDataWhenIsPrimary() {
+        self.sut.setPrimary()
+        XCTAssertTrue(self.sut.isPrimary)
+        XCTAssertEqual(self.sut.setPrimaryButtonTitle, "balance_detail.button.primary".localized())
+    }
+
+    func testPrimaryDataWhenIsNotPrimary() {
+        XCTAssertFalse(self.sut.isPrimary)
+        XCTAssertEqual(self.sut.setPrimaryButtonTitle, "balance_detail.button.set_primary".localized())
+    }
+
+    func testPrimaryDataWhenBalanceIsNil() {
+        let sut = BalanceDetailViewModel(sessionManager: self.sessionManager)
+        XCTAssertTrue(sut.isPrimary)
+        XCTAssertEqual(sut.setPrimaryButtonTitle, "")
     }
 
     func testShowLoadingWhenFetching() {

@@ -13,7 +13,10 @@ class TestBalanceDetailViewModel: BalanceDetailViewModelProtocol {
     var onFailGetWallet: FailureClosure?
     var onDataUpdate: SuccessClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
+    var onPrimaryStateChange: EmptyClosure?
 
+    var setPrimaryButtonTitle: String = "x"
+    var isPrimary: Bool = false
     var balanceDisplay: String = "x"
     var tokenSymbol: String = "x"
     var title: String = "x"
@@ -30,6 +33,11 @@ class TestBalanceDetailViewModel: BalanceDetailViewModelProtocol {
         self.isStopObservingCalled = true
     }
 
+    func setPrimary() {
+        self.isSetPrimaryCalled = true
+    }
+
     var isLoadDataCalled = false
     var isStopObservingCalled = false
+    var isSetPrimaryCalled = false
 }

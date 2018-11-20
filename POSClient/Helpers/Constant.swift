@@ -11,6 +11,8 @@ import Foundation
 enum UserDefaultKey: String {
     case email = "com.omisego.pos-client.email"
     case biometricEnabled = "com.omisego.pos-client.biometric_enabled"
+    case transactionRequestsQRString = "com.omisego.pos-client.transaction_requests_qr_string"
+    case primaryBalance = "com.omisego.pos-client.primary-balance"
 }
 
 enum KeychainKey: String {
@@ -20,9 +22,6 @@ enum KeychainKey: String {
 
 struct Constant {
     static let urlScheme = "pos-client://"
-    // LOCAL
-//    static let baseURL = "http://192.168.1.42:4000"
-//    static let APIKey = "dRrUkVp4WPypzHWJmEl6faJrBtvMZKY-27C63U6kAko"
 
     static let baseURL = "https://coffeego.omisego.io"
     static let APIKey = "fxqhJomqeemaAomNyfH_RphsVx4D2Z0ruBo_g-3jCY4"
@@ -33,4 +32,7 @@ struct Constant {
 
 extension Notification.Name {
     static let didTapPayOrTopup = Notification.Name("didTapPayOrTopup")
+    static let onConsumptionRequest = Notification.Name("onConsumptionRequest")
+    static let onConsumptionFinalized = Notification.Name("onConsumptionFinalized")
+    static let onPrimaryTokenUpdate = Notification.Name("onPrimaryTokenUpdate")
 }
