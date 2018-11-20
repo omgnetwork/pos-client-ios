@@ -18,6 +18,7 @@ class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     let passwordPlaceholder = "login.text_field.placeholder.password".localized()
     let loginButtonTitle = "login.button.title.login".localized()
     let registerButtonTitle = "login.button.title.register".localized()
+    let currentVersion = "v \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
 
     var email: String? {
         didSet { self.validateEmail() }

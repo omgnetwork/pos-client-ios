@@ -13,6 +13,9 @@ protocol ProfileTableViewModelProtocol {
     var transactionLabelText: String { get }
     var emailLabelText: String { get }
     var signOutLabelText: String { get }
+    var versionLabelText: String { get }
+    var settingsSectionTitle: String { get }
+    var infoSectionTitle: String { get }
 
     var onFailLogout: FailureClosure? { get set }
     var onLoadStateChange: ObjectClosure<Bool>? { get set }
@@ -23,6 +26,7 @@ protocol ProfileTableViewModelProtocol {
     var isBiometricAvailable: Bool { get }
     var touchFaceIdLabelText: String { get }
     var emailValueLabelText: String { get }
+    var currentVersion: String { get }
 
     func toggleSwitch(newValue isEnabled: Bool)
     func logout()

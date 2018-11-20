@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HbO-oK-DUf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HbO-oK-DUf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,7 +135,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="omisego_logo_black" translatesAutoresizingMaskIntoConstraints="NO" id="dGX-Ds-izV">
-                                        <rect key="frame" x="123" y="64" width="130" height="45"/>
+                                        <rect key="frame" x="122.5" y="64" width="130" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="078-k0-WyB"/>
                                         </constraints>
@@ -162,17 +163,26 @@
                                     <segue destination="vih-KJ-aIT" kind="show" id="T1k-SR-2VC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVp-mu-jA7">
+                                <rect key="frame" x="16" y="635.5" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.23529411759999999" green="0.25490196079999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xea-Te-Xc2" firstAttribute="bottom" secondItem="QVp-mu-jA7" secondAttribute="bottom" constant="8" id="4U4-k0-MN4"/>
                             <constraint firstItem="ee2-Tq-s7S" firstAttribute="top" secondItem="8Cl-VS-57f" secondAttribute="bottom" constant="32" id="G2N-gS-FyC"/>
                             <constraint firstItem="8Cl-VS-57f" firstAttribute="top" secondItem="Xea-Te-Xc2" secondAttribute="top" id="P3p-S8-xjB"/>
                             <constraint firstAttribute="trailing" secondItem="8Cl-VS-57f" secondAttribute="trailing" id="VJH-kj-3qJ"/>
                             <constraint firstItem="o3n-rv-LSG" firstAttribute="leading" secondItem="Xea-Te-Xc2" secondAttribute="leading" constant="32" id="Wzx-lB-8Ed"/>
                             <constraint firstItem="ee2-Tq-s7S" firstAttribute="leading" secondItem="Xea-Te-Xc2" secondAttribute="leading" id="etv-WH-pVS"/>
                             <constraint firstItem="Xea-Te-Xc2" firstAttribute="bottom" secondItem="ee2-Tq-s7S" secondAttribute="bottom" constant="32" id="jCx-G4-EtY"/>
+                            <constraint firstItem="Xea-Te-Xc2" firstAttribute="trailing" secondItem="QVp-mu-jA7" secondAttribute="trailing" constant="16" id="jGd-5W-GFw"/>
                             <constraint firstAttribute="trailing" secondItem="ee2-Tq-s7S" secondAttribute="trailing" id="kl8-Zg-7xG"/>
                             <constraint firstItem="Xea-Te-Xc2" firstAttribute="trailing" secondItem="o3n-rv-LSG" secondAttribute="trailing" constant="32" id="lcq-tI-kaD"/>
+                            <constraint firstItem="QVp-mu-jA7" firstAttribute="leading" secondItem="Xea-Te-Xc2" secondAttribute="leading" constant="16" id="mX6-1Z-nSs"/>
                             <constraint firstItem="8Cl-VS-57f" firstAttribute="leading" secondItem="Xea-Te-Xc2" secondAttribute="leading" id="n4b-YU-kv2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xea-Te-Xc2"/>
@@ -185,6 +195,7 @@
                         <outlet property="passwordTextField" destination="Pzc-nG-AGS" id="aAE-V6-wwf"/>
                         <outlet property="registerButton" destination="ee2-Tq-s7S" id="qcS-Jq-PLC"/>
                         <outlet property="scrollView" destination="8Cl-VS-57f" id="wra-2O-NzH"/>
+                        <outlet property="versionLabel" destination="QVp-mu-jA7" id="s8H-to-PIt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVX-Ab-GsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -219,7 +230,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="omisego_logo_black" width="130" height="45"/>
+        <image name="omisego_logo_black" width="130" height="45.5"/>
         <image name="touch_id_icon" width="17" height="17"/>
     </resources>
 </document>

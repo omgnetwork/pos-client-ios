@@ -10,11 +10,13 @@
 import UIKit
 
 class TestLoginViewModel: LoginViewModelProtocol {
+
     var updateEmailValidation: ViewModelValidationClosure?
     var updatePasswordValidation: ViewModelValidationClosure?
     var onFailedLogin: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
+    var currentVersion: String = "x"
     var emailPlaceholder: String = "x"
     var passwordPlaceholder: String = "x"
     var loginButtonTitle: String = "x"

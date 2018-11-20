@@ -37,6 +37,8 @@ class ProfileTableViewControllerTests: XCTestCase {
         XCTAssertEqual(self.sut.touchFaceIdLabel.text, "x")
         XCTAssertEqual(self.sut.touchFaceIdSwitch.isOn, false)
         XCTAssertEqual(self.sut.signOutLabel.text, "x")
+        XCTAssertEqual(self.sut.versionLabel.text, "x")
+        XCTAssertEqual(self.sut.versionValueLabel.text, "x")
     }
 
     func testBioStateChangeUpdateSwitchState() {
@@ -97,7 +99,7 @@ class ProfileTableViewControllerTests: XCTestCase {
     }
 
     func testLogoutIsTriggeredWhenSelectingLogout() {
-        self.sut.tableView(self.sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 2))
+        self.sut.tableView(self.sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 3))
         XCTAssertTrue(self.viewModel.isLogoutCalled)
     }
 
