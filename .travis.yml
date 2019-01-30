@@ -1,7 +1,6 @@
 language: swift
 osx_image: xcode10
-before_install:
-  pod repo update
-script:
-  set -o pipefail &&
-  xcodebuild -workspace POSClient.xcworkspace -scheme "POSClient" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone X" test | xcpretty ;
+cache: cocoapods
+xcode_workspace: POSClient.xcworkspace
+xcode_scheme: POSClient
+xcode_destination: platform=iOS Simulator,name=iPhone X
