@@ -10,25 +10,15 @@ target 'POSClient' do
   pod 'KeychainAccess'
   pod 'BigInt'
   pod 'MBProgressHUD'
-  pod 'Toaster'
+  pod 'SBToaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Client', '1.1.0-beta2'
+  pod 'OmiseGO/Client', '~> 1.1.0'
 
   target 'POSClientTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        if target.name == 'Toaster'
-            target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
-            end
-        end
-    end
 end
