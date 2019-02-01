@@ -12,10 +12,12 @@ import XCTest
 
 class MainTabBarViewModelTests: XCTestCase {
     var sut: MainTabBarViewModel!
+    var sessionManager: TestSessionManager!
 
     override func setUp() {
         super.setUp()
-        self.sut = MainTabBarViewModel()
+        self.sessionManager = TestSessionManager(currentUser: StubGenerator.currentUser())
+        self.sut = MainTabBarViewModel(sessionManager: self.sessionManager)
     }
 
     override func tearDown() {
@@ -35,7 +37,7 @@ class MainTabBarViewModelTests: XCTestCase {
 
     func testNotificationTriggersOnConsumptionRequest() {
         var consumption: TransactionConsumption?
-        let expectedConsumption = StubGenerator.transactionConsumption()
+        let expectedConsumption = StubGenerator.transactionConsumptionUserGenerated()
         self.sut.onConsumptionRequest = {
             consumption = $0
         }
@@ -44,14 +46,25 @@ class MainTabBarViewModelTests: XCTestCase {
         XCTAssertEqual(consumption, expectedConsumption)
     }
 
-    func testNotificationTriggersOnConsumptionFinalized() {
+    func testNotificationTriggersOnConsumptionFinalizedForAUserRequest() {
         var stringData: (title: NSAttributedString, subtitle: NSAttributedString)?
-        let consumption = StubGenerator.transactionConsumption()
+        let consumption = StubGenerator.transactionConsumptionUserGenerated()
         self.sut.onConsumptionFinalized = {
             stringData = $0
         }
         NotificationCenter.default.post(name: Notification.Name.onConsumptionFinalized, object: consumption)
         XCTAssertEqual(stringData?.title.string, "Received 1 TK1")
         XCTAssertEqual(stringData?.subtitle.string, "From Headquarter")
+    }
+
+    func testNotificationTriggersOnConsumptionFinalizedForAnAccountRequest() {
+        var stringData: (title: NSAttributedString, subtitle: NSAttributedString)?
+        let consumption = StubGenerator.transactionConsumptionAccountGenerated()
+        self.sut.onConsumptionFinalized = {
+            stringData = $0
+        }
+        NotificationCenter.default.post(name: Notification.Name.onConsumptionFinalized, object: consumption)
+        XCTAssertEqual(stringData?.title.string, "Sent 1 TK1")
+        XCTAssertEqual(stringData?.subtitle.string, "To Headquarter")
     }
 }

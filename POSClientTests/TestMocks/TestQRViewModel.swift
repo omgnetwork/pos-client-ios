@@ -7,15 +7,17 @@
 //
 
 @testable import POSClient
-import UIKit
+import OmiseGO
 
 class TestQRViewModel: QRViewModelProtocol {
     var title: String = "x"
     var hint: String = "x"
 
     var onTransactionRequestGenerated: EmptyClosure?
+    var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
     var onFailure: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
+    var qrScannerViewController: QRScannerViewController?
 
     func buildTransactionRequests() {
         self.didCallBuildTransactionRequests = true
@@ -26,6 +28,12 @@ class TestQRViewModel: QRViewModelProtocol {
         return UIColor.red.image()
     }
 
+    func prepareScanner() -> QRScannerViewController? {
+        self.didCallPrepareScanner = true
+        return self.qrScannerViewController
+    }
+
     var didCallQRImageWithWidth: CGFloat?
     var didCallBuildTransactionRequests = false
+    var didCallPrepareScanner = false
 }

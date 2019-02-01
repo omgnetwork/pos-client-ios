@@ -104,7 +104,7 @@ class TransactionsViewModelTests: XCTestCase {
         let cellViewModelDebit = TransactionCellViewModel(transaction: transactionDebit, currentUserAddress: "XXX123")
         XCTAssertEqual(cellViewModelDebit.name, "Starbucks - CDC")
         XCTAssertEqual(cellViewModelDebit.amount, "- 10 TK1")
-        XCTAssertEqual(cellViewModelDebit.color, Color.transactionDebitRed.uiColor())
+        XCTAssertEqual(cellViewModelDebit.color, Color.redError.uiColor())
         XCTAssertEqual(cellViewModelDebit.statusText, "transactions.label.status.success".localized())
     }
 }

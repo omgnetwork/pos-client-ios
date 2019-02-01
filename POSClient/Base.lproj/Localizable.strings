@@ -97,7 +97,7 @@
 "tab.notification.received" = "Received";
 "tab.notification.from" = "From";
 "tab.profile.sent" = "Sent";
-"tab.notification.to" = "to";
+"tab.notification.to" = "To";
 
 // Consumption confirmation
 "consumption_confirmation.button.confirm" = "Confirm";
