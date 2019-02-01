@@ -24,7 +24,7 @@ class TransactionCellViewModel: BaseViewModel {
         var source: TransactionSource!
         var sign: String!
         if currentUserAddress == transaction.from.address {
-            self.color = Color.transactionDebitRed.uiColor()
+            self.color = Color.redError.uiColor()
             self.name = transaction.to.account?.name ?? transaction.to.user?.email ?? "-"
             source = transaction.from
             sign = "-"

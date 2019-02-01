@@ -21,6 +21,14 @@
 		0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */; };
 		0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF682138F0E80062DBE3 /* TestSessionManager.swift */; };
 		0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */; };
+		032702BA2202E31E00C7E8BD /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */; };
+		032702BC2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */; };
+		032702BE2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */; };
+		032702C02202E47C00C7E8BD /* TransactionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */; };
+		032702C22202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */; };
+		032702C42202E4FD00C7E8BD /* TransactionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */; };
+		032702C62202E55400C7E8BD /* TransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */; };
+		032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C7220304E300C7E8BD /* TransactionBuilder.swift */; };
 		032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */; };
 		032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */; };
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
@@ -172,6 +180,14 @@
 		0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelTests.swift; sourceTree = "<group>"; };
 		0326EF682138F0E80062DBE3 /* TestSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionManager.swift; sourceTree = "<group>"; };
 		0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
+		032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
+		032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForUserConfirmationViewController.swift; sourceTree = "<group>"; };
+		032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewController.swift; sourceTree = "<group>"; };
+		032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModelProtocol.swift; sourceTree = "<group>"; };
+		032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModel.swift; sourceTree = "<group>"; };
+		032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		032702C7220304E300C7E8BD /* TransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBuilder.swift; sourceTree = "<group>"; };
 		032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -340,6 +356,8 @@
 				032FAF4F214919B500992742 /* TransactionsViewModelProtocol.swift */,
 				032FAF5321491ED500992742 /* TouchIDConfirmationViewModelProtocol.swift */,
 				0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */,
+				032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */,
+				032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -521,6 +539,9 @@
 				03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */,
 				03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */,
 				0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */,
+				032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */,
+				032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */,
+				032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -544,6 +565,8 @@
 				03FB798F212FECA100890D72 /* TransactionsViewModel.swift */,
 				03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */,
 				0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */,
+				032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */,
+				032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -578,6 +601,7 @@
 				0380AADC212C2013006B2193 /* AppEvent.swift */,
 				0380AADE212C2347006B2193 /* Publisher.swift */,
 				03FB799A212FEE2500890D72 /* Paginator.swift */,
+				032702C7220304E300C7E8BD /* TransactionBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -890,11 +914,13 @@
 				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
 				030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */,
 				0371EBAA21758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift in Sources */,
+				032702C42202E4FD00C7E8BD /* TransactionResultViewModel.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
 				03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */,
+				032702BA2202E31E00C7E8BD /* TransactionConfirmationViewController.swift in Sources */,
 				03885C132133ADDB00E78F69 /* Biometric.swift in Sources */,
 				032FAF4421490FC400992742 /* QRViewModelProtocol.swift in Sources */,
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
@@ -904,6 +930,7 @@
 				0381C2092137D21100F813E3 /* LoadingView.swift in Sources */,
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
+				032702BC2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift in Sources */,
 				0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */,
 				03FB7999212FEDFB00890D72 /* TransactionsPaginator.swift in Sources */,
 				03FB798E212FEC9600890D72 /* TransactionsViewController.swift in Sources */,
@@ -916,11 +943,13 @@
 				03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */,
 				03FB7991212FECA200890D72 /* TransactionsViewModel.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
+				032702C62202E55400C7E8BD /* TransactionConfirmationViewModel.swift in Sources */,
 				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
 				032FAF382148CC4100992742 /* BalanceListViewModelProtocol.swift in Sources */,
 				0371EBAC2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift in Sources */,
 				032FAF4C214915F200992742 /* ProfileTableViewModelProtocol.swift in Sources */,
 				03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */,
+				032702BE2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
 				03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */,
 				03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */,
@@ -932,13 +961,16 @@
 				0320B5A22147D2C200A8D646 /* LoginViewModelProtocol.swift in Sources */,
 				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
 				038A52ED217093B700A931CF /* SocketListener.swift in Sources */,
+				032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
 				0371EBAE217836D3006BDFD1 /* PrimaryTokenManager.swift in Sources */,
 				032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
 				038A52EB2170842D00A931CF /* TransactionRequestBuilder.swift in Sources */,
+				032702C22202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift in Sources */,
 				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,
+				032702C02202E47C00C7E8BD /* TransactionResultViewController.swift in Sources */,
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
 				0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */,

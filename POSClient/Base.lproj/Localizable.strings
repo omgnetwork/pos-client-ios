@@ -9,6 +9,7 @@
 // Global
 
 "global.next" = "Next";
+"global.cancel" = "Cancel";
 
 // Loading
 
@@ -52,6 +53,7 @@
 "qr_viewer.label.your_qr" = "Your QR";
 "qr_viewer.label.hint" = "Show this QR code\nto pay or top-up";
 "qr_viewer.button.done" = "Done";
+"qr_viewer.error.invalid_request_amount" = "This request does not contain a valid amount";
 
 // Signup verification
 "profile.view.title" = "Profile";
@@ -102,3 +104,24 @@
 "consumption_confirmation.button.reject" = "Reject";
 "consumption_confirmation.send" = "Send";
 "consumption_confirmation.to" = "To";
+
+// Request confirmation
+"transaction_request_confirmation.send" = "Send";
+"transaction_request_confirmation.to" = "To";
+"transaction_request_confirmation.receive" = "Receive";
+"transaction_request_confirmation.from" = "From";
+"transaction_request_confirmation.error.user_rejected" = "The transaction has been cancelled";
+"transaction_request_confirmation.button.confirm" = "Confirm";
+"transaction_request_confirmation.button.cancel" = "Cancel";
+
+// Waiting for account confirmation
+"waiting_confirmation.label.hint" = "Waiting for confirmation";
+
+// Transaction result
+"transaction_result.from" = "from";
+"transaction_result.to" = "to";
+"transaction_result.done" = "Done";
+"transaction_result.sent" = "Sent";
+"transaction_result.received" = "Received";
+"transaction_result.failed_to_receive" = "Failed to receive";
+"transaction_result.failed_to_send" = "Failed to send";

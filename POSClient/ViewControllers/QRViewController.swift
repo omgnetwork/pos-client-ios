@@ -6,14 +6,17 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class QRViewController: BaseViewController {
     @IBOutlet var hintLabel: UILabel!
     @IBOutlet var qrBorderView: UIView!
     @IBOutlet var qrImageView: UIImageView!
+    @IBOutlet var scanBarButton: UIBarButtonItem!
 
     var initialBrightness: CGFloat = UIScreen.main.brightness
+
+    let transactionRequestDetailSegueIdentifier = "showTransactionRequestDetail"
 
     private var viewModel: QRViewModelProtocol =
         QRViewModel(transactionRequestBuilder: TransactionRequestBuilder(sessionManager: SessionManager.shared))
@@ -42,8 +45,20 @@ class QRViewController: BaseViewController {
             $0 ? self?.showLoading() : self?.hideLoading()
         }
         self.viewModel.onTransactionRequestGenerated = { [weak self] in
-            guard let weakself = self else { return }
-            weakself.qrImageView.image = weakself.viewModel.qrImage(withWidth: weakself.qrImageView.frame.width)
+            guard let self = self else { return }
+            self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
+        }
+        self.viewModel.onTransactionRequestScanned = { [weak self] transactionRequest in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.transactionRequestDetailSegueIdentifier, sender: transactionRequest)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == self.transactionRequestDetailSegueIdentifier,
+            let request = sender as? TransactionRequest,
+            let transactionConfirmationVC = segue.destination as? TransactionConfirmationViewController {
+            transactionConfirmationVC.viewModel = TransactionConfirmationViewModel(transactionRequest: request)
         }
     }
 
@@ -56,5 +71,10 @@ class QRViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIScreen.main.brightness = self.initialBrightness
+    }
+
+    @IBAction func tapScanButton(_: UIBarButtonItem) {
+        guard let scanner = self.viewModel.prepareScanner() else { return }
+        self.present(scanner, animated: true, completion: nil)
     }
 }

@@ -25,8 +25,8 @@ class MainTabBarViewController: UITabBarController {
             self?.selectedIndex = tabIndex
         }
         self.viewModel.onConsumptionRequest = { [weak self] in
-            guard let weakself = self else { return }
-            weakself.performSegue(withIdentifier: weakself.consumptionConfirmationSegueIdentifier, sender: $0)
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.consumptionConfirmationSegueIdentifier, sender: $0)
         }
         self.viewModel.onConsumptionFinalized = { [weak self] in
             let banner = NotificationBanner(attributedTitle: $0.title, attributedSubtitle: $0.subtitle, style: .info, colors: BannerColor())

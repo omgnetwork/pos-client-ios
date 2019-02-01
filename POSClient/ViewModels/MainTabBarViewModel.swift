@@ -23,8 +23,10 @@ class MainTabBarViewModel: BaseViewModel {
     let item3Title = "tab.profile.title".localized()
 
     private var observers: [NSObjectProtocol] = []
+    private let sessionManager: SessionManagerProtocol
 
-    override init() {
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+        self.sessionManager = sessionManager
         super.init()
         let o1 = NotificationCenter.default.addObserver(forName: .didTapPayOrTopup,
                                                         object: nil,
@@ -51,6 +53,17 @@ class MainTabBarViewModel: BaseViewModel {
             self.onConsumptionRejected?()
             return
         }
+        let builtMessage: (title: NSAttributedString, subtitle: NSAttributedString)
+        if consumption.transactionRequest.user == self.sessionManager.currentUser {
+            builtMessage = self.buildForOwnTransactionRequest(withConsumption: consumption)
+        } else {
+            builtMessage = self.buildForAccountTransactionRequest(withConsumption: consumption)
+        }
+        self.onConsumptionFinalized?(builtMessage)
+    }
+
+    private func buildForOwnTransactionRequest(withConsumption consumption: TransactionConsumption)
+        -> (title: NSAttributedString, subtitle: NSAttributedString) {
         let type: String
         let direction: String
         let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
@@ -75,7 +88,36 @@ class MainTabBarViewModel: BaseViewModel {
                                                NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
                                                NSAttributedString.Key.foregroundColor: UIColor.white
         ])
-        self.onConsumptionFinalized?((aTitle, aSubtitle))
+        return (aTitle, aSubtitle)
+    }
+
+    private func buildForAccountTransactionRequest(withConsumption consumption: TransactionConsumption)
+        -> (title: NSAttributedString, subtitle: NSAttributedString) {
+        let type: String
+        let direction: String
+        let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
+                                                          subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
+        switch consumption.transactionRequest.type {
+        case .receive:
+            type = "tab.profile.sent".localized()
+            direction = "tab.notification.to".localized()
+        case .send:
+            type = "tab.notification.received".localized()
+            direction = "tab.notification.from".localized()
+        }
+        let title = "\(type) \(formattedAmount) \(consumption.transactionRequest.token.symbol)"
+        let aTitle = NSAttributedString(string: title,
+                                        attributes: [
+                                            NSAttributedString.Key.font: Font.avenirMedium.withSize(17),
+                                            NSAttributedString.Key.foregroundColor: UIColor.white
+        ])
+        let subtitle = "\(direction) \(consumption.transactionRequest.account?.name ?? "-")"
+        let aSubtitle = NSAttributedString(string: subtitle,
+                                           attributes: [
+                                               NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
+                                               NSAttributedString.Key.foregroundColor: UIColor.white
+        ])
+        return (aTitle, aSubtitle)
     }
 
     deinit {
