@@ -34,6 +34,9 @@ class StubGenerator {
     class func transactionConsumptionAccountGenerated()
         -> TransactionConsumption { return self.stub(forResource: "transaction_consumption_account_generated") }
 
+    class func transactionConsumptionAccountGeneratedWithConfirmation()
+        -> TransactionConsumption { return self.stub(forResource: "transaction_consumption_account_generated_with_confirmation") }
+
     class func transactionConsumptionUserGenerated()
         -> TransactionConsumption { return self.stub(forResource: "transaction_consumption_user_generated") }
 
