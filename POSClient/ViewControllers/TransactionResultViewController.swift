@@ -21,7 +21,7 @@ class TransactionResultViewController: BaseViewController {
 
     class func initWithViewModel(_ viewModel: TransactionResultViewModelProtocol) -> TransactionResultViewController? {
         guard let transactionResultVC: TransactionResultViewController =
-            Storyboard.transaction.viewControllerFromId() else { return nil }
+            Storyboard.qrCode.viewControllerFromId() else { return nil }
         transactionResultVC.viewModel = viewModel
         return transactionResultVC
     }

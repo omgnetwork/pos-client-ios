@@ -103,6 +103,9 @@
 		03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */; };
 		03B9A0DF21464B39006B056A /* BalanceNavigationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */; };
 		03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0E021465A47006B056A /* QRViewControllerTests.swift */; };
+		03C0BF0F220828F200188B0C /* TransactionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */; };
+		03C0BF112208292000188B0C /* TestTransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */; };
+		03C0BF1322082F9E00188B0C /* TestOmiseGOQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -266,6 +269,9 @@
 		03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0E021465A47006B056A /* QRViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewControllerTests.swift; sourceTree = "<group>"; };
+		03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOmiseGOQRViewModel.swift; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +389,8 @@
 				0371EBBE2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift */,
 				0371EBC02179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift */,
 				0371EBC42179E710006BDFD1 /* TestTransactionRequestCreator.swift */,
+				03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */,
+				03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -662,6 +670,7 @@
 				0320B59C2147981D00A8D646 /* TransactionsViewControllerTests.swift */,
 				0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */,
 				0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */,
+				03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -993,6 +1002,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C0BF1322082F9E00188B0C /* TestOmiseGOQRViewModel.swift in Sources */,
 				03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */,
 				0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */,
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
@@ -1006,6 +1016,7 @@
 				032FAF5621491F6A00992742 /* TestTouchIDConfirmationViewModel.swift in Sources */,
 				0320B59D2147981D00A8D646 /* TransactionsViewControllerTests.swift in Sources */,
 				03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */,
+				03C0BF0F220828F200188B0C /* TransactionConfirmationViewControllerTests.swift in Sources */,
 				0371EBB221789273006BDFD1 /* QrViewModelTests.swift in Sources */,
 				0320B5972147772000A8D646 /* SignupConfirmationViewControllerTests.swift in Sources */,
 				03AB7E5B214A3EDE00C80D8E /* TransactionTableViewCellTests.swift in Sources */,
@@ -1032,6 +1043,7 @@
 				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
 				0371EBBD2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
+				03C0BF112208292000188B0C /* TestTransactionConfirmationViewModel.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 				03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */,

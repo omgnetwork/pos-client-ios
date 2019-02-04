@@ -38,4 +38,6 @@ class StubGenerator {
         -> TransactionConsumption { return self.stub(forResource: "transaction_consumption_user_generated") }
 
     class func transactionRequest() -> TransactionRequest { return self.stub(forResource: "transaction_request") }
+
+    class func transactionRequestWithoutAmount() -> TransactionRequest { return self.stub(forResource: "transaction_request_without_amount") }
 }

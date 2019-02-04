@@ -22,7 +22,7 @@ class TransactionConfirmationViewController: BaseViewController {
 
     class func initWithViewModel(_ viewModel: TransactionConfirmationViewModelProtocol) -> TransactionConfirmationViewController? {
         guard let transactionConfirmationVC: TransactionConfirmationViewController =
-            Storyboard.transaction.viewControllerFromId() else { return nil }
+            Storyboard.qrCode.viewControllerFromId() else { return nil }
         transactionConfirmationVC.viewModel = viewModel
         return transactionConfirmationVC
     }

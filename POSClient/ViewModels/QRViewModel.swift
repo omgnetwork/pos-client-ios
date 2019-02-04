@@ -65,7 +65,7 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
     }
 
     func prepareScanner() -> QRScannerViewController? {
-        let verifier = QRClientVerifier(client: SessionManager.shared.httpClient)
+        let verifier = QRClientVerifier(client: self.sessionManager.httpClient)
         return QRScannerViewController(delegate: self, verifier: verifier, cancelButtonTitle: "global.cancel".localized())
     }
 
