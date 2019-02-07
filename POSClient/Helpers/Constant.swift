@@ -35,4 +35,5 @@ extension Notification.Name {
     static let onConsumptionRequest = Notification.Name("onConsumptionRequest")
     static let onConsumptionFinalized = Notification.Name("onConsumptionFinalized")
     static let onPrimaryTokenUpdate = Notification.Name("onPrimaryTokenUpdate")
+    static let onTapQRTabBarButton = Notification.Name("onTapQRTabBarButton")
 }

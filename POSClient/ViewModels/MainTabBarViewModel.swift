@@ -48,33 +48,33 @@ class MainTabBarViewModel: BaseViewModel {
         self.observers.append(contentsOf: [o1, o2, o3])
     }
 
+    func didSelect(item: UITabBarItem, inItems: [UITabBarItem]?) {
+        if let items = inItems, items.count == 3, item == items[1] {
+            NotificationCenter.default.post(name: .onTapQRTabBarButton, object: nil)
+        }
+    }
+
     private func buildBanner(withConsumption consumption: TransactionConsumption) {
         guard consumption.status == .confirmed else {
             self.onConsumptionRejected?()
             return
         }
-        let builtMessage: (title: NSAttributedString, subtitle: NSAttributedString)
-        if consumption.transactionRequest.user == self.sessionManager.currentUser {
-            builtMessage = self.buildForOwnTransactionRequest(withConsumption: consumption)
-        } else {
-            builtMessage = self.buildForAccountTransactionRequest(withConsumption: consumption)
-        }
-        self.onConsumptionFinalized?(builtMessage)
-    }
-
-    private func buildForOwnTransactionRequest(withConsumption consumption: TransactionConsumption)
-        -> (title: NSAttributedString, subtitle: NSAttributedString) {
         let type: String
         let direction: String
         let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
                                                           subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
         switch consumption.transactionRequest.type {
-        case .receive:
+        case .receive where consumption.transactionRequest.user == self.sessionManager.currentUser,
+             .send where consumption.transactionRequest.user != self.sessionManager.currentUser:
             type = "tab.notification.received".localized()
             direction = "tab.notification.from".localized()
-        case .send:
-            type = "tab.profile.sent".localized()
+        case .send where consumption.transactionRequest.user == self.sessionManager.currentUser,
+             .receive where consumption.transactionRequest.user != self.sessionManager.currentUser:
+            type = "tab.notification.sent".localized()
             direction = "tab.notification.to".localized()
+        default:
+            type = ""
+            direction = ""
         }
         let title = "\(type) \(formattedAmount) \(consumption.transactionRequest.token.symbol)"
         let aTitle = NSAttributedString(string: title,
@@ -82,42 +82,17 @@ class MainTabBarViewModel: BaseViewModel {
                                             NSAttributedString.Key.font: Font.avenirMedium.withSize(17),
                                             NSAttributedString.Key.foregroundColor: UIColor.white
         ])
-        let subtitle = "\(direction) \(consumption.account?.name ?? "-")"
+        let target: String? = consumption.transactionRequest.user ==
+            self.sessionManager.currentUser ?
+            consumption.account?.name : consumption.transactionRequest.account?.name
+        let subtitle = "\(direction) \(target ?? "-")"
         let aSubtitle = NSAttributedString(string: subtitle,
                                            attributes: [
                                                NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
                                                NSAttributedString.Key.foregroundColor: UIColor.white
         ])
-        return (aTitle, aSubtitle)
-    }
-
-    private func buildForAccountTransactionRequest(withConsumption consumption: TransactionConsumption)
-        -> (title: NSAttributedString, subtitle: NSAttributedString) {
-        let type: String
-        let direction: String
-        let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
-                                                          subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
-        switch consumption.transactionRequest.type {
-        case .receive:
-            type = "tab.profile.sent".localized()
-            direction = "tab.notification.to".localized()
-        case .send:
-            type = "tab.notification.received".localized()
-            direction = "tab.notification.from".localized()
-        }
-        let title = "\(type) \(formattedAmount) \(consumption.transactionRequest.token.symbol)"
-        let aTitle = NSAttributedString(string: title,
-                                        attributes: [
-                                            NSAttributedString.Key.font: Font.avenirMedium.withSize(17),
-                                            NSAttributedString.Key.foregroundColor: UIColor.white
-        ])
-        let subtitle = "\(direction) \(consumption.transactionRequest.account?.name ?? "-")"
-        let aSubtitle = NSAttributedString(string: subtitle,
-                                           attributes: [
-                                               NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
-                                               NSAttributedString.Key.foregroundColor: UIColor.white
-        ])
-        return (aTitle, aSubtitle)
+        let message = (aTitle, aSubtitle)
+        self.onConsumptionFinalized?(message)
     }
 
     deinit {

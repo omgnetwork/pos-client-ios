@@ -29,6 +29,16 @@ class QRPagerViewController: ButtonBarPagerTabStripViewController, Toastable {
         self.configureViewModel()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel.observerTabBarSelectNotification()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.viewModel.stopObserving()
+    }
+
     private func setupPagerMenuBar() {
         self.settings.style.buttonBarBackgroundColor = .white
         self.settings.style.buttonBarItemFont = Font.avenirMedium.withSize(17)
@@ -48,6 +58,10 @@ class QRPagerViewController: ButtonBarPagerTabStripViewController, Toastable {
         self.viewModel.onTransactionRequestScanned = { [weak self] transactionRequest in
             guard let self = self else { return }
             self.performSegue(withIdentifier: self.transactionRequestDetailSegueIdentifier, sender: transactionRequest)
+        }
+        self.viewModel.onBarButtonNotificationToggle = { [weak self] in
+            guard let self = self else { return }
+            self.moveToViewController(at: (self.currentIndex + 1) % 2)
         }
     }
 

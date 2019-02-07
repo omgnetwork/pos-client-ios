@@ -11,7 +11,10 @@ import OmiseGO
 protocol QRPagerViewModelProtocol {
     var onTransactionRequestScanned: ObjectClosure<TransactionRequest>? { get set }
     var onFailure: FailureClosure? { get set }
+    var onBarButtonNotificationToggle: SuccessClosure? { get set }
     var title: String { get }
 
     func prepareScanner() -> QRScannerViewController?
+    func observerTabBarSelectNotification()
+    func stopObserving()
 }

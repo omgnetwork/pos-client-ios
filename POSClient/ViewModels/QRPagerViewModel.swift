@@ -10,18 +10,37 @@ import OmiseGO
 
 class QRPagerViewModel: BaseViewModel, QRPagerViewModelProtocol {
     var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
+    var onBarButtonNotificationToggle: SuccessClosure?
     var onFailure: FailureClosure?
     private let sessionManager: SessionManagerProtocol
     let title = "tab.qr.title".localized()
+    private var observers: [NSObjectProtocol] = []
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.sessionManager = sessionManager
         super.init()
     }
 
+    func observerTabBarSelectNotification() {
+        let observer = NotificationCenter.default.addObserver(forName: .onTapQRTabBarButton,
+                                                              object: nil,
+                                                              queue: nil) { [weak self] _ in
+            self?.onBarButtonNotificationToggle?()
+        }
+        self.observers = [observer]
+    }
+
+    func stopObserving() {
+        self.observers.forEach({ NotificationCenter.default.removeObserver($0) })
+    }
+
     func prepareScanner() -> QRScannerViewController? {
         let verifier = QRClientVerifier(client: self.sessionManager.httpClient)
         return QRScannerViewController(delegate: self, verifier: verifier, cancelButtonTitle: "")
+    }
+
+    deinit {
+        self.stopObserving()
     }
 }
 

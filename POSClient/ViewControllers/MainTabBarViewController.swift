@@ -73,4 +73,8 @@ class MainTabBarViewController: UITabBarController {
         profileNavVC.viewControllers = [profileVC, transactionVC]
         self.selectedIndex = 2
     }
+
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.viewModel.didSelect(item: item, inItems: tabBar.items)
+    }
 }
