@@ -37,7 +37,7 @@
 "signup.error.validation.password_mismatch" = "Passwords don't match";
 
 // Balance list
-"balance_list.view.title" = "Balances";
+"balance_list.view.title" = "Wallet";
 
 // Balance cell
 "balance_cell.label.primary" = "Primary";
@@ -91,8 +91,8 @@
 "touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
 
 // Tabs
-"tab.balances.title" = "Balances";
-"tab.qr.title" = "QR";
+"tab.wallet.title" = "Wallet";
+"tab.qr.title" = "QR code";
 "tab.profile.title" = "Profile";
 "tab.notification.received" = "Received";
 "tab.notification.from" = "From";
@@ -125,3 +125,10 @@
 "transaction_result.received" = "Received";
 "transaction_result.failed_to_receive" = "Failed to receive";
 "transaction_result.failed_to_send" = "Failed to send";
+
+// Scanner not available
+"scanner_not_available.label.hint" = "Please allow this app to use the camera in your iPhone settings.";
+
+// QR Pager
+"qr_pager.my_qr" = "My QR";
+"qr_pager.scan" = "Scan";

@@ -10,13 +10,11 @@ import OmiseGO
 import UIKit
 
 class QRViewModel: BaseViewModel, QRViewModelProtocol {
-    private let sessionManager: SessionManagerProtocol
     private let transactionRequestBuilder: TransactionRequestBuilderProtocol
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
 
     var onTransactionRequestGenerated: EmptyClosure?
-    var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
     var onFailure: FailureClosure?
     var onLoadStateChange: ObjectClosure<Bool>?
 
@@ -33,9 +31,7 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
         }
     }
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
-         transactionRequestBuilder: TransactionRequestBuilderProtocol) {
-        self.sessionManager = sessionManager
+    init(transactionRequestBuilder: TransactionRequestBuilderProtocol) {
         self.transactionRequestBuilder = transactionRequestBuilder
         super.init()
         self.addObserver()
@@ -64,11 +60,6 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
                                           outputSize: CGSize(width: width, height: width))
     }
 
-    func prepareScanner() -> QRScannerViewController? {
-        let verifier = QRClientVerifier(client: self.sessionManager.httpClient)
-        return QRScannerViewController(delegate: self, verifier: verifier, cancelButtonTitle: "global.cancel".localized())
-    }
-
     deinit {
         if let observer = self.observer {
             NotificationCenter.default.removeObserver(observer)
@@ -81,24 +72,5 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
                                                                queue: nil) { [weak self] _ in
             self?.buildTransactionRequests()
         }
-    }
-}
-
-extension QRViewModel: QRScannerViewControllerDelegate {
-    func scannerDidCancel(scanner: QRScannerViewController) {
-        scanner.dismiss(animated: true, completion: nil)
-    }
-
-    func scannerDidDecode(scanner: QRScannerViewController, transactionRequest: TransactionRequest) {
-        guard let amount = transactionRequest.amount, amount > 0 else {
-            self.onFailure?(POSClientError.message(message: "qr_viewer.error.invalid_request_amount".localized()))
-            return
-        }
-        scanner.dismiss(animated: true, completion: nil)
-        self.onTransactionRequestScanned?(transactionRequest)
-    }
-
-    func scannerDidFailToDecode(scanner _: QRScannerViewController, withError error: OMGError) {
-        self.onFailure?(POSClientError.omiseGO(error: error))
     }
 }

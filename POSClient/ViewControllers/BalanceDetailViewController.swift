@@ -32,7 +32,7 @@ class BalanceDetailViewController: BaseViewController {
         self.tokenSymbolLabel.text = self.viewModel.tokenSymbol
         self.lastUpdatedLabel.text = self.viewModel.lastUpdatedString
         self.lastUpdatedValueLabel.text = self.viewModel.lastUpdated
-        self.title = self.viewModel.title
+        self.navigationItem.title = self.viewModel.title
         self.payButton.titleLabel?.numberOfLines = 0
         self.payButton.setAttributedTitle(self.viewModel.payOrTopupAttrStr, for: .normal)
         self.updatePrimaryButton()
@@ -44,7 +44,7 @@ class BalanceDetailViewController: BaseViewController {
         self.viewModel.onDataUpdate = { [weak self] in
             self?.balanceLabel.text = self?.viewModel.balanceDisplay
             self?.tokenSymbolLabel.text = self?.viewModel.tokenSymbol
-            self?.title = self?.viewModel.title
+            self?.navigationItem.title = self?.viewModel.title
         }
         self.viewModel.onFailGetWallet = { [weak self] in
             self?.showError(withMessage: $0.localizedDescription)

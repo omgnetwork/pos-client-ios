@@ -14,7 +14,8 @@ target 'POSClient' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Client', '~> 1.1.0'
+  pod 'OmiseGO/Client', path:'../omisego-ios'
+  pod 'XLPagerTabStrip', '~> 8.1'
 
   target 'POSClientTests' do
     inherit! :search_paths

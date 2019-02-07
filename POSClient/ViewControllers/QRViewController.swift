@@ -16,8 +16,6 @@ class QRViewController: BaseViewController {
 
     var initialBrightness: CGFloat = UIScreen.main.brightness
 
-    let transactionRequestDetailSegueIdentifier = "showTransactionRequestDetail"
-
     private var viewModel: QRViewModelProtocol =
         QRViewModel(transactionRequestBuilder: TransactionRequestBuilder(sessionManager: SessionManager.shared))
 
@@ -48,18 +46,6 @@ class QRViewController: BaseViewController {
             guard let self = self else { return }
             self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
         }
-        self.viewModel.onTransactionRequestScanned = { [weak self] transactionRequest in
-            guard let self = self else { return }
-            self.performSegue(withIdentifier: self.transactionRequestDetailSegueIdentifier, sender: transactionRequest)
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == self.transactionRequestDetailSegueIdentifier,
-            let request = sender as? TransactionRequest,
-            let transactionConfirmationVC = segue.destination as? TransactionConfirmationViewController {
-            transactionConfirmationVC.viewModel = TransactionConfirmationViewModel(transactionRequest: request)
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,10 +57,5 @@ class QRViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIScreen.main.brightness = self.initialBrightness
-    }
-
-    @IBAction func tapScanButton(_: UIBarButtonItem) {
-        guard let scanner = self.viewModel.prepareScanner() else { return }
-        self.present(scanner, animated: true, completion: nil)
     }
 }

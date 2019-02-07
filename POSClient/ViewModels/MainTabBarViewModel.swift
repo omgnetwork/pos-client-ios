@@ -16,7 +16,7 @@ class MainTabBarViewModel: BaseViewModel {
     var onConsumptionRejected: EmptyClosure?
 
     let item1Image = UIImage(named: "wallet_icon")
-    let item1Title = "tab.balances.title".localized()
+    let item1Title = "tab.wallet.title".localized()
     let item2Image = UIImage(named: "qr_icon")
     let item2Title = "tab.qr.title".localized()
     let item3Image = UIImage(named: "profile_icon")
