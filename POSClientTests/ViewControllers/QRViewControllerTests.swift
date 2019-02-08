@@ -65,36 +65,4 @@ class QRViewControllerTests: XCTestCase {
         XCTAssertEqual(self.viewModel.didCallQRImageWithWidth, self.sut.qrImageView.frame.width)
         XCTAssertNotNil(self.sut.qrImageView.image)
     }
-
-    func testTapScanButtonPresentsScanner() {
-        self.mountOnWindow()
-        class DummyDelegate: QRScannerViewControllerDelegate { // swiftlint:disable:this nesting
-            func scannerDidCancel(scanner _: QRScannerViewController) {}
-            func scannerDidDecode(scanner _: QRScannerViewController, transactionRequest _: TransactionRequest) {}
-            func scannerDidFailToDecode(scanner _: QRScannerViewController, withError _: OMGError) {}
-        }
-
-        self.sut.tapScanButton(UIBarButtonItem())
-
-        let verifier = QRClientVerifier(client: TestSessionManager().httpClient)
-        self.viewModel.qrScannerViewController = QRScannerViewController(delegate: DummyDelegate(), verifier: verifier, cancelButtonTitle: "cancel")
-        XCTAssertTrue(self.viewModel.didCallPrepareScanner)
-        XCTAssertEqual(self.sut.presentedViewController, self.viewModel.qrScannerViewController)
-    }
-
-    func testOntransactionRequestScannedCallsSegue() {
-        let navVC = UINavigationController(rootViewController: self.sut)
-        _ = self.sut.view
-        XCTAssertEqual(navVC.viewControllers.count, 1)
-        let request = StubGenerator.transactionRequest()
-        self.viewModel.onTransactionRequestScanned?(request)
-        let e = self.expectation(description: "pushes confirmation view controller")
-        dispatchMain {
-            e.fulfill()
-        }
-        waitForExpectations(timeout: 1, handler: nil)
-        XCTAssertEqual(navVC.viewControllers.count, 2)
-        let detailVC = navVC.viewControllers.last!
-        XCTAssertTrue(detailVC.isKind(of: TransactionConfirmationViewController.self))
-    }
 }

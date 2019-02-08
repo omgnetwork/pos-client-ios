@@ -13,9 +13,13 @@ class QRPagerViewController: ButtonBarPagerTabStripViewController, Toastable {
     private var viewModel: QRPagerViewModelProtocol = QRPagerViewModel()
     let transactionRequestDetailSegueIdentifier = "showTransactionRequestDetail"
 
-    class func initWithViewModel(_ viewModel: QRPagerViewModelProtocol) -> QRPagerViewController? {
+    private var qrViewModel: QRViewModelProtocol?
+
+    class func initWithViewModel(_ viewModel: QRPagerViewModelProtocol,
+                                 qrViewModel: QRViewModelProtocol) -> QRPagerViewController? {
         guard let qrPagerVC: QRPagerViewController = Storyboard.qrCode.viewControllerFromId() else { return nil }
         qrPagerVC.viewModel = viewModel
+        qrPagerVC.qrViewModel = qrViewModel
         return qrPagerVC
     }
 
@@ -76,7 +80,7 @@ class QRPagerViewController: ButtonBarPagerTabStripViewController, Toastable {
     // MARK: - PagerTabStripDataSource
 
     override func viewControllers(for _: PagerTabStripViewController) -> [UIViewController] {
-        guard let qrViewController: QRViewController = Storyboard.qrCode.viewControllerFromId() else { return [] }
+        guard let qrViewController = QRViewController.initWithViewModel(self.qrViewModel) else { return [] }
         if let scannerViewController = self.viewModel.prepareScanner() {
             return [qrViewController, scannerViewController]
         } else if let scannerNotAvailableVC: ScannerNotAvailableViewController = Storyboard.qrCode.viewControllerFromId() {

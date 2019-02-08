@@ -161,6 +161,9 @@
 		03FB79B52130105300890D72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AA2130105300890D72 /* Profile.storyboard */; };
 		03FB79B62130105300890D72 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AC2130105300890D72 /* Signup.storyboard */; };
 		03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */; };
+		03FEC2E8220C28D300DA2A70 /* QRPagerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */; };
+		03FEC2EA220C290500DA2A70 /* TestQRPagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */; };
+		03FEC2EC220C382F00DA2A70 /* QRPagerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */; };
 		8F7CD18379BACA135DA25E81 /* Pods_POSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */; };
 		AA1F0153D21BBE2609A9B607 /* Pods_POSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FF7E1851BCB9015E8D889 /* Pods_POSClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -334,6 +337,9 @@
 		03FB79AB2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		03FB79AD2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
 		03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewControllerTests.swift; sourceTree = "<group>"; };
+		03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRPagerViewModel.swift; sourceTree = "<group>"; };
+		03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModelTests.swift; sourceTree = "<group>"; };
 		1AFBE851E5E6123AFC830E08 /* Pods-POSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSClientTests/Pods-POSClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DBD3DE3387D7ECEBF01D9CA /* Pods-POSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSClient/Pods-POSClient.debug.xcconfig"; sourceTree = "<group>"; };
 		3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -408,6 +414,7 @@
 				03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */,
 				03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */,
 				03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */,
+				03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -428,6 +435,7 @@
 				0371EBB121789273006BDFD1 /* QrViewModelTests.swift */,
 				0371EBBC2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift */,
 				03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */,
+				03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -692,6 +700,7 @@
 				0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */,
 				0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */,
 				03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */,
+				03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1066,6 +1075,8 @@
 				0371EBB7217990F2006BDFD1 /* SocketListenerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
+				03FEC2EA220C290500DA2A70 /* TestQRPagerViewModel.swift in Sources */,
+				03FEC2E8220C28D300DA2A70 /* QRPagerViewControllerTests.swift in Sources */,
 				032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */,
 				0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */,
 				03C0BF1522083CF300188B0C /* TransactionConfirmationViewModelTests.swift in Sources */,
@@ -1082,6 +1093,7 @@
 				03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */,
 				0371EBBF2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift in Sources */,
 				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,
+				03FEC2EC220C382F00DA2A70 /* QRPagerViewModelTests.swift in Sources */,
 				03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */,
 				03C0BF1722083E1700188B0C /* TestTransactionConsumptionGenerator.swift in Sources */,
 				032FAF5221491A8000992742 /* TestTransactionsViewModel.swift in Sources */,

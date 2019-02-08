@@ -32,7 +32,7 @@
         <!--Pager View Controller-->
         <scene sceneID="ehx-yd-JRg">
             <objects>
-                <viewController id="uhR-Ze-nCv" customClass="QRPagerViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRPagerViewController" id="uhR-Ze-nCv" customClass="QRPagerViewController" customModule="POSClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sh-59-qmf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

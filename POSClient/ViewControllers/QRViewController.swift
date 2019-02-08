@@ -19,9 +19,11 @@ class QRViewController: BaseViewController {
     private var viewModel: QRViewModelProtocol =
         QRViewModel(transactionRequestBuilder: TransactionRequestBuilder(sessionManager: SessionManager.shared))
 
-    class func initWithViewModel(_ viewModel: QRViewModelProtocol) -> QRViewController? {
+    class func initWithViewModel(_ viewModel: QRViewModelProtocol?) -> QRViewController? {
         guard let qrVC: QRViewController = Storyboard.qrCode.viewControllerFromId() else { return nil }
-        qrVC.viewModel = viewModel
+        if let vm = viewModel {
+            qrVC.viewModel = vm
+        }
         return qrVC
     }
 
