@@ -44,6 +44,7 @@ class BalanceDetailViewController: BaseViewController {
         self.viewModel.onDataUpdate = { [weak self] in
             self?.balanceLabel.text = self?.viewModel.balanceDisplay
             self?.tokenSymbolLabel.text = self?.viewModel.tokenSymbol
+            self?.lastUpdatedValueLabel.text = self?.viewModel.lastUpdated
             self?.navigationItem.title = self?.viewModel.title
         }
         self.viewModel.onFailGetWallet = { [weak self] in
