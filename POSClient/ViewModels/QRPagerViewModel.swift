@@ -12,8 +12,8 @@ class QRPagerViewModel: BaseViewModel, QRPagerViewModelProtocol {
     var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
     var onBarButtonNotificationToggle: SuccessClosure?
     var onFailure: FailureClosure?
-    private let sessionManager: SessionManagerProtocol
     let title = "tab.qr.title".localized()
+    private let sessionManager: SessionManagerProtocol
     private var observers: [NSObjectProtocol] = []
 
     init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
@@ -54,7 +54,6 @@ extension QRPagerViewModel: QRScannerViewControllerDelegate {
             return
         }
         self.onTransactionRequestScanned?(transactionRequest)
-        scanner.startCapture()
     }
 
     func scannerDidFailToDecode(scanner _: QRScannerViewController, withError error: OMGError) {
