@@ -128,6 +128,7 @@
 
 // Scanner not available
 "scanner_not_available.label.hint" = "Please allow this app to use the camera in your iPhone settings.";
+"scanner_not_available.button.open_settings" = "Open settings";
 
 // QR Pager
 "qr_pager.my_qr" = "My QR";

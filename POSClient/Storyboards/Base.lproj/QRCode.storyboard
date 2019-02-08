@@ -503,29 +503,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow this app to use the camera in your iPhone settings." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc3-OS-34p">
-                                <rect key="frame" x="32" y="76" width="311" height="670"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQr-vf-NvU">
+                                <rect key="frame" x="32" y="344.66666666666669" width="311" height="122.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow this app to use the camera in your iPhone settings." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc3-OS-34p">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="46.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" red="0.52156862745098043" green="0.54509803921568623" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-SN-GKm">
+                                        <rect key="frame" x="0.0" y="78.666666666666629" width="311" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="uMf-8P-iFU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Open Settings">
+                                            <color key="titleColor" red="0.1019607843" green="0.33725490200000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapOpenSettings:" destination="Oob-n8-zbh" eventType="touchUpInside" id="DKr-2V-o1r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Mc3-OS-34p" firstAttribute="top" secondItem="HQr-vf-NvU" secondAttribute="top" id="Kn8-dU-XcL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mc3-OS-34p" secondAttribute="trailing" id="Pik-Eb-rl6"/>
+                                    <constraint firstAttribute="trailing" secondItem="GqO-SN-GKm" secondAttribute="trailing" id="RnY-gh-EQN"/>
+                                    <constraint firstItem="GqO-SN-GKm" firstAttribute="top" secondItem="Mc3-OS-34p" secondAttribute="bottom" constant="32" id="lig-Gi-JG7"/>
+                                    <constraint firstItem="Mc3-OS-34p" firstAttribute="leading" secondItem="HQr-vf-NvU" secondAttribute="leading" id="vhd-RE-dhd"/>
+                                    <constraint firstAttribute="bottom" secondItem="GqO-SN-GKm" secondAttribute="bottom" id="wwu-H0-v6d"/>
+                                    <constraint firstItem="GqO-SN-GKm" firstAttribute="leading" secondItem="HQr-vf-NvU" secondAttribute="leading" id="ye6-bw-QAs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Mc3-OS-34p" firstAttribute="top" secondItem="N22-k9-3ya" secondAttribute="top" constant="32" id="Hcb-u6-ckW"/>
-                            <constraint firstItem="N22-k9-3ya" firstAttribute="trailing" secondItem="Mc3-OS-34p" secondAttribute="trailing" constant="32" id="Xmk-ZL-1Jx"/>
-                            <constraint firstItem="N22-k9-3ya" firstAttribute="bottom" secondItem="Mc3-OS-34p" secondAttribute="bottom" constant="32" id="bVz-4Y-Wjs"/>
-                            <constraint firstItem="Mc3-OS-34p" firstAttribute="leading" secondItem="N22-k9-3ya" secondAttribute="leading" constant="32" id="cXZ-6I-c0N"/>
+                            <constraint firstItem="HQr-vf-NvU" firstAttribute="centerY" secondItem="sEu-vD-6RF" secondAttribute="centerY" id="2lR-Or-RE7"/>
+                            <constraint firstItem="HQr-vf-NvU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N22-k9-3ya" secondAttribute="top" constant="32" id="9Xj-YL-sjY"/>
+                            <constraint firstItem="N22-k9-3ya" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HQr-vf-NvU" secondAttribute="bottom" constant="32" id="Fvr-DN-0gB"/>
+                            <constraint firstItem="N22-k9-3ya" firstAttribute="trailing" secondItem="HQr-vf-NvU" secondAttribute="trailing" constant="32" id="Lnh-my-Vds"/>
+                            <constraint firstItem="HQr-vf-NvU" firstAttribute="leading" secondItem="N22-k9-3ya" secondAttribute="leading" constant="32" id="NcP-Mn-FJx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N22-k9-3ya"/>
                     </view>
                     <connections>
                         <outlet property="hintLabel" destination="Mc3-OS-34p" id="nxV-em-WNi"/>
+                        <outlet property="openSettingsButton" destination="GqO-SN-GKm" id="ODL-SF-b8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xK0-4k-vcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="890"/>
+            <point key="canvasLocation" x="1320.8" y="889.65517241379314"/>
         </scene>
     </scenes>
     <resources>
