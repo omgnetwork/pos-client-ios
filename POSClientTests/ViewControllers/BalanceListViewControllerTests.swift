@@ -7,7 +7,7 @@
 //
 
 @testable import POSClient
-import Toaster
+import SBToaster
 import XCTest
 
 class BalanceListViewControllerTests: XCTestCase {

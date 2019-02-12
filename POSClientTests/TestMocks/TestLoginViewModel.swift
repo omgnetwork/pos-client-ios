@@ -10,7 +10,6 @@
 import UIKit
 
 class TestLoginViewModel: LoginViewModelProtocol {
-
     var updateEmailValidation: ViewModelValidationClosure?
     var updatePasswordValidation: ViewModelValidationClosure?
     var onFailedLogin: FailureClosure?

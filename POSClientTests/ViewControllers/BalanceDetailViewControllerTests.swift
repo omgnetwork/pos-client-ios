@@ -8,7 +8,7 @@
 
 import OmiseGO
 @testable import POSClient
-import Toaster
+import SBToaster
 import XCTest
 
 class BalanceDetailViewControllerTests: XCTestCase {
