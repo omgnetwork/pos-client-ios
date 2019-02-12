@@ -11,6 +11,7 @@ import OmiseGO
 class QRPagerViewModel: BaseViewModel, QRPagerViewModelProtocol {
     var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
     var onBarButtonNotificationToggle: SuccessClosure?
+    var onCameraPermissionDeclined: SuccessClosure?
     var onFailure: FailureClosure?
     let title = "tab.qr.title".localized()
     private let sessionManager: SessionManagerProtocol
@@ -45,6 +46,12 @@ class QRPagerViewModel: BaseViewModel, QRPagerViewModelProtocol {
 }
 
 extension QRPagerViewModel: QRScannerViewControllerDelegate {
+    func userDidChoosePermission(granted: Bool) {
+        if !granted {
+            self.onCameraPermissionDeclined?()
+        }
+    }
+
     func scannerDidCancel(scanner _: QRScannerViewController) {}
 
     func scannerDidDecode(scanner: QRScannerViewController, transactionRequest: TransactionRequest) {

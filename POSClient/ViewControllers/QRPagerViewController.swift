@@ -6,6 +6,7 @@
 //  Copyright © 2019 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import AVFoundation
 import OmiseGO
 import XLPagerTabStrip
 
@@ -66,6 +67,13 @@ class QRPagerViewController: ButtonBarPagerTabStripViewController, Toastable {
         self.viewModel.onBarButtonNotificationToggle = { [weak self] in
             guard let self = self else { return }
             self.moveToViewController(at: (self.currentIndex + 1) % 2)
+        }
+        self.viewModel.onCameraPermissionDeclined = { [weak self] in
+            guard let self = self else { return }
+            // The first time the scanner is displayed, it'll load the camera view with a black window pending for camera permission.
+            // If the permission is declined, we need to reload the pager so that it'll load the
+            // ScannerNotAvailableViewController instead of the scanner.
+            self.reloadPagerTabStripView()
         }
     }
 
