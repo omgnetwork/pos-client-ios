@@ -85,7 +85,7 @@ class SignupViewModel: BaseViewModel, SignupViewModelProtocol {
     @discardableResult
     private func validateEmail() -> Bool {
         let isEmailValid = self.email?.isValidEmailAddress() ?? false
-        self.updateEmailValidation?(isEmailValid ? nil : "login.error.validation.email".localized())
+        self.updateEmailValidation?(isEmailValid ? nil : "signup.error.validation.email".localized())
         return isEmailValid
     }
 
@@ -111,12 +111,19 @@ class SignupViewModel: BaseViewModel, SignupViewModelProtocol {
     }
 
     private func validateAll() throws {
-        // We use this syntax to force to go over all validation and don't stop when something is invalid
-        // So we can show to the user all fields that have errors
-        var isValid = self.validateEmail()
-        isValid = self.validatePassword() && isValid
-        isValid = self.validatePasswordConfirmation() && isValid
-        isValid = self.validatePasswordMatch() && isValid
-        guard isValid else { throw POSClientError.missingRequiredFields }
+        var error: POSClientError?
+        if !self.validatePasswordMatch() {
+            error = POSClientError.message(message: "signup.error.validation.password_mismatch".localized())
+        }
+        if !self.validatePasswordConfirmation() {
+            error = POSClientError.message(message: "signup.error.validation.password.full".localized())
+        }
+        if !self.validatePassword() {
+            error = POSClientError.message(message: "signup.error.validation.password.full".localized())
+        }
+        if !self.validateEmail() {
+            error = POSClientError.message(message: "signup.error.validation.email".localized())
+        }
+        if let e = error { throw e }
     }
 }

@@ -82,6 +82,7 @@ class QRPagerViewControllerTests: XCTestCase {
 
     func testProvidesCorrectControllersToBarMenuWhenScanAvailable() {
         class DummyDelegate: QRScannerViewControllerDelegate { // swiftlint:disable:this nesting
+            func userDidChoosePermission(granted _: Bool) {}
             func scannerDidCancel(scanner _: QRScannerViewController) {}
             func scannerDidDecode(scanner _: QRScannerViewController, transactionRequest _: TransactionRequest) {}
             func scannerDidFailToDecode(scanner _: QRScannerViewController, withError _: OMGError) {}

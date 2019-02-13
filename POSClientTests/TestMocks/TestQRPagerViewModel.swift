@@ -10,6 +10,7 @@ import OmiseGO
 @testable import POSClient
 
 class TestQRPagerViewModel: QRPagerViewModelProtocol {
+    var onCameraPermissionDeclined: SuccessClosure?
     var onTransactionRequestScanned: ObjectClosure<TransactionRequest>?
     var onFailure: FailureClosure?
     var onBarButtonNotificationToggle: SuccessClosure?

@@ -19,6 +19,8 @@ class TestOmiseGOQRViewModel: QRScannerViewModelProtocol {
 
     var onGetTransactionRequest: OnGetTransactionRequestClosure?
 
+    var onUserPermissionChoice: ((Bool) -> Void)?
+
     var onError: OnErrorClosure?
 
     func startScanning(onStart _: (() -> Void)?) {

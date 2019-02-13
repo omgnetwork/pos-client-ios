@@ -102,8 +102,13 @@ class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     private func validateAll() throws {
         // We use this syntax to force to go over all validation and don't stop when something is invalid
         // So we can show to the user all fields that have errors
-        var isValid = self.validateEmail()
-        isValid = self.validatePassword() && isValid
-        guard isValid else { throw POSClientError.missingRequiredFields }
+        var error: POSClientError?
+        if !self.validatePassword() {
+            error = POSClientError.message(message: "login.error.validation.password.full".localized())
+        }
+        if !self.validateEmail() {
+            error = POSClientError.message(message: "login.error.validation.email".localized())
+        }
+        if let e = error { throw e }
     }
 }

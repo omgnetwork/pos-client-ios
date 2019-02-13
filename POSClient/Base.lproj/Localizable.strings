@@ -18,6 +18,7 @@
 // Login
 "login.error.validation.email" = "Invalid email";
 "login.error.validation.password" = "Invalid password";
+"login.error.validation.password.full" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Sign in";
@@ -35,6 +36,8 @@
 "signup.error.validation.email" = "Invalid email";
 "signup.error.validation.password" = "Invalid password";
 "signup.error.validation.password_mismatch" = "Passwords don't match";
+"signup.error.validation.password.full" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
+
 
 // Balance list
 "balance_list.view.title" = "Wallet";
@@ -84,11 +87,12 @@
 "biometric.faceID" = "Face ID";
 
 // TouchID confirmation
-"touch_id_confirmation.view.title" = "Confirm your password";
+"touch_id_confirmation.view.title" = "Confirm password";
 "touch_id_confirmation.text_field.placeholder.password" = "Password";
 "touch_id_confirmation.button.title.enable" = "Enable";
-"touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
+"touch_id_confirmation.error.validation.password" = "Invalid password";
 "touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
+"touch_id_confirmation.error.validation"= "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
 
 // Tabs
 "tab.wallet.title" = "Wallet";
