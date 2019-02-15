@@ -9,6 +9,7 @@
 // Global
 
 "global.next" = "Next";
+"global.cancel" = "Cancel";
 
 // Loading
 
@@ -17,6 +18,7 @@
 // Login
 "login.error.validation.email" = "Invalid email";
 "login.error.validation.password" = "Invalid password";
+"login.error.validation.password.full" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
 "login.text_field.placeholder.email" = "Email";
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Sign in";
@@ -34,9 +36,11 @@
 "signup.error.validation.email" = "Invalid email";
 "signup.error.validation.password" = "Invalid password";
 "signup.error.validation.password_mismatch" = "Passwords don't match";
+"signup.error.validation.password.full" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
+
 
 // Balance list
-"balance_list.view.title" = "Balances";
+"balance_list.view.title" = "Wallet";
 
 // Balance cell
 "balance_cell.label.primary" = "Primary";
@@ -52,6 +56,7 @@
 "qr_viewer.label.your_qr" = "Your QR";
 "qr_viewer.label.hint" = "Show this QR code\nto pay or top-up";
 "qr_viewer.button.done" = "Done";
+"qr_viewer.error.invalid_request_amount" = "This request does not contain a valid amount";
 
 // Signup verification
 "profile.view.title" = "Profile";
@@ -82,23 +87,53 @@
 "biometric.faceID" = "Face ID";
 
 // TouchID confirmation
-"touch_id_confirmation.view.title" = "Confirm your password";
+"touch_id_confirmation.view.title" = "Confirm password";
 "touch_id_confirmation.text_field.placeholder.password" = "Password";
 "touch_id_confirmation.button.title.enable" = "Enable";
-"touch_id_confirmation.error.validation.password" = "Password should be at least 8 characters long";
+"touch_id_confirmation.error.validation.password" = "Invalid password";
 "touch_id_confirmation.label.hint" = "Please confirm your password in order to enable";
+"touch_id_confirmation.error.validation"= "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
 
 // Tabs
-"tab.balances.title" = "Balances";
-"tab.qr.title" = "QR";
+"tab.wallet.title" = "Wallet";
+"tab.qr.title" = "QR code";
 "tab.profile.title" = "Profile";
 "tab.notification.received" = "Received";
 "tab.notification.from" = "From";
-"tab.profile.sent" = "Sent";
-"tab.notification.to" = "to";
+"tab.notification.sent" = "Sent";
+"tab.notification.to" = "To";
 
 // Consumption confirmation
 "consumption_confirmation.button.confirm" = "Confirm";
 "consumption_confirmation.button.reject" = "Reject";
 "consumption_confirmation.send" = "Send";
 "consumption_confirmation.to" = "To";
+
+// Request confirmation
+"transaction_request_confirmation.send" = "Send";
+"transaction_request_confirmation.to" = "To";
+"transaction_request_confirmation.receive" = "Receive";
+"transaction_request_confirmation.from" = "From";
+"transaction_request_confirmation.error.user_rejected" = "The transaction has been cancelled";
+"transaction_request_confirmation.button.confirm" = "Confirm";
+"transaction_request_confirmation.button.cancel" = "Cancel";
+
+// Waiting for account confirmation
+"waiting_confirmation.label.hint" = "Waiting for confirmation";
+
+// Transaction result
+"transaction_result.from" = "from";
+"transaction_result.to" = "to";
+"transaction_result.done" = "Done";
+"transaction_result.sent" = "Sent";
+"transaction_result.received" = "Received";
+"transaction_result.failed_to_receive" = "Failed to receive";
+"transaction_result.failed_to_send" = "Failed to send";
+
+// Scanner not available
+"scanner_not_available.label.hint" = "Please allow this app to use the camera in your iPhone settings.";
+"scanner_not_available.button.open_settings" = "Open settings";
+
+// QR Pager
+"qr_pager.my_qr" = "My QR";
+"qr_pager.scan" = "Scan";

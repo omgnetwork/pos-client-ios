@@ -93,7 +93,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Touch ID/Face ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8w-gp-6Pk">
-                                                    <rect key="frame" x="16" y="0.0" width="286" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="282" height="43.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sxc-k4-Fn6" firstAttribute="centerY" secondItem="VQF-CF-unh" secondAttribute="centerY" id="E3D-lq-TFt"/>
-                                                <constraint firstItem="E8w-gp-6Pk" firstAttribute="leading" secondItem="VQF-CF-unh" secondAttribute="leading" constant="16" id="GUp-C8-b9W"/>
+                                                <constraint firstItem="E8w-gp-6Pk" firstAttribute="leading" secondItem="VQF-CF-unh" secondAttribute="leading" constant="20" id="GUp-C8-b9W"/>
                                                 <constraint firstAttribute="bottom" secondItem="E8w-gp-6Pk" secondAttribute="bottom" id="OOJ-1c-wdI"/>
                                                 <constraint firstAttribute="trailing" secondItem="sxc-k4-Fn6" secondAttribute="trailing" constant="16" id="bqV-eW-JnY"/>
                                                 <constraint firstItem="sxc-k4-Fn6" firstAttribute="leading" secondItem="E8w-gp-6Pk" secondAttribute="trailing" constant="8" id="gLo-h9-gch"/>

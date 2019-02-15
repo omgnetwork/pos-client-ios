@@ -32,7 +32,7 @@ class SocketListenerTests: XCTestCase {
         self.sut.onChange(event: .onUserUpdate(user: user))
         XCTAssertTrue(self.sessionManager.startscreamSocketClient.isConnected)
         XCTAssertNotNil(self.sessionManager.startscreamSocketClient.lastSentData)
-        XCTAssertEqual("{\"data\":{},\"event\":\"phx_join\",\"ref\":\"1\",\"topic\":\"user:an_id\"}",
+        XCTAssertEqual("{\"data\":{},\"event\":\"phx_join\",\"ref\":\"1\",\"topic\":\"user:usr_01d2bxc5jfbmxvrhxpz5ny297k\"}",
                        String(data: self.sessionManager.startscreamSocketClient.lastSentData!,
                               encoding: .utf8))
     }
@@ -43,13 +43,13 @@ class SocketListenerTests: XCTestCase {
         self.sut.onChange(event: .onUserUpdate(user: user))
         self.sut.onChange(event: .onUserUpdate(user: nil))
         XCTAssertNotNil(self.sessionManager.startscreamSocketClient.lastSentData)
-        XCTAssertEqual("{\"data\":{},\"event\":\"phx_leave\",\"ref\":\"2\",\"topic\":\"user:an_id\"}",
+        XCTAssertEqual("{\"data\":{},\"event\":\"phx_leave\",\"ref\":\"2\",\"topic\":\"user:usr_01d2bxc5jfbmxvrhxpz5ny297k\"}",
                        String(data: self.sessionManager.startscreamSocketClient.lastSentData!,
                               encoding: .utf8))
     }
 
     func testBroadcastNotificationOnConsumptionRequest() {
-        let exptectedConsumption = StubGenerator.transactionConsumption()
+        let exptectedConsumption = StubGenerator.transactionConsumptionUserGenerated()
         var consumption: TransactionConsumption?
         self.expectation(forNotification: .onConsumptionRequest, object: nil) { (notification) -> Bool in
             consumption = notification.object as? TransactionConsumption
@@ -63,7 +63,7 @@ class SocketListenerTests: XCTestCase {
     }
 
     func testBroadcastNotificationOnConsumptionFinalized() {
-        let exptectedConsumption = StubGenerator.transactionConsumption()
+        let exptectedConsumption = StubGenerator.transactionConsumptionUserGenerated()
         var consumption: TransactionConsumption?
         self.expectation(forNotification: .onConsumptionFinalized, object: nil) { (notification) -> Bool in
             consumption = notification.object as? TransactionConsumption

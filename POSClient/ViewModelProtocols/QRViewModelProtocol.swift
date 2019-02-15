@@ -6,7 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 protocol QRViewModelProtocol {
     var title: String { get }

@@ -6,6 +6,7 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+import OmiseGO
 @testable import POSClient
 import SBToaster
 import XCTest
@@ -25,6 +26,12 @@ class QRViewControllerTests: XCTestCase {
         super.tearDown()
         self.sut = nil
         self.viewModel = nil
+    }
+
+    private func mountOnWindow() {
+        let w = UIWindow()
+        w.addSubview(self.sut.view)
+        w.makeKeyAndVisible()
     }
 
     func testSetupsCorrectly() {

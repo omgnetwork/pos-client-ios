@@ -13,7 +13,7 @@ class ProfileTableViewModel: BaseViewModel, ProfileTableViewModelProtocol {
     let transactionLabelText = "profile.label.transactions".localized()
     let emailLabelText = "profile.label.email".localized()
     let signOutLabelText = "profile.label.signout".localized()
-    let currentVersion = "v \(Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "")"
+    let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? ""
 
     let settingsSectionTitle = "profile.section.settings".localized()
     let infoSectionTitle = "profile.section.info".localized()

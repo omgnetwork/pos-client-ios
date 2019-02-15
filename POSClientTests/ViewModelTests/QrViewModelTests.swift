@@ -6,23 +6,21 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
+@testable import OmiseGO
 @testable import POSClient
 import XCTest
 
 class QrViewModelTests: XCTestCase {
-    var sessionManager: TestSessionManager!
     var transactionBuilder = TestTransactionRequestBuilder()
     var sut: QRViewModel!
 
     override func setUp() {
         super.setUp()
-        self.sessionManager = TestSessionManager(wallet: StubGenerator.mainWallet())
-        self.sut = QRViewModel(sessionManager: self.sessionManager, transactionRequestBuilder: self.transactionBuilder)
+        self.sut = QRViewModel(transactionRequestBuilder: self.transactionBuilder)
     }
 
     override func tearDown() {
         PrimaryTokenManager().clear()
-        self.sessionManager = nil
         self.sut = nil
         super.tearDown()
     }

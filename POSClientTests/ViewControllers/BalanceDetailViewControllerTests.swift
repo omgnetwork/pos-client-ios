@@ -35,20 +35,20 @@ class BalanceDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(self.sut.payButton.titleLabel?.attributedText, NSAttributedString(string: "x"))
         XCTAssertEqual(self.sut.lastUpdatedLabel.text, "x")
         XCTAssertEqual(self.sut.lastUpdatedValueLabel.text, "x")
-        XCTAssertEqual(self.sut.title, "x")
+        XCTAssertEqual(self.sut.navigationItem.title, "x")
     }
 
     func testOnDataUpdateTriggersDisplayUpdate() {
         XCTAssertEqual(self.sut.balanceLabel.text, "x")
         XCTAssertEqual(self.sut.tokenSymbolLabel.text, "x")
-        XCTAssertEqual(self.sut.title, "x")
+        XCTAssertEqual(self.sut.navigationItem.title, "x")
         self.viewModel.balanceDisplay = "y"
         self.viewModel.tokenSymbol = "y"
         self.viewModel.title = "y"
         self.viewModel.onDataUpdate?()
         XCTAssertEqual(self.sut.balanceLabel.text, "y")
         XCTAssertEqual(self.sut.tokenSymbolLabel.text, "y")
-        XCTAssertEqual(self.sut.title, "y")
+        XCTAssertEqual(self.sut.navigationItem.title, "y")
     }
 
     func testFailedGetWalletShowsError() {

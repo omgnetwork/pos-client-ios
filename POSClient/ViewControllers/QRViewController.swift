@@ -6,21 +6,24 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
+import OmiseGO
 
 class QRViewController: BaseViewController {
     @IBOutlet var hintLabel: UILabel!
     @IBOutlet var qrBorderView: UIView!
     @IBOutlet var qrImageView: UIImageView!
+    @IBOutlet var scanBarButton: UIBarButtonItem!
 
     var initialBrightness: CGFloat = UIScreen.main.brightness
 
     private var viewModel: QRViewModelProtocol =
         QRViewModel(transactionRequestBuilder: TransactionRequestBuilder(sessionManager: SessionManager.shared))
 
-    class func initWithViewModel(_ viewModel: QRViewModelProtocol) -> QRViewController? {
+    class func initWithViewModel(_ viewModel: QRViewModelProtocol?) -> QRViewController? {
         guard let qrVC: QRViewController = Storyboard.qrCode.viewControllerFromId() else { return nil }
-        qrVC.viewModel = viewModel
+        if let vm = viewModel {
+            qrVC.viewModel = vm
+        }
         return qrVC
     }
 
@@ -42,8 +45,8 @@ class QRViewController: BaseViewController {
             $0 ? self?.showLoading() : self?.hideLoading()
         }
         self.viewModel.onTransactionRequestGenerated = { [weak self] in
-            guard let weakself = self else { return }
-            weakself.qrImageView.image = weakself.viewModel.qrImage(withWidth: weakself.qrImageView.frame.width)
+            guard let self = self else { return }
+            self.qrImageView.image = self.viewModel.qrImage(withWidth: self.qrImageView.frame.width)
         }
     }
 

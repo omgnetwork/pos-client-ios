@@ -10,7 +10,6 @@ import OmiseGO
 import UIKit
 
 class QRViewModel: BaseViewModel, QRViewModelProtocol {
-    private let sessionManager: SessionManagerProtocol
     private let transactionRequestBuilder: TransactionRequestBuilderProtocol
     let title: String = "qr_viewer.label.your_qr".localized()
     let hint: String = "qr_viewer.label.hint".localized()
@@ -32,9 +31,7 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
         }
     }
 
-    init(sessionManager: SessionManagerProtocol = SessionManager.shared,
-         transactionRequestBuilder: TransactionRequestBuilderProtocol) {
-        self.sessionManager = sessionManager
+    init(transactionRequestBuilder: TransactionRequestBuilderProtocol) {
         self.transactionRequestBuilder = transactionRequestBuilder
         super.init()
         self.addObserver()

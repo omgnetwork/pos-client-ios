@@ -74,6 +74,6 @@ class TouchIDConfirmationViewModel: BaseViewModel, TouchIDConfirmationViewModelP
     }
 
     private func validateAll() throws {
-        guard self.validatePassword() else { throw POSClientError.missingRequiredFields }
+        guard self.validatePassword() else { throw POSClientError.message(message: "touch_id_confirmation.error.validation".localized()) }
     }
 }

@@ -46,8 +46,8 @@ class BalanceListViewController: BaseViewController {
             self?.refreshControl.endRefreshing()
         }
         self.viewModel.onBalanceSelection = { [weak self] in
-            guard let weakself = self else { return }
-            weakself.performSegue(withIdentifier: weakself.balanceDetailSegueIdentifier, sender: $0)
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.balanceDetailSegueIdentifier, sender: $0)
         }
     }
 

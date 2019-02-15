@@ -50,8 +50,8 @@ class ProfileTableViewController: BaseTableViewController {
             $0 ? self?.showLoading() : self?.hideLoading()
         }
         self.viewModel.shouldShowEnableConfirmationView = { [weak self] in
-            guard let weakself = self else { return }
-            weakself.performSegue(withIdentifier: weakself.touchIdConfirmationSegueIdentifier, sender: nil)
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: self.touchIdConfirmationSegueIdentifier, sender: nil)
         }
         self.viewModel.onBioStateChange = { [weak self] isEnabled in
             self?.touchFaceIdSwitch.isOn = isEnabled

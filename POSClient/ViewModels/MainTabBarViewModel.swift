@@ -16,15 +16,17 @@ class MainTabBarViewModel: BaseViewModel {
     var onConsumptionRejected: EmptyClosure?
 
     let item1Image = UIImage(named: "wallet_icon")
-    let item1Title = "tab.balances.title".localized()
+    let item1Title = "tab.wallet.title".localized()
     let item2Image = UIImage(named: "qr_icon")
     let item2Title = "tab.qr.title".localized()
     let item3Image = UIImage(named: "profile_icon")
     let item3Title = "tab.profile.title".localized()
 
     private var observers: [NSObjectProtocol] = []
+    private let sessionManager: SessionManagerProtocol
 
-    override init() {
+    init(sessionManager: SessionManagerProtocol = SessionManager.shared) {
+        self.sessionManager = sessionManager
         super.init()
         let o1 = NotificationCenter.default.addObserver(forName: .didTapPayOrTopup,
                                                         object: nil,
@@ -46,6 +48,12 @@ class MainTabBarViewModel: BaseViewModel {
         self.observers.append(contentsOf: [o1, o2, o3])
     }
 
+    func didSelect(item: UITabBarItem, inItems: [UITabBarItem]?) {
+        if let items = inItems, items.count == 3, item == items[1] {
+            NotificationCenter.default.post(name: .onTapQRTabBarButton, object: nil)
+        }
+    }
+
     private func buildBanner(withConsumption consumption: TransactionConsumption) {
         guard consumption.status == .confirmed else {
             self.onConsumptionRejected?()
@@ -56,12 +64,17 @@ class MainTabBarViewModel: BaseViewModel {
         let formattedAmount = OMGNumberFormatter().string(from: consumption.estimatedRequestAmount,
                                                           subunitToUnit: consumption.transactionRequest.token.subUnitToUnit)
         switch consumption.transactionRequest.type {
-        case .receive:
+        case .receive where consumption.transactionRequest.user == self.sessionManager.currentUser,
+             .send where consumption.transactionRequest.user != self.sessionManager.currentUser:
             type = "tab.notification.received".localized()
             direction = "tab.notification.from".localized()
-        case .send:
-            type = "tab.profile.sent".localized()
+        case .send where consumption.transactionRequest.user == self.sessionManager.currentUser,
+             .receive where consumption.transactionRequest.user != self.sessionManager.currentUser:
+            type = "tab.notification.sent".localized()
             direction = "tab.notification.to".localized()
+        default:
+            type = ""
+            direction = ""
         }
         let title = "\(type) \(formattedAmount) \(consumption.transactionRequest.token.symbol)"
         let aTitle = NSAttributedString(string: title,
@@ -69,13 +82,17 @@ class MainTabBarViewModel: BaseViewModel {
                                             NSAttributedString.Key.font: Font.avenirMedium.withSize(17),
                                             NSAttributedString.Key.foregroundColor: UIColor.white
         ])
-        let subtitle = "\(direction) \(consumption.account?.name ?? "-")"
+        let target: String? = consumption.transactionRequest.user ==
+            self.sessionManager.currentUser ?
+            consumption.account?.name : consumption.transactionRequest.account?.name
+        let subtitle = "\(direction) \(target ?? "-")"
         let aSubtitle = NSAttributedString(string: subtitle,
                                            attributes: [
                                                NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
                                                NSAttributedString.Key.foregroundColor: UIColor.white
         ])
-        self.onConsumptionFinalized?((aTitle, aSubtitle))
+        let message = (aTitle, aSubtitle)
+        self.onConsumptionFinalized?(message)
     }
 
     deinit {

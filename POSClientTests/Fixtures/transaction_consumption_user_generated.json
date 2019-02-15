@@ -63,26 +63,20 @@
   "expiration_date": null,
   "socket_topic": "transaction_consumption:txc_01cs9bb80wqd5xxrfyzgwazhqg",
   "transaction_request": {
-    "user_id": "usr_01cs9amcdf1kqp10de3q8fe56v",
+    "user_id": "usr_01d2bxc5jfbmxvrhxpz5ny297k",
     "user": {
-      "username": "user1",
-      "updated_at": "2018-10-08T07:52:57.519979Z",
-      "socket_topic": "user:usr_01cs9amcdf1kqp10de3q8fe56v",
-      "provider_user_id": "pid1",
       "object": "user",
-      "metadata": {},
-      "id": "usr_01cs9amcdf1kqp10de3q8fe56v",
-      "full_name": null,
+      "id": "usr_01d2bxc5jfbmxvrhxpz5ny297k",
+      "provider_user_id": "a_provider_user_id",
+      "username": "john.doe@example.com",
+      "socket_topic": "user:usr_01d2bxc5jfbmxvrhxpz5ny297k",
+      "metadata": {
+        "first_name": "John",
+        "last_name": "Doe"
+      },
       "encrypted_metadata": {},
-      "email": null,
-      "created_at": "2018-10-08T07:52:57.519972Z",
-      "calling_name": null,
-      "avatar": {
-        "thumb": null,
-        "small": null,
-        "original": null,
-        "large": null
-      }
+      "created_at": "2018-01-01T00:00:00Z",
+      "updated_at": "2018-01-01T00:00:00Z"
     },
     "updated_at": "2018-10-08T08:05:26.716968Z",
     "type": "receive",
@@ -123,28 +117,8 @@
     "amount": 100,
     "allow_amount_override": true,
     "address": "ykql631634124896",
-    "account_id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
-    "account": {
-      "updated_at": "2018-10-08T06:17:14.246615Z",
-      "socket_topic": "account:acc_01cs94yc3x4gggm6pwq2fhh1kv",
-      "parent_id": null,
-      "object": "account",
-      "name": "Headquarter",
-      "metadata": {},
-      "master": true,
-      "id": "acc_01cs94yc3x4gggm6pwq2fhh1kv",
-      "encrypted_metadata": {},
-      "description": "Master Account",
-      "created_at": "2018-10-08T06:13:33.440688Z",
-      "category_ids": null,
-      "categories": null,
-      "avatar": {
-        "thumb": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/thumb.png?v=63706198634",
-        "small": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/small.png?v=63706198634",
-        "original": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/original.jpg?v=63706198634",
-        "large": "http://192.168.1.42:4000/public/uploads/dev/account/avatars/acc_01cs94yc3x4gggm6pwq2fhh1kv/large.png?v=63706198634"
-      }
-    }
+    "account_id": null,
+    "account": null
   },
   "transaction_id": "txn_01cs9bb815yf7mndaty8q3d7yj",
   "transaction": {

@@ -21,6 +21,14 @@
 		0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */; };
 		0326EF692138F0E80062DBE3 /* TestSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF682138F0E80062DBE3 /* TestSessionManager.swift */; };
 		0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */; };
+		032702BA2202E31E00C7E8BD /* TransactionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */; };
+		032702BC2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */; };
+		032702BE2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */; };
+		032702C02202E47C00C7E8BD /* TransactionResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */; };
+		032702C22202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */; };
+		032702C42202E4FD00C7E8BD /* TransactionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */; };
+		032702C62202E55400C7E8BD /* TransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */; };
+		032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032702C7220304E300C7E8BD /* TransactionBuilder.swift */; };
 		032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */; };
 		032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */; };
 		032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F7A71212A474C00AAC753 /* Storyboard.swift */; };
@@ -95,6 +103,12 @@
 		03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */; };
 		03B9A0DF21464B39006B056A /* BalanceNavigationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */; };
 		03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9A0E021465A47006B056A /* QRViewControllerTests.swift */; };
+		03C0BF0F220828F200188B0C /* TransactionConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */; };
+		03C0BF112208292000188B0C /* TestTransactionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */; };
+		03C0BF1322082F9E00188B0C /* TestOmiseGOQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */; };
+		03C0BF1522083CF300188B0C /* TransactionConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */; };
+		03C0BF1722083E1700188B0C /* TestTransactionConsumptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */; };
+		03C0BF1922083E4100188B0C /* TestTransactionConsumptionRejector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -113,6 +127,10 @@
 		03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */; };
 		03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */; };
 		03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */; };
+		03D34963220986D900197262 /* QRPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D34962220986D900197262 /* QRPagerViewController.swift */; };
+		03D349662209925200197262 /* QRPagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D349652209925200197262 /* QRPagerViewModel.swift */; };
+		03D349682209929000197262 /* QRPagerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D349672209929000197262 /* QRPagerViewModelProtocol.swift */; };
+		03D3496A220A92FC00197262 /* ScannerNotAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D34969220A92FC00197262 /* ScannerNotAvailableViewController.swift */; };
 		03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */; };
 		03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */; };
 		03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */; };
@@ -143,6 +161,9 @@
 		03FB79B52130105300890D72 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AA2130105300890D72 /* Profile.storyboard */; };
 		03FB79B62130105300890D72 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FB79AC2130105300890D72 /* Signup.storyboard */; };
 		03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */; };
+		03FEC2E8220C28D300DA2A70 /* QRPagerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */; };
+		03FEC2EA220C290500DA2A70 /* TestQRPagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */; };
+		03FEC2EC220C382F00DA2A70 /* QRPagerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */; };
 		8F7CD18379BACA135DA25E81 /* Pods_POSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */; };
 		AA1F0153D21BBE2609A9B607 /* Pods_POSClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FF7E1851BCB9015E8D889 /* Pods_POSClientTests.framework */; };
 /* End PBXBuildFile section */
@@ -172,6 +193,14 @@
 		0326EF662138F0BC0062DBE3 /* LoadingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModelTests.swift; sourceTree = "<group>"; };
 		0326EF682138F0E80062DBE3 /* TestSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSessionManager.swift; sourceTree = "<group>"; };
 		0326EF6A2138F6CB0062DBE3 /* StubGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubGenerator.swift; sourceTree = "<group>"; };
+		032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewController.swift; sourceTree = "<group>"; };
+		032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelProtocol.swift; sourceTree = "<group>"; };
+		032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForUserConfirmationViewController.swift; sourceTree = "<group>"; };
+		032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewController.swift; sourceTree = "<group>"; };
+		032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModelProtocol.swift; sourceTree = "<group>"; };
+		032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResultViewModel.swift; sourceTree = "<group>"; };
+		032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		032702C7220304E300C7E8BD /* TransactionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBuilder.swift; sourceTree = "<group>"; };
 		032F7A6D212A371000AAC753 /* BalanceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCellViewModel.swift; sourceTree = "<group>"; };
 		032F7A6F212A441E00AAC753 /* OmiseGOWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OmiseGOWrapper.swift; sourceTree = "<group>"; };
 		032F7A71212A474C00AAC753 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
@@ -250,6 +279,12 @@
 		03B9A0DC21463B31006B056A /* BalanceDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0DE21464B39006B056A /* BalanceNavigationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNavigationViewControllerTests.swift; sourceTree = "<group>"; };
 		03B9A0E021465A47006B056A /* QRViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewControllerTests.swift; sourceTree = "<group>"; };
+		03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConfirmationViewModel.swift; sourceTree = "<group>"; };
+		03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOmiseGOQRViewModel.swift; sourceTree = "<group>"; };
+		03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelTests.swift; sourceTree = "<group>"; };
+		03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionGenerator.swift; sourceTree = "<group>"; };
+		03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionRejector.swift; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +303,10 @@
 		03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModel.swift; sourceTree = "<group>"; };
 		03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		03D34962220986D900197262 /* QRPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewController.swift; sourceTree = "<group>"; };
+		03D349652209925200197262 /* QRPagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModel.swift; sourceTree = "<group>"; };
+		03D349672209929000197262 /* QRPagerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModelProtocol.swift; sourceTree = "<group>"; };
+		03D34969220A92FC00197262 /* ScannerNotAvailableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerNotAvailableViewController.swift; sourceTree = "<group>"; };
 		03E3CEE6213F979500A199C5 /* TransactionsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModelTests.swift; sourceTree = "<group>"; };
 		03E3CEE8213F982A00A199C5 /* TestTransactionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionLoader.swift; sourceTree = "<group>"; };
 		03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIDConfirmationViewModelTests.swift; sourceTree = "<group>"; };
@@ -298,6 +337,9 @@
 		03FB79AB2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		03FB79AD2130105300890D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Signup.storyboard; sourceTree = "<group>"; };
 		03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewControllerTests.swift; sourceTree = "<group>"; };
+		03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRPagerViewModel.swift; sourceTree = "<group>"; };
+		03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModelTests.swift; sourceTree = "<group>"; };
 		1AFBE851E5E6123AFC830E08 /* Pods-POSClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POSClientTests/Pods-POSClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		2DBD3DE3387D7ECEBF01D9CA /* Pods-POSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POSClient/Pods-POSClient.debug.xcconfig"; sourceTree = "<group>"; };
 		3008B28886DD7DF3D7EC831E /* Pods_POSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +382,9 @@
 				032FAF4F214919B500992742 /* TransactionsViewModelProtocol.swift */,
 				032FAF5321491ED500992742 /* TouchIDConfirmationViewModelProtocol.swift */,
 				0371EBAB2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift */,
+				032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */,
+				032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */,
+				03D349672209929000197262 /* QRPagerViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -365,6 +410,11 @@
 				0371EBBE2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift */,
 				0371EBC02179E1A7006BDFD1 /* TestConsumptionConfirmationViewModel.swift */,
 				0371EBC42179E710006BDFD1 /* TestTransactionRequestCreator.swift */,
+				03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */,
+				03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */,
+				03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */,
+				03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */,
+				03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */,
 			);
 			path = TestMocks;
 			sourceTree = "<group>";
@@ -384,6 +434,8 @@
 				03E5F18B2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift */,
 				0371EBB121789273006BDFD1 /* QrViewModelTests.swift */,
 				0371EBBC2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift */,
+				03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */,
+				03FEC2EB220C382F00DA2A70 /* QRPagerViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -521,6 +573,11 @@
 				03FB79B7213011E900890D72 /* BaseNavigationViewController.swift */,
 				03885C142133B68500E78F69 /* TouchIDConfirmationViewController.swift */,
 				0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */,
+				032702B92202E31E00C7E8BD /* TransactionConfirmationViewController.swift */,
+				032702BD2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift */,
+				032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */,
+				03D34962220986D900197262 /* QRPagerViewController.swift */,
+				03D34969220A92FC00197262 /* ScannerNotAvailableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -544,6 +601,9 @@
 				03FB798F212FECA100890D72 /* TransactionsViewModel.swift */,
 				03885C162133B69300E78F69 /* TouchIDConfirmationViewModel.swift */,
 				0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */,
+				032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */,
+				032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */,
+				03D349652209925200197262 /* QRPagerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -578,6 +638,7 @@
 				0380AADC212C2013006B2193 /* AppEvent.swift */,
 				0380AADE212C2347006B2193 /* Publisher.swift */,
 				03FB799A212FEE2500890D72 /* Paginator.swift */,
+				032702C7220304E300C7E8BD /* TransactionBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -638,6 +699,8 @@
 				0320B59C2147981D00A8D646 /* TransactionsViewControllerTests.swift */,
 				0320B59E21479C3B00A8D646 /* TouchIDConfirmationViewControllerTests.swift */,
 				0371EBBA2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift */,
+				03C0BF0E220828F200188B0C /* TransactionConfirmationViewControllerTests.swift */,
+				03FEC2E7220C28D300DA2A70 /* QRPagerViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -818,6 +881,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -834,6 +898,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -890,11 +955,13 @@
 				032F7A78212A5A6300AAC753 /* BalanceDetailViewController.swift in Sources */,
 				030D5F4621379CEC00EB5B6A /* MainTabBarViewModel.swift in Sources */,
 				0371EBAA21758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift in Sources */,
+				032702C42202E4FD00C7E8BD /* TransactionResultViewModel.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
 				03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */,
+				032702BA2202E31E00C7E8BD /* TransactionConfirmationViewController.swift in Sources */,
 				03885C132133ADDB00E78F69 /* Biometric.swift in Sources */,
 				032FAF4421490FC400992742 /* QRViewModelProtocol.swift in Sources */,
 				033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */,
@@ -904,6 +971,7 @@
 				0381C2092137D21100F813E3 /* LoadingView.swift in Sources */,
 				032F7A70212A441E00AAC753 /* OmiseGOWrapper.swift in Sources */,
 				03C2A66321269CDF00267E7F /* Constant.swift in Sources */,
+				032702BC2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift in Sources */,
 				0380AAE3212D11DA006B2193 /* QRViewController.swift in Sources */,
 				03FB7999212FEDFB00890D72 /* TransactionsPaginator.swift in Sources */,
 				03FB798E212FEC9600890D72 /* TransactionsViewController.swift in Sources */,
@@ -916,29 +984,37 @@
 				03885C172133B69300E78F69 /* TouchIDConfirmationViewModel.swift in Sources */,
 				03FB7991212FECA200890D72 /* TransactionsViewModel.swift in Sources */,
 				03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */,
+				032702C62202E55400C7E8BD /* TransactionConfirmationViewModel.swift in Sources */,
 				0380AAE5212D11E5006B2193 /* QRViewModel.swift in Sources */,
 				032FAF382148CC4100992742 /* BalanceListViewModelProtocol.swift in Sources */,
 				0371EBAC2175906D006BDFD1 /* ConsumptionConfirmationViewModelProtocol.swift in Sources */,
 				032FAF4C214915F200992742 /* ProfileTableViewModelProtocol.swift in Sources */,
 				03885C152133B68500E78F69 /* TouchIDConfirmationViewController.swift in Sources */,
+				032702BE2202E43600C7E8BD /* WaitingForUserConfirmationViewController.swift in Sources */,
 				03C2A66021269C2300267E7F /* Extension.swift in Sources */,
 				03A0C00A21350FFD00E31833 /* KeychainWrapper.swift in Sources */,
 				03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */,
 				03C2A68D212A317D00267E7F /* BalanceListViewController.swift in Sources */,
 				03C2A65F21269C2300267E7F /* CustomView.swift in Sources */,
 				032FAF5421491ED500992742 /* TouchIDConfirmationViewModelProtocol.swift in Sources */,
+				03D3496A220A92FC00197262 /* ScannerNotAvailableViewController.swift in Sources */,
 				03FB799B212FEE2500890D72 /* Paginator.swift in Sources */,
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
 				0320B5A22147D2C200A8D646 /* LoginViewModelProtocol.swift in Sources */,
 				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
+				03D349682209929000197262 /* QRPagerViewModelProtocol.swift in Sources */,
 				038A52ED217093B700A931CF /* SocketListener.swift in Sources */,
+				032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
+				03D349662209925200197262 /* QRPagerViewModel.swift in Sources */,
 				0371EBAE217836D3006BDFD1 /* PrimaryTokenManager.swift in Sources */,
 				032FAF48214911A000992742 /* SignupViewModelProtocol.swift in Sources */,
 				032F7A6E212A371000AAC753 /* BalanceCellViewModel.swift in Sources */,
 				038A52EB2170842D00A931CF /* TransactionRequestBuilder.swift in Sources */,
+				032702C22202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift in Sources */,
 				0380AAD9212C12AF006B2193 /* BalanceNavigationViewController.swift in Sources */,
+				032702C02202E47C00C7E8BD /* TransactionResultViewController.swift in Sources */,
 				032F7A7A212A5A7200AAC753 /* BalanceDetailViewModel.swift in Sources */,
 				03C2A65A21269AA500267E7F /* LoginViewController.swift in Sources */,
 				0380AADB212C1303006B2193 /* BalanceNavigationViewModel.swift in Sources */,
@@ -946,6 +1022,7 @@
 				0380AADF212C2347006B2193 /* Publisher.swift in Sources */,
 				03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
+				03D34963220986D900197262 /* QRPagerViewController.swift in Sources */,
 				03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */,
 				0371EBA821758F25006BDFD1 /* ConsumptionConfirmationViewController.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,
@@ -961,11 +1038,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C0BF1322082F9E00188B0C /* TestOmiseGOQRViewModel.swift in Sources */,
 				03E5F18F2140F0E60089939D /* TransactionsPaginatorTests.swift in Sources */,
 				0371EBB921799CC6006BDFD1 /* TestSocketClient.swift in Sources */,
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
 				0371EBBB2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
+				03C0BF1922083E4100188B0C /* TestTransactionConsumptionRejector.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
 				032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */,
 				03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */,
@@ -974,6 +1053,7 @@
 				032FAF5621491F6A00992742 /* TestTouchIDConfirmationViewModel.swift in Sources */,
 				0320B59D2147981D00A8D646 /* TransactionsViewControllerTests.swift in Sources */,
 				03B9A0E121465A47006B056A /* QRViewControllerTests.swift in Sources */,
+				03C0BF0F220828F200188B0C /* TransactionConfirmationViewControllerTests.swift in Sources */,
 				0371EBB221789273006BDFD1 /* QrViewModelTests.swift in Sources */,
 				0320B5972147772000A8D646 /* SignupConfirmationViewControllerTests.swift in Sources */,
 				03AB7E5B214A3EDE00C80D8E /* TransactionTableViewCellTests.swift in Sources */,
@@ -995,11 +1075,15 @@
 				0371EBB7217990F2006BDFD1 /* SocketListenerTests.swift in Sources */,
 				0320EB67213F8C15001E711F /* ProfileTableViewModelTests.swift in Sources */,
 				0326EF6B2138F6CB0062DBE3 /* StubGenerator.swift in Sources */,
+				03FEC2EA220C290500DA2A70 /* TestQRPagerViewModel.swift in Sources */,
+				03FEC2E8220C28D300DA2A70 /* QRPagerViewControllerTests.swift in Sources */,
 				032FAF3A2148CE6000992742 /* TestBalanceListViewModel.swift in Sources */,
 				0371EBB421789AB9006BDFD1 /* TestTransactionRequestBuilder.swift in Sources */,
+				03C0BF1522083CF300188B0C /* TransactionConfirmationViewModelTests.swift in Sources */,
 				0320B5A42147D2FD00A8D646 /* TestLoginViewModel.swift in Sources */,
 				0371EBBD2179D85B006BDFD1 /* ConsumptionConfirmationViewModelTests.swift in Sources */,
 				0320EB69213F9167001E711F /* MainTabBarViewModelTests.swift in Sources */,
+				03C0BF112208292000188B0C /* TestTransactionConfirmationViewModel.swift in Sources */,
 				0372E3B9213E41970058D0A6 /* BalanceDetailViewModelTests.swift in Sources */,
 				0326EF672138F0BC0062DBE3 /* LoadingViewModelTests.swift in Sources */,
 				03E3CEE7213F979500A199C5 /* TransactionsViewModelTests.swift in Sources */,
@@ -1009,7 +1093,9 @@
 				03B9A0DB2146289D006B056A /* BalanceListViewControllerTests.swift in Sources */,
 				0371EBBF2179DAF5006BDFD1 /* TestTransactionConsumptionApprover.swift in Sources */,
 				03E5F192214103A80089939D /* BaseViewControllerTests.swift in Sources */,
+				03FEC2EC220C382F00DA2A70 /* QRPagerViewModelTests.swift in Sources */,
 				03E3CEE9213F982A00A199C5 /* TestTransactionLoader.swift in Sources */,
+				03C0BF1722083E1700188B0C /* TestTransactionConsumptionGenerator.swift in Sources */,
 				032FAF5221491A8000992742 /* TestTransactionsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

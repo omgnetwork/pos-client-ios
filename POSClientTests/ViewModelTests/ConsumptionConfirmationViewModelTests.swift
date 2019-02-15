@@ -13,7 +13,7 @@ import XCTest
 class ConsumptionConfirmationViewModelTests: XCTestCase {
     var transactionConsumptionApprover: TestTransactionConsumptionApprover!
     var sut: ConsumptionConfirmationViewModel!
-    let testConsumption = StubGenerator.transactionConsumption()
+    let testConsumption = StubGenerator.transactionConsumptionUserGenerated()
 
     override func setUp() {
         super.setUp()

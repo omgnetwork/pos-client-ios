@@ -1,9 +1,9 @@
 {
   "object": "user",
-  "id": "an_id",
+  "id": "usr_01d2bxc5jfbmxvrhxpz5ny297k",
   "provider_user_id": "a_provider_user_id",
   "username": "john.doe@example.com",
-  "socket_topic": "user:an_id",
+  "socket_topic": "user:usr_01d2bxc5jfbmxvrhxpz5ny297k",
   "metadata": {
     "first_name": "John",
     "last_name": "Doe"
