@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseNavigationViewController: UINavigationController {
+class BaseNavigationViewController: UINavigationController, Toastable {
     override func viewDidLoad() {
         super.viewDidLoad()
 

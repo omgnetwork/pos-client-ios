@@ -57,6 +57,9 @@
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
+		03705F55221FBF9600E887E8 /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705F54221FBF9600E887E8 /* DeeplinkManager.swift */; };
+		03705F59221FC0E300E887E8 /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705F58221FC0E300E887E8 /* DeeplinkNavigator.swift */; };
+		03705F5B221FC5AA00E887E8 /* DeepLinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705F5A221FC5AA00E887E8 /* DeepLinkParser.swift */; };
 		0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EA60213D241700BBF92C /* LoginViewModelTests.swift */; };
 		0371EBA821758F25006BDFD1 /* ConsumptionConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */; };
 		0371EBAA21758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */; };
@@ -233,6 +236,9 @@
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
+		03705F54221FBF9600E887E8 /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
+		03705F58221FC0E300E887E8 /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
+		03705F5A221FC5AA00E887E8 /* DeepLinkParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepLinkParser.swift; sourceTree = "<group>"; };
 		0371EA60213D241700BBF92C /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		0371EBA721758F25006BDFD1 /* ConsumptionConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewController.swift; sourceTree = "<group>"; };
 		0371EBA921758FC6006BDFD1 /* ConsumptionConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionConfirmationViewModel.swift; sourceTree = "<group>"; };
@@ -612,6 +618,8 @@
 			isa = PBXGroup;
 			children = (
 				03C2A65C21269C2300267E7F /* CustomView.swift */,
+				03705F5A221FC5AA00E887E8 /* DeepLinkParser.swift */,
+				03705F58221FC0E300E887E8 /* DeeplinkNavigator.swift */,
 				03C2A65D21269C2300267E7F /* Extension.swift */,
 				03C2A65E21269C2300267E7F /* Theme.swift */,
 				03C2A66221269CDF00267E7F /* Constant.swift */,
@@ -647,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				03C2A66B2126A25100267E7F /* SessionManager.swift */,
+				03705F54221FBF9600E887E8 /* DeeplinkManager.swift */,
 				03C2A66D2126B7F600267E7F /* POSClientManager.swift */,
 				038A52EC217093B700A931CF /* SocketListener.swift */,
 				0371EBAD217836D3006BDFD1 /* PrimaryTokenManager.swift */,
@@ -959,6 +968,7 @@
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
+				03705F55221FBF9600E887E8 /* DeeplinkManager.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
 				03FB797A212E6EAD00890D72 /* SignupConfirmationViewController.swift in Sources */,
 				032702BA2202E31E00C7E8BD /* TransactionConfirmationViewController.swift in Sources */,
@@ -1000,11 +1010,13 @@
 				03D3496A220A92FC00197262 /* ScannerNotAvailableViewController.swift in Sources */,
 				03FB799B212FEE2500890D72 /* Paginator.swift in Sources */,
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
+				03705F59221FC0E300E887E8 /* DeeplinkNavigator.swift in Sources */,
 				0320B5A22147D2C200A8D646 /* LoginViewModelProtocol.swift in Sources */,
 				0380AAE7212D13C3006B2193 /* QRGenerator.swift in Sources */,
 				03D349682209929000197262 /* QRPagerViewModelProtocol.swift in Sources */,
 				038A52ED217093B700A931CF /* SocketListener.swift in Sources */,
 				032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */,
+				03705F5B221FC5AA00E887E8 /* DeepLinkParser.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
 				03D349662209925200197262 /* QRPagerViewModel.swift in Sources */,

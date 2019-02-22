@@ -35,6 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         default: break
         }
     }
+
+    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        DeepLinkManager.shared.handleDeeplink(url: url)
+        return true
+    }
+
+    func applicationDidBecomeActive(_: UIApplication) {
+        DeepLinkManager.shared.checkDeepLink()
+    }
 }
 
 extension AppDelegate: Observer {

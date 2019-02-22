@@ -137,3 +137,6 @@
 // QR Pager
 "qr_pager.my_qr" = "My QR";
 "qr_pager.scan" = "Scan";
+
+// Notification
+"notification.signup_success" = "Successfully confirmed your account, you can now log in with your email and password.";
