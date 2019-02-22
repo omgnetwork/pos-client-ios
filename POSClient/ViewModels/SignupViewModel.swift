@@ -72,7 +72,7 @@ class SignupViewModel: BaseViewModel, SignupViewModelProtocol {
         let params = SignupParams(email: self.email!,
                                   password: self.password!,
                                   passwordConfirmation: self.passwordConfirmation!,
-                                  successURL: Constant.urlScheme)
+                                  successURL: Constant.urlScheme + Constant.signupSuccessPath)
         self.sessionManager.signup(withParams: params, success: { [weak self] in
             self?.isLoading = false
             self?.onSuccessfulSignup?()
