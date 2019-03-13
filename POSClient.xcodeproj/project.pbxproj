@@ -111,7 +111,7 @@
 		03C0BF1322082F9E00188B0C /* TestOmiseGOQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */; };
 		03C0BF1522083CF300188B0C /* TransactionConfirmationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */; };
 		03C0BF1722083E1700188B0C /* TestTransactionConsumptionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */; };
-		03C0BF1922083E4100188B0C /* TestTransactionConsumptionRejector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */; };
+		03C0BF1922083E4100188B0C /* TestTransactionConsumptionCanceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0BF1822083E4100188B0C /* TestTransactionConsumptionCanceller.swift */; };
 		03C2A65521269A9D00267E7F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65321269A9D00267E7F /* BaseViewModel.swift */; };
 		03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65421269A9D00267E7F /* LoginViewModel.swift */; };
 		03C2A65921269AA500267E7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A65721269AA500267E7F /* BaseViewController.swift */; };
@@ -290,7 +290,7 @@
 		03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOmiseGOQRViewModel.swift; sourceTree = "<group>"; };
 		03C0BF1422083CF300188B0C /* TransactionConfirmationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionConfirmationViewModelTests.swift; sourceTree = "<group>"; };
 		03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionGenerator.swift; sourceTree = "<group>"; };
-		03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionRejector.swift; sourceTree = "<group>"; };
+		03C0BF1822083E4100188B0C /* TestTransactionConsumptionCanceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTransactionConsumptionCanceller.swift; sourceTree = "<group>"; };
 		03C2A65321269A9D00267E7F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		03C2A65421269A9D00267E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03C2A65721269AA500267E7F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 				03C0BF102208292000188B0C /* TestTransactionConfirmationViewModel.swift */,
 				03C0BF1222082F9E00188B0C /* TestOmiseGOQRViewModel.swift */,
 				03C0BF1622083E1700188B0C /* TestTransactionConsumptionGenerator.swift */,
-				03C0BF1822083E4100188B0C /* TestTransactionConsumptionRejector.swift */,
+				03C0BF1822083E4100188B0C /* TestTransactionConsumptionCanceller.swift */,
 				03FEC2E9220C290500DA2A70 /* TestQRPagerViewModel.swift */,
 			);
 			path = TestMocks;
@@ -876,7 +876,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -911,7 +911,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-POSClient/Pods-POSClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C7270502E9ED82126C18D2C /* [CP] Check Pods Manifest.lock */ = {
@@ -1056,7 +1056,7 @@
 				0371EA61213D241700BBF92C /* LoginViewModelTests.swift in Sources */,
 				0371EBBB2179D848006BDFD1 /* ConsumptionConfirmationViewControllerTests.swift in Sources */,
 				0372E3B7213E31590058D0A6 /* BalanceListViewModelTests.swift in Sources */,
-				03C0BF1922083E4100188B0C /* TestTransactionConsumptionRejector.swift in Sources */,
+				03C0BF1922083E4100188B0C /* TestTransactionConsumptionCanceller.swift in Sources */,
 				03E5F18C2140E99A0089939D /* TouchIDConfirmationViewModelTests.swift in Sources */,
 				032FAF4A2149127300992742 /* TestSignupViewModel.swift in Sources */,
 				03B9A0DD21463B31006B056A /* BalanceDetailViewControllerTests.swift in Sources */,

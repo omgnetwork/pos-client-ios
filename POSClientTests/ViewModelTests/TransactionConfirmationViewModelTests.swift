@@ -15,18 +15,18 @@ class TransactionConfirmationViewModelTests: XCTestCase {
     var sessionManager: TestSessionManager!
     var transactionBuilder: TransactionBuilder!
     var transactionConsumptionGenerator: TestTransactionConsumptionGenerator!
-    var transactionConsumptionRejector: TestTransactionConsumptionRejector!
+    var transactionConsumptionCanceller: TestTransactionConsumptionCanceller!
 
     override func setUp() {
         super.setUp()
         self.sessionManager = TestSessionManager()
         self.transactionConsumptionGenerator = TestTransactionConsumptionGenerator()
-        self.transactionConsumptionRejector = TestTransactionConsumptionRejector()
+        self.transactionConsumptionCanceller = TestTransactionConsumptionCanceller()
         let request = StubGenerator.transactionRequest()
         self.sut = TransactionConfirmationViewModel(sessionManager: self.sessionManager,
                                                     transactionConsumptionGenerator: self.transactionConsumptionGenerator,
                                                     transactionRequest: request,
-                                                    transactionConsumptionRejector: self.transactionConsumptionRejector)
+                                                    transactionConsumptionCanceller: self.transactionConsumptionCanceller)
     }
 
     override func tearDown() {
@@ -96,7 +96,7 @@ class TransactionConfirmationViewModelTests: XCTestCase {
         self.sut.consume()
         self.transactionConsumptionGenerator.success(withConsumption: consumption)
         self.sut.waitingForUserConfirmationDidCancel()
-        XCTAssertEqual(self.transactionConsumptionRejector.consumption, consumption)
+        XCTAssertEqual(self.transactionConsumptionCanceller.consumption, consumption)
     }
 
     func testOnSuccessfulConsumptionFinalized() {

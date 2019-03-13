@@ -33,12 +33,12 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     private var transactionBuilder: TransactionBuilder
     private let sessionManager: SessionManagerProtocol
     private let transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol
-    private let transactionConsumptionRejector: TransactionConsumptionRejectorProtocol
+    private let transactionConsumptionCanceller: TransactionConsumptionCancellerProtocol
 
     required init(sessionManager: SessionManagerProtocol = SessionManager.shared,
                   transactionConsumptionGenerator: TransactionConsumptionGeneratorProtocol = TransactionConsumptionGenerator(),
                   transactionRequest: TransactionRequest,
-                  transactionConsumptionRejector: TransactionConsumptionRejectorProtocol = TransactionConsumptionRejector()) {
+                  transactionConsumptionCanceller: TransactionConsumptionCancellerProtocol = TransactionConsumptionCanceller()) {
         self.accountName = transactionRequest.account?.name ?? "-"
         self.accountId = transactionRequest.account?.id ?? "-"
 
@@ -46,7 +46,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
 
         self.sessionManager = sessionManager
         self.transactionConsumptionGenerator = transactionConsumptionGenerator
-        self.transactionConsumptionRejector = transactionConsumptionRejector
+        self.transactionConsumptionCanceller = transactionConsumptionCanceller
         let formattedAmount = OMGNumberFormatter(precision: 5).string(from: transactionRequest.amount!,
                                                                       subunitToUnit: transactionRequest.token.subUnitToUnit)
         self.amountDisplay = "\(formattedAmount) \(transactionRequest.token.symbol)"
@@ -89,7 +89,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
 
     func waitingForUserConfirmationDidCancel() {
         self.isLoading = true
-        self.transactionConsumptionRejector.reject(consumption: self.listenedConsumption) { [weak self] _ in
+        self.transactionConsumptionCanceller.cancel(consumption: self.listenedConsumption) { [weak self] _ in
             self?.isLoading = false
         }
     }
@@ -99,9 +99,9 @@ extension TransactionConfirmationViewModel: TransactionConsumptionEventDelegate 
     func onSuccessfulTransactionConsumptionFinalized(_ transactionConsumption: TransactionConsumption) {
         self.transactionBuilder.transactionConsumption = transactionConsumption
         switch transactionConsumption.status {
-        case .rejected:
+        case .rejected, .cancelled:
             self.transactionBuilder.error =
-                POSClientError.message(message: "transaction_request_confirmation.error.user_rejected".localized())
+                POSClientError.message(message: "transaction_request_confirmation.error.cancelled".localized())
         default: break
         }
         self.onCompletedConsumption?(self.transactionBuilder)
