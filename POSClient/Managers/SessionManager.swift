@@ -18,7 +18,7 @@ protocol SessionManagerProtocol: Observable {
     func enableBiometricAuth(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func bioLogin(withPromptMessage message: String, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
-    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
+    func logout(_ force: Bool, success: SuccessClosure?, failure: FailureClosure?)
     func signup(withParams params: SignupParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure)
     func loadCurrentUser()
     func loadWallet()
@@ -111,7 +111,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
         }
     }
 
-    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+    func logout(_ force: Bool, success: SuccessClosure?, failure: FailureClosure?) {
         if force {
             self.clearTokens()
             self.disableBiometricAuth()
@@ -121,9 +121,9 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 switch response {
                 case .success(data: _):
                     self.clearTokens()
-                    success()
+                    success?()
                 case let .fail(error: error):
-                    failure(.omiseGO(error: error))
+                    failure?(.omiseGO(error: error))
                 }
             }
         }

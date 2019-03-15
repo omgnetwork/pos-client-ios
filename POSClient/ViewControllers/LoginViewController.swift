@@ -15,6 +15,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var emailTextField: OMGFloatingTextField!
     @IBOutlet var passwordTextField: OMGFloatingTextField!
     @IBOutlet var loginButton: UIButton!
+    @IBOutlet var forgotYourPasswordButton: UIButton!
     @IBOutlet var bioLoginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var versionLabel: UILabel!
@@ -25,12 +26,18 @@ class LoginViewController: BaseViewController {
         return loginVC
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
     override func configureView() {
         super.configureView()
         self.emailTextField.placeholder = self.viewModel.emailPlaceholder
         self.passwordTextField.placeholder = self.viewModel.passwordPlaceholder
         self.loginButton.setTitle(self.viewModel.loginButtonTitle, for: .normal)
         self.registerButton.setTitle(self.viewModel.registerButtonTitle, for: .normal)
+        self.forgotYourPasswordButton.setTitle(self.viewModel.forgotPasswordButtonTitle, for: .normal)
         self.versionLabel.text = self.viewModel.currentVersion
         self.setupBioLoginButton()
     }

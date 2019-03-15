@@ -23,6 +23,7 @@
 "login.text_field.placeholder.password" = "Password";
 "login.button.title.login" = "Sign in";
 "login.button.title.register" = "Don't have an account yet? Sign up";
+"login.button.title.forgot_password" = "Forgot your password?";
 "login.alert.biometric_auth" = "Authenticate to login";
 
 // Signup
@@ -140,3 +141,23 @@
 
 // Notification
 "notification.signup_success" = "Successfully confirmed your account, you can now log in with your email and password.";
+
+// Request password reset
+"request_password_reset.view.title" = "Reset password";
+"request_password_reset.text_field.placeholder.email" = "Email";
+"request_password_reset.button.title.request" = "Submit";
+"request_password_reset.label.hint" = "Forgot your password?\nEnter your email and we will send you a link to reset it!";
+"request_password_reset.error.validation.email" = "Invalid email";
+"request_password_reset.error.validation"= "Invalid email";
+"request_password_reset.success" = "Successfully requested a password reset, please check your emails and follow the link.";
+
+// Update password
+"update_password.view.title" = "Update password";
+"update_password.text_field.placeholder.password" = "New Password";
+"update_password.text_field.placeholder.password_confirmation" = "Re-type password";
+"update_password.label.password_hint" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
+"update_password.button.title.update" = "Update password";
+"update_password.error.validation.password" = "Invalid password";
+"update_password.error.validation.password_mismatch" = "Passwords don't match";
+"update_password.error.validation.password.full" = "Password should be at least 8 characters long and include a lower case letter [a-z], an upper case letter [A-Z], a numeric character [0-9] and a special character [~`!@].";
+"update_password.success" = "Successfully updated your password, you can now log in";

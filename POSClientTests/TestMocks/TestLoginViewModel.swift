@@ -20,6 +20,7 @@ class TestLoginViewModel: LoginViewModelProtocol {
     var passwordPlaceholder: String = "x"
     var loginButtonTitle: String = "x"
     var registerButtonTitle: String = "x"
+    var forgotPasswordButtonTitle: String = "x"
     var isBiometricAvailable: Bool = false
     var touchFaceIdButtonTitle: String = "x"
     var touchFaceIdButtonPicture: UIImage?

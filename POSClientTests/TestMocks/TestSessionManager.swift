@@ -151,7 +151,7 @@ class TestSessionManager: Publisher, SessionManagerProtocol {
         self.loginFailureClosure = failure
     }
 
-    func logout(_ force: Bool, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
+    func logout(_ force: Bool, success: SuccessClosure?, failure: FailureClosure?) {
         self.isForceLogout = force
         self.logoutCalled = true
         self.logoutSuccessClosure = success
