@@ -136,6 +136,7 @@
 		03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */; };
 		03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */; };
 		03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */; };
+		03CEB9072251B51C00C37843 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 03CEB9062251B51C00C37843 /* Settings.bundle */; };
 		03D34963220986D900197262 /* QRPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D34962220986D900197262 /* QRPagerViewController.swift */; };
 		03D349662209925200197262 /* QRPagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D349652209925200197262 /* QRPagerViewModel.swift */; };
 		03D349682209929000197262 /* QRPagerViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D349672209929000197262 /* QRPagerViewModelProtocol.swift */; };
@@ -321,6 +322,7 @@
 		03C2A68E212A318C00267E7F /* BalanceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceListViewModel.swift; sourceTree = "<group>"; };
 		03C2A692212A31ED00267E7F /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
 		03C2A693212A31ED00267E7F /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		03CEB9062251B51C00C37843 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		03D34962220986D900197262 /* QRPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewController.swift; sourceTree = "<group>"; };
 		03D349652209925200197262 /* QRPagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModel.swift; sourceTree = "<group>"; };
 		03D349672209929000197262 /* QRPagerViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPagerViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				03C2A690212A31C600267E7F /* Views */,
 				033A63A52123E02800A2D08B /* AppDelegate.swift */,
 				033A63B12123E02C00A2D08B /* Info.plist */,
+				03CEB9062251B51C00C37843 /* Settings.bundle */,
 			);
 			path = POSClient;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				033A63A02123E02800A2D08B /* Resources */,
 				4A62CB5863EDACE05E92A639 /* [CP] Embed Pods Frameworks */,
 				033A63CC2123E93400A2D08B /* ShellScript */,
+				03CEB9082251B52400C37843 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -854,6 +858,7 @@
 				03FB79B02130105300890D72 /* Login.storyboard in Resources */,
 				03C2A695212A31ED00267E7F /* BalanceTableViewCell.xib in Resources */,
 				03FB79B52130105300890D72 /* Profile.storyboard in Resources */,
+				03CEB9072251B51C00C37843 /* Settings.bundle in Resources */,
 				03FB79B32130105300890D72 /* Transaction.storyboard in Resources */,
 				03C2A6882126C36500267E7F /* Localizable.strings in Resources */,
 				03FB79AE2130105300890D72 /* Loading.storyboard in Resources */,
@@ -887,6 +892,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint lint\nswiftlint lint --config .swiftlint-test.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nif which swiftformat >/dev/null; then\nswiftformat . --commas false --self insert\nelse\necho \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		03CEB9082251B52400C37843 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./credits.py -s \"$SRCROOT\" -o \"$SRCROOT/POSClient/Settings.bundle/Credits.plist\"\n";
 		};
 		4A62CB5863EDACE05E92A639 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
