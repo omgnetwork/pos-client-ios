@@ -56,6 +56,12 @@
 		032FAF5621491F6A00992742 /* TestTouchIDConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032FAF5521491F6A00992742 /* TestTouchIDConfirmationViewModel.swift */; };
 		033A63A62123E02800A2D08B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033A63A52123E02800A2D08B /* AppDelegate.swift */; };
 		033A63CB2123E2CB00A2D08B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033A63C92123E2CB00A2D08B /* Assets.xcassets */; };
+		033D1899223B904700B6B8D9 /* RequestPasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D1898223B904700B6B8D9 /* RequestPasswordResetViewController.swift */; };
+		033D189B223B906200B6B8D9 /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D189A223B906200B6B8D9 /* UpdatePasswordViewController.swift */; };
+		033D189D223B907F00B6B8D9 /* RequestPasswordResetViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D189C223B907F00B6B8D9 /* RequestPasswordResetViewModelProtocol.swift */; };
+		033D189F223B908C00B6B8D9 /* UpdatePasswordViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D189E223B908C00B6B8D9 /* UpdatePasswordViewModelProtocol.swift */; };
+		033D18A1223B909A00B6B8D9 /* RequestPasswordResetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D18A0223B909A00B6B8D9 /* RequestPasswordResetViewModel.swift */; };
+		033D18A3223B90A200B6B8D9 /* UpdatePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D18A2223B90A200B6B8D9 /* UpdatePasswordViewModel.swift */; };
 		033F28B821465FCA00E0DC02 /* SignupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */; };
 		03705F55221FBF9600E887E8 /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705F54221FBF9600E887E8 /* DeeplinkManager.swift */; };
 		03705F59221FC0E300E887E8 /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03705F58221FC0E300E887E8 /* DeeplinkNavigator.swift */; };
@@ -235,6 +241,12 @@
 		033A63B62123E02C00A2D08B /* POSClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POSClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		033A63BC2123E02C00A2D08B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033A63C92123E2CB00A2D08B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		033D1898223B904700B6B8D9 /* RequestPasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordResetViewController.swift; sourceTree = "<group>"; };
+		033D189A223B906200B6B8D9 /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
+		033D189C223B907F00B6B8D9 /* RequestPasswordResetViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordResetViewModelProtocol.swift; sourceTree = "<group>"; };
+		033D189E223B908C00B6B8D9 /* UpdatePasswordViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewModelProtocol.swift; sourceTree = "<group>"; };
+		033D18A0223B909A00B6B8D9 /* RequestPasswordResetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordResetViewModel.swift; sourceTree = "<group>"; };
+		033D18A2223B90A200B6B8D9 /* UpdatePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewModel.swift; sourceTree = "<group>"; };
 		033F28B721465FCA00E0DC02 /* SignupViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewControllerTests.swift; sourceTree = "<group>"; };
 		03705F54221FBF9600E887E8 /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		03705F58221FC0E300E887E8 /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
@@ -391,6 +403,8 @@
 				032702BB2202E40B00C7E8BD /* TransactionConfirmationViewModelProtocol.swift */,
 				032702C12202E49C00C7E8BD /* TransactionResultViewModelProtocol.swift */,
 				03D349672209929000197262 /* QRPagerViewModelProtocol.swift */,
+				033D189C223B907F00B6B8D9 /* RequestPasswordResetViewModelProtocol.swift */,
+				033D189E223B908C00B6B8D9 /* UpdatePasswordViewModelProtocol.swift */,
 			);
 			path = ViewModelProtocols;
 			sourceTree = "<group>";
@@ -584,6 +598,8 @@
 				032702BF2202E47C00C7E8BD /* TransactionResultViewController.swift */,
 				03D34962220986D900197262 /* QRPagerViewController.swift */,
 				03D34969220A92FC00197262 /* ScannerNotAvailableViewController.swift */,
+				033D1898223B904700B6B8D9 /* RequestPasswordResetViewController.swift */,
+				033D189A223B906200B6B8D9 /* UpdatePasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -610,6 +626,8 @@
 				032702C32202E4FD00C7E8BD /* TransactionResultViewModel.swift */,
 				032702C52202E55400C7E8BD /* TransactionConfirmationViewModel.swift */,
 				03D349652209925200197262 /* QRPagerViewModel.swift */,
+				033D18A0223B909A00B6B8D9 /* RequestPasswordResetViewModel.swift */,
+				033D18A2223B90A200B6B8D9 /* UpdatePasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -967,6 +985,7 @@
 				032702C42202E4FD00C7E8BD /* TransactionResultViewModel.swift in Sources */,
 				03C2A6692126A12E00267E7F /* POSClientError.swift in Sources */,
 				03C2A66E2126B7F600267E7F /* POSClientManager.swift in Sources */,
+				033D189B223B906200B6B8D9 /* UpdatePasswordViewController.swift in Sources */,
 				03C2A67D2126BFD500267E7F /* LoadingViewController.swift in Sources */,
 				03705F55221FBF9600E887E8 /* DeeplinkManager.swift in Sources */,
 				03C2A68F212A318C00267E7F /* BalanceListViewModel.swift in Sources */,
@@ -986,6 +1005,7 @@
 				03FB7999212FEDFB00890D72 /* TransactionsPaginator.swift in Sources */,
 				03FB798E212FEC9600890D72 /* TransactionsViewController.swift in Sources */,
 				03C2A694212A31ED00267E7F /* BalanceTableViewCell.swift in Sources */,
+				033D18A3223B90A200B6B8D9 /* UpdatePasswordViewModel.swift in Sources */,
 				0380AAD7212BF4F8006B2193 /* Observable.swift in Sources */,
 				032F7A72212A474C00AAC753 /* Storyboard.swift in Sources */,
 				03A0C00C2135173B00E31833 /* UserDefaultsWrapper.swift in Sources */,
@@ -1008,6 +1028,7 @@
 				03C2A65F21269C2300267E7F /* CustomView.swift in Sources */,
 				032FAF5421491ED500992742 /* TouchIDConfirmationViewModelProtocol.swift in Sources */,
 				03D3496A220A92FC00197262 /* ScannerNotAvailableViewController.swift in Sources */,
+				033D1899223B904700B6B8D9 /* RequestPasswordResetViewController.swift in Sources */,
 				03FB799B212FEE2500890D72 /* Paginator.swift in Sources */,
 				032F7A76212A478200AAC753 /* AppState.swift in Sources */,
 				03705F59221FC0E300E887E8 /* DeeplinkNavigator.swift in Sources */,
@@ -1016,6 +1037,7 @@
 				03D349682209929000197262 /* QRPagerViewModelProtocol.swift in Sources */,
 				038A52ED217093B700A931CF /* SocketListener.swift in Sources */,
 				032702C8220304E300C7E8BD /* TransactionBuilder.swift in Sources */,
+				033D18A1223B909A00B6B8D9 /* RequestPasswordResetViewModel.swift in Sources */,
 				03705F5B221FC5AA00E887E8 /* DeepLinkParser.swift in Sources */,
 				032F7A74212A476400AAC753 /* Closure.swift in Sources */,
 				0380AAEF212D54EF006B2193 /* SignupViewController.swift in Sources */,
@@ -1035,6 +1057,8 @@
 				03FB797C212E6EF800890D72 /* SignupConfirmationViewModel.swift in Sources */,
 				03C2A65621269A9D00267E7F /* LoginViewModel.swift in Sources */,
 				03D34963220986D900197262 /* QRPagerViewController.swift in Sources */,
+				033D189F223B908C00B6B8D9 /* UpdatePasswordViewModelProtocol.swift in Sources */,
+				033D189D223B907F00B6B8D9 /* RequestPasswordResetViewModelProtocol.swift in Sources */,
 				03FB79B8213011E900890D72 /* BaseNavigationViewController.swift in Sources */,
 				0371EBA821758F25006BDFD1 /* ConsumptionConfirmationViewController.swift in Sources */,
 				03C2A66C2126A25100267E7F /* SessionManager.swift in Sources */,

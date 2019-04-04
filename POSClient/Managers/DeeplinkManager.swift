@@ -10,6 +10,7 @@ import Foundation
 
 enum Deeplink {
     case signupSuccess
+    case requestPasswordReset(email: String, token: String)
 }
 
 class DeepLinkManager {

@@ -23,6 +23,14 @@ class DeeplinkParser {
         switch (host, pathComponents.first) {
         case (_, .none): return nil
         case ("signup", .some("success")): return Deeplink.signupSuccess
+        case ("resetPassword", .some("request")):
+            guard let emailQI = components.queryItems?.filter({ $0.name == "email" }).first,
+                let tokenQI = components.queryItems?.filter({ $0.name == "token" }).first,
+                let email = emailQI.value,
+                let token = tokenQI.value else {
+                return nil
+            }
+            return Deeplink.requestPasswordReset(email: email, token: token)
         default: return nil
         }
     }

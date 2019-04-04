@@ -17,6 +17,7 @@ protocol LoginViewModelProtocol {
     var passwordPlaceholder: String { get }
     var loginButtonTitle: String { get }
     var registerButtonTitle: String { get }
+    var forgotPasswordButtonTitle: String { get }
     var isBiometricAvailable: Bool { get }
     var touchFaceIdButtonTitle: String { get }
     var touchFaceIdButtonPicture: UIImage? { get }

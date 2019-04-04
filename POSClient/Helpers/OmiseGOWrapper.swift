@@ -107,3 +107,31 @@ class TransactionConsumptionCanceller: TransactionConsumptionCancellerProtocol {
                                    callback: callback)
     }
 }
+
+protocol ForgetPasswordWrapperProtocol {
+    @discardableResult
+    func requestReset(withParams params: UserResetPasswordParams,
+                      callback: @escaping Request<EmptyResponse>.Callback) -> Request<EmptyResponse>?
+
+    @discardableResult
+    func update(withParams params: UserUpdatePasswordParams,
+                callback: @escaping Request<EmptyResponse>.Callback) -> Request<EmptyResponse>?
+}
+
+class ForgetPasswordWrapper: ForgetPasswordWrapperProtocol {
+    @discardableResult
+    func requestReset(withParams params: UserResetPasswordParams,
+                      callback: @escaping Request<EmptyResponse>.Callback) -> Request<EmptyResponse>? {
+        return User.resetPassword(using: SessionManager.shared.httpClient,
+                                  params: params,
+                                  callback: callback)
+    }
+
+    @discardableResult
+    func update(withParams params: UserUpdatePasswordParams,
+                callback: @escaping Request<EmptyResponse>.Callback) -> Request<EmptyResponse>? {
+        return User.updatePassword(using: SessionManager.shared.httpClient,
+                                   params: params,
+                                   callback: callback)
+    }
+}
