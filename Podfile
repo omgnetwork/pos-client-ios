@@ -14,7 +14,7 @@ target 'POSClient' do
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Client', '~> 1.1.1'
+  pod 'OmiseGO/Client', '~> 1.2.0.beta.1'
   pod 'XLPagerTabStrip', '~> 8.1'
 
   target 'POSClientTests' do

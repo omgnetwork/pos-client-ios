@@ -114,7 +114,7 @@
 "transaction_request_confirmation.to" = "To";
 "transaction_request_confirmation.receive" = "Receive";
 "transaction_request_confirmation.from" = "From";
-"transaction_request_confirmation.error.user_rejected" = "The transaction has been cancelled";
+"transaction_request_confirmation.error.cancelled" = "The transaction has been cancelled";
 "transaction_request_confirmation.button.confirm" = "Confirm";
 "transaction_request_confirmation.button.cancel" = "Cancel";
 
