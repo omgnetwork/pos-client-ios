@@ -44,7 +44,7 @@ class UpdatePasswordViewModel: BaseViewModel, UpdatePasswordViewModelProtocol {
     }
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     private let forgetPasswordWrapper: ForgetPasswordWrapperProtocol
@@ -81,7 +81,7 @@ class UpdatePasswordViewModel: BaseViewModel, UpdatePasswordViewModelProtocol {
             case .success:
                 self?.sessionManager.logout(true, success: nil, failure: nil)
                 self?.onSuccessfulUpdate?("update_password.success".localized())
-            case let .fail(error: error): self?.onFailedUpdate?(POSClientError.omiseGO(error: error))
+            case let .failure(error): self?.onFailedUpdate?(POSClientError.omiseGO(error: error))
                 self?.isLoading = false
             }
         }

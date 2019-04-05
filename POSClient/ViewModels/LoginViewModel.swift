@@ -30,7 +30,7 @@ class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     }
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     lazy var isBiometricAvailable: Bool = {

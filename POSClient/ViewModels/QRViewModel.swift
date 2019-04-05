@@ -20,7 +20,7 @@ class QRViewModel: BaseViewModel, QRViewModelProtocol {
 
     private var isLoading: Bool = false {
         didSet {
-            self.onLoadStateChange?(isLoading)
+            self.onLoadStateChange?(self.isLoading)
         }
     }
 

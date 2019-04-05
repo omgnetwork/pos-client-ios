@@ -24,7 +24,7 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
     var accountName: String = "-"
 
     private var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     private let consumption: TransactionConsumption
@@ -50,7 +50,7 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
             switch result {
             case .success:
                 self?.onSuccessApprove?()
-            case let .fail(error: error):
+            case let .failure(error):
                 self?.onFailApprove?(.omiseGO(error: error))
             }
         }
@@ -63,7 +63,7 @@ class ConsumptionConfirmationViewModel: BaseViewModel, ConsumptionConfirmationVi
             switch result {
             case .success:
                 self?.onSuccessReject?()
-            case let .fail(error: error):
+            case let .failure(error):
                 self?.onFailReject?(.omiseGO(error: error))
             }
         }

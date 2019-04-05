@@ -25,13 +25,16 @@ class RequestPasswordResetViewModel: BaseViewModel, RequestPasswordResetViewMode
     }
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     private let forgetPasswordWrapper: ForgetPasswordWrapperProtocol
+    private let sessionManager: SessionManagerProtocol
 
-    init(forgetPasswordWrapper: ForgetPasswordWrapperProtocol = ForgetPasswordWrapper()) {
+    init(forgetPasswordWrapper: ForgetPasswordWrapperProtocol = ForgetPasswordWrapper(),
+         sessionManager: SessionManagerProtocol = SessionManager.shared) {
         self.forgetPasswordWrapper = forgetPasswordWrapper
+        self.sessionManager = sessionManager
         super.init()
     }
 
@@ -46,11 +49,14 @@ class RequestPasswordResetViewModel: BaseViewModel, RequestPasswordResetViewMode
     }
 
     private func submit() {
-        let params = UserResetPasswordParams(email: self.email!, redirectUrl: Constant.urlScheme + Constant.resetPasswordRequest)
+        let resetPasswordURL = UserResetPasswordParams.defaultResetPasswordURL(forClient: self.sessionManager.httpClient)
+        let params = UserResetPasswordParams(email: self.email!,
+                                             resetPasswordURL: resetPasswordURL,
+                                             forwardURL: Constant.urlScheme + Constant.resetPasswordForwardURLpath)
         self.forgetPasswordWrapper.requestReset(withParams: params) { [weak self] result in
             switch result {
             case .success: self?.onSuccessRequest?("request_password_reset.success".localized())
-            case let .fail(error: error): self?.onFailedRequest?(POSClientError.omiseGO(error: error))
+            case let .failure(error): self?.onFailedRequest?(POSClientError.omiseGO(error: error))
             }
             self?.isLoading = false
         }

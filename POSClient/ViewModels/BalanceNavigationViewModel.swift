@@ -20,7 +20,7 @@ class BalanceNavigationViewModel: BaseViewModel, BalanceNavigationViewModelProto
 
     var displayStyle: DisplayStyle = .list {
         didSet {
-            if oldValue != displayStyle {
+            if oldValue != self.displayStyle {
                 self.onDisplayStyleUpdate?()
             }
         }

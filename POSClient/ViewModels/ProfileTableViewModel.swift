@@ -31,7 +31,7 @@ class ProfileTableViewModel: BaseViewModel, ProfileTableViewModelProtocol {
     }
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     lazy var isBiometricAvailable: Bool = {
