@@ -6,8 +6,8 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-import UIKit
 @testable import POSClient
+import UIKit
 
 class TestTransactionsViewModel: TransactionsViewModelProtocol {
     var appendNewResultClosure: ObjectClosure<[IndexPath]>?

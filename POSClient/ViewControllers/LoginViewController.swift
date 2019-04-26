@@ -75,7 +75,7 @@ extension LoginViewController {
         self.viewModel.login()
     }
 
-    @IBAction func tapBioLoginButton(_: Any) {
+    @IBAction func tapBioLoginButton(_: UIButton) {
         self.view.endEditing(true)
         self.viewModel.bioLogin()
     }

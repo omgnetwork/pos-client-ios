@@ -16,12 +16,12 @@ class TestTransactionRequestCreator {
     var createCompletionClosures: [TransactionRequest.RetrieveRequestCallback] = []
 
     func createSuccess(withRequest request: TransactionRequest) {
-        self.createCompletionClosures.first?(OmiseGO.Response.success(data: request))
+        self.createCompletionClosures.first?(OmiseGO.Response.success(request))
         _ = self.createCompletionClosures.removeFirst()
     }
 
     func createFailed(withError error: OMGError) {
-        self.createCompletionClosures.first?(OmiseGO.Response.fail(error: error))
+        self.createCompletionClosures.first?(OmiseGO.Response.failure(error))
         _ = self.createCompletionClosures.removeFirst()
     }
 }

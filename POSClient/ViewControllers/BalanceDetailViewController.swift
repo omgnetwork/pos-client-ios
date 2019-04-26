@@ -74,7 +74,7 @@ extension BalanceDetailViewController {
         self.viewModel.setPrimary()
     }
 
-    @IBAction func tapPayOrTopupButton(_: Any) {
+    @IBAction func tapPayOrTopupButton(_: UIButton) {
         NotificationCenter.default.post(name: Notification.Name.didTapPayOrTopup, object: nil)
     }
 

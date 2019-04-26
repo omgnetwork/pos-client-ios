@@ -23,7 +23,7 @@ enum KeychainKey: String {
 struct Constant {
     static let urlScheme = "pos-client://"
     static let signupSuccessPath = "signup/success"
-    static let resetPasswordRequest = "resetPassword/request?email={email}&token={token}"
+    static let resetPasswordForwardURLpath = "resetPassword/request?email={email}&token={token}"
 
     static let baseURL = "https://coffeego.omisego.io"
     static let APIKey = "fxqhJomqeemaAomNyfH_RphsVx4D2Z0ruBo_g-3jCY4"

@@ -39,7 +39,7 @@ class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
         self.buildReceive(withTokenId: tokenId) { result in
             switch result {
             case let .success(data: receiveTR): receiveId = receiveTR.formattedId
-            case let .fail(error: error): raisedError = error
+            case let .failure(error): raisedError = error
             }
             group.leave()
         }
@@ -47,7 +47,7 @@ class TransactionRequestBuilder: TransactionRequestBuilderProtocol {
         self.buildTopup(withTokenId: tokenId) { result in
             switch result {
             case let .success(data: topupTR): topupId = topupTR.formattedId
-            case let .fail(error: error): raisedError = error
+            case let .failure(error): raisedError = error
             }
             group.leave()
         }

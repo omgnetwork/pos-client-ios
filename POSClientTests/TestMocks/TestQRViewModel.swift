@@ -6,8 +6,8 @@
 //  Copyright © 2018 Omise Go Pte. Ltd. All rights reserved.
 //
 
-@testable import POSClient
 import OmiseGO
+@testable import POSClient
 
 class TestQRViewModel: QRViewModelProtocol {
     var title: String = "x"

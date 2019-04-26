@@ -25,7 +25,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
     let accountId: String
 
     private var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     private var listenedConsumption: TransactionConsumption?
@@ -76,7 +76,7 @@ class TransactionConfirmationViewModel: BaseViewModel, TransactionConfirmationVi
                 self.transactionBuilder.transactionConsumption = consumption
                 self.listenedConsumption = consumption
                 self.onCompletedConsumption?(self.transactionBuilder)
-            case let .fail(error: error):
+            case let .failure(error):
                 self.transactionBuilder.error = .omiseGO(error: error)
                 self.onCompletedConsumption?(self.transactionBuilder)
             }

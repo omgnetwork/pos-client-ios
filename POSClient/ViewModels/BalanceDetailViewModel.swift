@@ -15,7 +15,7 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
     var onLoadStateChange: ObjectClosure<Bool>?
 
     var isLoading: Bool = false {
-        didSet { self.onLoadStateChange?(isLoading) }
+        didSet { self.onLoadStateChange?(self.isLoading) }
     }
 
     var balanceDisplay: String = "-"
@@ -46,13 +46,13 @@ class BalanceDetailViewModel: BaseViewModel, BalanceDetailViewModelProtocol {
                                          .font: Font.avenirHeavy.withSize(17),
                                          .foregroundColor: UIColor.white,
                                          .paragraphStyle: style
-        ])
+                                     ])
         let orTopup = NSAttributedString(string: "balance_detail.label.or_topup".localized(),
                                          attributes: [
                                              .font: Font.avenirMedium.withSize(12),
                                              .foregroundColor: UIColor.white,
                                              .paragraphStyle: style
-        ])
+                                         ])
         let payOrTopup = NSMutableAttributedString(attributedString: pay)
         payOrTopup.append(orTopup)
         return payOrTopup

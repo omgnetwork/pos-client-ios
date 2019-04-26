@@ -32,7 +32,7 @@ class QRPagerViewModel: BaseViewModel, QRPagerViewModelProtocol {
     }
 
     func stopObserving() {
-        self.observers.forEach({ NotificationCenter.default.removeObserver($0) })
+        self.observers.forEach { NotificationCenter.default.removeObserver($0) }
     }
 
     func prepareScanner() -> QRScannerViewController? {

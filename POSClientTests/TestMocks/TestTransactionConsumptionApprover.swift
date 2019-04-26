@@ -18,19 +18,19 @@ class TestTransactionConsumptionApprover {
     var rejectCompletionClosure: TransactionConsumption.RetrieveRequestCallback?
 
     func approveSuccess(withConsumption consumption: TransactionConsumption) {
-        self.approveCompletionClosure?(OmiseGO.Response.success(data: consumption))
+        self.approveCompletionClosure?(OmiseGO.Response.success(consumption))
     }
 
     func rejectSuccess(withConsumption consumption: TransactionConsumption) {
-        self.rejectCompletionClosure?(OmiseGO.Response.success(data: consumption))
+        self.rejectCompletionClosure?(OmiseGO.Response.success(consumption))
     }
 
     func approveFailed(withError error: OMGError) {
-        self.approveCompletionClosure?(OmiseGO.Response.fail(error: error))
+        self.approveCompletionClosure?(OmiseGO.Response.failure(error))
     }
 
     func rejectFailed(withError error: OMGError) {
-        self.rejectCompletionClosure?(OmiseGO.Response.fail(error: error))
+        self.rejectCompletionClosure?(OmiseGO.Response.failure(error))
     }
 }
 

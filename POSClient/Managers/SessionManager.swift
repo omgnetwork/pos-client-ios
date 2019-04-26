@@ -100,7 +100,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
     func login(withParams params: LoginParams, success: @escaping SuccessClosure, failure: @escaping FailureClosure) {
         self.httpClient.login(withParams: params) { response in
             switch response {
-            case let .fail(error: error): failure(.omiseGO(error: error))
+            case let .failure(error): failure(.omiseGO(error: error))
             case let .success(data: authenticationToken):
                 self.keychainWrapper.storeValue(value: authenticationToken.token, forKey: .authenticationToken)
                 self.userDefaultsWrapper.storeValue(value: params.email, forKey: .email)
@@ -122,7 +122,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
                 case .success(data: _):
                     self.clearTokens()
                     success?()
-                case let .fail(error: error):
+                case let .failure(error):
                     failure?(.omiseGO(error: error))
                 }
             }
@@ -133,7 +133,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
         self.httpClient.signup(withParams: params) { response in
             switch response {
             case .success: success()
-            case let .fail(error: error): failure(.omiseGO(error: error))
+            case let .failure(error): failure(.omiseGO(error: error))
             }
         }
     }
@@ -143,7 +143,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
             switch response {
             case let .success(data: user):
                 self.currentUser = user
-            case let .fail(error: error):
+            case let .failure(error):
                 self.notify(event: .onUserError(error: error))
             }
         }
@@ -154,7 +154,7 @@ class SessionManager: Publisher, SessionManagerProtocol {
             switch response {
             case let .success(data: wallet):
                 self.wallet = wallet
-            case let .fail(error: error):
+            case let .failure(error):
                 self.notify(event: .onWalletError(error: error))
             }
         }

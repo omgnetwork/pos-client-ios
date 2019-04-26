@@ -65,10 +65,10 @@ class BalanceListViewModel: BaseViewModel, BalanceListViewModelProtocol {
 
     private func generateTableViewModels(fromBalances balances: [Balance]) {
         var newViewModels: [BalanceCellViewModel] = []
-        balances.forEach({
+        balances.forEach {
             let viewModel = BalanceCellViewModel(balance: $0)
             newViewModels.append(viewModel)
-        })
+        }
         self.balanceCellViewModels = newViewModels
     }
 

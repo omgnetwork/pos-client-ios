@@ -81,7 +81,7 @@ class MainTabBarViewModel: BaseViewModel {
                                         attributes: [
                                             NSAttributedString.Key.font: Font.avenirMedium.withSize(17),
                                             NSAttributedString.Key.foregroundColor: UIColor.white
-        ])
+                                        ])
         let target: String? = consumption.transactionRequest.user ==
             self.sessionManager.currentUser ?
             consumption.account?.name : consumption.transactionRequest.account?.name
@@ -90,12 +90,12 @@ class MainTabBarViewModel: BaseViewModel {
                                            attributes: [
                                                NSAttributedString.Key.font: Font.avenirMedium.withSize(14),
                                                NSAttributedString.Key.foregroundColor: UIColor.white
-        ])
+                                           ])
         let message = (aTitle, aSubtitle)
         self.onConsumptionFinalized?(message)
     }
 
     deinit {
-        self.observers.forEach({ NotificationCenter.default.removeObserver($0) })
+        self.observers.forEach { NotificationCenter.default.removeObserver($0) }
     }
 }

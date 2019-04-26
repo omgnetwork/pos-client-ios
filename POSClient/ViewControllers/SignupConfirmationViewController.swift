@@ -45,7 +45,7 @@ class SignupConfirmationViewController: BaseViewController {
 }
 
 extension SignupConfirmationViewController {
-    @IBAction func tapGotItButton(_: Any) {
+    @IBAction func tapGotItButton(_: UIButton) {
         self.popToRoot()
     }
 }

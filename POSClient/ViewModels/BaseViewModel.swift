@@ -8,5 +8,4 @@
 
 import OmiseGO
 
-class BaseViewModel: NSObject {
-}
+class BaseViewModel: NSObject {}

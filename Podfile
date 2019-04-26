@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'POSClient' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,13 +8,13 @@ target 'POSClient' do
   # Pods for POSClient
   pod 'Alamofire'
   pod 'KeychainAccess'
-  pod 'BigInt'
+  pod 'BigInt', '~> 4.0'
   pod 'MBProgressHUD'
   pod 'SBToaster'
   pod 'TPKeyboardAvoiding'
   pod 'SkyFloatingLabelTextField'
   pod 'NotificationBannerSwift'
-  pod 'OmiseGO/Client', '~> 1.2.0.beta.1'
+  pod 'OmiseGO/Client', '~> 1.2.0.beta.2'
   pod 'XLPagerTabStrip', '~> 8.1'
 
   target 'POSClientTests' do

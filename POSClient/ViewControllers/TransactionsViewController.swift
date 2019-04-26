@@ -17,7 +17,7 @@ class TransactionsViewController: BaseTableViewController {
         loader.translatesAutoresizingMaskIntoConstraints = false
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44))
         view.addSubview(loader)
-        [.centerX, .centerY].forEach({
+        [.centerX, .centerY].forEach {
             view.addConstraint(NSLayoutConstraint(item: loader,
                                                   attribute: $0,
                                                   relatedBy: .equal,
@@ -25,7 +25,7 @@ class TransactionsViewController: BaseTableViewController {
                                                   attribute: $0,
                                                   multiplier: 1,
                                                   constant: 0))
-        })
+        }
         return view
     }()
 
@@ -81,7 +81,8 @@ extension TransactionsViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell: TransactionTableViewCell = tableView.dequeueReusableCell(
             withIdentifier: TransactionTableViewCell.identifier(),
-            for: indexPath) as? TransactionTableViewCell else {
+            for: indexPath
+        ) as? TransactionTableViewCell else {
             return UITableViewCell()
         }
         cell.transactionCellViewModel = self.viewModel.transactionCellViewModel(at: indexPath)
